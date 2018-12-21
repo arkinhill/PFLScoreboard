@@ -23,7 +23,7 @@ class UserProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     // MARK: - OUTLETS
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var usernameTextLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
     
     // MARK: - VIEW DID LOAD
     

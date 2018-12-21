@@ -29,10 +29,10 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Re-LG-IxW">
-                                <rect key="frame" x="296.66666666666674" y="282" width="143" height="33"/>
+                                <rect key="frame" x="296.66666666666663" y="282" width="143" height="32"/>
                                 <color key="backgroundColor" red="0.92407351732254028" green="0.23367717862129211" blue="0.15281248092651367" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="5ZK-Rv-WKP"/>
+                                    <constraint firstAttribute="height" constant="32" id="5ZK-Rv-WKP"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="143" id="uv0-Li-KKg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="17"/>
