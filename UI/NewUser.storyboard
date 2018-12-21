@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--New UserVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="NewUserVC" customModule="PFLScoreboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grayGradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="zrH-ZB-WH6">
+                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PFLLogo" translatesAutoresizingMaskIntoConstraints="NO" id="yBL-CD-ebw">
+                                <rect key="frame" x="343" y="76" width="50" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Ufy-Pw-ILd"/>
+                                    <constraint firstAttribute="width" constant="50" id="cCI-fn-zhi"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Re-LG-IxW">
+                                <rect key="frame" x="296.66666666666674" y="282" width="143" height="33"/>
+                                <color key="backgroundColor" red="0.92407351732254028" green="0.23367717862129211" blue="0.15281248092651367" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="5ZK-Rv-WKP"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="143" id="uv0-Li-KKg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="SUBMIT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.50791827280000001" green="0.50791827280000001" blue="0.50791827280000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="submitButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HVa-MN-1WA"/>
+                                    <segue destination="QKe-lM-ZsZ" kind="show" identifier="toProfileFromNew" id="GnA-ii-DNa"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="Ixi-60-UOz">
+                                <rect key="frame" x="241" y="162" width="254" height="100"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="w5V-Dq-ghN">
+                                        <rect key="frame" x="4" y="0.0" width="246.33333333333334" height="57"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paper Football League" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3w-qV-EJl">
+                                                <rect key="frame" x="0.0" y="0.0" width="246.33333333333334" height="33.333333333333336"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="28"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a new username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uxf-2f-qAU">
+                                                <rect key="frame" x="20.333333333333314" y="33.333333333333343" width="205.66666666666666" height="23.666666666666671"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PFL username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nYZ-en-i7f">
+                                        <rect key="frame" x="17" y="68" width="220" height="32"/>
+                                        <color key="backgroundColor" red="0.83529411764705885" green="0.83921568627450982" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="0Bx-hw-GAp"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" id="x3j-cp-sMo"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zrH-ZB-WH6" secondAttribute="bottom" id="5l7-aj-cMO"/>
+                            <constraint firstItem="zrH-ZB-WH6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EkP-nj-Nto"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zrH-ZB-WH6" secondAttribute="trailing" id="NoN-Xb-dRs"/>
+                            <constraint firstItem="0Re-LG-IxW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ove-aB-I90"/>
+                            <constraint firstItem="Ixi-60-UOz" firstAttribute="top" secondItem="yBL-CD-ebw" secondAttribute="bottom" constant="16" id="PG5-od-yfm"/>
+                            <constraint firstItem="Ixi-60-UOz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UJf-BH-jHW"/>
+                            <constraint firstItem="Ixi-60-UOz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="162" id="bMy-rH-AOF"/>
+                            <constraint firstItem="Ixi-60-UOz" firstAttribute="centerX" secondItem="yBL-CD-ebw" secondAttribute="centerX" id="glc-gi-gQD"/>
+                            <constraint firstItem="zrH-ZB-WH6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ncc-c8-cuh"/>
+                            <constraint firstItem="Ixi-60-UOz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="241" id="seS-nO-wHP"/>
+                            <constraint firstItem="yBL-CD-ebw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xmB-bo-564"/>
+                            <constraint firstItem="0Re-LG-IxW" firstAttribute="top" secondItem="Ixi-60-UOz" secondAttribute="bottom" constant="20" id="zl6-sL-qBo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="newUsernameTextField" destination="nYZ-en-i7f" id="LOf-yL-HpT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-13" y="-396"/>
+        </scene>
+        <!--UserProfile-->
+        <scene sceneID="kMm-h7-1ki">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UserProfile" id="QKe-lM-ZsZ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V1W-AV-l9L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-13" y="151"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="PFLLogo" width="724" height="978"/>
+        <image name="grayGradientBackground" width="2209" height="1243"/>
+    </resources>
+</document>

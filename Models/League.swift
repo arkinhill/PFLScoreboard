@@ -14,8 +14,9 @@ class League {
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
     // 🔸 MARK: - PROPERTIES
     
-    // League name
+    // League info
     var leagueName: String
+    var isPending: Bool
     
     // League arrays
     var teams: [Team]
@@ -31,8 +32,9 @@ class League {
     
     static let leagueTypeKey = "League"
     
-    // League name
+    // League info
     fileprivate static let leagueNameKey = "leagueName"
+    fileprivate static let isPendingKey = "isPending"
     
     // League arrays
     fileprivate static let teamsKey = "teams"
@@ -45,10 +47,11 @@ class League {
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
     // 🔸 MARK: - MEMBERWISE INITIALIZER
     
-    init(leagueName: String, teams: [Team], users: [User], appleUserReference: CKRecord.Reference) {
+    init(leagueName: String, isPending: Bool, teams: [Team], users: [User], appleUserReference: CKRecord.Reference) {
         
-        // League name
+        // League info
         self.leagueName = leagueName
+        self.isPending = isPending
         
         // League arrays
         self.teams = teams
@@ -65,8 +68,9 @@ class League {
         
         // Unpack values
         
-        // League name
+        // League info
         guard let leagueName = ckRecord[League.leagueNameKey] as? String,
+            let isPending = ckRecord[League.isPendingKey] as? Bool,
             
             // League arrays
             let teams = ckRecord[League.teamsKey] as? [Team],
@@ -79,8 +83,9 @@ class League {
         
         // Set as the values of new instance
         
-        // League name
+        // League info
         self.leagueName = leagueName
+        self.isPending = isPending
         
         // League arrays
         self.teams = teams
@@ -106,8 +111,9 @@ extension CKRecord {
         
         // Set CKRecord values
         
-        // League name
+        // League info
         self.setValue(league.leagueName, forKey: League.leagueNameKey)
+        self.setValue(league.isPending, forKey: League.isPendingKey)
         
         // League arrays
         self.setValue(league.teams, forKey: League.teamsKey)

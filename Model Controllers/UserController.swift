@@ -67,7 +67,7 @@ class UserController {
         let appleUserReference = CKRecord.Reference(recordID: appleUserRecordID, action: .deleteSelf)
         
         // Create new user
-        let newUser = User(username: username, appleUserReference: appleUserReference)
+        let newUser = User(username: username, leagues: leagues, leagueInvites: leagueInvites, appleUserReference: appleUserReference)
         
         // Create record
         let userRecord = CKRecord(user: newUser)

@@ -8,23 +8,94 @@
 
 import UIKit
 
-class UserProfileVC: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+class UserProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    // MARK: - SOURCE OF TRUTH
+    
+    var leagues: [League] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - OUTLETS
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var usernameTextLabel: UILabel!
+    
+    // MARK: - VIEW DID LOAD
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
-    */
-
+    
+    // MARK: - ACTIONS
+    
+    @IBAction func addNewLeagueButton(_ sender: UIButton) {
+    }
+    
+    // MARK: - TABLE VIEW DATA SOURCE
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let league = leagues[indexPath.row]
+        
+        // Custom cell switch
+        switch league.isPending {
+            
+        // Send all active leagues to LeagueActiveTVCell
+        case false:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "leagueActiveCell", for: indexPath) as? LeagueActiveTVCell
+                else { return UITableViewCell() }
+            
+            // Configure the cell
+            cell.leagueNameLabel?.text = league.leagueName
+            return cell
+            
+        // Send all league invites to LeagueInvitedTVCell
+        case true:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "leagueInvitedCell", for: indexPath) as? LeagueInvitedTVCell
+                else { return UITableViewCell() }
+            
+            // Configure the cell
+            cell.leagueNameLabel?.text = league.leagueName
+            return cell
+        }
+    }
+    
+//❎
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+            let unlinkLeague = UIContextualAction(style: .destructive, title: "Unlink") { (action, view, nil) in
+                print("Unlink") // NEED TO ADD CODE HERE TO REMOVE LEAGUE FROM ARRAY
+            }
+            unlinkLeague.backgroundColor = UIColor(named: Constants.PFLred)
+            
+            let config = UISwipeActionsConfiguration(actions: [unlinkLeague])
+            config.performsFirstActionWithFullSwipe = false
+            return config
+    }
+    
+////❎
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//
+//            // Get league to be deleted
+//            let league = LeagueController.
+//        }
+//    }
+    
+    // MARK: - NAVIGATION
 }
