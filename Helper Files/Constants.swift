@@ -16,6 +16,6 @@ struct Constants {
     static let PFLgrayDark = "PFLgrayDark"
     static let PFLred = "PFLred"
     static let PFLyellow = "PFLyellow"
-    static let PFLyellowLight = "PFLyellowLIght"
+    static let PFLyellowLight = "PFLyellowLight"
     
 }

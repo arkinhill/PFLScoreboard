@@ -18,8 +18,8 @@ class User {
     let username: String
     
     // User arrays
-    var leagues: [League]
-    var leagueInvites: [League]
+    var leagues: [League] = []
+    var leagueInvites: [League] = []
     
     // CloudKit variables
     let appleUserReference: CKRecord.Reference
@@ -45,14 +45,14 @@ class User {
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
     // 🔸 MARK: - MEMBERWISE INITIALIZER
     
-    init(username: String, leagues: [League], leagueInvites: [League], appleUserReference: CKRecord.Reference) {
+    init(username: String, appleUserReference: CKRecord.Reference) {
         
         // Username
         self.username = username
         
         // User arrays
-        self.leagues = leagues
-        self.leagueInvites = leagueInvites
+//        self.leagues = leagues
+//        self.leagueInvites = leagueInvites
         
         // CloudKit variables
         self.appleUserReference = appleUserReference

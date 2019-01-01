@@ -18,16 +18,14 @@ class Team {
     var coach: String
     var name: String
     var color: String
-    var letter: String
-    
-    // Team arrays
-    var games: [Game]
     
     // Team record
     var wins: Int
     var losses: Int
     var rank: Int
-    var gamesPlayed: Int
+    var gamesPlayed: Int {
+        return wins + losses
+    }
     
     // Team stats
     var completionsAttempted: Int
@@ -42,7 +40,8 @@ class Team {
     var interceptionsCaught: Int
     
     // CloudKit variables
-    var appleUserReference: CKRecord.Reference
+    var leagueReference: CKRecord.Reference
+//    var gameReferences: [CKRecord.Reference]
     var ckRecordID: CKRecord.ID?
     
     
@@ -55,16 +54,11 @@ class Team {
     fileprivate static let coachKey = "coach"
     fileprivate static let nameKey = "name"
     fileprivate static let colorKey = "color"
-    fileprivate static let letterKey = "letter"
-    
-    // Team arrays
-    fileprivate static let gamesKey = "games"
     
     // Team record
     fileprivate static let winsKey = "wins"
     fileprivate static let lossesKey = "losses"
     fileprivate static let rankKey = "rank"
-    fileprivate static let gamesPlayedKey = "gamesPlayed"
     
     // Team stats
     fileprivate static let completionsAttemptedKey = "completionsAttempted"
@@ -79,7 +73,8 @@ class Team {
     fileprivate static let interceptionsCaughtKey = "interceptionsCaught"
     
     // CloudKit variables
-    fileprivate static let appleUserReferenceKey = "appleUserReference"
+    fileprivate static let leagueReferenceKey = "leagueReference"
+    fileprivate static let gameReferencesKey = "gameReferences"
     
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
@@ -91,46 +86,38 @@ class Team {
         coach: String,
         name: String,
         color: String,
-        letter: String,
-        
-        // Team arrays
-        games: [Game],
     
         // Team record
-        wins: Int,
-        losses: Int,
-        rank: Int,
-        gamesPlayed: Int,
+        wins: Int = 0,
+        losses: Int = 0,
+        rank: Int = 0,
     
         // Team stats
-        completionsAttempted: Int,
-        completionsMade: Int,
-        interceptionsThrown: Int,
-        fieldGoalsMade: Int,
-        fieldGoalsAttempted: Int,
-        pATsMade: Int,
-        pATsAttempted: Int,
-        touchdowns: Int,
-        twoPointConversions: Int,
-        interceptionsCaught: Int,
+        completionsAttempted: Int = 0,
+        completionsMade: Int = 0,
+        interceptionsThrown: Int = 0,
+        fieldGoalsMade: Int = 0,
+        fieldGoalsAttempted: Int = 0,
+        pATsMade: Int = 0,
+        pATsAttempted: Int = 0,
+        touchdowns: Int = 0,
+        twoPointConversions: Int = 0,
+        interceptionsCaught: Int = 0,
     
         // CloudKit variables
-        appleUserReference: CKRecord.Reference) {
+        leagueReference: CKRecord.Reference
+//        , gameReferences: [CKRecord.Reference]
+        ) {
         
         // General team info
         self.coach = coach
         self.name = name
         self.color = color
-        self.letter = letter
-        
-        // Team arrays
-        self.games = games
         
         // Team record
         self.wins = wins
         self.losses = losses
         self.rank = rank
-        self.gamesPlayed = gamesPlayed
         
         // Team stats
         self.completionsAttempted = completionsAttempted
@@ -145,7 +132,8 @@ class Team {
         self.interceptionsCaught = interceptionsCaught
         
         // CloudKit variables
-        self.appleUserReference = appleUserReference
+        self.leagueReference = leagueReference
+//        self.gameReferences = gameReferences
     }
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
@@ -159,16 +147,11 @@ class Team {
         guard let coach = ckRecord[Team.coachKey] as? String,
         let name = ckRecord[Team.nameKey] as? String,
         let color = ckRecord[Team.colorKey] as? String,
-        let letter = ckRecord[Team.letterKey] as? String,
-        
-        // Team arrays
-        let games = ckRecord[Team.gamesKey] as? [Game],
         
         // Team record
         let wins = ckRecord[Team.winsKey] as? Int,
         let losses = ckRecord[Team.lossesKey] as? Int,
         let rank = ckRecord[Team.rankKey] as? Int,
-        let gamesPlayed = ckRecord[Team.gamesPlayedKey] as? Int,
         
         // Team stats
         let completionsAttempted = ckRecord[Team.completionsAttemptedKey] as? Int,
@@ -183,8 +166,8 @@ class Team {
         let interceptionsCaught = ckRecord[Team.interceptionsCaughtKey] as? Int,
         
         // CloudKit variables
-        let appleUserReference = ckRecord[Team.appleUserReferenceKey] as? CKRecord.Reference
-            
+        let leagueReference = ckRecord[Team.leagueReferenceKey] as? CKRecord.Reference
+        
         else { return nil }
         
         // Set as values of new instance
@@ -193,16 +176,11 @@ class Team {
         self.coach = coach
         self.name = name
         self.color = color
-        self.letter = letter
-        
-        // Team arrays
-        self.games = games
         
         // Team record
         self.wins = wins
         self.losses = losses
         self.rank = rank
-        self.gamesPlayed = gamesPlayed
         
         // Team stats
         self.completionsAttempted = completionsAttempted
@@ -217,7 +195,8 @@ class Team {
         self.interceptionsCaught = interceptionsCaught
         
         // CloudKit variables
-        self.appleUserReference = appleUserReference
+        self.leagueReference = leagueReference
+        
         self.ckRecordID = ckRecord.recordID
     }
 }
@@ -241,16 +220,11 @@ extension CKRecord {
         self.setValue(team.coach, forKey: Team.coachKey)
         self.setValue(team.name, forKey: Team.nameKey)
         self.setValue(team.color, forKey: Team.colorKey)
-        self.setValue(team.letter, forKey: Team.letterKey)
-        
-        // Team arrays
-        self.setValue(team.games, forKey: Team.gamesKey)
         
         // Team record
         self.setValue(team.wins, forKey: Team.winsKey)
         self.setValue(team.losses, forKey: Team.lossesKey)
         self.setValue(team.rank, forKey: Team.rankKey)
-        self.setValue(team.gamesPlayed, forKey: Team.gamesPlayedKey)
         
         // Team stats
         self.setValue(team.completionsAttempted, forKey: Team.completionsAttemptedKey)
@@ -265,8 +239,8 @@ extension CKRecord {
         self.setValue(team.interceptionsCaught, forKey: Team.interceptionsCaughtKey)
         
         // CloudKit variables
-        self.setValue(team.appleUserReference, forKey: Team.appleUserReferenceKey)
-        
+        self.setValue(team.leagueReference, forKey: Team.leagueReferenceKey)
+                
         // Give new ckRecord new ID (or pass along existing)
         team.ckRecordID = recordID
     }

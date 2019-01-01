@@ -16,14 +16,15 @@ class League {
     
     // League info
     var leagueName: String
-    var isPending: Bool
+    var isPending: Bool?
     
     // League arrays
-    var teams: [Team]
-    var users: [User]
+    var teams: [Team] = []
+    var users: [User] = []
+    var games: [Game] = []
     
     // CloudKit variables
-    let appleUserReference: CKRecord.Reference
+    let userReference: CKRecord.Reference
     var ckRecordID: CKRecord.ID?
     
     
@@ -39,26 +40,26 @@ class League {
     // League arrays
     fileprivate static let teamsKey = "teams"
     fileprivate static let usersKey = "users"
+    fileprivate static let gamesKey = "games"
     
     // CloudKit variables
-    fileprivate static let appleUserReferenceKey = "appleUserReference"
+    fileprivate static let userReferenceKey = "appleUserReference"
     
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
     // 🔸 MARK: - MEMBERWISE INITIALIZER
     
-    init(leagueName: String, isPending: Bool, teams: [Team], users: [User], appleUserReference: CKRecord.Reference) {
+    init(leagueName: String, userReference: CKRecord.Reference) {
         
-        // League info
+////        // League info
         self.leagueName = leagueName
-        self.isPending = isPending
-        
-        // League arrays
-        self.teams = teams
-        self.users = users
+//
+//        // League arrays
+//        self.teams = teams
+//        self.users = users
         
         // CloudKit variables
-        self.appleUserReference = appleUserReference
+        self.userReference = userReference
     }
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
@@ -70,14 +71,13 @@ class League {
         
         // League info
         guard let leagueName = ckRecord[League.leagueNameKey] as? String,
-            let isPending = ckRecord[League.isPendingKey] as? Bool,
             
             // League arrays
             let teams = ckRecord[League.teamsKey] as? [Team],
             let users = ckRecord[League.usersKey] as? [User],
             
             // CloudKit variables
-            let appleUserReference = ckRecord[League.appleUserReferenceKey] as? CKRecord.Reference
+            let userReference = ckRecord[League.userReferenceKey] as? CKRecord.Reference
             
             else { return nil }
         
@@ -85,14 +85,13 @@ class League {
         
         // League info
         self.leagueName = leagueName
-        self.isPending = isPending
         
         // League arrays
         self.teams = teams
         self.users = users
         
         // CloudKit variables
-        self.appleUserReference = appleUserReference
+        self.userReference = userReference
     }
 }
 
@@ -113,14 +112,13 @@ extension CKRecord {
         
         // League info
         self.setValue(league.leagueName, forKey: League.leagueNameKey)
-        self.setValue(league.isPending, forKey: League.isPendingKey)
         
         // League arrays
         self.setValue(league.teams, forKey: League.teamsKey)
         self.setValue(league.users, forKey: League.usersKey)
         
         // CloudKit variables
-        self.setValue(league.appleUserReference, forKey: League.appleUserReferenceKey)
+        self.setValue(league.userReference, forKey: League.userReferenceKey)
         
         // Give new ckRecord new ID (or pass along existing)
         league.ckRecordID = recordID

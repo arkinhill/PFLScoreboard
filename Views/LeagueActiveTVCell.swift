@@ -14,4 +14,11 @@ class LeagueActiveTVCell: UITableViewCell {
     
     @IBOutlet weak var leagueNameLabel: UILabel!
     
+    // MARK: - ACTIONS
+    
+    @IBAction func acceptInviteButton(_ sender: Any) {
+    }
+    
+    @IBAction func rejectInviteButton(_ sender: Any) {
+    }
 }

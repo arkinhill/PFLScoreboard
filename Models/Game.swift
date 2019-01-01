@@ -16,8 +16,8 @@ class Game {
     
     // Game info
     var date: Date
-    var team1Name: String
-    var team2Name: String
+    var team1: Team
+    var team2: Team
     
     // Clock
     var clockTime: Timer
@@ -50,7 +50,7 @@ class Game {
     var team2InterceptionsCaught: Int
     
     // CloudKit variables
-    var appleUserReference: CKRecord.Reference
+    var leagueReference: CKRecord.Reference
     var ckRecordID: CKRecord.ID?
     
     
@@ -61,8 +61,8 @@ class Game {
     
     // Game info
     fileprivate static let dateKey = "date"
-    fileprivate static let team1NameKey = "team1Name"  // Team.teamName
-    fileprivate static let team2NameKey = "team2Name"  // Team.teamName
+    fileprivate static let team1Key = "team1"  // Team.teamName
+    fileprivate static let team2Key = "team2"  // Team.teamName
     
     // Clock
     fileprivate static let clockTimeKey = "clockTime"
@@ -95,7 +95,7 @@ class Game {
     fileprivate static let team2InterceptionsCaughtKey = "team2InterceptionsCaught"
     
     // CloudKit variables
-    fileprivate static let appleUserReferenceKey = "appleUserReferenceKey"
+    fileprivate static let leagueReferenceKey = "leagueReferenceKey"
     
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
@@ -104,47 +104,47 @@ class Game {
     init(
         
         // Game info
-        date: Date,
-        team1Name: String,
-        team2Name: String,
+        date: Date = Date(),
+        team1: Team,
+        team2: Team,
         
         // Clock
-        clockTime: Timer,
-        whichHalf: Int,
+        clockTime: Timer = Timer(),
+        whichHalf: Int = 0,
         
         // Team 1 game stats
-        team1Score: Int,
-        team1CompletionsMade: Int,
-        team1CompletionsAttempted: Int,
-        team1InterceptionsThrown: Int,
-        team1FieldGoalsMade: Int,
-        team1FieldGoalsAttempted: Int,
-        team1PATsMade: Int,
-        team1PATsAttempted: Int,
-        team1Touchdowns: Int,
-        team1TwoPointConversions: Int,
-        team1InterceptionsCaught: Int,
+        team1Score: Int = 0,
+        team1CompletionsMade: Int = 0,
+        team1CompletionsAttempted: Int = 0,
+        team1InterceptionsThrown: Int = 0,
+        team1FieldGoalsMade: Int = 0,
+        team1FieldGoalsAttempted: Int = 0,
+        team1PATsMade: Int = 0,
+        team1PATsAttempted: Int = 0,
+        team1Touchdowns: Int = 0,
+        team1TwoPointConversions: Int = 0,
+        team1InterceptionsCaught: Int = 0,
         
         // Team 2 game stats
-        team2Score: Int,
-        team2CompletionsMade: Int,
-        team2CompletionsAttempted: Int,
-        team2InterceptionsThrown: Int,
-        team2FieldGoalsMade: Int,
-        team2FieldGoalsAttempted: Int,
-        team2PATsMade: Int,
-        team2PATsAttempted: Int,
-        team2Touchdowns: Int,
-        team2TwoPointConversions: Int,
-        team2InterceptionsCaught: Int,
+        team2Score: Int = 0,
+        team2CompletionsMade: Int = 0,
+        team2CompletionsAttempted: Int = 0,
+        team2InterceptionsThrown: Int = 0,
+        team2FieldGoalsMade: Int = 0,
+        team2FieldGoalsAttempted: Int = 0,
+        team2PATsMade: Int = 0,
+        team2PATsAttempted: Int = 0,
+        team2Touchdowns: Int = 0,
+        team2TwoPointConversions: Int = 0,
+        team2InterceptionsCaught: Int = 0,
         
         // CloudKit variables
-        appleUserReference: CKRecord.Reference) {
+        leagueReference: CKRecord.Reference) {
         
         // Game info
         self.date = date
-        self.team1Name = team1Name
-        self.team2Name = team2Name
+        self.team1 = team1
+        self.team2 = team2
         
         // Clock
         self.clockTime = clockTime
@@ -177,7 +177,7 @@ class Game {
         self.team2InterceptionsCaught = team2InterceptionsCaught
         
         // CloudKit variables
-        self.appleUserReference = appleUserReference
+        self.leagueReference = leagueReference
     }
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
@@ -189,8 +189,8 @@ class Game {
         
         // Game info
         guard let date = ckRecord[Game.dateKey] as? Date,
-            let team1Name = ckRecord[Game.team1NameKey] as? String,
-            let team2Name = ckRecord[Game.team2NameKey] as? String,
+            let team1 = ckRecord[Game.team1Key] as? Team,
+            let team2 = ckRecord[Game.team2Key] as? Team,
             
             // Clock
             let clockTime = ckRecord[Game.clockTimeKey] as? Timer,
@@ -223,7 +223,7 @@ class Game {
             let team2InterceptionsCaught = ckRecord[Game.team2InterceptionsCaughtKey] as? Int,
         
             // CloudKit variables
-            let appleUserReference = ckRecord[Game.appleUserReferenceKey] as? CKRecord.Reference
+            let leagueReference = ckRecord[Game.leagueReferenceKey] as? CKRecord.Reference
             
             else { return nil }
         
@@ -231,8 +231,8 @@ class Game {
         
         // Game info
         self.date = date
-        self.team1Name = team1Name
-        self.team2Name = team2Name
+        self.team1 = team1
+        self.team2 = team2
         
         // Clock
         self.clockTime = clockTime
@@ -265,7 +265,7 @@ class Game {
         self.team2InterceptionsCaught = team2InterceptionsCaught
         
         // CloudKit variables
-        self.appleUserReference = appleUserReference
+        self.leagueReference = leagueReference
         self.ckRecordID = ckRecord.recordID
     }
 }
@@ -287,8 +287,8 @@ extension CKRecord {
         
         // Game info
         self.setValue(game.date, forKey: Game.dateKey)
-        self.setValue(game.team1Name, forKey: Game.team1NameKey)
-        self.setValue(game.team2Name, forKey: Game.team2NameKey)
+        self.setValue(game.team1, forKey: Game.team1Key)
+        self.setValue(game.team2, forKey: Game.team2Key)
         
         // Clock
         self.setValue(game.clockTime, forKey: Game.clockTimeKey)
@@ -321,7 +321,7 @@ extension CKRecord {
         self.setValue(game.team2InterceptionsCaught, forKey: Game.team2InterceptionsCaughtKey)
         
         // CloudKit variables
-        self.setValue(game.appleUserReference, forKey: Game.appleUserReferenceKey)
+        self.setValue(game.leagueReference, forKey: Game.leagueReferenceKey)
         
         // Give new record ckRecord new ID (or pass along existing)
         game.ckRecordID = recordID

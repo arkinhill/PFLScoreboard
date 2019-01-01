@@ -14,5 +14,4 @@ class LeagueInvitedTVCell: UITableViewCell {
     
     @IBOutlet weak var leagueNameLabel: UILabel!
     
-
 }

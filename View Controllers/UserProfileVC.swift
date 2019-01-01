@@ -38,17 +38,17 @@ class UserProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     // MARK: - TABLE VIEW DATA SOURCE
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        <#code#>
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        <#code#>
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
-    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
+//    
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        
+//    }
+//    
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let league = leagues[indexPath.row]
@@ -71,9 +71,15 @@ class UserProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                 else { return UITableViewCell() }
             
             // Configure the cell
-            cell.leagueNameLabel?.text = league.leagueName
+            cell.leagueInviteNameLabel?.text = league.leagueName
             return cell
+            
+            
+        default:
+            print("Hi")
+            return UITableViewCell()
         }
+        
     }
     
 //❎

@@ -17,7 +17,7 @@ class GameController {
     static let shared = GameController()
     
     // Source of truth
-    var games: [Games] = []
+    var games: [Game] = []
     
     // Database
     private let database = CKContainer.default().publicCloudDatabase
@@ -30,54 +30,57 @@ class GameController {
     func createGame(
         
         // Game info
-        date: Date,
-        team1Name: String,
-        team2Name: String,
+        date: Date = Date(),
+        team1: Team,
+        team2: Team,
+        league: League,
         
         // Clock
-        clockTime: Timer,
-        whichHalf: Int,
+        clockTime: Timer = Timer(),
+        whichHalf: Int = 0,
         
         // Team 1 game stats
-        team1Score: Int,
-        team1CompletionsMade: Int,
-        team1CompletionsAttempted: Int,
-        team1InterceptionsThrown: Int,
-        team1FieldGoalsMade: Int,
-        team1FieldGoalsAttempted: Int,
-        team1PATsMade: Int,
-        team1PATsAttempted: Int,
-        team1Touchdowns: Int,
-        team1TwoPointConversions: Int,
-        team1InterceptionsCaught: Int,
+        team1Score: Int = 0,
+        team1CompletionsMade: Int = 0,
+        team1CompletionsAttempted: Int = 0,
+        team1InterceptionsThrown: Int = 0,
+        team1FieldGoalsMade: Int = 0,
+        team1FieldGoalsAttempted: Int = 0,
+        team1PATsMade: Int = 0,
+        team1PATsAttempted: Int = 0,
+        team1Touchdowns: Int = 0,
+        team1TwoPointConversions: Int = 0,
+        team1InterceptionsCaught: Int = 0,
         
         // Team 2 game stats
-        team2Score: Int,
-        team2CompletionsMade: Int,
-        team2CompletionsAttempted: Int,
-        team2InterceptionsThrown: Int,
-        team2FieldGoalsMade: Int,
-        team2FieldGoalsAttempted: Int,
-        team2PATsMade: Int,
-        team2PATsAttempted: Int,
-        team2Touchdowns: Int,
-        team2TwoPointConversions: Int,
-        team2InterceptionsCaught: Int,
+        team2Score: Int = 0,
+        team2CompletionsMade: Int = 0,
+        team2CompletionsAttempted: Int = 0,
+        team2InterceptionsThrown: Int = 0,
+        team2FieldGoalsMade: Int = 0,
+        team2FieldGoalsAttempted: Int = 0,
+        team2PATsMade: Int = 0,
+        team2PATsAttempted: Int = 0,
+        team2Touchdowns: Int = 0,
+        team2TwoPointConversions: Int = 0,
+        team2InterceptionsCaught: Int = 0,
         
-        completion: @escaping (Bool) -> Void) {
+        completion: @escaping (Bool) -> Void = { _ in }) {
         
         // Make sure correct user is creating array
-        guard let appleUserReference = UserController.shared.loggedInUser?.appleUserReference else {
+        guard let leagueRecordID = league.ckRecordID else {
             completion(false)
             return
         }
+        let leagueReference = CKRecord.Reference(recordID: leagueRecordID, action: .deleteSelf)
+        
         // Append source of truth, call completion
         let game = Game(
             
             // Game info
             date: date,
-            team1Name: team1Name,
-            team2Name: team2Name,
+            team1: team1,
+            team2: team2,
             
             // Clock
             clockTime: clockTime,
@@ -110,8 +113,10 @@ class GameController {
             team2InterceptionsCaught: team2InterceptionsCaught,
             
             // CloudKit variables
-            appleUserReference: appleUserReference
+            leagueReference: leagueReference
         )
+        
+        league.games.append(game)
         saveGame(game: game) { (success) in
             completion(true)
         }
@@ -128,7 +133,6 @@ class GameController {
                 return
             }
             // Append source of truth, call completion
-            self.games.append(game)
             completion(true)
         }
     }
@@ -136,14 +140,15 @@ class GameController {
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
     // 🔸 MARK: - READ
     
-    func fetchGames(completion: @escaping (Bool) -> Void) {
+    func fetchGamesFor(league: League, completion: @escaping (Bool) -> Void) {
         
         // Set predicate to user reference, so we can pull users games from database in query
-        guard let appleUserReference = UserController.shared.loggedInUser?.appleUserReference else {
+        guard let leagueRecordID = league.ckRecordID else {
             completion(false)
             return
         }
-        let predicate = NSPredicate(format: "appleUser == %@", appleUserReference)
+        
+        let predicate = NSPredicate(format: "leagueReference == %@", leagueRecordID)
         let query = CKQuery(recordType: "Game", predicate: predicate)
         database.perform(query, inZoneWith: nil) { (records, error) in
             if let error = error {
@@ -157,8 +162,8 @@ class GameController {
                 return
             }
             // Gather games into array, replace source of truth with new array, call completion
-            let fetchedGames = records.compactMap { Team(ckRecord: $0) }
-            self.games = fetchedGames
+            let fetchedGames = records.compactMap { Game(ckRecord: $0) }
+            league.games = fetchedGames
             completion(true)
         }
     }
@@ -172,8 +177,8 @@ class GameController {
         
         // Game info
         date: Date,
-        team1Name: String,
-        team2Name: String,
+        team1: Team,
+        team2: Team,
         
         // Clock
         clockTime: Timer,
@@ -211,8 +216,8 @@ class GameController {
         
         // Game info
         game.date = date
-        game.team1Name = team1Name
-        game.team2Name = team2Name
+        game.team1 = team1
+        game.team2 = team2
         
         // Clock
         game.clockTime = clockTime

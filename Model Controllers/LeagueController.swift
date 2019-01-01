@@ -16,7 +16,7 @@ class LeagueController {
     // Shared instance
     static let shared = LeagueController()
     
-    // Source of truth
+    // Source of truth ??
     var leagues: [League] = []
     
     // Database
@@ -25,19 +25,20 @@ class LeagueController {
     // MARK: - CRUD FUNCTIONS
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
-    // 🔸 MARK: - CREATE
+    // 🔸 MARK: - CREATE LEAGUE
     
-    func createLeague(leagueName: String, isPending: Bool, teams: [Team], users: [User], completion: @escaping (Bool) -> Void) {
+    func createLeague(leagueName: String, isPending: Bool, users: [User], completion: @escaping (League?) -> Void) {
         
         // Make sure correct user is creating array
         guard let appleUserReference = UserController.shared.loggedInUser?.appleUserReference else {
-            completion(false)
+            completion(nil)
             return
         }
         // Append source of truth, call completion
-        let league = League(leagueName: leagueName, isPending: isPending, teams: teams, users: users, appleUserReference: appleUserReference)
+        let league = League(leagueName: leagueName, userReference: appleUserReference)
+//        let league = League(leagueName: leagueName, isPending: isPending, users: users, userReference: CKRecord.Reference)
         saveLeague(league: league) { (success) in }
-            completion(true)
+            completion(league)
     }
 
     func saveLeague(league: League, completion: @escaping (Bool) -> Void) {
@@ -54,6 +55,163 @@ class LeagueController {
             self.leagues.append(league)
             completion(true)
         }
+    }
+    
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: - ADD TEAMS TO LEAGUE
+    
+    func addTeamToLeague(league: League, team: Team, completion: @escaping (Bool) -> Void) {
+        league.teams.append(team)
+        saveLeague(league: league, completion: <#T##(Bool) -> Void#>)
+    }
+
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: - ADD GAMES TO LEAGUE
+    
+    // Game schedule for a league of 4 teams (each team plays other team twice = 12 games)
+    func addGamesTo4TeamLeague(league: League) {
+        
+        let teamA = league.teams[0]
+        let teamB = league.teams[1]
+        let teamC = league.teams[2]
+        let teamD = league.teams[3]
+        
+        // Game 1
+        GameController.shared.createGame(team1: teamA, team2: teamC, league: league)
+        // Game 2
+        GameController.shared.createGame(team1: teamB, team2: teamA, league: league)
+        // Game 3
+        GameController.shared.createGame(team1: teamC, team2: teamD, league: league)
+        // Game 4
+        GameController.shared.createGame(team1: teamD, team2: teamB, league: league)
+        // Game 5
+        GameController.shared.createGame(team1: teamC, team2: teamD, league: league)
+        // Game 6
+        GameController.shared.createGame(team1: teamA, team2: teamB, league: league)
+        // Game 7
+        GameController.shared.createGame(team1: teamC, team2: teamA, league: league)
+        // Game 8
+        GameController.shared.createGame(team1: teamD, team2: teamA, league: league)
+        // Game 9
+        GameController.shared.createGame(team1: teamB, team2: teamD, league: league)
+        // Game 10
+        GameController.shared.createGame(team1: teamC, team2: teamB, league: league)
+        // Game 11
+        GameController.shared.createGame(team1: teamA, team2: teamD, league: league)
+        // Game 12
+        GameController.shared.createGame(team1: teamB, team2: teamC, league: league)
+    }
+    
+    // Game schedule for a league of 6 teams (each team plays other team once = 15 games)
+    func addGamesTo6TeamLeague(league: League) {
+        
+        let teamA = league.teams[0]
+        let teamB = league.teams[1]
+        let teamC = league.teams[2]
+        let teamD = league.teams[3]
+        let teamE = league.teams[4]
+        let teamF = league.teams[5]
+        
+        // Game 1
+        GameController.shared.createGame(team1: teamE, team2: teamF, league: league)
+        // Game 2
+        GameController.shared.createGame(team1: teamC, team2: teamE, league: league)
+        // Game 3
+        GameController.shared.createGame(team1: teamF, team2: teamC, league: league)
+        // Game 4
+        GameController.shared.createGame(team1: teamA, team2: teamE, league: league)
+        // Game 5
+        GameController.shared.createGame(team1: teamD, team2: teamA, league: league)
+        // Game 6
+        GameController.shared.createGame(team1: teamA, team2: teamF, league: league)
+        // Game 7
+        GameController.shared.createGame(team1: teamC, team2: teamD, league: league)
+        // Game 8
+        GameController.shared.createGame(team1: teamD, team2: teamF, league: league)
+        // Game 9
+        GameController.shared.createGame(team1: teamA, team2: teamC, league: league)
+        // Game 10
+        GameController.shared.createGame(team1: teamC, team2: teamB, league: league)
+        // Game 11
+        GameController.shared.createGame(team1: teamB, team2: teamF, league: league)
+        // Game 12
+        GameController.shared.createGame(team1: teamD, team2: teamB, league: league)
+        // Game 13
+        GameController.shared.createGame(team1: teamE, team2: teamD, league: league)
+        // Game 14
+        GameController.shared.createGame(team1: teamA, team2: teamB, league: league)
+        // Game 15
+        GameController.shared.createGame(team1: teamB, team2: teamE, league: league)
+    }
+    
+    // Game schedule for a league of 8 teams (each team plays other team once = 28 games)
+    func addGamesTo8TeamLeague(league: League) {
+        
+        let teamA = league.teams[0]
+        let teamB = league.teams[1]
+        let teamC = league.teams[2]
+        let teamD = league.teams[3]
+        let teamE = league.teams[4]
+        let teamF = league.teams[5]
+        let teamG = league.teams[6]
+        let teamH = league.teams[7]
+        
+        // Game 1
+        GameController.shared.createGame(team1: teamF, team2: teamH, league: league)
+        // Game 2
+        GameController.shared.createGame(team1: teamC, team2: teamD, league: league)
+        // Game 3
+        GameController.shared.createGame(team1: teamA, team2: teamF, league: league)
+        // Game 4
+        GameController.shared.createGame(team1: teamB, team2: teamA, league: league)
+        // Game 5
+        GameController.shared.createGame(team1: teamG, team2: teamC, league: league)
+        // Game 6
+        GameController.shared.createGame(team1: teamD, team2: teamA, league: league)
+        // Game 7
+        GameController.shared.createGame(team1: teamE, team2: teamD, league: league)
+        // Game 8
+        GameController.shared.createGame(team1: teamC, team2: teamE, league: league)
+        // Game 9
+        GameController.shared.createGame(team1: teamA, team2: teamH, league: league)
+        // Game 10
+        GameController.shared.createGame(team1: teamE, team2: teamG, league: league)
+        // Game 11
+        GameController.shared.createGame(team1: teamF, team2: teamB, league: league)
+        // Game 12
+        GameController.shared.createGame(team1: teamE, team2: teamF, league: league)
+        // Game 13
+        GameController.shared.createGame(team1: teamH, team2: teamC, league: league)
+        // Game 14
+        GameController.shared.createGame(team1: teamB, team2: teamG, league: league)
+        // Game 15
+        GameController.shared.createGame(team1: teamG, team2: teamF, league: league)
+        // Game 16
+        GameController.shared.createGame(team1: teamD, team2: teamB, league: league)
+        // Game 17
+        GameController.shared.createGame(team1: teamF, team2: teamC, league: league)
+        // Game 18
+        GameController.shared.createGame(team1: teamH, team2: teamG, league: league)
+        // Game 19
+        GameController.shared.createGame(team1: teamE, team2: teamH, league: league)
+        // Game 20
+        GameController.shared.createGame(team1: teamD, team2: teamF, league: league)
+        // Game 21
+        GameController.shared.createGame(team1: teamB, team2: teamH, league: league)
+        // Game 22
+        GameController.shared.createGame(team1: teamA, team2: teamE, league: league)
+        // Game 23
+        GameController.shared.createGame(team1: teamG, team2: teamD, league: league)
+        // Game 24
+        GameController.shared.createGame(team1: teamE, team2: teamB, league: league)
+        // Game 25
+        GameController.shared.createGame(team1: teamC, team2: teamB, league: league)
+        // Game 26
+        GameController.shared.createGame(team1: teamH, team2: teamD, league: league)
+        // Game 27
+        GameController.shared.createGame(team1: teamA, team2: teamC, league: league)
+        // Game 28
+        GameController.shared.createGame(team1: teamG, team2: teamA, league: league)
     }
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
@@ -110,8 +268,6 @@ class LeagueController {
         }
         database.add(operation)
     }
-    
-//❎ WE DON'T WANT TO DELETE A LEAGUE, JUST UNLINK IT FROM USER BEING ABLE TO SEE IT
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
     // 🔸 MARK: - DELETE 

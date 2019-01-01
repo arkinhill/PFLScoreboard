@@ -16,9 +16,9 @@ class TeamController {
     // Shared instance
     static let shared = TeamController()
     
-    // Source of truth
-    var teams: [Team] = []
-    
+//    // Source of truth
+//    var teams: [Team] = []
+//    
     // Database
     private let database = CKContainer.default().publicCloudDatabase
     
@@ -33,36 +33,35 @@ class TeamController {
         coach: String,
         name: String,
         color: String,
-        letter: String,
+        league: League,
     
-        // Team arrays
-        games: [Game],
+//        // Team record
+//        wins: Int,
+//        losses: Int,
+//        rank: Int,
+//        gamesPlayed: Int,
+//
+//        // Team stats
+//        completionsAttempted: Int,
+//        completionsMade: Int,
+//        interceptionsThrown: Int,
+//        fieldGoalsMade: Int,
+//        fieldGoalsAttempted: Int,
+//        pATsMade: Int,
+//        pATsAttempted: Int,
+//        touchdowns: Int,
+//        twoPointConversions: Int,
+//        interceptionsCaught: Int,
     
-        // Team record
-        wins: Int,
-        losses: Int,
-        rank: Int,
-        gamesPlayed: Int,
-    
-        // Team stats
-        completionsAttempted: Int,
-        completionsMade: Int,
-        interceptionsThrown: Int,
-        fieldGoalsMade: Int,
-        fieldGoalsAttempted: Int,
-        pATsMade: Int,
-        pATsAttempted: Int,
-        touchdowns: Int,
-        twoPointConversions: Int,
-        interceptionsCaught: Int,
-    
-        completion: @escaping (Bool) -> Void) {
+        completion: @escaping (Team?) -> Void) {
         
         // Make sure correct user is creating array
-        guard let appleUserReference = UserController.shared.loggedInUser?.appleUserReference else {
-            completion(false)
+        guard let leagueCKRecord = league.ckRecordID else {
+            completion(nil)
             return
         }
+        
+        let leagueReference = CKRecord.Reference(recordID: leagueCKRecord, action: .deleteSelf)
         // Append source of truth, call completion
         let team = Team(
             
@@ -70,34 +69,30 @@ class TeamController {
             coach: coach,
             name: name,
             color: color,
-            letter: letter,
             
-            // Team arrays
-            games: games,
-            
-            // Team record
-            wins: wins,
-            losses: losses,
-            rank: rank,
-            gamesPlayed: gamesPlayed,
-            
-            // Team stats
-            completionsAttempted: completionsAttempted,
-            completionsMade: completionsMade,
-            interceptionsThrown: interceptionsThrown,
-            fieldGoalsMade: fieldGoalsMade,
-            fieldGoalsAttempted: fieldGoalsAttempted,
-            pATsMade: pATsMade,
-            pATsAttempted: pATsAttempted,
-            touchdowns: touchdowns,
-            twoPointConversions: twoPointConversions,
-            interceptionsCaught: interceptionsCaught,
+//            // Team record
+//            wins: wins,
+//            losses: losses,
+//            rank: rank,
+//            gamesPlayed: gamesPlayed,
+//
+//            // Team stats
+//            completionsAttempted: completionsAttempted,
+//            completionsMade: completionsMade,
+//            interceptionsThrown: interceptionsThrown,
+//            fieldGoalsMade: fieldGoalsMade,
+//            fieldGoalsAttempted: fieldGoalsAttempted,
+//            pATsMade: pATsMade,
+//            pATsAttempted: pATsAttempted,
+//            touchdowns: touchdowns,
+//            twoPointConversions: twoPointConversions,
+//            interceptionsCaught: interceptionsCaught,
             
             // CloudKit variables
-            appleUserReference: appleUserReference
+            leagueReference: leagueReference
             )
             saveTeam(team: team) { (success) in
-            completion(true)
+            completion(team)
         }
     }
     
@@ -112,7 +107,6 @@ class TeamController {
                 return
             }
             // Append source of truth, call completion
-            self.teams.append(team)
             completion(true)
         }
     }
@@ -120,14 +114,14 @@ class TeamController {
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
     // 🔸 MARK: - READ
     
-    func fetchTeams(completion: @escaping (Bool) -> Void) {
+    func fetchTeamsFor(league: League, completion: @escaping (Bool) -> Void) {
         
         // Set predicate to user reference, so we can pull users teams from database in query
-        guard let appleUserReference = UserController.shared.loggedInUser?.appleUserReference else {
+        guard let leagueCKRecord = league.ckRecordID else {
             completion(false)
             return
         }
-        let predicate = NSPredicate(format: "appleUser == %@", appleUserReference)
+        let predicate = NSPredicate(format: "leagueReference == %@", leagueCKRecord)
         let query = CKQuery(recordType: "Team", predicate: predicate)
         database.perform(query, inZoneWith: nil) { (records, error) in
             if let error = error {
@@ -142,7 +136,7 @@ class TeamController {
             }
             // Gather teams into array, replace source of truth with new array, call completion
             let fetchedTeams = records.compactMap { Team(ckRecord: $0) }
-            self.teams = fetchedTeams
+            league.teams = fetchedTeams
             completion(true)
         }
     }
@@ -158,16 +152,11 @@ class TeamController {
         coach: String,
         name: String,
         color: String,
-        letter: String,
-        
-        // Team arrays
-        games: [Game],
         
         // Team record
         wins: Int,
         losses: Int,
         rank: Int,
-        gamesPlayed: Int,
         
         // Team stats
         completionsAttempted: Int,
@@ -189,16 +178,11 @@ class TeamController {
         team.coach = coach
         team.name = name
         team.color = color
-        team.letter = letter
-        
-        // Team arrays
-        team.games = games
         
         // Team record
         team.wins = wins
         team.losses = losses
         team.rank = rank
-        team.gamesPlayed = gamesPlayed
         
         // Team stats
         team.completionsAttempted = completionsAttempted
