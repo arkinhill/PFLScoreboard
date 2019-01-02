@@ -10,6 +10,10 @@ import UIKit
 
 class GameScheduleVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    // MARK: - LANDING PAD
+    
+    var league: League?
+    
     // MARK: - OUTLETS
     
     @IBOutlet weak var collectionView: UICollectionView!

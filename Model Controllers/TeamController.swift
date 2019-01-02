@@ -11,14 +11,11 @@ import CloudKit
 
 class TeamController {
    
-    // MARK: - SHARED, SOURCE, DATABASE
+    // MARK: - SHARED, DATABASE
     
     // Shared instance
     static let shared = TeamController()
     
-//    // Source of truth
-//    var teams: [Team] = []
-//    
     // Database
     private let database = CKContainer.default().publicCloudDatabase
     
@@ -27,33 +24,7 @@ class TeamController {
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
     // 🔸 MARK: - CREATE
     
-    func createTeam(
-        
-        // General team info
-        coach: String,
-        name: String,
-        color: String,
-        league: League,
-    
-//        // Team record
-//        wins: Int,
-//        losses: Int,
-//        rank: Int,
-//        gamesPlayed: Int,
-//
-//        // Team stats
-//        completionsAttempted: Int,
-//        completionsMade: Int,
-//        interceptionsThrown: Int,
-//        fieldGoalsMade: Int,
-//        fieldGoalsAttempted: Int,
-//        pATsMade: Int,
-//        pATsAttempted: Int,
-//        touchdowns: Int,
-//        twoPointConversions: Int,
-//        interceptionsCaught: Int,
-    
-        completion: @escaping (Team?) -> Void) {
+    func createTeam(coach: String, name: String, color: String, league: League, completion: @escaping (Team?) -> Void) {
         
         // Make sure correct user is creating array
         guard let leagueCKRecord = league.ckRecordID else {
@@ -62,35 +33,9 @@ class TeamController {
         }
         
         let leagueReference = CKRecord.Reference(recordID: leagueCKRecord, action: .deleteSelf)
+        
         // Append source of truth, call completion
-        let team = Team(
-            
-            // General team info
-            coach: coach,
-            name: name,
-            color: color,
-            
-//            // Team record
-//            wins: wins,
-//            losses: losses,
-//            rank: rank,
-//            gamesPlayed: gamesPlayed,
-//
-//            // Team stats
-//            completionsAttempted: completionsAttempted,
-//            completionsMade: completionsMade,
-//            interceptionsThrown: interceptionsThrown,
-//            fieldGoalsMade: fieldGoalsMade,
-//            fieldGoalsAttempted: fieldGoalsAttempted,
-//            pATsMade: pATsMade,
-//            pATsAttempted: pATsAttempted,
-//            touchdowns: touchdowns,
-//            twoPointConversions: twoPointConversions,
-//            interceptionsCaught: interceptionsCaught,
-            
-            // CloudKit variables
-            leagueReference: leagueReference
-            )
+        let team = Team(coach: coach, name: name, color: color, leagueReference: leagueReference)
             saveTeam(team: team) { (success) in
             completion(team)
         }

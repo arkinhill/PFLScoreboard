@@ -20,7 +20,7 @@ class LeagueController {
     var leagues: [League] = []
     
     // Database
-    private let database = CKContainer.default().publicCloudDatabase
+    let database = CKContainer.default().publicCloudDatabase
     
     // MARK: - CRUD FUNCTIONS
     

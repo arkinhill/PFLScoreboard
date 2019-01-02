@@ -9,6 +9,13 @@
 import UIKit
 
 class LeagueActiveTVCell: UITableViewCell {
+    
+    // MARK: - SET DELEGATE
+    
+    // Set delegate to protocol in child
+    // (Step 2 of 5 - 3 steps in child (this file), 2 in parent)
+    
+    weak var delegate: LeagueActiveTVCellDelegate?
 
     // MARK: - OUTLETS
     
@@ -16,9 +23,20 @@ class LeagueActiveTVCell: UITableViewCell {
     
     // MARK: - ACTIONS
     
-    @IBAction func acceptInviteButton(_ sender: Any) {
+    @IBAction func unlinkFromLeagueButtonTapped(_ sender: Any) {
+        
+        // Call the delegate function
+        // (Step 3 of 5 - 3 steps in child (this file), 2 in parent)
+        
+        delegate?.unlinkFromLeagueButtonTapped(self)
     }
-    
-    @IBAction func rejectInviteButton(_ sender: Any) {
-    }
+}
+
+// MARK: - CUSTOM PROTOCOL FOR DELEGATE
+
+// Create custom protocol for delegate so we can collect data in custom view and pass it to view controller
+// (Step 1 of 5 - 3 steps in child (this file), 2 in parent)
+
+protocol LeagueActiveTVCellDelegate: class {
+    func unlinkFromLeagueButtonTapped(_ sender: LeagueActiveTVCell)
 }

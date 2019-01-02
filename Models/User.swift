@@ -16,6 +16,7 @@ class User {
     
     // Username
     let username: String
+    var leagueInvitesReferences: [CKRecord.Reference]
     
     // User arrays
     var leagues: [League] = []

@@ -662,6 +662,14 @@
                         <outlet property="teamGTeamNameTextField" destination="CBe-Q9-fUH" id="ONN-b3-5T1"/>
                         <outlet property="teamHCoachNameTextField" destination="T2Q-QJ-C1R" id="45g-6R-M9X"/>
                         <outlet property="teamHTeamNameTextField" destination="9jD-hw-ea3" id="E2J-DX-4ub"/>
+                        <outletCollection property="usernameTextFields" destination="o3I-0H-x9n" collectionClass="NSMutableArray" id="puq-tB-5Qg"/>
+                        <outletCollection property="usernameTextFields" destination="I4s-cc-vvr" collectionClass="NSMutableArray" id="Hhr-93-4Vs"/>
+                        <outletCollection property="usernameTextFields" destination="t5U-iN-mZD" collectionClass="NSMutableArray" id="dul-7v-FhC"/>
+                        <outletCollection property="usernameTextFields" destination="VWq-V4-kIP" collectionClass="NSMutableArray" id="Fyf-1q-gfy"/>
+                        <outletCollection property="usernameTextFields" destination="pgU-XY-8ag" collectionClass="NSMutableArray" id="nCb-GL-q2m"/>
+                        <outletCollection property="usernameTextFields" destination="pGV-qc-2W5" collectionClass="NSMutableArray" id="ECJ-AN-PsN"/>
+                        <outletCollection property="usernameTextFields" destination="7aa-c7-AZ0" collectionClass="NSMutableArray" id="gXB-TP-Bo9"/>
+                        <outletCollection property="usernameTextFields" destination="3PD-pV-gSK" collectionClass="NSMutableArray" id="NSU-fk-Atg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MqK-Um-Vrd" userLabel="First Responder" sceneMemberID="firstResponder"/>

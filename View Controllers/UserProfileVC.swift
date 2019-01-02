@@ -38,70 +38,127 @@ class UserProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     // MARK: - TABLE VIEW DATA SOURCE
     
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
-//    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if UserController.shared.loggedInUser?.leagueInvites.count ?? 0 > 0 {
+            return 2
+        } else {
+            return 1
+        }
+    }
+    
 //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        
+//        if section == 0 {
+//            return "Your Leagues"
+//        } else {
+//            return "League Invites"
+//        }
 //    }
-//    
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        
-//    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "sectionCell") as! SectionTVCell
+        if section == 0 {
+            cell.sectionTitleLabel?.text = "Your Leagues"
+        } else {
+            cell.sectionTitleLabel.text = "League Invites"
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return UserController.shared.loggedInUser?.leagues.count ?? 0
+        } else {
+            return UserController.shared.loggedInUser?.leagueInvites.count ?? 0
+        }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let league = leagues[indexPath.row]
         
         // Custom cell switch
-        switch league.isPending {
+        switch indexPath.section {
             
         // Send all active leagues to LeagueActiveTVCell
-        case false:
+        case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "leagueActiveCell", for: indexPath) as? LeagueActiveTVCell
                 else { return UITableViewCell() }
+            
+            // Set delegate to custom view cell
+            // (Step 5 of 5 - 3 steps in child, 2 in parent(this file))
+            cell.delegate = self
             
             // Configure the cell
             cell.leagueNameLabel?.text = league.leagueName
             return cell
             
         // Send all league invites to LeagueInvitedTVCell
-        case true:
+        case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "leagueInvitedCell", for: indexPath) as? LeagueInvitedTVCell
                 else { return UITableViewCell() }
             
-            // Configure the cell
-            cell.leagueInviteNameLabel?.text = league.leagueName
-            return cell
+            // Set delegate to custom view cell
+            // (Step 5 of 5 - 3 steps in child, 2 in parent(this file))
+            cell.delegate = self
             
+            // Configure the cell
+            cell.leagueNameLabel?.text = league.leagueName
+            return cell
             
         default:
             print("Hi")
             return UITableViewCell()
         }
-        
     }
-    
-//❎
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-            let unlinkLeague = UIContextualAction(style: .destructive, title: "Unlink") { (action, view, nil) in
-                print("Unlink") // NEED TO ADD CODE HERE TO REMOVE LEAGUE FROM ARRAY
-            }
-            unlinkLeague.backgroundColor = UIColor(named: Constants.PFLred)
-            
-            let config = UISwipeActionsConfiguration(actions: [unlinkLeague])
-            config.performsFirstActionWithFullSwipe = false
-            return config
-    }
-    
-////❎
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//
-//            // Get league to be deleted
-//            let league = LeagueController.
-//        }
-//    }
     
     // MARK: - NAVIGATION
 }
+
+// MARK: - LEAGUE ACTIVE TV CELL DELEGATE EXTENSION
+
+// Conforming to delegate set above -
+// (Step 4 of 5 - 3 steps in child, 2 in parent(this file))
+
+extension UserProfileVC: LeagueActiveTVCellDelegate {
+    
+    func unlinkFromLeagueButtonTapped(_ sender: LeagueActiveTVCell) {
+    
+        let alertController = UIAlertController(title: "Are you sure?", message: "This action will permanently disconnect you from this league.", preferredStyle: .alert)
+        
+        let dismissAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let continueAction = UIAlertAction(title: "Proceed", style: .default) { (_) in
+            print("Continue action was tapped by the user")
+        }
+        alertController.addAction(dismissAction)
+        alertController.addAction(continueAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+}
+
+// MARK: - LEAGUE INVITED TV CELL DELEGATE EXTENSION
+
+// Conforming to delegate set above -
+// (Step 4 of 5 - 3 steps in child, 2 in parent(this file))
+
+extension UserProfileVC: LeagueInvitedTVCellDelegate {
+    
+    func acceptInviteButtonTapped(_ sender: LeagueInvitedTVCell) {
+        // WHAT TO DO WHEN INVITE IS ACCEPTED
+    }
+    
+    func rejectInviteButtonTapped(_ sender: LeagueInvitedTVCell) {
+    
+        let alertController = UIAlertController(title: "Are you sure?", message: "This action will permanently disconnect you from this league.", preferredStyle: .alert)
+            
+        let dismissAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let continueAction = UIAlertAction(title: "Proceed", style: .default) { (_) in
+        print("Continue action was tapped by the user")
+        }
+            
+        alertController.addAction(dismissAction)
+        alertController.addAction(continueAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+}
+
+
+

@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import CloudKit
 
 class LeagueSetupVC: UIViewController {
+    
+    var league: League?
     
     // MARK: - OUTLETS
     
@@ -38,14 +41,9 @@ class LeagueSetupVC: UIViewController {
     @IBOutlet weak var teamHTeamNameTextField: UITextField!
     @IBOutlet weak var teamHCoachNameTextField: UITextField!
     
-    @IBOutlet weak var PFLUsername1TextField: UITextField!
-    @IBOutlet weak var PFLUserName2TextField: UITextField!
-    @IBOutlet weak var PFLUsername3TextField: UITextField!
-    @IBOutlet weak var PFLUsername4TextField: UITextField!
-    @IBOutlet weak var PFLUsername5TextField: UITextField!
-    @IBOutlet weak var PFLUsername6TextField: UITextField!
-    @IBOutlet weak var PFLUsername7Textfield: UITextField!
-    @IBOutlet weak var PFLUsername8TextField: UITextField!
+    // Outlet collection
+    // (dragged out one username outlet, selected "collection" instead of "outlet", then joined all other username fields in outlet collection, by dragging from filled circle at left up to each field on storyboard)
+    @IBOutlet var usernameTextFields: [UITextField]!
     
     // MARK: - VIEW DID LOAD
     
@@ -58,7 +56,11 @@ class LeagueSetupVC: UIViewController {
     @IBAction func createNewLeagueButton(_ sender: UIButton) {
         LeagueController.shared.createLeague(leagueName: leagueNameTextField.text!, isPending: false, users: []) { (league) in
             if let league = league {
+                self.league = league
                 league.teams = []
+                
+            // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+            // 🔸 MARK: - CREATE TEAMS
                 
                 // Team A information
                 if let teamATeamName = self.teamATeamNameTextField.text, !teamATeamName.isEmpty,
@@ -140,6 +142,9 @@ class LeagueSetupVC: UIViewController {
                     })
                 }
                 
+            // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+            // 🔸 MARK: - CREATE GAMES
+                
                 // Selecting the right game schedule based on number of teams in league
                 if league.teams.count == 4 {
                     LeagueController.shared.addGamesTo4TeamLeague(league: league)
@@ -152,21 +157,65 @@ class LeagueSetupVC: UIViewController {
                 } else {
                     self.presentAlertController()
                 }
+            
+            // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+            // 🔸 MARK: - INVITE EXISTING USERS TO LEAGUE
                 
-// ❎ NEED TO ASSIGN USERS TO LEAGUE
+                // Set up dispatch group, so app doesn't move on until looping through all username fields
+                let dispatchGroup = DispatchGroup()
                 
+                // Loop through username fields, check to see if empty or not
+                for usernameTextField in self.usernameTextFields {
+                    guard let username = usernameTextField.text,!username.isEmpty else { continue }
+                    
+                    // Set predicate to username, query to find username records
+                    let predicate = NSPredicate(format: "username == %@", username)
+                    let query = CKQuery(recordType: User.userTypeKey, predicate: predicate)
+                    dispatchGroup.enter()
+                    LeagueController.shared.database.perform(query, inZoneWith: nil, completionHandler: { (records, error) in
+                        if let error = error {
+                            print("Error fetching user: \(error.localizedDescription)")
+                            return
+                        }
+                        
+                        // Adding a league reference to username
+                        if let records = records, let userRecord = records.first {
+                            if let user = User(ckRecord: userRecord) {
+                                let leagueReference = CKRecord.Reference(recordID: league.ckRecordID!, action: .none)
+                                user.leagueInvitesReferences.append(leagueReference)
+                                
+                                // Bundle up and send to CloudKit
+                                let record = CKRecord(user: user)
+                                let operation = CKModifyRecordsOperation(recordsToSave: [record], recordIDsToDelete: nil)
+                                operation.savePolicy = .changedKeys
+                                operation.queuePriority = .high
+                                operation.qualityOfService = .userInteractive
+                                
+                                // Update league on CloudKit
+                                operation.completionBlock = {
+                                    dispatchGroup.leave()
+                                }
+                                LeagueController.shared.database.add(operation)
+                            }
+                        }
+                    })
+                }
+                // When all tasks are finished, perform segue to next view
+                dispatchGroup.notify(queue: .main, execute: {
+                    self.performSegue(withIdentifier: "toGameSchedule", sender: nil)
+                })
             }
         }
     }
-
-// ❎ NEED TO COMPLETE NAVIGATION
     
     // MARK: - NAVIGATION
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toUserProfile" {}
+        if segue.identifier == "toGameSchedule" {
             
-        if segue.identifier == "toGameSchedule" {}
+            guard let destinationVC = segue.destination as? GameScheduleVC else { return }
+            destinationVC.league = league
+        }
     }
 }
 
