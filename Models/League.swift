@@ -16,6 +16,9 @@ class League {
     
     // League info
     var leagueName: String
+
+// ❎ Are we going to use thes leagues and leagueInvites arrays, or the isPending property on League objects?
+    
     var isPending: Bool?
     
     // League arrays
@@ -24,7 +27,7 @@ class League {
     var games: [Game] = []
     
     // CloudKit variables
-    let userReference: CKRecord.Reference
+    var userReference: [CKRecord.Reference]
     var ckRecordID: CKRecord.ID?
     
     
@@ -49,7 +52,7 @@ class League {
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
     // 🔸 MARK: - MEMBERWISE INITIALIZER
     
-    init(leagueName: String, userReference: CKRecord.Reference) {
+    init(leagueName: String, userReference: [CKRecord.Reference] = []) {
         
 ////        // League info
         self.leagueName = leagueName
@@ -77,7 +80,7 @@ class League {
             let users = ckRecord[League.usersKey] as? [User],
             
             // CloudKit variables
-            let userReference = ckRecord[League.userReferenceKey] as? CKRecord.Reference
+            let userReference = ckRecord[League.userReferenceKey] as? [CKRecord.Reference]
             
             else { return nil }
         

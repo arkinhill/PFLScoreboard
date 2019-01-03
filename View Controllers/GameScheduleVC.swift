@@ -28,14 +28,16 @@ class GameScheduleVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-// ❎ I DON'T KNOW IF THIS IS THE RIGHT LOCATION FOR GAMES ARRAY
-        GameController.shared.games.count
+// ❎ What is the right location for games array?
+        
+        return GameController.shared.games.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gameCell", for: indexPath) as? GameCVCell else { return UICollectionViewCell() }
         
-// ❎ I DON'T KNOW IF THIS IS THE RIGHT LOCATION FOR GAMES ARRAY
+// ❎ What is the right location for games array?
+        
         let game = GameController.shared.games[indexPath.row]
         
         // Configure cell
@@ -48,10 +50,20 @@ class GameScheduleVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.team2NameLabel.text = game.team2.name.capitalized
         cell.team2ScoreLabel.text = "\(game.team2Score)"
         cell.gameDateLabel.text = "\(game.date)"
+        
+        return cell
     }
     
-    // MARK: - Navigation
+// ❎ Need to complete navigation (after user profile, and game schedule are working)
+    
+    // MARK: - NAVIGATION
 
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toScoreboard" {
+            guard let destinationVC = segue.destination as? ScoreboardVC, let indexPath = collectionView.indexPath(for: <#T##UICollectionViewCell#>) else { return }
+            
+            let game = GameController.shared.games[indexPath.row]
+            destinationVC.selectedGame = game
+        }
+    }
 }

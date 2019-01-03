@@ -22,6 +22,8 @@ class UserController {
     
     // Database
     let database = CKContainer.default().publicCloudDatabase
+
+// ❎ Do I need all CRUD functions? (I put them all in at first, not sure which I would need)
     
     // MARK: - FETCH USER FUNCTION
     
@@ -39,7 +41,7 @@ class UserController {
             self.appleUserRecordID = recordID
             
             // Now search in database for user with CKReference to this CKRecordID
-            let predicate = NSPredicate(format: "appleUser == %@", recordID)
+            let predicate = NSPredicate(format: "appleUserReference == %@", recordID)
             let query = CKQuery(recordType: User.userTypeKey, predicate: predicate)
             self.database.perform(query, inZoneWith: nil) { (records, error) in
                 if let error = error {
@@ -78,10 +80,11 @@ class UserController {
                 print("Error saving user to the database: \(error.localizedDescription)")
                 completion(false)
                 return
-            }
+            } else {
             // Replace source of truth (local), and call source of truth
-            self.loggedInUser = newUser
-            completion(true)
+                self.loggedInUser = newUser
+                completion(true)
+            }
         }
     }
 }

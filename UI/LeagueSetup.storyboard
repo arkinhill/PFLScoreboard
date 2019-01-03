@@ -16,635 +16,840 @@
             <objects>
                 <viewController id="RVE-mI-b4y" customClass="LeagueSetupVC" customModule="PFLScoreboard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sSw-zW-zAQ">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="1040"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="1100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="grayGradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="3OG-3Z-odP">
-                                <rect key="frame" x="0.0" y="0.0" width="736" height="1040"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PFLLogo" translatesAutoresizingMaskIntoConstraints="NO" id="E1c-Xt-YoP">
-                                <rect key="frame" x="32" y="16" width="50" height="70"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXw-q4-HLT">
+                                <rect key="frame" x="0.0" y="0.0" width="736" height="1100"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rVz-vu-0Pa">
+                                        <rect key="frame" x="0.0" y="0.0" width="736" height="1094"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="grayGradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="3OG-3Z-odP">
+                                                <rect key="frame" x="0.0" y="0.0" width="736" height="1100"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PFLLogo" translatesAutoresizingMaskIntoConstraints="NO" id="E1c-Xt-YoP">
+                                                <rect key="frame" x="32" y="24" width="50" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="EK7-6t-IFS"/>
+                                                    <constraint firstAttribute="width" constant="50" id="ekD-c3-uId"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="League Setup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eas-BN-Rm3">
+                                                <rect key="frame" x="98" y="40" width="151" height="33.333333333333343"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="28"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qGJ-MY-7PB" userLabel="step1">
+                                                <rect key="frame" x="32" y="110" width="672" height="100.66666666666669"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STEP 1:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nfl-VZ-uzI">
+                                                        <rect key="frame" x="0.0" y="0.0" width="672" height="20.333333333333332"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" name="PFLyellow"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYI-Cx-Tec">
+                                                        <rect key="frame" x="0.0" y="20.333333333333343" width="672" height="80.333333333333329"/>
+                                                        <string key="text">Have fellow league members download this app, and have them sign up as a PFL user. To share this league with others, you will need their PFL usernames. Also, make sure to double-check everything before you tap on the "Create a New League" button. Once you create a league, you cannot edit any of the information below.</string>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zaS-eL-mL5" userLabel="step2Instructions">
+                                                <rect key="frame" x="32" y="226.66666666666666" width="672" height="40.666666666666657"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="STEP 2:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nh-4H-pV0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="672" height="20.333333333333332"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" name="PFLyellow"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a league name (this is the name that will show up your user profile):" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lfm-qG-mFa">
+                                                        <rect key="frame" x="0.0" y="20.333333333333343" width="672" height="20.333333333333329"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Kbk-c3-h8y" userLabel="step2LeagueName">
+                                                <rect key="frame" x="134" y="275.33333333333331" width="468" height="32"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="League name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9QO-nF-ZQH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="468" height="32"/>
+                                                        <color key="backgroundColor" name="PFLgray"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="32" id="JPJ-Vp-CrK"/>
+                                                            <constraint firstAttribute="width" constant="468" id="Kij-Ih-XWg"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                <color key="value" name="PFL-StandardGray"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="RVE-mI-b4y" id="3AP-0k-XIF"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kHE-oY-4Vk" userLabel="step3Instructions">
+                                                <rect key="frame" x="32" y="323.33333333333331" width="672" height="58"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STEP 3:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gU7-tY-wlf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="672" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="1MR-Du-fGy"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="16"/>
+                                                        <color key="textColor" name="PFLyellow"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oq4-82-UA3">
+                                                        <rect key="frame" x="0.0" y="20" width="672" height="38"/>
+                                                        <string key="text">Add four, six, or eight teams. Choose a helmet color (you can skip over lines if you don't want to use that color), then enter a team name and coach name:</string>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="0L8-0C-k62" userLabel="step3TeamFields">
+                                                <rect key="frame" x="94" y="389.33333333333326" width="508" height="305"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="a6g-g3-Ha4" userLabel="teamRed">
+                                                        <rect key="frame" x="0.0" y="0.0" width="508" height="32"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPK-EJ-dMS">
+                                                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="32" id="JpZ-VA-0hW"/>
+                                                                    <constraint firstAttribute="width" constant="32" id="pDj-B3-KPt"/>
+                                                                </constraints>
+                                                                <state key="normal" image="helmetRedLeft"/>
+                                                            </button>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Team name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rAD-16-agl">
+                                                                <rect key="frame" x="40" y="0.0" width="230" height="32"/>
+                                                                <color key="backgroundColor" name="PFLgray"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="230" id="VRR-nb-SJJ"/>
+                                                                    <constraint firstAttribute="height" constant="32" id="YXX-BJ-kHY"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="PFL-StandardGray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="RVE-mI-b4y" id="UBF-Lv-g0b"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coach name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bjc-vm-F9j">
+                                                                <rect key="frame" x="278" y="0.0" width="230" height="32"/>
+                                                                <color key="backgroundColor" name="PFLgray"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="32" id="3rD-Ro-z2J"/>
+                                                                    <constraint firstAttribute="width" constant="230" id="Ua0-Pd-INb"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="PFL-StandardGray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="RVE-mI-b4y" id="Hj9-d7-ZmU"/>
+                                                                </connections>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sR8-kl-lPV" userLabel="teamOrange">
+                                                        <rect key="frame" x="0.0" y="39" width="508" height="32"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUU-CM-SSn">
+                                                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="32" id="8cX-PO-9Us"/>
+                                                                    <constraint firstAttribute="width" constant="32" id="fMT-dY-mQa"/>
+                                                                </constraints>
+                                                                <state key="normal" image="helmetOrangeLeft"/>
+                                                            </button>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Team name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pc7-bT-jxy">
+                                                                <rect key="frame" x="40" y="0.0" width="230" height="32"/>
+                                                                <color key="backgroundColor" name="PFLgray"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="32" id="qcl-jo-jzz"/>
+                                                                    <constraint firstAttribute="width" constant="230" id="yAg-QR-YvR"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="PFL-StandardGray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="RVE-mI-b4y" id="c9N-kE-Mp0"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coach name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2JL-CL-dfo">
+                                                                <rect key="frame" x="278" y="0.0" width="230" height="32"/>
+                                                                <color key="backgroundColor" name="PFLgray"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="230" id="cZF-df-CVK"/>
+                                                                    <constraint firstAttribute="height" constant="32" id="spq-qi-hgL"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="PFL-StandardGray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="RVE-mI-b4y" id="qmi-BY-tFP"/>
+                                                                </connections>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="oUt-O8-AT7" userLabel="teamYellow">
+                                                        <rect key="frame" x="0.0" y="78" width="508" height="32"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7A9-9E-wFt">
+                                                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="32" id="2Db-bk-bz2"/>
+                                                                    <constraint firstAttribute="width" constant="32" id="4OT-5P-Xho"/>
+                                                                </constraints>
+                                                                <state key="normal" image="helmetYellowLeft"/>
+                                                            </button>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Team name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3qd-aL-dtS">
+                                                                <rect key="frame" x="40" y="0.0" width="230" height="32"/>
+                                                                <color key="backgroundColor" name="PFLgray"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="32" id="39A-jC-I7S"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="s9u-lf-Ykg"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="PFL-StandardGray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="RVE-mI-b4y" id="hCT-h2-GqB"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coach name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ykc-0q-fiQ">
+                                                                <rect key="frame" x="278" y="0.0" width="230" height="32"/>
+                                                                <color key="backgroundColor" name="PFLgray"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="WtW-VW-GFh"/>
+                                                                    <constraint firstAttribute="height" constant="32" id="uj2-lT-uHN"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="PFL-StandardGray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="RVE-mI-b4y" id="OGa-j6-av0"/>
+                                                                </connections>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jtR-mR-s6j" userLabel="teamGreen">
+                                                        <rect key="frame" x="0.0" y="117" width="508" height="32"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuG-4S-3pQ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="32" id="3o3-be-vkA"/>
+                                                                    <constraint firstAttribute="height" constant="32" id="Ipg-4Z-2Qh"/>
+                                                                </constraints>
+                                                                <state key="normal" image="helmetGreenLeft"/>
+                                                            </button>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Team name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vld-PV-g6B">
+                                                                <rect key="frame" x="40" y="0.0" width="230" height="32"/>
+                                                                <color key="backgroundColor" name="PFLgray"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="280-M8-ZV4"/>
+                                                                    <constraint firstAttribute="height" constant="32" id="FKQ-67-E3U"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="PFL-StandardGray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="RVE-mI-b4y" id="9Kq-lB-v2E"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coach name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ay-Ac-jnJ">
+                                                                <rect key="frame" x="278" y="0.0" width="230" height="32"/>
+                                                                <color key="backgroundColor" name="PFLgray"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="6mL-Am-7Dp"/>
+                                                                    <constraint firstAttribute="height" constant="32" id="DsY-Jk-JuA"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="PFL-StandardGray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="RVE-mI-b4y" id="oWw-YO-yB6"/>
+                                                                </connections>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Duc-Ai-H6D" userLabel="teamBlue">
+                                                        <rect key="frame" x="0.0" y="156.00000000000006" width="508" height="32"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEU-Yh-eQR">
+                                                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="32" id="14L-YZ-3wj"/>
+                                                                    <constraint firstAttribute="height" constant="32" id="sT8-X8-nF2"/>
+                                                                </constraints>
+                                                                <state key="normal" image="helmetBlueLeft"/>
+                                                            </button>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Team name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TNl-29-dJ7">
+                                                                <rect key="frame" x="40" y="0.0" width="230" height="32"/>
+                                                                <color key="backgroundColor" name="PFLgray"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="32" id="E6v-ic-p0F"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="Jdy-Cw-Sr7"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="PFL-StandardGray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="RVE-mI-b4y" id="M7q-QU-W7i"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coach name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rG3-gZ-QGp">
+                                                                <rect key="frame" x="278" y="0.0" width="230" height="32"/>
+                                                                <color key="backgroundColor" name="PFLgray"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="32" id="P8N-Qp-g15"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="pqR-EW-QxZ"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="PFL-StandardGray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="RVE-mI-b4y" id="URX-7z-uHU"/>
+                                                                </connections>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="PyT-05-WIL" userLabel="teamPurple">
+                                                        <rect key="frame" x="2" y="195.00000000000006" width="506" height="32"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezc-z0-ahO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="32" id="V6a-L1-Aoi"/>
+                                                                    <constraint firstAttribute="width" constant="32" id="yWo-jM-0GS"/>
+                                                                </constraints>
+                                                                <state key="normal" image="helmetPurpleLeft"/>
+                                                            </button>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Team name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Nz-e1-7aZ">
+                                                                <rect key="frame" x="39" y="0.0" width="230" height="32"/>
+                                                                <color key="backgroundColor" name="PFLgray"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="003-7Y-grM"/>
+                                                                    <constraint firstAttribute="height" constant="32" id="VFV-QR-q3x"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="PFL-StandardGray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="RVE-mI-b4y" id="WQp-Ou-WgT"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coach name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0fL-cy-Wsh">
+                                                                <rect key="frame" x="276" y="0.0" width="230" height="32"/>
+                                                                <color key="backgroundColor" name="PFLgray"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="32" id="QX0-bb-7Xj"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="jZ1-IJ-vdc"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="PFL-StandardGray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="RVE-mI-b4y" id="TA1-ff-4VT"/>
+                                                                </connections>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jl1-r8-Edx" userLabel="teamSilver">
+                                                        <rect key="frame" x="0.0" y="234.00000000000006" width="508" height="32"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRw-7o-lbM">
+                                                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="32" id="Ifi-xD-SkQ"/>
+                                                                    <constraint firstAttribute="width" constant="32" id="Q4z-1N-TD8"/>
+                                                                </constraints>
+                                                                <state key="normal" image="helmetSilverLeft"/>
+                                                            </button>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Team name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CBe-Q9-fUH">
+                                                                <rect key="frame" x="40" y="0.0" width="230" height="32"/>
+                                                                <color key="backgroundColor" name="PFLgray"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="32" id="EvH-4f-gWx"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="He0-R1-zff"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="PFL-StandardGray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="RVE-mI-b4y" id="Xjp-7Y-efe"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coach name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BGr-Kx-feq">
+                                                                <rect key="frame" x="278" y="0.0" width="230" height="32"/>
+                                                                <color key="backgroundColor" name="PFLgray"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="9Wk-af-QAM"/>
+                                                                    <constraint firstAttribute="height" constant="32" id="qTb-lK-hUh"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="PFL-StandardGray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="RVE-mI-b4y" id="kvL-vz-fZF"/>
+                                                                </connections>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xKZ-fp-AwC" userLabel="teamBlack">
+                                                        <rect key="frame" x="0.0" y="273.00000000000006" width="508" height="32"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Is-Eq-Ku6">
+                                                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="32" id="gXf-HZ-oV1"/>
+                                                                    <constraint firstAttribute="height" constant="32" id="gj8-cE-I7C"/>
+                                                                </constraints>
+                                                                <state key="normal" image="helmetBlackLeft"/>
+                                                            </button>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Team name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9jD-hw-ea3">
+                                                                <rect key="frame" x="40" y="0.0" width="230" height="32"/>
+                                                                <color key="backgroundColor" name="PFLgray"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="32" id="kyK-84-ckx"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="utI-55-wHY"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="PFL-StandardGray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="RVE-mI-b4y" id="Z1e-Q4-7js"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coach name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T2Q-QJ-C1R">
+                                                                <rect key="frame" x="278" y="0.0" width="230" height="32"/>
+                                                                <color key="backgroundColor" name="PFLgray"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="32" id="8Kt-ox-ZqW"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="Yra-oZ-uti"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="PFL-StandardGray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="RVE-mI-b4y" id="8oN-Qg-27U"/>
+                                                                </connections>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="4z2-jh-k3l" userLabel="step4Instructions">
+                                                <rect key="frame" x="32" y="710.33333333333337" width="672" height="60.666666666666629"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STEP 4:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUz-Ij-oXq">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50.333333333333336" height="20.333333333333332"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" name="PFLyellow"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEt-02-f2u">
+                                                        <rect key="frame" x="0.0" y="20.333333333333261" width="670.66666666666663" height="40.333333333333343"/>
+                                                        <string key="text">Share this league with others by entering in their PFL usernames below (if they don't have a username yet, they need to download this app first on a device, and create a username):</string>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1cq-Gs-uZs" userLabel="step4UsernameFields">
+                                                <rect key="frame" x="134" y="779" width="468" height="152"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tIN-fN-g6c">
+                                                        <rect key="frame" x="0.0" y="0.0" width="468" height="32"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PFL username 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I4s-cc-vvr">
+                                                                <rect key="frame" x="0.0" y="0.0" width="230" height="32"/>
+                                                                <color key="backgroundColor" name="PFLgray"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="32" id="NLq-ni-23F"/>
+                                                                    <constraint firstAttribute="width" constant="230" id="jmM-X2-Kwt"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="PFL-StandardGray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="RVE-mI-b4y" id="V0H-tf-ABC"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PFL username 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t5U-iN-mZD">
+                                                                <rect key="frame" x="238" y="0.0" width="230" height="32"/>
+                                                                <color key="backgroundColor" name="PFLgray"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="230" id="NWp-bY-L5C"/>
+                                                                    <constraint firstAttribute="height" constant="32" id="aVF-HF-LqN"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="PFL-StandardGray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="RVE-mI-b4y" id="Ctt-pG-d39"/>
+                                                                </connections>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QRQ-qH-a4i">
+                                                        <rect key="frame" x="0.0" y="40" width="468" height="32"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PFL username 3" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VWq-V4-kIP">
+                                                                <rect key="frame" x="0.0" y="0.0" width="230" height="32"/>
+                                                                <color key="backgroundColor" name="PFLgray"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="32" id="Euu-Ja-vdU"/>
+                                                                    <constraint firstAttribute="width" constant="230" id="bNC-hI-xhO"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="PFL-StandardGray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="RVE-mI-b4y" id="vdy-na-k2h"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PFL username 4" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pgU-XY-8ag">
+                                                                <rect key="frame" x="238" y="0.0" width="230" height="32"/>
+                                                                <color key="backgroundColor" name="PFLgray"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="32" id="Gs4-zq-eXg"/>
+                                                                    <constraint firstAttribute="width" constant="230" id="r2Y-OC-JGT"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="PFL-StandardGray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="RVE-mI-b4y" id="8Jl-cB-qXV"/>
+                                                                </connections>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iZ9-Kz-9Ps">
+                                                        <rect key="frame" x="0.0" y="80" width="468" height="32"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PFL username 5" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pGV-qc-2W5">
+                                                                <rect key="frame" x="0.0" y="0.0" width="230" height="32"/>
+                                                                <color key="backgroundColor" name="PFLgray"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="230" id="GMT-nc-tiI"/>
+                                                                    <constraint firstAttribute="height" constant="32" id="cii-EA-HPY"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="PFL-StandardGray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="RVE-mI-b4y" id="EeM-JY-QKk"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PFL username 6" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7aa-c7-AZ0">
+                                                                <rect key="frame" x="238" y="0.0" width="230" height="32"/>
+                                                                <color key="backgroundColor" name="PFLgray"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="230" id="fbI-7G-l25"/>
+                                                                    <constraint firstAttribute="height" constant="32" id="y8L-qI-UO5"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="PFL-StandardGray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="RVE-mI-b4y" id="jd4-fr-Fxc"/>
+                                                                </connections>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UBT-W2-mPp">
+                                                        <rect key="frame" x="0.0" y="120" width="468" height="32"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PFL username 7" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o3I-0H-x9n">
+                                                                <rect key="frame" x="0.0" y="0.0" width="230" height="32"/>
+                                                                <color key="backgroundColor" name="PFLgray"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="230" id="G22-RG-bfL"/>
+                                                                    <constraint firstAttribute="height" constant="32" id="J6o-1u-QCf"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="PFL-StandardGray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="RVE-mI-b4y" id="LiA-hW-0X3"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PFL username 8" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3PD-pV-gSK">
+                                                                <rect key="frame" x="238" y="0.0" width="230" height="32"/>
+                                                                <color key="backgroundColor" name="PFLgray"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="32" id="NGv-aO-cYp"/>
+                                                                    <constraint firstAttribute="width" constant="230" id="cl1-Ku-5oW"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="PFL-StandardGray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="RVE-mI-b4y" id="W5M-zd-H97"/>
+                                                                </connections>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0Qy-pt-RNc" userLabel="step5Instructions">
+                                                <rect key="frame" x="32" y="947" width="672" height="59.333333333333371"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STEP 5:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVa-D3-5fw">
+                                                        <rect key="frame" x="0.0" y="0.0" width="672" height="19"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="19" id="Ed2-d7-Bvx"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" name="PFLyellow"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axU-gu-jwo">
+                                                        <rect key="frame" x="0.0" y="19.000000000000004" width="672" height="40.333333333333343"/>
+                                                        <string key="text">Remember to double-check all of your league info before submitting. Once you tap on the create button below, you will not be able to edit league name, team names, or usernames.</string>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v91-Ex-8Au">
+                                                <rect key="frame" x="238" y="1022.3333333333335" width="260" height="36"/>
+                                                <color key="backgroundColor" name="StandardRed"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="36" id="G9b-o7-OD9"/>
+                                                    <constraint firstAttribute="width" constant="260" id="NPi-7o-sHS"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="19"/>
+                                                <state key="normal" title="CREATE NEW LEAGUE">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <integer key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.4725389069385787" green="0.009033808352030057" blue="0.004609800615161491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="createNewLeagueButton:" destination="RVE-mI-b4y" eventType="touchUpInside" id="QYe-WB-9gO"/>
+                                                    <segue destination="QKk-ZG-GQT" kind="show" identifier="toGameSchedule" id="EE3-EU-rIh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WI0-kW-m8P">
+                                                <rect key="frame" x="546" y="32" width="158" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="aCy-1X-fGf"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                <state key="normal" title="BACK TO USER PROFILE">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="backToUserProfileButton:" destination="lCo-qE-ujd" eventType="touchUpInside" id="FYr-6P-zsx"/>
+                                                    <segue destination="8uU-Lp-2xs" kind="show" identifier="toUserProfile" id="HgQ-dd-nfW"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="1cq-Gs-uZs" firstAttribute="top" secondItem="4z2-jh-k3l" secondAttribute="bottom" constant="8" id="0vb-vF-XW0"/>
+                                            <constraint firstItem="WI0-kW-m8P" firstAttribute="top" secondItem="rVz-vu-0Pa" secondAttribute="top" constant="32" id="1G3-B5-yNO"/>
+                                            <constraint firstItem="0Qy-pt-RNc" firstAttribute="leading" secondItem="rVz-vu-0Pa" secondAttribute="leading" constant="32" id="4D9-hS-5CI"/>
+                                            <constraint firstItem="qGJ-MY-7PB" firstAttribute="leading" secondItem="rVz-vu-0Pa" secondAttribute="leading" constant="32" id="B3z-mo-DVf"/>
+                                            <constraint firstItem="eas-BN-Rm3" firstAttribute="top" secondItem="rVz-vu-0Pa" secondAttribute="top" constant="40" id="GUq-Pm-JFk"/>
+                                            <constraint firstAttribute="bottom" secondItem="3OG-3Z-odP" secondAttribute="bottom" id="GaX-ba-aMt"/>
+                                            <constraint firstAttribute="trailing" secondItem="WI0-kW-m8P" secondAttribute="trailing" constant="32" id="HHu-P5-R7d"/>
+                                            <constraint firstItem="3OG-3Z-odP" firstAttribute="top" secondItem="rVz-vu-0Pa" secondAttribute="top" id="ICI-a9-2wy"/>
+                                            <constraint firstAttribute="trailing" secondItem="zaS-eL-mL5" secondAttribute="trailing" constant="32" id="Kbg-nu-DPN"/>
+                                            <constraint firstItem="eas-BN-Rm3" firstAttribute="leading" secondItem="E1c-Xt-YoP" secondAttribute="trailing" constant="16" id="Vho-cg-lX4"/>
+                                            <constraint firstItem="Kbk-c3-h8y" firstAttribute="top" secondItem="zaS-eL-mL5" secondAttribute="bottom" constant="8" id="WHd-M0-L9R"/>
+                                            <constraint firstItem="4z2-jh-k3l" firstAttribute="leading" secondItem="rVz-vu-0Pa" secondAttribute="leading" constant="32" id="XjF-nW-ja1"/>
+                                            <constraint firstAttribute="trailing" secondItem="1cq-Gs-uZs" secondAttribute="trailing" constant="134" id="aZY-Gr-syL"/>
+                                            <constraint firstItem="4z2-jh-k3l" firstAttribute="top" secondItem="0L8-0C-k62" secondAttribute="bottom" constant="16" id="bjx-9s-MMD"/>
+                                            <constraint firstItem="E1c-Xt-YoP" firstAttribute="top" secondItem="rVz-vu-0Pa" secondAttribute="top" constant="24" id="dFc-R5-5TF"/>
+                                            <constraint firstItem="kHE-oY-4Vk" firstAttribute="top" secondItem="Kbk-c3-h8y" secondAttribute="bottom" constant="16" id="dQO-fe-b9z"/>
+                                            <constraint firstItem="qGJ-MY-7PB" firstAttribute="top" secondItem="E1c-Xt-YoP" secondAttribute="bottom" constant="16" id="did-1C-tTi"/>
+                                            <constraint firstItem="0L8-0C-k62" firstAttribute="top" secondItem="kHE-oY-4Vk" secondAttribute="bottom" constant="8" id="epK-lL-HZe"/>
+                                            <constraint firstItem="E1c-Xt-YoP" firstAttribute="leading" secondItem="rVz-vu-0Pa" secondAttribute="leading" constant="32" id="fUZ-bT-I15"/>
+                                            <constraint firstAttribute="trailing" secondItem="3OG-3Z-odP" secondAttribute="trailing" id="gqM-9w-oO9"/>
+                                            <constraint firstAttribute="trailing" secondItem="kHE-oY-4Vk" secondAttribute="trailing" constant="32" id="hW1-rY-jFa"/>
+                                            <constraint firstAttribute="trailing" secondItem="Kbk-c3-h8y" secondAttribute="trailing" constant="134" id="iRf-BF-8ni"/>
+                                            <constraint firstItem="kHE-oY-4Vk" firstAttribute="leading" secondItem="rVz-vu-0Pa" secondAttribute="leading" constant="32" id="j2l-sN-hAA"/>
+                                            <constraint firstAttribute="trailing" secondItem="4z2-jh-k3l" secondAttribute="trailing" constant="32" id="kVV-Cp-7ao"/>
+                                            <constraint firstItem="v91-Ex-8Au" firstAttribute="top" secondItem="0Qy-pt-RNc" secondAttribute="bottom" constant="16" id="qzW-ZY-35A"/>
+                                            <constraint firstItem="0Qy-pt-RNc" firstAttribute="top" secondItem="1cq-Gs-uZs" secondAttribute="bottom" constant="16" id="rQE-HA-IcS"/>
+                                            <constraint firstItem="zaS-eL-mL5" firstAttribute="leading" secondItem="rVz-vu-0Pa" secondAttribute="leading" constant="32" id="rap-Lt-4vG"/>
+                                            <constraint firstAttribute="trailing" secondItem="0Qy-pt-RNc" secondAttribute="trailing" constant="32" id="rvF-qW-Ekc"/>
+                                            <constraint firstAttribute="trailing" secondItem="0L8-0C-k62" secondAttribute="trailing" constant="134" id="tTO-nb-loa"/>
+                                            <constraint firstItem="3OG-3Z-odP" firstAttribute="leading" secondItem="rVz-vu-0Pa" secondAttribute="leading" id="wDG-y5-qSC"/>
+                                            <constraint firstItem="zaS-eL-mL5" firstAttribute="top" secondItem="qGJ-MY-7PB" secondAttribute="bottom" constant="16" id="yDf-Gq-S5P"/>
+                                            <constraint firstItem="v91-Ex-8Au" firstAttribute="centerX" secondItem="rVz-vu-0Pa" secondAttribute="centerX" id="yh3-Nu-llc"/>
+                                            <constraint firstAttribute="trailing" secondItem="qGJ-MY-7PB" secondAttribute="trailing" constant="32" id="zLK-T2-Pi4"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="EK7-6t-IFS"/>
-                                    <constraint firstAttribute="width" constant="50" id="ekD-c3-uId"/>
+                                    <constraint firstItem="rVz-vu-0Pa" firstAttribute="top" secondItem="hXw-q4-HLT" secondAttribute="top" id="0Rp-CE-qrI"/>
+                                    <constraint firstItem="rVz-vu-0Pa" firstAttribute="width" secondItem="hXw-q4-HLT" secondAttribute="width" id="8AF-Ah-zER"/>
+                                    <constraint firstItem="rVz-vu-0Pa" firstAttribute="leading" secondItem="hXw-q4-HLT" secondAttribute="leading" id="MkR-ke-2Qw"/>
+                                    <constraint firstAttribute="trailing" secondItem="rVz-vu-0Pa" secondAttribute="trailing" id="d2p-Y0-t9d"/>
+                                    <constraint firstAttribute="bottom" secondItem="rVz-vu-0Pa" secondAttribute="bottom" id="k53-Mf-Jvw"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="League Setup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eas-BN-Rm3">
-                                <rect key="frame" x="98" y="32" width="151" height="34"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="28"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STEP 1:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nfl-VZ-uzI">
-                                <rect key="frame" x="32" y="102" width="672" height="19"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" name="PFLyellow"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYI-Cx-Tec">
-                                <rect key="frame" x="32" y="121" width="672" height="38"/>
-                                <string key="text">Have fellow league members download this app, and sign up as a PFL user. To share this league with others, you will need their PFL usernames.</string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="League name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9QO-nF-ZQH">
-                                <rect key="frame" x="136" y="221" width="468" height="32"/>
-                                <color key="backgroundColor" name="PFLgray"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="3zU-v4-t5X"/>
-                                    <constraint firstAttribute="width" constant="468" id="LAR-qe-IQ3"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a league name:" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lfm-qG-mFa">
-                                <rect key="frame" x="32" y="194" width="672" height="19"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="League name:" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqb-de-GoO">
-                                <rect key="frame" x="39" y="221" width="89" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="uzc-zc-ZW3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STEP 3:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gU7-tY-wlf">
-                                <rect key="frame" x="32" y="269" width="672" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="1MR-Du-fGy"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" name="PFLyellow"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="STEP 2:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nh-4H-pV0">
-                                <rect key="frame" x="32" y="175" width="672" height="19"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" name="PFLyellow"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oq4-82-UA3">
-                                <rect key="frame" x="32" y="289" width="672" height="38"/>
-                                <string key="text">Add four, six, or eight teams. Choose a helmet color (you can skip over lines if you don't want to use that color), then enter a team name and coach name:</string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coach name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bjc-vm-F9j">
-                                <rect key="frame" x="374" y="335" width="230" height="32"/>
-                                <color key="backgroundColor" name="PFLgray"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="3rD-Ro-z2J"/>
-                                    <constraint firstAttribute="width" constant="230" id="Ua0-Pd-INb"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Team name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pc7-bT-jxy">
-                                <rect key="frame" x="136" y="375" width="230" height="32"/>
-                                <color key="backgroundColor" name="PFLgray"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="qcl-jo-jzz"/>
-                                    <constraint firstAttribute="width" constant="230" id="yAg-QR-YvR"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coach name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2JL-CL-dfo">
-                                <rect key="frame" x="374" y="375" width="230" height="32"/>
-                                <color key="backgroundColor" name="PFLgray"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="230" id="cZF-df-CVK"/>
-                                    <constraint firstAttribute="height" constant="32" id="spq-qi-hgL"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Team name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rAD-16-agl">
-                                <rect key="frame" x="136" y="335" width="230" height="32"/>
-                                <color key="backgroundColor" name="PFLgray"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="230" id="VRR-nb-SJJ"/>
-                                    <constraint firstAttribute="height" constant="32" id="YXX-BJ-kHY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Team name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3qd-aL-dtS">
-                                <rect key="frame" x="136" y="415" width="230" height="32"/>
-                                <color key="backgroundColor" name="PFLgray"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="39A-jC-I7S"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="s9u-lf-Ykg"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coach name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ykc-0q-fiQ">
-                                <rect key="frame" x="374" y="415" width="230" height="32"/>
-                                <color key="backgroundColor" name="PFLgray"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="WtW-VW-GFh"/>
-                                    <constraint firstAttribute="height" constant="32" id="uj2-lT-uHN"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Team name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vld-PV-g6B">
-                                <rect key="frame" x="136" y="455" width="230" height="32"/>
-                                <color key="backgroundColor" name="PFLgray"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="280-M8-ZV4"/>
-                                    <constraint firstAttribute="height" constant="32" id="FKQ-67-E3U"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coach name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ay-Ac-jnJ">
-                                <rect key="frame" x="374" y="455" width="230" height="32"/>
-                                <color key="backgroundColor" name="PFLgray"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="6mL-Am-7Dp"/>
-                                    <constraint firstAttribute="height" constant="32" id="DsY-Jk-JuA"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Team name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TNl-29-dJ7">
-                                <rect key="frame" x="136" y="495" width="230" height="32"/>
-                                <color key="backgroundColor" name="PFLgray"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="E6v-ic-p0F"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="Jdy-Cw-Sr7"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coach name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rG3-gZ-QGp">
-                                <rect key="frame" x="374" y="495" width="230" height="32"/>
-                                <color key="backgroundColor" name="PFLgray"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="P8N-Qp-g15"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="pqR-EW-QxZ"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Team name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Nz-e1-7aZ">
-                                <rect key="frame" x="136" y="535" width="230" height="32"/>
-                                <color key="backgroundColor" name="PFLgray"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="003-7Y-grM"/>
-                                    <constraint firstAttribute="height" constant="32" id="VFV-QR-q3x"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coach name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0fL-cy-Wsh">
-                                <rect key="frame" x="374" y="535" width="230" height="32"/>
-                                <color key="backgroundColor" name="PFLgray"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="QX0-bb-7Xj"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="jZ1-IJ-vdc"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Team name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CBe-Q9-fUH">
-                                <rect key="frame" x="136" y="575" width="230" height="32"/>
-                                <color key="backgroundColor" name="PFLgray"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="EvH-4f-gWx"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="He0-R1-zff"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coach name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BGr-Kx-feq">
-                                <rect key="frame" x="374" y="575" width="230" height="32"/>
-                                <color key="backgroundColor" name="PFLgray"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="9Wk-af-QAM"/>
-                                    <constraint firstAttribute="height" constant="32" id="qTb-lK-hUh"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Team name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9jD-hw-ea3">
-                                <rect key="frame" x="136" y="615" width="230" height="32"/>
-                                <color key="backgroundColor" name="PFLgray"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="kyK-84-ckx"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="utI-55-wHY"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coach name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T2Q-QJ-C1R">
-                                <rect key="frame" x="374" y="615" width="230" height="32"/>
-                                <color key="backgroundColor" name="PFLgray"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="8Kt-ox-ZqW"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="Yra-oZ-uti"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STEP 4:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUz-Ij-oXq">
-                                <rect key="frame" x="32" y="663" width="672" height="19"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="19" id="4z3-NX-8yV"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" name="PFLyellow"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share this league with others by entering in their PFL usernames below:" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEt-02-f2u">
-                                <rect key="frame" x="32" y="682" width="672" height="19"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STEP 5:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVa-D3-5fw">
-                                <rect key="frame" x="32" y="877" width="672" height="19"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="19" id="Ed2-d7-Bvx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" name="PFLyellow"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axU-gu-jwo">
-                                <rect key="frame" x="32" y="896" width="672" height="38"/>
-                                <string key="text">Double-check team info before submitting. Once you tap on the create button below, the number of teams will be set, and a game schedule will be generated.</string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PFL username 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I4s-cc-vvr">
-                                <rect key="frame" x="136" y="709" width="230" height="32"/>
-                                <color key="backgroundColor" name="PFLgray"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="NLq-ni-23F"/>
-                                    <constraint firstAttribute="width" constant="230" id="jmM-X2-Kwt"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PFL username 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t5U-iN-mZD">
-                                <rect key="frame" x="374" y="709" width="230" height="32"/>
-                                <color key="backgroundColor" name="PFLgray"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="230" id="NWp-bY-L5C"/>
-                                    <constraint firstAttribute="height" constant="32" id="aVF-HF-LqN"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PFL username 3" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VWq-V4-kIP">
-                                <rect key="frame" x="136" y="749" width="230" height="32"/>
-                                <color key="backgroundColor" name="PFLgray"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="Euu-Ja-vdU"/>
-                                    <constraint firstAttribute="width" constant="230" id="bNC-hI-xhO"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PFL username 4" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pgU-XY-8ag">
-                                <rect key="frame" x="374" y="749" width="230" height="32"/>
-                                <color key="backgroundColor" name="PFLgray"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="Gs4-zq-eXg"/>
-                                    <constraint firstAttribute="width" constant="230" id="r2Y-OC-JGT"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PFL username 5" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pGV-qc-2W5">
-                                <rect key="frame" x="136" y="789" width="230" height="32"/>
-                                <color key="backgroundColor" name="PFLgray"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="230" id="GMT-nc-tiI"/>
-                                    <constraint firstAttribute="height" constant="32" id="cii-EA-HPY"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PFL username 6" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7aa-c7-AZ0">
-                                <rect key="frame" x="374" y="789" width="230" height="32"/>
-                                <color key="backgroundColor" name="PFLgray"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="230" id="fbI-7G-l25"/>
-                                    <constraint firstAttribute="height" constant="32" id="y8L-qI-UO5"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PFL username 7" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o3I-0H-x9n">
-                                <rect key="frame" x="136" y="829" width="230" height="32"/>
-                                <color key="backgroundColor" name="PFLgray"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="230" id="G22-RG-bfL"/>
-                                    <constraint firstAttribute="height" constant="32" id="J6o-1u-QCf"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v91-Ex-8Au">
-                                <rect key="frame" x="238" y="950" width="260" height="32"/>
-                                <color key="backgroundColor" red="0.92407351729999998" green="0.23367717860000001" blue="0.15281248089999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="G9b-o7-OD9"/>
-                                    <constraint firstAttribute="width" constant="260" id="NPi-7o-sHS"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="17"/>
-                                <state key="normal" title="CREATE NEW LEAGUE">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.50791827280000001" green="0.50791827280000001" blue="0.50791827280000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="createNewLeagueButton:" destination="RVE-mI-b4y" eventType="touchUpInside" id="QYe-WB-9gO"/>
-                                    <segue destination="QKk-ZG-GQT" kind="show" identifier="toGameSchedule" id="EE3-EU-rIh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WI0-kW-m8P">
-                                <rect key="frame" x="546" y="32" width="158" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="aCy-1X-fGf"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <state key="normal" title="BACK TO USER PROFILE">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="backToUserProfileButton:" destination="lCo-qE-ujd" eventType="touchUpInside" id="FYr-6P-zsx"/>
-                                    <action selector="backToUserProfileButton:" destination="RVE-mI-b4y" eventType="touchUpInside" id="dvQ-CY-dxl"/>
-                                    <segue destination="8uU-Lp-2xs" kind="show" identifier="toUserProfile" id="HgQ-dd-nfW"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPK-EJ-dMS">
-                                <rect key="frame" x="96" y="335" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="JpZ-VA-0hW"/>
-                                    <constraint firstAttribute="width" constant="32" id="pDj-B3-KPt"/>
-                                </constraints>
-                                <state key="normal" image="helmetRedLeft"/>
-                                <connections>
-                                    <action selector="helmet1Button:" destination="RVE-mI-b4y" eventType="touchUpInside" id="GhP-y5-jmh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUU-CM-SSn">
-                                <rect key="frame" x="96" y="375" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="8cX-PO-9Us"/>
-                                    <constraint firstAttribute="width" constant="32" id="fMT-dY-mQa"/>
-                                </constraints>
-                                <state key="normal" image="helmetOrangeLeft"/>
-                                <connections>
-                                    <action selector="helmet2Button:" destination="RVE-mI-b4y" eventType="touchUpInside" id="h8w-OA-Nw3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7A9-9E-wFt">
-                                <rect key="frame" x="96" y="415" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="2Db-bk-bz2"/>
-                                    <constraint firstAttribute="width" constant="32" id="4OT-5P-Xho"/>
-                                </constraints>
-                                <state key="normal" image="helmetYellowLeft"/>
-                                <connections>
-                                    <action selector="helmet3Button:" destination="RVE-mI-b4y" eventType="touchUpInside" id="F8b-JY-4RF"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuG-4S-3pQ">
-                                <rect key="frame" x="96" y="455" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="3o3-be-vkA"/>
-                                    <constraint firstAttribute="height" constant="32" id="Ipg-4Z-2Qh"/>
-                                </constraints>
-                                <state key="normal" image="helmetGreenLeft"/>
-                                <connections>
-                                    <action selector="helmet4Button:" destination="RVE-mI-b4y" eventType="touchUpInside" id="g55-3K-5Hf"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEU-Yh-eQR">
-                                <rect key="frame" x="96" y="495" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="14L-YZ-3wj"/>
-                                    <constraint firstAttribute="height" constant="32" id="sT8-X8-nF2"/>
-                                </constraints>
-                                <state key="normal" image="helmetBlueLeft"/>
-                                <connections>
-                                    <action selector="helmet5Button:" destination="RVE-mI-b4y" eventType="touchUpInside" id="u9j-8j-phT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezc-z0-ahO">
-                                <rect key="frame" x="98" y="535" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="V6a-L1-Aoi"/>
-                                    <constraint firstAttribute="width" constant="32" id="yWo-jM-0GS"/>
-                                </constraints>
-                                <state key="normal" image="helmetPurpleLeft"/>
-                                <connections>
-                                    <action selector="helmet6Button:" destination="RVE-mI-b4y" eventType="touchUpInside" id="EXW-GH-oJl"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRw-7o-lbM">
-                                <rect key="frame" x="96" y="575" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="Ifi-xD-SkQ"/>
-                                    <constraint firstAttribute="width" constant="32" id="Q4z-1N-TD8"/>
-                                </constraints>
-                                <state key="normal" image="helmetSilverLeft"/>
-                                <connections>
-                                    <action selector="helmet7Button:" destination="RVE-mI-b4y" eventType="touchUpInside" id="aIc-tw-35T"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Is-Eq-Ku6">
-                                <rect key="frame" x="96" y="615" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="gXf-HZ-oV1"/>
-                                    <constraint firstAttribute="height" constant="32" id="gj8-cE-I7C"/>
-                                </constraints>
-                                <state key="normal" image="helmetBlackLeft"/>
-                                <connections>
-                                    <action selector="helmet8Button:" destination="RVE-mI-b4y" eventType="touchUpInside" id="lp1-AZ-uFE"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PFL username 8" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3PD-pV-gSK">
-                                <rect key="frame" x="374" y="829" width="230" height="32"/>
-                                <color key="backgroundColor" name="PFLgray"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="NGv-aO-cYp"/>
-                                    <constraint firstAttribute="width" constant="230" id="cl1-Ku-5oW"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="iWS-67-qjf" firstAttribute="trailing" secondItem="7aa-c7-AZ0" secondAttribute="trailing" constant="132" id="23p-Pw-MNH"/>
-                            <constraint firstItem="WI0-kW-m8P" firstAttribute="top" secondItem="iWS-67-qjf" secondAttribute="top" constant="12" id="2jg-Yj-c8y"/>
-                            <constraint firstItem="Bjc-vm-F9j" firstAttribute="leading" secondItem="rAD-16-agl" secondAttribute="trailing" constant="8" id="2vt-54-veN"/>
-                            <constraint firstItem="T2Q-QJ-C1R" firstAttribute="top" secondItem="BGr-Kx-feq" secondAttribute="bottom" constant="8" id="3Y3-UT-4AX"/>
-                            <constraint firstItem="aUz-Ij-oXq" firstAttribute="leading" secondItem="iWS-67-qjf" secondAttribute="leading" constant="32" id="3bo-hd-KdI"/>
-                            <constraint firstItem="JYI-Cx-Tec" firstAttribute="top" secondItem="Nfl-VZ-uzI" secondAttribute="bottom" id="41I-Ar-ELp"/>
-                            <constraint firstItem="Oq4-82-UA3" firstAttribute="leading" secondItem="sSw-zW-zAQ" secondAttribute="leading" constant="32" id="45p-uF-Kwj"/>
-                            <constraint firstItem="gU7-tY-wlf" firstAttribute="leading" secondItem="sSw-zW-zAQ" secondAttribute="leading" constant="32" id="48W-hj-wyg"/>
-                            <constraint firstItem="3PD-pV-gSK" firstAttribute="leading" secondItem="o3I-0H-x9n" secondAttribute="trailing" constant="8" id="4P1-7t-kqO"/>
-                            <constraint firstItem="TNl-29-dJ7" firstAttribute="top" secondItem="vld-PV-g6B" secondAttribute="bottom" constant="8" id="4wf-x7-5cw"/>
-                            <constraint firstItem="pgU-XY-8ag" firstAttribute="top" secondItem="t5U-iN-mZD" secondAttribute="bottom" constant="8" id="4xM-Lk-kcr"/>
-                            <constraint firstItem="iWS-67-qjf" firstAttribute="trailing" secondItem="9QO-nF-ZQH" secondAttribute="trailing" constant="132" id="574-bk-Kht"/>
-                            <constraint firstItem="E1c-Xt-YoP" firstAttribute="top" secondItem="sSw-zW-zAQ" secondAttribute="top" constant="16" id="5SJ-J6-kCM"/>
-                            <constraint firstItem="pGV-qc-2W5" firstAttribute="top" secondItem="VWq-V4-kIP" secondAttribute="bottom" constant="8" id="5Sc-qI-kFw"/>
-                            <constraint firstItem="wuG-4S-3pQ" firstAttribute="top" secondItem="7A9-9E-wFt" secondAttribute="bottom" constant="8" id="5Xz-Fz-Vz8"/>
-                            <constraint firstItem="BGr-Kx-feq" firstAttribute="leading" secondItem="CBe-Q9-fUH" secondAttribute="trailing" constant="8" id="5vB-Ip-4f5"/>
-                            <constraint firstItem="iWS-67-qjf" firstAttribute="trailing" secondItem="aUz-Ij-oXq" secondAttribute="trailing" constant="32" id="6rY-3k-rdp"/>
-                            <constraint firstItem="Nfl-VZ-uzI" firstAttribute="top" secondItem="E1c-Xt-YoP" secondAttribute="bottom" constant="16" id="7Xg-Tg-mh9"/>
-                            <constraint firstItem="9QO-nF-ZQH" firstAttribute="leading" secondItem="Sqb-de-GoO" secondAttribute="trailing" constant="8" id="87r-2l-qmM"/>
-                            <constraint firstAttribute="trailing" secondItem="5nh-4H-pV0" secondAttribute="trailing" constant="32" id="8jc-os-0H5"/>
-                            <constraint firstItem="9QO-nF-ZQH" firstAttribute="top" secondItem="Lfm-qG-mFa" secondAttribute="bottom" constant="8" id="9RJ-DF-fMn"/>
-                            <constraint firstItem="aUz-Ij-oXq" firstAttribute="top" secondItem="9jD-hw-ea3" secondAttribute="bottom" constant="16" id="ADc-zM-X8L"/>
-                            <constraint firstItem="VWq-V4-kIP" firstAttribute="top" secondItem="I4s-cc-vvr" secondAttribute="bottom" constant="8" id="ByH-Gb-YDI"/>
-                            <constraint firstItem="3OG-3Z-odP" firstAttribute="top" secondItem="sSw-zW-zAQ" secondAttribute="top" id="DRp-pu-kjF"/>
-                            <constraint firstItem="iWS-67-qjf" firstAttribute="trailing" secondItem="Ykc-0q-fiQ" secondAttribute="trailing" constant="132" id="Ed7-Ec-GFR"/>
-                            <constraint firstItem="iWS-67-qjf" firstAttribute="trailing" secondItem="t5U-iN-mZD" secondAttribute="trailing" constant="132" id="EiD-6G-1oQ"/>
-                            <constraint firstAttribute="trailing" secondItem="Lfm-qG-mFa" secondAttribute="trailing" constant="32" id="Fyb-Nu-Rc3"/>
-                            <constraint firstItem="Bjc-vm-F9j" firstAttribute="top" secondItem="Oq4-82-UA3" secondAttribute="bottom" constant="8" id="GL8-Yr-3tw"/>
-                            <constraint firstItem="2JL-CL-dfo" firstAttribute="leading" secondItem="Pc7-bT-jxy" secondAttribute="trailing" constant="8" id="GQs-Zp-C9D"/>
-                            <constraint firstItem="iWS-67-qjf" firstAttribute="trailing" secondItem="pgU-XY-8ag" secondAttribute="trailing" constant="132" id="GcN-Si-YyN"/>
-                            <constraint firstItem="5nh-4H-pV0" firstAttribute="leading" secondItem="sSw-zW-zAQ" secondAttribute="leading" constant="32" id="Gkl-Eu-pht"/>
-                            <constraint firstAttribute="trailing" secondItem="Oq4-82-UA3" secondAttribute="trailing" constant="32" id="IF2-KC-CUM"/>
-                            <constraint firstItem="Ykc-0q-fiQ" firstAttribute="leading" secondItem="3qd-aL-dtS" secondAttribute="trailing" constant="8" id="IQL-k5-bmu"/>
-                            <constraint firstItem="E1c-Xt-YoP" firstAttribute="leading" secondItem="sSw-zW-zAQ" secondAttribute="leading" constant="32" id="IRT-QD-X2G"/>
-                            <constraint firstItem="Ykc-0q-fiQ" firstAttribute="top" secondItem="2JL-CL-dfo" secondAttribute="bottom" constant="8" id="IWZ-zT-iKv"/>
-                            <constraint firstItem="Lfm-qG-mFa" firstAttribute="leading" secondItem="sSw-zW-zAQ" secondAttribute="leading" constant="32" id="Io7-R5-fBY"/>
-                            <constraint firstItem="9jD-hw-ea3" firstAttribute="top" secondItem="CBe-Q9-fUH" secondAttribute="bottom" constant="8" id="Iok-dy-IUX"/>
-                            <constraint firstItem="Oq4-82-UA3" firstAttribute="top" secondItem="gU7-tY-wlf" secondAttribute="bottom" id="K4h-4V-zrj"/>
-                            <constraint firstItem="CBe-Q9-fUH" firstAttribute="top" secondItem="6Nz-e1-7aZ" secondAttribute="bottom" constant="8" id="LHJ-z0-hBR"/>
-                            <constraint firstItem="0fL-cy-Wsh" firstAttribute="leading" secondItem="6Nz-e1-7aZ" secondAttribute="trailing" constant="8" id="Lk8-wB-uHU"/>
-                            <constraint firstItem="iWS-67-qjf" firstAttribute="trailing" secondItem="2JL-CL-dfo" secondAttribute="trailing" constant="132" id="MJ0-bD-fie"/>
-                            <constraint firstItem="vld-PV-g6B" firstAttribute="top" secondItem="3qd-aL-dtS" secondAttribute="bottom" constant="8" id="NN1-rf-n3y"/>
-                            <constraint firstItem="iWS-67-qjf" firstAttribute="trailing" secondItem="Bjc-vm-F9j" secondAttribute="trailing" constant="132" id="NoD-xF-72B"/>
-                            <constraint firstItem="v91-Ex-8Au" firstAttribute="top" secondItem="axU-gu-jwo" secondAttribute="bottom" constant="16" id="OP7-uy-RO0"/>
-                            <constraint firstItem="rG3-gZ-QGp" firstAttribute="top" secondItem="9ay-Ac-jnJ" secondAttribute="bottom" constant="8" id="Omn-2E-gVI"/>
-                            <constraint firstItem="9ay-Ac-jnJ" firstAttribute="top" secondItem="Ykc-0q-fiQ" secondAttribute="bottom" constant="8" id="QIj-GS-1ah"/>
-                            <constraint firstItem="o3I-0H-x9n" firstAttribute="top" secondItem="pGV-qc-2W5" secondAttribute="bottom" constant="8" id="QiU-nT-Egs"/>
-                            <constraint firstItem="rG3-gZ-QGp" firstAttribute="leading" secondItem="TNl-29-dJ7" secondAttribute="trailing" constant="8" id="R9v-ch-o4Y"/>
-                            <constraint firstItem="iWS-67-qjf" firstAttribute="trailing" secondItem="bVa-D3-5fw" secondAttribute="trailing" constant="32" id="RtX-FL-F6l"/>
-                            <constraint firstItem="0fL-cy-Wsh" firstAttribute="top" secondItem="rG3-gZ-QGp" secondAttribute="bottom" constant="8" id="SN3-lO-Zhz"/>
-                            <constraint firstItem="6Nz-e1-7aZ" firstAttribute="leading" secondItem="ezc-z0-ahO" secondAttribute="trailing" constant="6" id="SeL-zX-ywa"/>
-                            <constraint firstItem="Lfm-qG-mFa" firstAttribute="top" secondItem="5nh-4H-pV0" secondAttribute="bottom" id="TFl-qh-Run"/>
-                            <constraint firstItem="vld-PV-g6B" firstAttribute="leading" secondItem="wuG-4S-3pQ" secondAttribute="trailing" constant="8" id="UQ7-E8-S5L"/>
-                            <constraint firstItem="eas-BN-Rm3" firstAttribute="top" secondItem="sSw-zW-zAQ" secondAttribute="top" constant="32" id="UUN-UI-9tt"/>
-                            <constraint firstItem="2Is-Eq-Ku6" firstAttribute="top" secondItem="rRw-7o-lbM" secondAttribute="bottom" constant="8" id="VRv-Sp-aXn"/>
-                            <constraint firstItem="MEt-02-f2u" firstAttribute="top" secondItem="aUz-Ij-oXq" secondAttribute="bottom" id="VVd-r4-IYu"/>
-                            <constraint firstItem="iWS-67-qjf" firstAttribute="trailing" secondItem="WI0-kW-m8P" secondAttribute="trailing" constant="32" id="WXJ-43-Q3a"/>
-                            <constraint firstItem="Pc7-bT-jxy" firstAttribute="top" secondItem="rAD-16-agl" secondAttribute="bottom" constant="8" id="Wlw-sm-Rgf"/>
-                            <constraint firstItem="t5U-iN-mZD" firstAttribute="leading" secondItem="I4s-cc-vvr" secondAttribute="trailing" constant="8" id="WuG-tb-JTo"/>
-                            <constraint firstItem="gU7-tY-wlf" firstAttribute="top" secondItem="9QO-nF-ZQH" secondAttribute="bottom" constant="16" id="Y7K-jI-twV"/>
-                            <constraint firstAttribute="trailing" secondItem="Nfl-VZ-uzI" secondAttribute="trailing" constant="32" id="Ydm-um-WBd"/>
-                            <constraint firstItem="2JL-CL-dfo" firstAttribute="top" secondItem="Bjc-vm-F9j" secondAttribute="bottom" constant="8" id="a6O-Oc-xaU"/>
-                            <constraint firstItem="7aa-c7-AZ0" firstAttribute="top" secondItem="pgU-XY-8ag" secondAttribute="bottom" constant="8" id="api-Ck-YKr"/>
-                            <constraint firstItem="9jD-hw-ea3" firstAttribute="leading" secondItem="2Is-Eq-Ku6" secondAttribute="trailing" constant="8" id="b3O-jn-f2T"/>
-                            <constraint firstItem="3PD-pV-gSK" firstAttribute="top" secondItem="7aa-c7-AZ0" secondAttribute="bottom" constant="8" id="bKg-aO-Mi4"/>
-                            <constraint firstItem="Sqb-de-GoO" firstAttribute="top" secondItem="Lfm-qG-mFa" secondAttribute="bottom" constant="8" id="bZm-bW-xDn"/>
-                            <constraint firstItem="iWS-67-qjf" firstAttribute="trailing" secondItem="BGr-Kx-feq" secondAttribute="trailing" constant="132" id="btf-WL-iSg"/>
-                            <constraint firstItem="3qd-aL-dtS" firstAttribute="leading" secondItem="7A9-9E-wFt" secondAttribute="trailing" constant="8" id="cC8-3T-zdH"/>
-                            <constraint firstItem="dUU-CM-SSn" firstAttribute="top" secondItem="gPK-EJ-dMS" secondAttribute="bottom" constant="8" id="cST-7u-vIw"/>
-                            <constraint firstItem="rAD-16-agl" firstAttribute="leading" secondItem="gPK-EJ-dMS" secondAttribute="trailing" constant="8" id="d7x-jh-yJh"/>
-                            <constraint firstAttribute="trailing" secondItem="gU7-tY-wlf" secondAttribute="trailing" constant="32" id="dAj-zu-rQk"/>
-                            <constraint firstItem="Pc7-bT-jxy" firstAttribute="leading" secondItem="dUU-CM-SSn" secondAttribute="trailing" constant="8" id="dYy-9V-TBh"/>
-                            <constraint firstItem="v91-Ex-8Au" firstAttribute="centerX" secondItem="sSw-zW-zAQ" secondAttribute="centerX" id="dpL-SM-LVA"/>
-                            <constraint firstItem="7aa-c7-AZ0" firstAttribute="leading" secondItem="pGV-qc-2W5" secondAttribute="trailing" constant="8" id="edx-95-siR"/>
-                            <constraint firstItem="3qd-aL-dtS" firstAttribute="top" secondItem="Pc7-bT-jxy" secondAttribute="bottom" constant="8" id="ewQ-kX-1EQ"/>
-                            <constraint firstItem="iWS-67-qjf" firstAttribute="trailing" secondItem="T2Q-QJ-C1R" secondAttribute="trailing" constant="132" id="f45-59-17r"/>
-                            <constraint firstItem="t5U-iN-mZD" firstAttribute="top" secondItem="MEt-02-f2u" secondAttribute="bottom" constant="8" id="fiP-OY-Ouo"/>
-                            <constraint firstItem="iWS-67-qjf" firstAttribute="trailing" secondItem="axU-gu-jwo" secondAttribute="trailing" constant="32" id="gHb-ro-wlx"/>
-                            <constraint firstItem="7A9-9E-wFt" firstAttribute="top" secondItem="dUU-CM-SSn" secondAttribute="bottom" constant="8" id="gRR-uN-5pd"/>
-                            <constraint firstItem="Nfl-VZ-uzI" firstAttribute="leading" secondItem="sSw-zW-zAQ" secondAttribute="leading" constant="32" id="gle-lF-BBm"/>
-                            <constraint firstItem="3OG-3Z-odP" firstAttribute="leading" secondItem="sSw-zW-zAQ" secondAttribute="leading" id="gmw-xL-RWg"/>
-                            <constraint firstItem="CBe-Q9-fUH" firstAttribute="leading" secondItem="rRw-7o-lbM" secondAttribute="trailing" constant="8" id="gyj-YD-ZRo"/>
-                            <constraint firstAttribute="trailing" secondItem="3OG-3Z-odP" secondAttribute="trailing" id="hEH-iK-eKf"/>
-                            <constraint firstItem="iWS-67-qjf" firstAttribute="trailing" secondItem="9ay-Ac-jnJ" secondAttribute="trailing" constant="132" id="hS9-ph-eoG"/>
-                            <constraint firstAttribute="trailing" secondItem="JYI-Cx-Tec" secondAttribute="trailing" constant="32" id="hYG-nU-K3N"/>
-                            <constraint firstItem="JYI-Cx-Tec" firstAttribute="leading" secondItem="sSw-zW-zAQ" secondAttribute="leading" constant="32" id="iw9-SA-S31"/>
-                            <constraint firstItem="iWS-67-qjf" firstAttribute="trailing" secondItem="3PD-pV-gSK" secondAttribute="trailing" constant="132" id="j37-BB-U2y"/>
-                            <constraint firstItem="MEt-02-f2u" firstAttribute="leading" secondItem="iWS-67-qjf" secondAttribute="leading" constant="32" id="jPA-2c-Koe"/>
-                            <constraint firstAttribute="trailing" secondItem="MEt-02-f2u" secondAttribute="trailing" constant="32" id="kRw-TK-goX"/>
-                            <constraint firstItem="axU-gu-jwo" firstAttribute="top" secondItem="bVa-D3-5fw" secondAttribute="bottom" id="kxw-v1-S06"/>
-                            <constraint firstItem="bVa-D3-5fw" firstAttribute="leading" secondItem="iWS-67-qjf" secondAttribute="leading" constant="32" id="m5O-Yn-dlR"/>
-                            <constraint firstItem="TNl-29-dJ7" firstAttribute="leading" secondItem="UEU-Yh-eQR" secondAttribute="trailing" constant="8" id="mNa-gq-6ad"/>
-                            <constraint firstItem="eas-BN-Rm3" firstAttribute="leading" secondItem="E1c-Xt-YoP" secondAttribute="trailing" constant="16" id="mOF-UB-xyN"/>
-                            <constraint firstItem="5nh-4H-pV0" firstAttribute="top" secondItem="JYI-Cx-Tec" secondAttribute="bottom" constant="16" id="mT7-mB-HpD"/>
-                            <constraint firstItem="BGr-Kx-feq" firstAttribute="top" secondItem="0fL-cy-Wsh" secondAttribute="bottom" constant="8" id="pSZ-5D-gmb"/>
-                            <constraint firstItem="6Nz-e1-7aZ" firstAttribute="top" secondItem="TNl-29-dJ7" secondAttribute="bottom" constant="8" id="qFW-H3-bmm"/>
-                            <constraint firstItem="rRw-7o-lbM" firstAttribute="top" secondItem="ezc-z0-ahO" secondAttribute="bottom" constant="8" id="rD4-J2-hKy"/>
-                            <constraint firstItem="UEU-Yh-eQR" firstAttribute="top" secondItem="wuG-4S-3pQ" secondAttribute="bottom" constant="8" id="sM0-tM-mlR"/>
-                            <constraint firstItem="axU-gu-jwo" firstAttribute="leading" secondItem="iWS-67-qjf" secondAttribute="leading" constant="32" id="sSl-yu-jAK"/>
-                            <constraint firstItem="iWS-67-qjf" firstAttribute="trailing" secondItem="rG3-gZ-QGp" secondAttribute="trailing" constant="132" id="tQ1-eZ-25c"/>
-                            <constraint firstItem="ezc-z0-ahO" firstAttribute="top" secondItem="UEU-Yh-eQR" secondAttribute="bottom" constant="8" id="tbF-VP-gaL"/>
-                            <constraint firstItem="I4s-cc-vvr" firstAttribute="top" secondItem="MEt-02-f2u" secondAttribute="bottom" constant="8" id="wfK-B6-hUe"/>
-                            <constraint firstItem="bVa-D3-5fw" firstAttribute="top" secondItem="o3I-0H-x9n" secondAttribute="bottom" constant="16" id="wkb-Ku-SIE"/>
-                            <constraint firstItem="gPK-EJ-dMS" firstAttribute="top" secondItem="Oq4-82-UA3" secondAttribute="bottom" constant="8" id="xTr-Gh-5Pb"/>
-                            <constraint firstItem="T2Q-QJ-C1R" firstAttribute="leading" secondItem="9jD-hw-ea3" secondAttribute="trailing" constant="8" id="y7i-jI-cQ9"/>
-                            <constraint firstItem="pgU-XY-8ag" firstAttribute="leading" secondItem="VWq-V4-kIP" secondAttribute="trailing" constant="8" id="y8z-A7-rH7"/>
-                            <constraint firstItem="rAD-16-agl" firstAttribute="top" secondItem="Oq4-82-UA3" secondAttribute="bottom" constant="8" id="yqh-HI-aO0"/>
-                            <constraint firstItem="iWS-67-qjf" firstAttribute="trailing" secondItem="0fL-cy-Wsh" secondAttribute="trailing" constant="132" id="z3p-k5-fq4"/>
-                            <constraint firstItem="9ay-Ac-jnJ" firstAttribute="leading" secondItem="vld-PV-g6B" secondAttribute="trailing" constant="8" id="z7f-6v-7fW"/>
+                            <constraint firstAttribute="trailing" secondItem="hXw-q4-HLT" secondAttribute="trailing" id="M5P-sS-2sz"/>
+                            <constraint firstItem="hXw-q4-HLT" firstAttribute="top" secondItem="sSw-zW-zAQ" secondAttribute="top" id="P7h-95-5Ox"/>
+                            <constraint firstAttribute="bottom" secondItem="hXw-q4-HLT" secondAttribute="bottom" id="hM0-MD-vn0"/>
+                            <constraint firstItem="hXw-q4-HLT" firstAttribute="leading" secondItem="sSw-zW-zAQ" secondAttribute="leading" id="sqo-fv-TfQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iWS-67-qjf"/>
                     </view>
-                    <size key="freeformSize" width="736" height="1040"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="736" height="1100"/>
                     <connections>
-                        <outlet property="PFLUserName2TextField" destination="t5U-iN-mZD" id="gqg-5y-lcR"/>
-                        <outlet property="PFLUsername1TextField" destination="I4s-cc-vvr" id="og0-X8-1oz"/>
-                        <outlet property="PFLUsername3TextField" destination="VWq-V4-kIP" id="aB3-TL-2lJ"/>
-                        <outlet property="PFLUsername4TextField" destination="pgU-XY-8ag" id="R4r-QQ-QtX"/>
-                        <outlet property="PFLUsername5TextField" destination="pGV-qc-2W5" id="Xg2-hd-vSh"/>
-                        <outlet property="PFLUsername6TextField" destination="7aa-c7-AZ0" id="tUt-m4-5Yd"/>
-                        <outlet property="PFLUsername7Textfield" destination="o3I-0H-x9n" id="9a4-sI-3r0"/>
-                        <outlet property="PFLUsername8TextField" destination="3PD-pV-gSK" id="bbZ-Io-hGJ"/>
                         <outlet property="leagueNameTextField" destination="9QO-nF-ZQH" id="at6-9M-x9Q"/>
                         <outlet property="teamACoachNameTextField" destination="Bjc-vm-F9j" id="lCx-Ps-a4B"/>
                         <outlet property="teamATeamNameTextField" destination="rAD-16-agl" id="dMn-qe-40t"/>
@@ -662,14 +867,14 @@
                         <outlet property="teamGTeamNameTextField" destination="CBe-Q9-fUH" id="ONN-b3-5T1"/>
                         <outlet property="teamHCoachNameTextField" destination="T2Q-QJ-C1R" id="45g-6R-M9X"/>
                         <outlet property="teamHTeamNameTextField" destination="9jD-hw-ea3" id="E2J-DX-4ub"/>
-                        <outletCollection property="usernameTextFields" destination="o3I-0H-x9n" collectionClass="NSMutableArray" id="puq-tB-5Qg"/>
-                        <outletCollection property="usernameTextFields" destination="I4s-cc-vvr" collectionClass="NSMutableArray" id="Hhr-93-4Vs"/>
                         <outletCollection property="usernameTextFields" destination="t5U-iN-mZD" collectionClass="NSMutableArray" id="dul-7v-FhC"/>
-                        <outletCollection property="usernameTextFields" destination="VWq-V4-kIP" collectionClass="NSMutableArray" id="Fyf-1q-gfy"/>
+                        <outletCollection property="usernameTextFields" destination="I4s-cc-vvr" collectionClass="NSMutableArray" id="Hhr-93-4Vs"/>
                         <outletCollection property="usernameTextFields" destination="pgU-XY-8ag" collectionClass="NSMutableArray" id="nCb-GL-q2m"/>
-                        <outletCollection property="usernameTextFields" destination="pGV-qc-2W5" collectionClass="NSMutableArray" id="ECJ-AN-PsN"/>
+                        <outletCollection property="usernameTextFields" destination="VWq-V4-kIP" collectionClass="NSMutableArray" id="Fyf-1q-gfy"/>
                         <outletCollection property="usernameTextFields" destination="7aa-c7-AZ0" collectionClass="NSMutableArray" id="gXB-TP-Bo9"/>
+                        <outletCollection property="usernameTextFields" destination="pGV-qc-2W5" collectionClass="NSMutableArray" id="ECJ-AN-PsN"/>
                         <outletCollection property="usernameTextFields" destination="3PD-pV-gSK" collectionClass="NSMutableArray" id="NSU-fk-Atg"/>
+                        <outletCollection property="usernameTextFields" destination="o3I-0H-x9n" collectionClass="NSMutableArray" id="puq-tB-5Qg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MqK-Um-Vrd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -705,11 +910,17 @@
         <image name="helmetRedLeft" width="359.5" height="331.5"/>
         <image name="helmetSilverLeft" width="357" height="329.5"/>
         <image name="helmetYellowLeft" width="357.5" height="329.5"/>
+        <namedColor name="PFL-StandardGray">
+            <color red="0.38100001215934753" green="0.38699999451637268" blue="0.41899999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="PFLgray">
             <color red="0.83499997854232788" green="0.83899998664855957" blue="0.85900002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="PFLyellow">
             <color red="0.95899999141693115" green="0.75400000810623169" blue="0.32100000977516174" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="StandardRed">
+            <color red="0.78299999237060547" green="0.012000000104308128" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

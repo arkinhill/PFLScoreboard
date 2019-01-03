@@ -46,20 +46,12 @@ class UserProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         }
     }
     
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        if section == 0 {
-//            return "Your Leagues"
-//        } else {
-//            return "League Invites"
-//        }
-//    }
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = tableView.dequeueReusableCell(withIdentifier: "sectionCell") as! SectionTVCell
         if section == 0 {
-            cell.sectionTitleLabel?.text = "Your Leagues"
+            cell.sectionTitleLabel?.text = "YOUR LEAGUES:"
         } else {
-            cell.sectionTitleLabel.text = "League Invites"
+            cell.sectionTitleLabel.text = "YOUR LEAGUE INVITES:"
         }
         return cell
     }
@@ -110,7 +102,13 @@ class UserProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         }
     }
     
+// ❎ Need to complete navigation (pass through league object with teams, games)
+    
     // MARK: - NAVIGATION
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
 }
 
 // MARK: - LEAGUE ACTIVE TV CELL DELEGATE EXTENSION
@@ -140,6 +138,8 @@ extension UserProfileVC: LeagueActiveTVCellDelegate {
 // (Step 4 of 5 - 3 steps in child, 2 in parent(this file))
 
 extension UserProfileVC: LeagueInvitedTVCellDelegate {
+
+// ❎ Need to complete this function
     
     func acceptInviteButtonTapped(_ sender: LeagueInvitedTVCell) {
         // WHAT TO DO WHEN INVITE IS ACCEPTED

@@ -1,0 +1,1590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q5C-iq-nZK">
+    <device id="retina5_5" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ScoreboardVC-->
+        <scene sceneID="DQz-MD-jGr">
+            <objects>
+                <viewController id="q5C-iq-nZK" customClass="ScoreboardVC" customModule="PFLScoreboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ecF-zn-Cz1">
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grayGradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ymc-4Y-fyi">
+                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="123" translatesAutoresizingMaskIntoConstraints="NO" id="Q7x-6C-Q2Y" userLabel="teamHeaders">
+                                <rect key="frame" x="38" y="20" width="660" height="66"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="etE-d9-ZTR" userLabel="team1Header">
+                                        <rect key="frame" x="0.0" y="0.0" width="268" height="66"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="DG1-3a-W7X" userLabel="team1Info">
+                                                <rect key="frame" x="0.0" y="0.0" width="180" height="66"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="TITANS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X93-hz-2zO">
+                                                        <rect key="frame" x="123.66666666666667" y="0.0" width="56.333333333333329" height="26"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coach: Ashton" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHD-wA-uLV">
+                                                        <rect key="frame" x="67" y="26" width="113" height="20"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 – 2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CiW-u6-B4u">
+                                                        <rect key="frame" x="143" y="46" width="37" height="20"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="180" id="fhg-Gm-jzH"/>
+                                                </constraints>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8nW-Z4-ptF" userLabel="team1Helmet">
+                                                <rect key="frame" x="195" y="0.0" width="73" height="66"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="73" id="Xac-Cd-VE8"/>
+                                                    <constraint firstAttribute="height" constant="66" id="qU9-za-9GK"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="helmetBlueLeft"/>
+                                                <connections>
+                                                    <action selector="team1HelmetTapped:" destination="q5C-iq-nZK" eventType="touchUpInside" id="4yT-YJ-BWM"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tGK-dH-aVM" userLabel="team2Header">
+                                        <rect key="frame" x="391" y="0.0" width="269" height="66"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXZ-wx-0AX" userLabel="team2Helmet">
+                                                <rect key="frame" x="0.0" y="0.0" width="73" height="66"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="73" id="cfZ-HT-pas"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="helmetRedRight"/>
+                                                <connections>
+                                                    <action selector="team2HelmetTapped:" destination="q5C-iq-nZK" eventType="touchUpInside" id="gdh-zb-3gl"/>
+                                                </connections>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="CSW-45-L4L" userLabel="team2Info">
+                                                <rect key="frame" x="88.999999999999943" y="0.0" width="180" height="66"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="CARDINALS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFi-7C-qDK">
+                                                        <rect key="frame" x="0.0" y="0.0" width="92" height="26"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coach: Braden" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vbh-HA-CSP">
+                                                        <rect key="frame" x="0.0" y="26" width="114.33333333333333" height="20"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 – 4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDt-ZS-kcp">
+                                                        <rect key="frame" x="0.0" y="46" width="37" height="20"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="180" id="msK-ld-brr"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="182" translatesAutoresizingMaskIntoConstraints="NO" id="91e-hl-veQ" userLabel="teamHelmetLetters">
+                                <rect key="frame" x="252" y="30" width="232" height="25"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterT" translatesAutoresizingMaskIntoConstraints="NO" id="bwS-xE-fa6">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="Rk9-qB-9AU"/>
+                                            <constraint firstAttribute="width" constant="25" id="Wbz-is-taT"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterC" translatesAutoresizingMaskIntoConstraints="NO" id="Gxs-Bn-rMR">
+                                        <rect key="frame" x="207.00000000000003" y="0.0" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="cb0-Ga-0SD"/>
+                                            <constraint firstAttribute="height" constant="25" id="t2Q-6C-ZOH"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="rq0-Cn-apf" userLabel="scores&amp;ClockBacking">
+                                <rect key="frame" x="88" y="97" width="560" height="107"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboardBackScores" translatesAutoresizingMaskIntoConstraints="NO" id="Ny2-ot-ScS">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="107"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="107" id="h6A-51-RPm"/>
+                                            <constraint firstAttribute="width" constant="130" id="oem-sp-b4M"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboardBackClock" translatesAutoresizingMaskIntoConstraints="NO" id="FtU-l5-jtz">
+                                        <rect key="frame" x="145" y="0.0" width="270" height="107"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="270" id="Bmc-e1-Lw2"/>
+                                            <constraint firstAttribute="height" constant="107" id="Fcx-3a-PTV"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboardBackScores" translatesAutoresizingMaskIntoConstraints="NO" id="UsO-oX-dqS">
+                                        <rect key="frame" x="429.99999999999994" y="0.0" width="130.00000000000006" height="107"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="9su-Km-1tZ"/>
+                                            <constraint firstAttribute="height" constant="107" id="P3E-jd-kjT"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="INd-P1-fRq" userLabel="scores&amp;ClockNumbers">
+                                <rect key="frame" x="92" y="101" width="552" height="99"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="uUa-XL-t71" userLabel="scoreTeam1">
+                                        <rect key="frame" x="0.0" y="0.0" width="122" height="99"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboard0Red" translatesAutoresizingMaskIntoConstraints="NO" id="P5t-IO-XNs">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="99"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="99" id="dCy-Ug-o9V"/>
+                                                    <constraint firstAttribute="width" constant="60" id="wJQ-fJ-inq"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboard7Red" translatesAutoresizingMaskIntoConstraints="NO" id="UWA-WF-BsD">
+                                                <rect key="frame" x="61.999999999999986" y="0.0" width="60" height="99"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="99" id="R2q-cH-Aj0"/>
+                                                    <constraint firstAttribute="width" constant="60" id="aqm-Yp-IW6"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="HDc-iH-Rhf" userLabel="clock">
+                                        <rect key="frame" x="145" y="0.0" width="262" height="99"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="0VI-6Z-e5J" userLabel="scoreMinutes">
+                                                <rect key="frame" x="0.0" y="0.0" width="122" height="99"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboard0Yellow" translatesAutoresizingMaskIntoConstraints="NO" id="yWJ-6V-BdF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="99"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="60" id="Cvh-xT-RWY"/>
+                                                            <constraint firstAttribute="height" constant="99" id="nS1-7T-sd0"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboard8Yellow" translatesAutoresizingMaskIntoConstraints="NO" id="zgi-lT-6hZ">
+                                                        <rect key="frame" x="62.000000000000028" y="0.0" width="60" height="99"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="60" id="aaq-n7-e6A"/>
+                                                            <constraint firstAttribute="height" constant="99" id="pMG-6C-YZo"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="bUf-ih-lRI" userLabel="scoreSeconds">
+                                                <rect key="frame" x="140.00000000000003" y="0.0" width="121.99999999999997" height="99"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboard4Yellow" translatesAutoresizingMaskIntoConstraints="NO" id="fwE-Sp-0fz">
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="99"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="99" id="Ism-DC-mXL"/>
+                                                            <constraint firstAttribute="width" constant="60" id="NEr-mU-0fa"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboard3Yellow" translatesAutoresizingMaskIntoConstraints="NO" id="fsr-16-yC9">
+                                                        <rect key="frame" x="62" y="0.0" width="60" height="99"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="99" id="DbO-Jw-9fe"/>
+                                                            <constraint firstAttribute="width" constant="60" id="vfG-mg-gx9"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Jls-7M-NPm" userLabel="scoreTeam2">
+                                        <rect key="frame" x="429.99999999999994" y="0.0" width="122.00000000000006" height="99"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboard2Red" translatesAutoresizingMaskIntoConstraints="NO" id="j55-v7-2Bp">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="99"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="99" id="FcF-8n-CIn"/>
+                                                    <constraint firstAttribute="width" constant="60" id="hFh-Wm-uSf"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboard1Red" translatesAutoresizingMaskIntoConstraints="NO" id="T9v-sx-SN5">
+                                                <rect key="frame" x="62" y="0.0" width="60" height="99"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="6GW-Af-MID"/>
+                                                    <constraint firstAttribute="height" constant="99" id="m2X-Kg-eC0"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="237" translatesAutoresizingMaskIntoConstraints="NO" id="SxK-NR-FSK" userLabel="teamRankingPatches">
+                                <rect key="frame" x="229.66666666666663" y="18" width="277" height="20"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ranking4" translatesAutoresizingMaskIntoConstraints="NO" id="zDX-fG-hvG" userLabel="team1RankingPatch">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="BdT-7F-wUz"/>
+                                            <constraint firstAttribute="height" constant="20" id="YLP-Z2-3HX"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ranking7" translatesAutoresizingMaskIntoConstraints="NO" id="51Q-ay-ydo" userLabel="team2RankingPatch">
+                                        <rect key="frame" x="257" y="0.0" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="2As-ja-YgC"/>
+                                            <constraint firstAttribute="width" constant="20" id="slq-U8-8uz"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="qHL-YR-mpr" userLabel="logo&amp;HalfIndicator">
+                                <rect key="frame" x="349" y="20" width="38" height="73"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PFLLogo" translatesAutoresizingMaskIntoConstraints="NO" id="VB8-np-l9a">
+                                        <rect key="frame" x="0.0" y="0.0" width="38" height="52"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="38" id="3IB-6B-cQu"/>
+                                            <constraint firstAttribute="height" constant="52" id="SDW-jU-hmJ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboardHalf1" translatesAutoresizingMaskIntoConstraints="NO" id="rlC-w8-eXv" userLabel="scoreboardHalfIndicator">
+                                        <rect key="frame" x="0.0" y="61" width="38" height="12"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="01y-aZ-nfs"/>
+                                            <constraint firstAttribute="width" constant="38" id="eti-P6-EQO"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ix-kf-7aT" userLabel="buttonForward">
+                                <rect key="frame" x="36.000000000000007" y="160" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="3xe-EI-rAy"/>
+                                    <constraint firstAttribute="height" constant="44" id="lIR-q1-a5g"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="scoreboardButtonForward"/>
+                                <connections>
+                                    <action selector="forwardButtonTapped:" destination="q5C-iq-nZK" eventType="touchUpInside" id="hpZ-3G-kaP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3c-XI-qSj" userLabel="buttonPlayPause">
+                                <rect key="frame" x="656" y="160" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="GHJ-uV-4OK"/>
+                                    <constraint firstAttribute="width" constant="44" id="U6b-pI-RfB"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="scoreboardButtonPlay"/>
+                                <connections>
+                                    <action selector="playPauseButtonTapped:" destination="q5C-iq-nZK" eventType="touchUpInside" id="Ra3-zU-EdR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azr-RN-Nka" userLabel="buttonRewind">
+                                <rect key="frame" x="36.000000000000007" y="108" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Wk2-xY-YIV"/>
+                                    <constraint firstAttribute="width" constant="44" id="z2k-wh-icc"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="scoreboardButtonRewind"/>
+                                <connections>
+                                    <action selector="rewindButtonTapped:" destination="q5C-iq-nZK" eventType="touchUpInside" id="LbO-X4-i5R"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JhI-wa-gGX" userLabel="buttonexit">
+                                <rect key="frame" x="696" y="8" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="6DD-yu-y0W"/>
+                                    <constraint firstAttribute="width" constant="32" id="xAB-Ch-qQV"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="xWhite"/>
+                                <connections>
+                                    <action selector="exitButtonTapped:" destination="q5C-iq-nZK" eventType="touchUpInside" id="KkC-8k-VW9"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Ffc-ca-4PQ" userLabel="teamStatsLabels">
+                                <rect key="frame" x="34" y="212" width="669" height="32"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="pgE-bs-gPa" userLabel="labelsPassCompletion">
+                                        <rect key="frame" x="0.0" y="0.0" width="201" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PASS COMPLETION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MV-vy-p9X">
+                                                <rect key="frame" x="0.0" y="0.0" width="105" height="16"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="XDX-Id-fpv">
+                                                <rect key="frame" x="0.0" y="16" width="198" height="16"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxR-Is-0Gx">
+                                                        <rect key="frame" x="0.0" y="0.0" width="48" height="16"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="16" id="VR8-wj-Jzl"/>
+                                                            <constraint firstAttribute="width" constant="48" id="Vpq-JP-Af1"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thrown" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHS-Us-76F">
+                                                        <rect key="frame" x="50" y="0.0" width="48" height="16"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="48" id="Yq2-RQ-apq"/>
+                                                            <constraint firstAttribute="height" constant="16" id="c59-B3-UYD"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTG-3s-ppE">
+                                                        <rect key="frame" x="100" y="0.0" width="48" height="16"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="16" id="6FF-wQ-FVe"/>
+                                                            <constraint firstAttribute="width" constant="48" id="klK-tY-I6E"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Int T" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmL-be-NhN">
+                                                        <rect key="frame" x="150" y="0.0" width="48" height="16"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="16" id="IHE-Dd-FeV"/>
+                                                            <constraint firstAttribute="width" constant="48" id="skR-9o-c6i"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="OFa-RH-bp8" userLabel="labelsFieldGoals">
+                                        <rect key="frame" x="210" y="0.0" width="179" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIELD GOALS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGI-3i-geF">
+                                                <rect key="frame" x="0.0" y="0.0" width="72" height="16"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="XJ4-O4-rhm">
+                                                <rect key="frame" x="0.0" y="16" width="148" height="16"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Made" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0b-u8-bnO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="48" height="16"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="48" id="Xtx-Rn-w9H"/>
+                                                            <constraint firstAttribute="height" constant="16" id="ry0-Dw-Fyh"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kicked" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bk-Wh-Q8v">
+                                                        <rect key="frame" x="50" y="0.0" width="48" height="16"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="48" id="8Zs-E7-i25"/>
+                                                            <constraint firstAttribute="height" constant="16" id="q4l-tH-c1j"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvx-fZ-rVE">
+                                                        <rect key="frame" x="100" y="0.0" width="48" height="16"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="48" id="OjC-a7-24U"/>
+                                                            <constraint firstAttribute="height" constant="16" id="zSg-Ly-lnh"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="r7H-hE-i2Z" userLabel="labelsPATs">
+                                        <rect key="frame" x="398" y="0.0" width="114" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PATs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gqc-yG-RpL">
+                                                <rect key="frame" x="0.0" y="0.0" width="27" height="16"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="NHn-4c-Prx">
+                                                <rect key="frame" x="0.0" y="16" width="114" height="16"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Made" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfj-pF-Gmd">
+                                                        <rect key="frame" x="0.0" y="0.0" width="48" height="16"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="16" id="qJn-Du-KWW"/>
+                                                            <constraint firstAttribute="width" constant="48" id="qfz-3N-HJ2"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kicked" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAk-Rs-gbE">
+                                                        <rect key="frame" x="50" y="0.0" width="48" height="16"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="16" id="1Iw-Xh-w1Y"/>
+                                                            <constraint firstAttribute="width" constant="48" id="DH1-iL-sM0"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlp-vL-OBE">
+                                                        <rect key="frame" x="100" y="0.0" width="14" height="16"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="16" id="Kyo-ZD-auR"/>
+                                                            <constraint firstAttribute="width" constant="48" id="sZ8-Pn-C36"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="My9-NF-nnp" userLabel="labelsMisc">
+                                        <rect key="frame" x="521" y="0.0" width="148" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYr-e3-UqL">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="16" id="QdI-dc-MXY"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="UGl-pM-t84">
+                                                <rect key="frame" x="0.0" y="16" width="148" height="16"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TDs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4GH-AJ-BlF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="48" height="16"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="48" id="H1C-VN-MCU"/>
+                                                            <constraint firstAttribute="height" constant="16" id="cP7-9I-hTl"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2PTs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U64-Yh-1Rh">
+                                                        <rect key="frame" x="50" y="0.0" width="48" height="16"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="48" id="AsN-4L-iM5"/>
+                                                            <constraint firstAttribute="height" constant="16" id="COr-F6-Pvd"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Int C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xb6-L6-hk6">
+                                                        <rect key="frame" x="100" y="0.0" width="48" height="16"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="48" id="Vsu-cf-bLB"/>
+                                                            <constraint firstAttribute="height" constant="16" id="Wbq-RK-R7p"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="OFa-RH-bp8" firstAttribute="leading" secondItem="Ffc-ca-4PQ" secondAttribute="leading" constant="210" id="jA0-2q-dMP"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dxm-n7-uNR" userLabel="teamStats">
+                                <rect key="frame" x="35" y="248" width="663" height="148"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="0Or-fS-Bif" userLabel="team1Stats">
+                                        <rect key="frame" x="0.0" y="0.0" width="663" height="70"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mqe-Db-J9l" userLabel="team1GameStats">
+                                                <rect key="frame" x="0.0" y="0.0" width="663" height="34"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="yqx-fd-kgb" userLabel="team1GamePasses">
+                                                        <rect key="frame" x="0.0" y="0.0" width="198" height="34"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pL-kI-WGt">
+                                                                <rect key="frame" x="0.0" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="48" id="fcI-7K-fMV"/>
+                                                                    <constraint firstAttribute="height" constant="34" id="ki4-AC-Xvv"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="12">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team1AddCompletionMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="VNp-Kt-UGT"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4SU-QB-nFi">
+                                                                <rect key="frame" x="50" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="Ggm-vo-9Pp"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="LCh-3z-Bsg"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="54">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team1AddCompletionMissedButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="YGe-5i-mFr"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Yx-fP-RPK">
+                                                                <rect key="frame" x="100" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="48" id="iDt-Kj-iq2"/>
+                                                                    <constraint firstAttribute="height" constant="34" id="kCq-xT-BfN"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="22%">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nwx-NQ-GkN">
+                                                                <rect key="frame" x="150" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="HJy-lD-UPf"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="Rn9-gM-UgV"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="8">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team1AddInterceptionThrownButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="ayD-pV-c8q"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="dIe-N4-cXp" userLabel="team1GameFieldGoals">
+                                                        <rect key="frame" x="206" y="0.0" width="148" height="34"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZP2-1S-wL1">
+                                                                <rect key="frame" x="0.0" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="EI5-Eo-WR6"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="Tly-2O-y2a"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="3">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team1AddFieldGoalMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="RRB-lL-a2H"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2m-KH-faR">
+                                                                <rect key="frame" x="50" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="StandardBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="48" id="FZE-kH-Y97"/>
+                                                                    <constraint firstAttribute="height" constant="34" id="NIN-xp-xiC"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="5">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team1AddFieldGoalMissedButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="7JK-Tv-aIZ"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61z-RK-1vn">
+                                                                <rect key="frame" x="100" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="48" id="NNu-H1-Tcw"/>
+                                                                    <constraint firstAttribute="height" constant="34" id="YEa-5D-4ze"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="60%">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Vg6-tO-t3v" userLabel="team1GamePATs">
+                                                        <rect key="frame" x="362" y="0.0" width="145" height="34"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wpi-Dm-yFw">
+                                                                <rect key="frame" x="0.0" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="48" id="61i-kc-LZc"/>
+                                                                    <constraint firstAttribute="height" constant="34" id="Fo5-zj-N5I"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="1">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team1AddPATMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="Pg1-90-5bG"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7h-HC-7mp">
+                                                                <rect key="frame" x="50" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="WTS-la-7zZ"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="ink-3i-ipV"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="3">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team1AddPATMIssedButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="fH8-qd-NNW"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGE-JG-5Ub">
+                                                                <rect key="frame" x="100" y="0.0" width="45" height="34"/>
+                                                                <color key="backgroundColor" name="LightBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="48" id="Bbb-Ef-YdD"/>
+                                                                    <constraint firstAttribute="height" constant="34" id="tav-e3-1EQ"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="33%">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="8Bt-L0-SeU" userLabel="team1GameMisc">
+                                                        <rect key="frame" x="515" y="0.0" width="148" height="34"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xoE-Ji-uon">
+                                                                <rect key="frame" x="0.0" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="D4k-f0-srh"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="ZX5-tF-foW"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="3">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team1AddTDMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="RSp-vP-FeI"/>
+                                                                    <action selector="team2AddCompletionMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="vkw-3R-YSV"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4b-mp-7vr">
+                                                                <rect key="frame" x="50" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="W66-fL-ZtM"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="ZXo-q0-ZOC"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="0">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team1Add2PTMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="1rO-2e-vay"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHY-e6-KuC">
+                                                                <rect key="frame" x="100" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="48" id="9MY-sk-g9M"/>
+                                                                    <constraint firstAttribute="height" constant="34" id="nGq-SF-BQp"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="5">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="teeam1AddInterceptionCaughtButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="Xgs-Zd-OhZ"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gzy-ng-MbM" userLabel="team1AvgStats">
+                                                <rect key="frame" x="0.0" y="36" width="663" height="34"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="1kM-hh-3qj" userLabel="team1AvgPasses">
+                                                        <rect key="frame" x="0.0" y="0.0" width="198" height="34"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5u3-th-X0m">
+                                                                <rect key="frame" x="0.0" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="StandardBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="48" id="Z8C-kt-DhM"/>
+                                                                    <constraint firstAttribute="height" constant="34" id="jPT-zn-P19"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="11.0">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team1SubtractCompletionMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="t5n-ae-Yvg"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4J-UM-MXy">
+                                                                <rect key="frame" x="50" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="StandardRed"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="016-VG-lN6"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="Pne-NR-zh6"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="54.2">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team1SubtractCompletionMissedButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="LIx-Uu-E7q"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzp-UK-t4E">
+                                                                <rect key="frame" x="100" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="StandardBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="48" id="Flw-Mt-fXm"/>
+                                                                    <constraint firstAttribute="height" constant="34" id="qNF-p1-gel"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="20%">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYj-jj-ivA">
+                                                                <rect key="frame" x="150" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="2CZ-cL-guq"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="Bfn-xF-uzK"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="5.2">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team1SubtractInterceptionThrownButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="VJr-Db-XMG"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="HsX-zI-Ioh" userLabel="team1AvgFieldGoals">
+                                                        <rect key="frame" x="206" y="0.0" width="148" height="34"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kd7-VL-RVe">
+                                                                <rect key="frame" x="0.0" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="48" id="WEE-hK-N1S"/>
+                                                                    <constraint firstAttribute="height" constant="34" id="wCq-W6-lk8"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="3.8">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team1SubtractFieldGoalMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="g9h-S3-bif"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ay9-Gx-vJM">
+                                                                <rect key="frame" x="50" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="64P-M9-goS"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="Txn-CW-fNJ"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="5.6">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team1SubractFieldGoalMissedButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="hoq-Ls-USz"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LvP-H7-wi0">
+                                                                <rect key="frame" x="100" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="StandardBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="J7P-Tc-rcO"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="pZG-7D-6ox"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="68%">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="LCU-LJ-Unn" userLabel="team1AvgPATs">
+                                                        <rect key="frame" x="362" y="0.0" width="145" height="34"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4W-PA-BUU">
+                                                                <rect key="frame" x="0.0" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="ZgR-50-bug"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="m8h-4j-Vix"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="0.6">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team1SubtractPATMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="8mS-MK-0Be"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGt-mp-smE">
+                                                                <rect key="frame" x="50" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="48" id="kMB-tc-aH8"/>
+                                                                    <constraint firstAttribute="height" constant="34" id="nh9-IY-bVN"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="0.8">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team1SubractPATMIssedButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="w9h-4Q-Ubq"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9B-qV-0uA">
+                                                                <rect key="frame" x="100" y="0.0" width="45" height="34"/>
+                                                                <color key="backgroundColor" name="LightBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="48" id="O9x-Hc-6oe"/>
+                                                                    <constraint firstAttribute="height" constant="34" id="wpT-n3-rgM"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="75%">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="TCM-BH-8KZ" userLabel="team1AvgMisc">
+                                                        <rect key="frame" x="515" y="0.0" width="148" height="34"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9q3-fZ-FXC">
+                                                                <rect key="frame" x="0.0" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="M03-PU-KlO"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="pdk-hv-mkT"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="0.8">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team1SubtractMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="zAK-hF-VS3"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08F-wb-Kh3">
+                                                                <rect key="frame" x="50" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="6rQ-VS-N4s"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="nWD-h2-Nui"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="0.0">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team1Subtract2PTMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="0y3-De-Q7s"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEv-eM-IQd">
+                                                                <rect key="frame" x="100" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" red="0.78307044506072998" green="0.011975801549851894" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="toV-a5-UgH"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="w1R-qF-oEb"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="6.0">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="teeam1SubtractInterceptionCaughtButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="jLs-Jd-Bv9"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="YG2-Xa-76T" userLabel="team2Stats">
+                                        <rect key="frame" x="0.0" y="78" width="663" height="70"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tWw-RR-kYV" userLabel="team2GameStats">
+                                                <rect key="frame" x="0.0" y="0.0" width="663" height="34"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="pfH-GG-J5F" userLabel="team2GamePasses">
+                                                        <rect key="frame" x="0.0" y="0.0" width="198" height="34"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTx-bV-apH">
+                                                                <rect key="frame" x="0.0" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightRed"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="48" id="GoR-MD-y4t"/>
+                                                                    <constraint firstAttribute="height" constant="34" id="bAI-DZ-9Lu"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="12">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team2AddCompletionMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="JdO-LR-5fR"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbj-BI-IVe">
+                                                                <rect key="frame" x="50" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="StandardRed"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="5LE-Gm-b8e"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="Jn6-g7-ife"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="63">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team2AddCompletionMissedButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="Jz6-wG-lgq"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKV-FR-V4b">
+                                                                <rect key="frame" x="100" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightRed"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="AZ0-Dn-n76"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="TJw-wO-Yra"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="19%">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YlL-fR-Oh2">
+                                                                <rect key="frame" x="150" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightRed"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="A3v-jC-bzj"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="tZp-Wt-dgY"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="5">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team2AddInterceptionThrownButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="ljL-5p-Q95"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="fuC-B2-ALS" userLabel="team2GameFieldGoals">
+                                                        <rect key="frame" x="206" y="0.0" width="148" height="34"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eS-mk-0NX">
+                                                                <rect key="frame" x="0.0" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightRed"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="bqT-JA-ROS"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="g3C-9h-dca"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="2">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team2AddFieldGoalMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="ZCt-xP-HcB"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwC-p7-UaP">
+                                                                <rect key="frame" x="50" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightRed"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="5Ez-ou-7qz"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="qor-we-C3V"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="4">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team2AddFieldGoalMissedButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="l9l-da-haD"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdh-xf-0sz">
+                                                                <rect key="frame" x="100" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightRed"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="48" id="OpQ-HV-4gC"/>
+                                                                    <constraint firstAttribute="height" constant="34" id="yw0-bs-9oy"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="50%">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="CND-LI-oJ8" userLabel="team2GamePATs">
+                                                        <rect key="frame" x="362" y="0.0" width="145" height="34"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3r-k1-U98">
+                                                                <rect key="frame" x="0.0" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightRed"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="Ls1-pA-qmC"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="xwy-AW-HBu"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="2">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team2AddPATMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="ruz-5f-OoW"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ww-xG-on3">
+                                                                <rect key="frame" x="50" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightRed"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="48" id="C0w-Bo-Pn3"/>
+                                                                    <constraint firstAttribute="height" constant="34" id="Mbc-et-t7w"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="2">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team2AddPATMIssedButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="Oyo-eT-qdJ"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83Y-If-aA8">
+                                                                <rect key="frame" x="100" y="0.0" width="45" height="34"/>
+                                                                <color key="backgroundColor" name="LightRed"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="48" id="MKS-gi-Ha1"/>
+                                                                    <constraint firstAttribute="height" constant="34" id="Ucj-ym-yIc"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="100%">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="nqr-rx-1Hz" userLabel="team2GameMisc">
+                                                        <rect key="frame" x="515" y="0.0" width="148" height="34"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ol0-SW-FqO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightRed"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="48" id="0eo-uw-b3U"/>
+                                                                    <constraint firstAttribute="height" constant="34" id="RZC-aX-i0O"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="2">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team2AddTDMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="GyU-Vq-fPk"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTJ-NR-80E">
+                                                                <rect key="frame" x="50" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightRed"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="48" id="3s4-mq-amc"/>
+                                                                    <constraint firstAttribute="height" constant="34" id="Xx8-gk-3CS"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="0">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team2Add2PTMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="3yi-XZ-5op"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGf-ck-445">
+                                                                <rect key="frame" x="100" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightRed"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="FiB-Fh-JHq"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="Ga5-Ae-d3O"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="8">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="teeam2AddInterceptionCaughtButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="ox6-ie-C5E"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kpb-VY-qaM" userLabel="team2AvgStats">
+                                                <rect key="frame" x="0.0" y="36" width="663" height="34"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="b8N-7g-OQJ" userLabel="team2AvgPasses">
+                                                        <rect key="frame" x="0.0" y="0.0" width="198" height="34"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzY-Jl-jP8">
+                                                                <rect key="frame" x="0.0" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightRed"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="RIX-Oq-qoV"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="oTe-bu-6l2"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="9.0">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team2SubtractCompletionMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="iMv-cQ-k8T"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwp-1I-BUH">
+                                                                <rect key="frame" x="50" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="StandardBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="48" id="5Ob-GU-Lma"/>
+                                                                    <constraint firstAttribute="height" constant="34" id="7xl-H7-Zn0"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="55.0">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team2SubtractCompletionMissedButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="31N-Zw-rCa"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVe-fV-13c">
+                                                                <rect key="frame" x="100" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightRed"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="jcu-YA-kkc"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="kO5-le-FXU"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="16%">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aS1-hz-3GY">
+                                                                <rect key="frame" x="150" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightRed"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="48" id="3fH-ZV-JeA"/>
+                                                                    <constraint firstAttribute="height" constant="34" id="Let-xj-1nv"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="4.4">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team2SubtractInterceptionThrownButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="jhi-jt-l22"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="xO2-s5-czC" userLabel="team2AvgFieldGoals">
+                                                        <rect key="frame" x="206" y="0.0" width="148" height="34"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfW-fq-qCE">
+                                                                <rect key="frame" x="0.0" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightRed"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="3O2-bZ-cov"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="SHo-YH-fvd"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="2.4">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team2SubtractFieldGoalMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="wqW-2C-cOd"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bo0-F7-JfI">
+                                                                <rect key="frame" x="50" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightRed"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="7Vo-qS-nIx"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="oOY-kb-0tr"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="4.4">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team2SubractFieldGoalMissedButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="fNA-q3-ayU"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wdj-aK-Uv5">
+                                                                <rect key="frame" x="100" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightRed"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="48" id="7cl-1n-gfG"/>
+                                                                    <constraint firstAttribute="height" constant="34" id="WYy-Lm-OHo"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="55%">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="zem-gS-uzj" userLabel="team2AvgPATs">
+                                                        <rect key="frame" x="362" y="0.0" width="145" height="34"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGz-bm-AIs">
+                                                                <rect key="frame" x="0.0" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightRed"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="48" id="D6C-KN-cXg"/>
+                                                                    <constraint firstAttribute="height" constant="34" id="TiV-12-oG4"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="1.0">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team2SubtractPATMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="z9J-4v-kZP"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAb-CG-QBn">
+                                                                <rect key="frame" x="50" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightRed"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="48" id="FZ7-nf-EdJ"/>
+                                                                    <constraint firstAttribute="height" constant="34" id="Od2-Ok-cPm"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="1.2">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team2SubractPATMIssedButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="5db-WI-pBm"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFI-ca-HJg">
+                                                                <rect key="frame" x="100" y="0.0" width="45" height="34"/>
+                                                                <color key="backgroundColor" name="StandardRed"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="48" id="3kO-fM-rm2"/>
+                                                                    <constraint firstAttribute="height" constant="34" id="3zU-ra-Qd5"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="83%">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="K4h-xv-ZQX" userLabel="team2AvgMisc">
+                                                        <rect key="frame" x="515" y="0.0" width="148" height="34"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4c-c7-FAR">
+                                                                <rect key="frame" x="0.0" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightRed"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="bz3-XT-5G8"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="qyR-5m-BqR"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="1.2">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team2SubtractMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="hvV-kO-IpJ"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6K-mK-0fq">
+                                                                <rect key="frame" x="50" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightRed"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="48" id="BQk-qC-bBC"/>
+                                                                    <constraint firstAttribute="height" constant="34" id="waB-iF-gar"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="0.0">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="team2Subtract2PTMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="9By-E4-OP7"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NF2-XJ-AiY">
+                                                                <rect key="frame" x="100" y="0.0" width="48" height="34"/>
+                                                                <color key="backgroundColor" name="LightRed"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="NNd-tG-5Un"/>
+                                                                    <constraint firstAttribute="width" constant="48" id="vBG-3P-EXN"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <state key="normal" title="15.4">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="teeam2SubtractInterceptionCaughtButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="hPA-3e-nhW"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="4v6-Qy-FrZ">
+                                <rect key="frame" x="20" y="273" width="10" height="98"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboardButtonsUpDownArrows" translatesAutoresizingMaskIntoConstraints="NO" id="59U-6F-fxr">
+                                        <rect key="frame" x="0.0" y="0.0" width="10" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="10" id="5Bv-w3-uoR"/>
+                                            <constraint firstAttribute="height" constant="20" id="tXK-MW-CTU"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboardButtonsUpDownArrows" translatesAutoresizingMaskIntoConstraints="NO" id="jfJ-y3-g5f">
+                                        <rect key="frame" x="0.0" y="78" width="10" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="10" id="QVz-zv-Yk4"/>
+                                            <constraint firstAttribute="height" constant="20" id="V50-W8-Ezg"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="4wf-ra-PQQ">
+                                <rect key="frame" x="706" y="273" width="10" height="98"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboardButtonsUpDownArrows" translatesAutoresizingMaskIntoConstraints="NO" id="70G-Ix-wjY">
+                                        <rect key="frame" x="0.0" y="0.0" width="10" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="bCj-eA-dc0"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboardButtonsUpDownArrows" translatesAutoresizingMaskIntoConstraints="NO" id="7kW-jt-jvw">
+                                        <rect key="frame" x="0.0" y="78" width="10" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="4or-VC-P0L"/>
+                                            <constraint firstAttribute="width" constant="10" id="dRn-l6-H8j"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="R3c-XI-qSj" firstAttribute="top" secondItem="7ix-kf-7aT" secondAttribute="top" id="0Qs-KC-s9f"/>
+                            <constraint firstItem="SxK-NR-FSK" firstAttribute="centerX" secondItem="ecF-zn-Cz1" secondAttribute="centerX" id="0ru-Bp-Hxh"/>
+                            <constraint firstItem="ymc-4Y-fyi" firstAttribute="leading" secondItem="TpV-H4-sEo" secondAttribute="leading" id="2Cu-pt-xH0"/>
+                            <constraint firstItem="91e-hl-veQ" firstAttribute="centerX" secondItem="ecF-zn-Cz1" secondAttribute="centerX" id="2Cw-3v-xkY"/>
+                            <constraint firstItem="Dxm-n7-uNR" firstAttribute="leading" secondItem="TpV-H4-sEo" secondAttribute="leading" constant="35" id="2ou-sK-EiU"/>
+                            <constraint firstItem="Ffc-ca-4PQ" firstAttribute="leading" secondItem="TpV-H4-sEo" secondAttribute="leading" constant="34" id="3b8-SO-cv5"/>
+                            <constraint firstItem="SxK-NR-FSK" firstAttribute="top" secondItem="TpV-H4-sEo" secondAttribute="top" constant="18" id="5Yi-mR-5OE"/>
+                            <constraint firstItem="rq0-Cn-apf" firstAttribute="leading" secondItem="7ix-kf-7aT" secondAttribute="trailing" constant="8" id="9Ai-yq-4eW"/>
+                            <constraint firstItem="91e-hl-veQ" firstAttribute="top" secondItem="TpV-H4-sEo" secondAttribute="top" constant="30" id="9QA-Re-qIw"/>
+                            <constraint firstItem="qHL-YR-mpr" firstAttribute="centerX" secondItem="ecF-zn-Cz1" secondAttribute="centerX" id="9qm-dh-5q6"/>
+                            <constraint firstItem="Dxm-n7-uNR" firstAttribute="top" secondItem="Ffc-ca-4PQ" secondAttribute="bottom" constant="4" id="9wj-MJ-O47"/>
+                            <constraint firstItem="TpV-H4-sEo" firstAttribute="bottom" secondItem="4v6-Qy-FrZ" secondAttribute="bottom" constant="43" id="D1a-fj-cAx"/>
+                            <constraint firstItem="rq0-Cn-apf" firstAttribute="top" secondItem="qHL-YR-mpr" secondAttribute="bottom" constant="4" id="FY6-Ua-1xU"/>
+                            <constraint firstItem="R3c-XI-qSj" firstAttribute="leading" secondItem="rq0-Cn-apf" secondAttribute="trailing" constant="8" id="GPV-dW-MzL"/>
+                            <constraint firstItem="TpV-H4-sEo" firstAttribute="bottom" secondItem="ymc-4Y-fyi" secondAttribute="bottom" id="Gg0-SX-nhG"/>
+                            <constraint firstItem="R3c-XI-qSj" firstAttribute="firstBaseline" secondItem="7ix-kf-7aT" secondAttribute="firstBaseline" id="Hro-hA-LO6"/>
+                            <constraint firstItem="Ffc-ca-4PQ" firstAttribute="top" secondItem="R3c-XI-qSj" secondAttribute="bottom" constant="8" symbolic="YES" id="Obg-mp-eRz"/>
+                            <constraint firstItem="rq0-Cn-apf" firstAttribute="centerX" secondItem="ecF-zn-Cz1" secondAttribute="centerX" id="UrH-Kp-Gw4"/>
+                            <constraint firstItem="TpV-H4-sEo" firstAttribute="trailing" secondItem="4wf-ra-PQQ" secondAttribute="trailing" constant="20" id="VsE-sV-RAC"/>
+                            <constraint firstItem="4v6-Qy-FrZ" firstAttribute="leading" secondItem="TpV-H4-sEo" secondAttribute="leading" constant="20" id="XvU-10-zOT"/>
+                            <constraint firstItem="INd-P1-fRq" firstAttribute="top" secondItem="qHL-YR-mpr" secondAttribute="bottom" constant="8" symbolic="YES" id="Xym-zI-mfw"/>
+                            <constraint firstItem="TpV-H4-sEo" firstAttribute="trailing" secondItem="JhI-wa-gGX" secondAttribute="trailing" constant="8" id="f6y-UA-g6u"/>
+                            <constraint firstItem="TpV-H4-sEo" firstAttribute="bottom" secondItem="4wf-ra-PQQ" secondAttribute="bottom" constant="43" id="fDy-Al-Ns7"/>
+                            <constraint firstItem="Q7x-6C-Q2Y" firstAttribute="centerX" secondItem="ecF-zn-Cz1" secondAttribute="centerX" id="h77-UV-KoN"/>
+                            <constraint firstItem="rq0-Cn-apf" firstAttribute="leading" secondItem="azr-RN-Nka" secondAttribute="trailing" constant="8" id="hc3-Yv-c26"/>
+                            <constraint firstItem="JhI-wa-gGX" firstAttribute="top" secondItem="TpV-H4-sEo" secondAttribute="top" constant="8" id="k6J-wU-neX"/>
+                            <constraint firstItem="R3c-XI-qSj" firstAttribute="leading" secondItem="rq0-Cn-apf" secondAttribute="trailing" constant="8" id="l0S-CX-F70"/>
+                            <constraint firstItem="TpV-H4-sEo" firstAttribute="trailing" secondItem="ymc-4Y-fyi" secondAttribute="trailing" id="mnz-jB-RT6"/>
+                            <constraint firstItem="7ix-kf-7aT" firstAttribute="top" secondItem="azr-RN-Nka" secondAttribute="bottom" constant="8" id="oQe-9K-Rax"/>
+                            <constraint firstItem="Q7x-6C-Q2Y" firstAttribute="top" secondItem="TpV-H4-sEo" secondAttribute="top" constant="20" id="ogP-2i-F2C"/>
+                            <constraint firstItem="Ffc-ca-4PQ" firstAttribute="top" secondItem="rq0-Cn-apf" secondAttribute="bottom" constant="8" id="pUW-7G-lkg"/>
+                            <constraint firstItem="TpV-H4-sEo" firstAttribute="bottom" secondItem="Dxm-n7-uNR" secondAttribute="bottom" constant="18" id="qwf-7e-kVt"/>
+                            <constraint firstItem="R3c-XI-qSj" firstAttribute="baseline" secondItem="7ix-kf-7aT" secondAttribute="baseline" id="snc-He-MQJ"/>
+                            <constraint firstItem="ymc-4Y-fyi" firstAttribute="top" secondItem="TpV-H4-sEo" secondAttribute="top" id="sxU-3A-C9l"/>
+                            <constraint firstItem="INd-P1-fRq" firstAttribute="centerX" secondItem="ecF-zn-Cz1" secondAttribute="centerX" id="tec-fl-5gh"/>
+                            <constraint firstItem="4wf-ra-PQQ" firstAttribute="leading" secondItem="Dxm-n7-uNR" secondAttribute="trailing" constant="8" id="tzE-UP-3Iv"/>
+                            <constraint firstItem="TpV-H4-sEo" firstAttribute="trailing" secondItem="Ffc-ca-4PQ" secondAttribute="trailing" constant="33" id="vj5-g2-rCU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TpV-H4-sEo"/>
+                    </view>
+                    <connections>
+                        <outlet property="clockFirstDigitImageView" destination="yWJ-6V-BdF" id="eaa-ex-j5Y"/>
+                        <outlet property="clockFourthDigitImageView" destination="fsr-16-yC9" id="Duc-Is-AS0"/>
+                        <outlet property="clockSecondDigitImageView" destination="zgi-lT-6hZ" id="Zpm-TC-xLa"/>
+                        <outlet property="clockThirdDigitImageView" destination="fwE-Sp-0fz" id="eqt-RB-guI"/>
+                        <outlet property="halfIndicatorImageView" destination="rlC-w8-eXv" id="xKi-ec-xV0"/>
+                        <outlet property="team1Avg2PTsButton" destination="08F-wb-Kh3" id="5bz-Sl-zpf"/>
+                        <outlet property="team1AvgCompletionPercentButton" destination="yzp-UK-t4E" id="5IK-e3-M9b"/>
+                        <outlet property="team1AvgCoompletionsButton" destination="5u3-th-X0m" id="0gL-pN-oR9"/>
+                        <outlet property="team1AvgFieldGoalPercentButton" destination="LvP-H7-wi0" id="hNj-oP-jTP"/>
+                        <outlet property="team1AvgFieldGoalsAttemptedButton" destination="ay9-Gx-vJM" id="ZKD-i5-B58"/>
+                        <outlet property="team1AvgFieldGoalsButton" destination="Kd7-VL-RVe" id="5gh-JY-gJy"/>
+                        <outlet property="team1AvgIntCaughtButton" destination="DEv-eM-IQd" id="dUi-6m-vdm"/>
+                        <outlet property="team1AvgIntThrownButton" destination="YYj-jj-ivA" id="7rN-u2-06p"/>
+                        <outlet property="team1AvgPATPercentButton" destination="x9B-qV-0uA" id="lVw-iH-lZL"/>
+                        <outlet property="team1AvgPATsAttemptedButton" destination="DGt-mp-smE" id="k7b-Y6-ga0"/>
+                        <outlet property="team1AvgPATsMadeButton" destination="O4W-PA-BUU" id="hE8-bp-iaJ"/>
+                        <outlet property="team1AvgPassesAttemptedButton" destination="x4J-UM-MXy" id="Kuw-xJ-SDy"/>
+                        <outlet property="team1AvgTDsButton" destination="9q3-fZ-FXC" id="gXc-h9-yvx"/>
+                        <outlet property="team1CoachLabel" destination="ZHD-wA-uLV" id="Pdf-sy-fJe"/>
+                        <outlet property="team1Game2PTsButton" destination="P4b-mp-7vr" id="Pim-Fb-0Uw"/>
+                        <outlet property="team1GameCompletionPercentButton" destination="5Yx-fP-RPK" id="i88-lP-OD7"/>
+                        <outlet property="team1GameCompletionsButton" destination="9pL-kI-WGt" id="fNP-8c-DJC"/>
+                        <outlet property="team1GameFieldGoalPercentButton" destination="61z-RK-1vn" id="DPd-E5-WCK"/>
+                        <outlet property="team1GameFieldGoalsAttemptedButton" destination="X2m-KH-faR" id="gBI-8i-8Ih"/>
+                        <outlet property="team1GameFieldGoalsButton" destination="ZP2-1S-wL1" id="1YQ-IM-aLu"/>
+                        <outlet property="team1GameIntCaughtButton" destination="SHY-e6-KuC" id="cYU-h2-5Gs"/>
+                        <outlet property="team1GameIntThrownButton" destination="Nwx-NQ-GkN" id="H5K-fk-Pzb"/>
+                        <outlet property="team1GamePATPercentButton" destination="VGE-JG-5Ub" id="IGD-j2-fUa"/>
+                        <outlet property="team1GamePATsAttemptedButton" destination="W7h-HC-7mp" id="kJ1-ue-hiJ"/>
+                        <outlet property="team1GamePATsMadeButton" destination="Wpi-Dm-yFw" id="PUH-Kb-Ws8"/>
+                        <outlet property="team1GamePassesAttemptedButton" destination="4SU-QB-nFi" id="LBb-h9-7b8"/>
+                        <outlet property="team1GameTDsButton" destination="xoE-Ji-uon" id="t0Y-12-6ax"/>
+                        <outlet property="team1HelmetButton" destination="8nW-Z4-ptF" id="zsD-Av-M2y"/>
+                        <outlet property="team1HelmetLetterImageView" destination="bwS-xE-fa6" id="MFL-k9-pbU"/>
+                        <outlet property="team1NameLabel" destination="X93-hz-2zO" id="EWA-6s-QU0"/>
+                        <outlet property="team1RankImageView" destination="zDX-fG-hvG" id="qyX-gi-apo"/>
+                        <outlet property="team1RecordLabel" destination="CiW-u6-B4u" id="N8b-ta-sAp"/>
+                        <outlet property="team1ScoreFirstDigitImageView" destination="P5t-IO-XNs" id="wWJ-6Q-bqQ"/>
+                        <outlet property="team1ScoreSecondDigitImageView" destination="UWA-WF-BsD" id="tq8-bl-Jd8"/>
+                        <outlet property="team2Avg2PTsButton" destination="Q6K-mK-0fq" id="Fgy-a5-Pqu"/>
+                        <outlet property="team2AvgCompletionPercentButton" destination="uVe-fV-13c" id="jz3-Zd-Hdo"/>
+                        <outlet property="team2AvgCompletionsButton" destination="bzY-Jl-jP8" id="D64-UT-EOS"/>
+                        <outlet property="team2AvgFieldGoalPercentButton" destination="Wdj-aK-Uv5" id="GyT-xd-5aY"/>
+                        <outlet property="team2AvgFieldGoalsAttemptedButton" destination="bo0-F7-JfI" id="Aki-5C-iue"/>
+                        <outlet property="team2AvgFieldGoalsButton" destination="vfW-fq-qCE" id="awv-xO-gEt"/>
+                        <outlet property="team2AvgIntCaughtButton" destination="NF2-XJ-AiY" id="jme-w7-Ka7"/>
+                        <outlet property="team2AvgIntThrownButton" destination="aS1-hz-3GY" id="idy-4I-aWq"/>
+                        <outlet property="team2AvgPATPercentButton" destination="FFI-ca-HJg" id="L4r-NY-75S"/>
+                        <outlet property="team2AvgPATsAttemptedButton" destination="WAb-CG-QBn" id="vUj-73-6RK"/>
+                        <outlet property="team2AvgPATsMadeButton" destination="RGz-bm-AIs" id="r5b-Y3-Nnd"/>
+                        <outlet property="team2AvgPassesAttemptedButton" destination="iwp-1I-BUH" id="21R-ol-MSY"/>
+                        <outlet property="team2AvgTDsButton" destination="a4c-c7-FAR" id="Qit-UI-kRL"/>
+                        <outlet property="team2CoachLabel" destination="Vbh-HA-CSP" id="lqa-zW-GQ8"/>
+                        <outlet property="team2Game2PTsButton" destination="ZTJ-NR-80E" id="scj-80-FvB"/>
+                        <outlet property="team2GameCompletionPercentButton" destination="jKV-FR-V4b" id="nxl-vh-8vs"/>
+                        <outlet property="team2GameCompletionsButton" destination="sTx-bV-apH" id="YW7-gB-3d6"/>
+                        <outlet property="team2GameFieldGoalPercentButton" destination="mdh-xf-0sz" id="ymg-Wf-283"/>
+                        <outlet property="team2GameFieldGoalsAttemptedButton" destination="pwC-p7-UaP" id="S8i-jO-VKZ"/>
+                        <outlet property="team2GameFieldGoalsButton" destination="1eS-mk-0NX" id="gKm-of-1co"/>
+                        <outlet property="team2GameIntCaughtButton" destination="LGf-ck-445" id="7ja-bc-oH2"/>
+                        <outlet property="team2GameIntThrownButton" destination="YlL-fR-Oh2" id="Pa4-Lb-0zv"/>
+                        <outlet property="team2GamePATPercentButton" destination="83Y-If-aA8" id="vi5-1X-E0q"/>
+                        <outlet property="team2GamePATsAttemptedButton" destination="1ww-xG-on3" id="UjT-6w-sGc"/>
+                        <outlet property="team2GamePATsMadeButton" destination="F3r-k1-U98" id="RQ0-HH-CZA"/>
+                        <outlet property="team2GamePassesAttemptedButton" destination="Pbj-BI-IVe" id="n1R-aL-PXe"/>
+                        <outlet property="team2GameTDsButton" destination="Ol0-SW-FqO" id="3ig-uD-BRb"/>
+                        <outlet property="team2HelmetButton" destination="yXZ-wx-0AX" id="MNV-c1-b8X"/>
+                        <outlet property="team2HelmetLetterImageView" destination="Gxs-Bn-rMR" id="6Sj-zz-ArP"/>
+                        <outlet property="team2NameLabel" destination="OFi-7C-qDK" id="Ce3-cH-8a9"/>
+                        <outlet property="team2RankImageView" destination="51Q-ay-ydo" id="Rbb-Uc-hNX"/>
+                        <outlet property="team2RecordLabel" destination="jDt-ZS-kcp" id="E41-MA-wnQ"/>
+                        <outlet property="team2ScoreFirstDigitImageView" destination="j55-v7-2Bp" id="fLL-fH-Leg"/>
+                        <outlet property="team2ScoreSecondDigitImageView" destination="T9v-sx-SN5" id="Vto-dK-0dw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PzY-JM-7Op" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2018.4782608695655" y="789.85507246376812"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="PFLLogo" width="724" height="978"/>
+        <image name="grayGradientBackground" width="2209" height="1243"/>
+        <image name="helmetBlueLeft" width="357" height="329.5"/>
+        <image name="helmetRedRight" width="359.5" height="331.5"/>
+        <image name="letterC" width="100" height="100"/>
+        <image name="letterT" width="100" height="100"/>
+        <image name="ranking4" width="63" height="63"/>
+        <image name="ranking7" width="63" height="63"/>
+        <image name="scoreboard0Red" width="187" height="309.5"/>
+        <image name="scoreboard0Yellow" width="187" height="309.5"/>
+        <image name="scoreboard1Red" width="187" height="309.5"/>
+        <image name="scoreboard2Red" width="187" height="309.5"/>
+        <image name="scoreboard3Yellow" width="187" height="309.5"/>
+        <image name="scoreboard4Yellow" width="187" height="309.5"/>
+        <image name="scoreboard7Red" width="187" height="309.5"/>
+        <image name="scoreboard8Yellow" width="187" height="309.5"/>
+        <image name="scoreboardBackClock" width="807" height="316"/>
+        <image name="scoreboardBackScores" width="387" height="316"/>
+        <image name="scoreboardButtonForward" width="131" height="122"/>
+        <image name="scoreboardButtonPlay" width="128" height="119"/>
+        <image name="scoreboardButtonRewind" width="122" height="114"/>
+        <image name="scoreboardButtonsUpDownArrows" width="26" height="64.5"/>
+        <image name="scoreboardHalf1" width="137.5" height="37"/>
+        <image name="xWhite" width="200" height="200"/>
+        <namedColor name="LightBlue">
+            <color red="0.75800001621246338" green="0.84200000762939453" blue="0.92599999904632568" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="LightRed">
+            <color red="1" green="0.64800000190734863" blue="0.67299997806549072" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="StandardBlue">
+            <color red="0.27099999785423279" green="0.43799999356269836" blue="0.76899999380111694" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="StandardRed">
+            <color red="0.78299999237060547" green="0.012000000104308128" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

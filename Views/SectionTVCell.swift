@@ -13,5 +13,6 @@ class SectionTVCell: UITableViewCell {
     // MARK: - OUTLETS
     
     @IBOutlet weak var sectionTitleLabel: UILabel!
+
     
 }

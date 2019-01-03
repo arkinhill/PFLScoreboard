@@ -36,7 +36,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0dV-mG-ODA">
-                                <rect key="frame" x="32" y="156" width="672" height="226"/>
+                                <rect key="frame" x="32" y="178.33333333333337" width="672" height="203.66666666666663"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="yST-8d-A0o">
                                     <size key="itemSize" width="162" height="114"/>
@@ -164,6 +164,7 @@
                                             <outlet property="team2NameLabel" destination="AaW-PH-jXb" id="wC7-Nl-2fv"/>
                                             <outlet property="team2ScoreLabel" destination="Al3-Y8-hWv" id="LHa-qx-cFx"/>
                                             <outlet property="vsLabel" destination="g7W-aJ-XuI" id="qM3-mL-PV8"/>
+                                            <segue destination="tEO-el-Cbt" kind="show" identifier="toScoreboard" id="EQ8-zu-pJh"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ObM-pB-J3b">
@@ -272,9 +273,9 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cA-Rf-Wd4">
-                                <rect key="frame" x="32" y="102" width="672" height="38"/>
+                                <rect key="frame" x="32" y="101.99999999999999" width="672" height="60.333333333333329"/>
                                 <string key="text">Each game in the schedule is represented by a tile below. Completed games are highlighted in yellow. Tap on a completed game to see the game recap, and tap on an unplayed game to play!</string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -307,6 +308,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JyQ-oD-hhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1372.0108695652175" y="798.55072463768124"/>
+        </scene>
+        <!--Scoreboard-->
+        <scene sceneID="SQk-Kh-jb0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Scoreboard" id="tEO-el-Cbt" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="83k-NW-afz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1802" y="799"/>
         </scene>
     </scenes>
     <resources>

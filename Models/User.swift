@@ -16,7 +16,9 @@ class User {
     
     // Username
     let username: String
-    var leagueInvitesReferences: [CKRecord.Reference]
+//    var leagueInvitesReferences: [CKRecord.Reference]
+
+// ❎ Are we going to use thes leagues and leagueInvites arrays, or the isPending property on League objects?
     
     // User arrays
     var leagues: [League] = []
@@ -68,8 +70,8 @@ class User {
         guard let username = ckRecord[User.usernameKey] as? String,
             
             // User arrays
-            let leagues = ckRecord[User.leaguesKey] as? [League],
-            let leagueInvites = ckRecord[User.leagueInvitesKey] as? [League],
+//            let leagues = ckRecord[User.leaguesKey] as? [League],
+//            let leagueInvites = ckRecord[User.leagueInvitesKey] as? [League],
             
             // CloudKit variables
             let appleUserReference = ckRecord[User.appleUserReferenceKey] as? CKRecord.Reference
@@ -79,8 +81,8 @@ class User {
         self.username = username
         
         // User arrays
-        self.leagues = leagues
-        self.leagueInvites = leagueInvites
+//        self.leagues = leagues
+//        self.leagueInvites = leagueInvites
         
         // CloudKit variables
         self.appleUserReference = appleUserReference
@@ -107,8 +109,8 @@ extension CKRecord {
         self.setValue(user.username, forKey: User.usernameKey)
         
         // User arrays
-        self.setValue(user.leagues, forKey: User.leaguesKey)
-        self.setValue(user.leagueInvites, forKey: User.leagueInvitesKey)
+//        self.setValue(user.leagues, forKey: User.leaguesKey)
+//        self.setValue(user.leagueInvites, forKey: User.leagueInvitesKey)
         
         // CloudKit variables
         self.setValue(user.appleUserReference, forKey: User.appleUserReferenceKey)

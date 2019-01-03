@@ -22,6 +22,8 @@ class GameController {
     // Database
     private let database = CKContainer.default().publicCloudDatabase
     
+// ❎ Do I need all CRUD functions? (I put them all in at first, not sure which I would need)
+    
     // MARK: - CRUD FUNCTIONS
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸

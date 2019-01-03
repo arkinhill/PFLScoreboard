@@ -41,8 +41,8 @@ class LeagueSetupVC: UIViewController {
     @IBOutlet weak var teamHTeamNameTextField: UITextField!
     @IBOutlet weak var teamHCoachNameTextField: UITextField!
     
-    // Outlet collection
-    // (dragged out one username outlet, selected "collection" instead of "outlet", then joined all other username fields in outlet collection, by dragging from filled circle at left up to each field on storyboard)
+    // Outlet collection (dragged out one username field, selected "collection" instead of "outlet", then joined all other username fields by dragging from filled circle at left up to each field on storyboard)
+    
     @IBOutlet var usernameTextFields: [UITextField]!
     
     // MARK: - VIEW DID LOAD
@@ -65,7 +65,7 @@ class LeagueSetupVC: UIViewController {
                 // Team A information
                 if let teamATeamName = self.teamATeamNameTextField.text, !teamATeamName.isEmpty,
                     let teamACoachName = self.teamACoachNameTextField.text, !teamACoachName.isEmpty {
-                    TeamController.shared.createTeam(coach: teamACoachName, name: teamATeamName, color: "red", league: league, completion: { (team) in
+                    TeamController.shared.createTeam(coach: teamACoachName, name: teamATeamName, color: .LightRed, league: league, completion: { (team) in
                         guard let team = team else { return }
                         LeagueController.shared.addTeamToLeague(league: league, team: team, completion: { (success) in
                         })
@@ -75,7 +75,7 @@ class LeagueSetupVC: UIViewController {
                 // Team B information
                 if let teamBTeamName = self.teamBTeamNameTextField.text, !teamBTeamName.isEmpty,
                     let teamBCoachName = self.teamBCoachNameTextField.text, !teamBCoachName.isEmpty {
-                    TeamController.shared.createTeam(coach: teamBCoachName, name: teamBTeamName, color: "orange", league: league, completion: { (team) in
+                    TeamController.shared.createTeam(coach: teamBCoachName, name: teamBTeamName, color: .lightOrange, league: league, completion: { (team) in
                         guard let team = team else { return }
                         LeagueController.shared.addTeamToLeague(league: league, team: team, completion: { (success) in
                         })
@@ -153,7 +153,7 @@ class LeagueSetupVC: UIViewController {
                 } else if league.teams.count == 8 {
                     LeagueController.shared.addGamesTo8TeamLeague(league: league)
                     
-                // Presenting alert controller if league info is incorrect
+                // Presenting alert notification if league info is incorrect
                 } else {
                     self.presentAlertController()
                 }
@@ -178,32 +178,46 @@ class LeagueSetupVC: UIViewController {
                             return
                         }
                         
-                        // Adding a league reference to username
                         if let records = records, let userRecord = records.first {
-                            if let user = User(ckRecord: userRecord) {
-                                let leagueReference = CKRecord.Reference(recordID: league.ckRecordID!, action: .none)
-                                user.leagueInvitesReferences.append(leagueReference)
-                                
-                                // Bundle up and send to CloudKit
-                                let record = CKRecord(user: user)
-                                let operation = CKModifyRecordsOperation(recordsToSave: [record], recordIDsToDelete: nil)
-                                operation.savePolicy = .changedKeys
-                                operation.queuePriority = .high
-                                operation.qualityOfService = .userInteractive
-                                
-                                // Update league on CloudKit
-                                operation.completionBlock = {
-                                    dispatchGroup.leave()
-                                }
-                                LeagueController.shared.database.add(operation)
+                            if let user = User(ckRecord: userRecord), let userRecordID = user.ckRecordID {
+                                let userReference = CKRecord.Reference(recordID: userRecordID, action: CKRecord_Reference_Action.none)
+                                league.userReference.append(userReference)
+                                LeagueController.shared.saveLeague(league: league, completion: { (success) in
+                                    if success {
+                                        dispatchGroup.notify(queue: .main, execute: {
+                                            self.performSegue(withIdentifier: "toGameSchedule", sender: nil)
+                                        })
+                                    }
+                                })
                             }
                         }
+                        
+//                        // Adding a league reference to username
+//                        if let records = records, let userRecord = records.first {
+//                            if let user = User(ckRecord: userRecord) {
+//                                let leagueReference = CKRecord.Reference(recordID: league.ckRecordID!, action: .none)
+//                                user.leagueInvitesReferences.append(leagueReference)
+//
+//                                // Bundle up and send to CloudKit
+//                                let record = CKRecord(user: user)
+//                                let operation = CKModifyRecordsOperation(recordsToSave: [record], recordIDsToDelete: nil)
+//                                operation.savePolicy = .changedKeys
+//                                operation.queuePriority = .high
+//                                operation.qualityOfService = .userInteractive
+//
+//                                // Update league on CloudKit
+//                                operation.completionBlock = {
+//                                    dispatchGroup.leave()
+//                                }
+//                                LeagueController.shared.database.add(operation)
+//                            }
+//                        }
                     })
                 }
+                
+// ❎ Do I need to present alert notification if league name is missing, or team names or coach names?
+                
                 // When all tasks are finished, perform segue to next view
-                dispatchGroup.notify(queue: .main, execute: {
-                    self.performSegue(withIdentifier: "toGameSchedule", sender: nil)
-                })
             }
         }
     }
@@ -229,6 +243,13 @@ extension LeagueSetupVC {
         let dismissAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(dismissAction)
         present(alertController, animated: true, completion: nil)
+    }
+}
+
+extension LeagueSetupVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 

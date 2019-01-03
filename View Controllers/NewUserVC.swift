@@ -39,3 +39,12 @@ class NewUserVC: UIViewController {
         }
     }
 }
+
+// MARK: - RESIGN FIRST RESPONDER EXTENSION
+
+extension NewUserVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}

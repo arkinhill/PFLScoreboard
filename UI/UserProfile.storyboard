@@ -23,14 +23,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PFLLogo" translatesAutoresizingMaskIntoConstraints="NO" id="UPY-hu-2GL">
-                                <rect key="frame" x="32" y="16" width="50" height="70"/>
+                                <rect key="frame" x="32" y="32" width="50" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="I5k-BJ-1aV"/>
                                     <constraint firstAttribute="width" constant="50" id="vLc-zi-9Xo"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="fRz-xC-7fO">
-                                <rect key="frame" x="98.000000000000014" y="32" width="149.33333333333337" height="52.333333333333343"/>
+                                <rect key="frame" x="98.000000000000014" y="36" width="158.33333333333337" height="53.666666666666657"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5i-cZ-lbo">
                                         <rect key="frame" x="0.0" y="0.0" width="128.66666666666666" height="33.333333333333336"/>
@@ -39,17 +39,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Nzr-Lg-TKJ">
-                                        <rect key="frame" x="0.0" y="33.333333333333329" width="149.33333333333334" height="19"/>
+                                        <rect key="frame" x="0.0" y="33.333333333333329" width="158.33333333333334" height="20.333333333333329"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USERNAME:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2QX-Be-Fjo">
-                                                <rect key="frame" x="0.0" y="0.0" width="75" height="19"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="16"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="79.666666666666671" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" red="0.95942836999893188" green="0.75420618057250977" blue="0.32142004370689392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="arkinhill71" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDq-yX-J0g">
-                                                <rect key="frame" x="81" y="0.0" width="68.333333333333314" height="19"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                <rect key="frame" x="85.666666666666657" y="0.0" width="72.666666666666657" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -71,8 +71,8 @@
                                     <segue destination="Hwo-dt-AU1" kind="show" identifier="toLeagueSetup" id="cmi-sH-UTj"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VPm-Ma-vw7">
-                                <rect key="frame" x="32" y="102" width="672" height="280"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="27" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VPm-Ma-vw7">
+                                <rect key="frame" x="32" y="118" width="672" height="264"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -80,21 +80,62 @@
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="leagueActiveCell" id="V05-55-pmn" customClass="LeagueActiveTVCell" customModule="PFLScoreboard" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="672" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="-5" reuseIdentifier="sectionCell" rowHeight="27" id="mJk-IE-duZ" customClass="SectionTVCell" customModule="PFLScoreboard" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="27" width="672" height="27"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mJk-IE-duZ" id="4p2-cQ-SWX">
+                                            <rect key="frame" x="0.0" y="0.0" width="672" height="26.666666666666668"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SECTION TITLE:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ic9-Zl-wWn">
+                                                    <rect key="frame" x="0.0" y="-0.33333333333333393" width="114.33333333333333" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="19" id="mHu-1L-56O"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="19"/>
+                                                    <color key="textColor" name="PFLyellow"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="ic9-Zl-wWn" secondAttribute="bottom" constant="8" id="YcE-iL-o3T"/>
+                                                <constraint firstItem="ic9-Zl-wWn" firstAttribute="leading" secondItem="4p2-cQ-SWX" secondAttribute="leading" id="hJN-H8-nuR"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="sectionTitleLabel" destination="ic9-Zl-wWn" id="sW8-5A-wy7"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="leagueActiveCell" rowHeight="50" id="V05-55-pmn" customClass="LeagueActiveTVCell" customModule="PFLScoreboard" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="54" width="672" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V05-55-pmn" id="4i8-gr-zG6">
-                                            <rect key="frame" x="0.0" y="0.0" width="672" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="672" height="49.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hill Brothers 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEh-r3-4h9">
-                                                    <rect key="frame" x="16" y="11" width="128" height="22"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="18"/>
+                                                    <rect key="frame" x="16" y="14" width="134.66666666666666" height="22"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLB-43-Uzv">
-                                                    <rect key="frame" x="467" y="13.333333333333336" width="189" height="17"/>
+                                                    <rect key="frame" x="467" y="16.333333333333332" width="189" height="16.999999999999996"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="17" id="bbE-il-wpl"/>
                                                     </constraints>
@@ -130,22 +171,22 @@
                                             <outlet property="leagueNameLabel" destination="oEh-r3-4h9" id="mid-39-5a2"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="-5" reuseIdentifier="leagueInvitedCell" id="qZj-qG-akz" customClass="LeagueInvitedTVCell" customModule="PFLScoreboard" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="672" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="-5" reuseIdentifier="leagueInvitedCell" rowHeight="50" id="qZj-qG-akz" customClass="LeagueInvitedTVCell" customModule="PFLScoreboard" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="104" width="672" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qZj-qG-akz" id="m79-2a-1s1">
-                                            <rect key="frame" x="0.0" y="0.0" width="672" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="672" height="49.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DevMountain iOS22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTj-Y1-dcC">
-                                                    <rect key="frame" x="16" y="11.333333333333334" width="139.33333333333334" height="21.333333333333329"/>
+                                                    <rect key="frame" x="16" y="13.666666666666666" width="147" height="22.666666666666671"/>
                                                     <color key="tintColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="19"/>
                                                     <color key="textColor" red="0.38081138840255491" green="0.38749745264035057" blue="0.41865241326802027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Auh-fh-lJV">
-                                                    <rect key="frame" x="427.66666666666669" y="14" width="228.33333333333331" height="16"/>
+                                                    <rect key="frame" x="427.66666666666669" y="17" width="228.33333333333331" height="16"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NP1-yV-XGl">
                                                             <rect key="frame" x="0.0" y="0.0" width="98" height="16"/>
@@ -200,47 +241,6 @@
                                             <outlet property="leagueNameLabel" destination="BTj-Y1-dcC" id="Oxa-Li-sFD"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="-5" reuseIdentifier="sectionCell" id="mJk-IE-duZ" customClass="SectionTVCell" customModule="PFLScoreboard" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="116" width="672" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mJk-IE-duZ" id="4p2-cQ-SWX">
-                                            <rect key="frame" x="0.0" y="0.0" width="672" height="43.666666666666664"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SECTION TITLE:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ic9-Zl-wWn">
-                                                    <rect key="frame" x="16" y="16.666666666666668" width="109" height="19.000000000000004"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="19" id="mHu-1L-56O"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="18"/>
-                                                    <color key="textColor" name="PFLyellow"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" name="PFLgray"/>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="ic9-Zl-wWn" secondAttribute="bottom" constant="8" id="YcE-iL-o3T"/>
-                                                <constraint firstItem="ic9-Zl-wWn" firstAttribute="leading" secondItem="4p2-cQ-SWX" secondAttribute="leading" constant="16" id="hJN-H8-nuR"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <outlet property="sectionTitleLabel" destination="ic9-Zl-wWn" id="sW8-5A-wy7"/>
-                                        </connections>
-                                    </tableViewCell>
                                 </prototypes>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
@@ -258,13 +258,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="UPY-hu-2GL" firstAttribute="top" secondItem="dH1-YU-9VF" secondAttribute="top" constant="16" id="3bE-KI-V23"/>
+                            <constraint firstItem="UPY-hu-2GL" firstAttribute="top" secondItem="dH1-YU-9VF" secondAttribute="top" constant="32" id="3bE-KI-V23"/>
                             <constraint firstItem="dH1-YU-9VF" firstAttribute="bottom" secondItem="VPm-Ma-vw7" secondAttribute="bottom" constant="32" id="LwO-nY-BX1"/>
                             <constraint firstItem="dH1-YU-9VF" firstAttribute="bottom" secondItem="z6c-nD-iwY" secondAttribute="bottom" id="MSx-MG-PoT"/>
                             <constraint firstItem="dH1-YU-9VF" firstAttribute="trailing" secondItem="z6c-nD-iwY" secondAttribute="trailing" id="PPe-iC-H4K"/>
                             <constraint firstItem="VPm-Ma-vw7" firstAttribute="leading" secondItem="dH1-YU-9VF" secondAttribute="leading" constant="32" id="UHx-jN-t81"/>
                             <constraint firstItem="dH1-YU-9VF" firstAttribute="trailing" secondItem="Stz-P9-QP8" secondAttribute="trailing" constant="32" id="W53-9D-Edr"/>
-                            <constraint firstItem="fRz-xC-7fO" firstAttribute="top" secondItem="dH1-YU-9VF" secondAttribute="top" constant="32" id="XCL-RL-ljI"/>
+                            <constraint firstItem="fRz-xC-7fO" firstAttribute="top" secondItem="dH1-YU-9VF" secondAttribute="top" constant="36" id="XCL-RL-ljI"/>
                             <constraint firstItem="z6c-nD-iwY" firstAttribute="top" secondItem="dH1-YU-9VF" secondAttribute="top" id="d7i-UT-vK7"/>
                             <constraint firstItem="z6c-nD-iwY" firstAttribute="leading" secondItem="dH1-YU-9VF" secondAttribute="leading" id="fjC-VT-fh6"/>
                             <constraint firstItem="dH1-YU-9VF" firstAttribute="trailing" secondItem="VPm-Ma-vw7" secondAttribute="trailing" constant="32" id="gWw-BL-srC"/>
@@ -285,10 +285,10 @@
             </objects>
             <point key="canvasLocation" x="-11.413043478260871" y="405.79710144927537"/>
         </scene>
-        <!--LeagueSetukp-->
+        <!--LeagueSetup-->
         <scene sceneID="qUW-xh-lbi">
             <objects>
-                <viewControllerPlaceholder storyboardName="LeagueSetukp" id="Hwo-dt-AU1" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="LeagueSetup" id="Hwo-dt-AU1" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ocb-w2-Oe2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="473" y="406"/>

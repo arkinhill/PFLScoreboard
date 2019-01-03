@@ -22,6 +22,8 @@ class LeagueController {
     // Database
     let database = CKContainer.default().publicCloudDatabase
     
+// ❎ Do I need all CRUD functions? (I put them all in at first, not sure which I would need)
+    
     // MARK: - CRUD FUNCTIONS
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
@@ -35,8 +37,7 @@ class LeagueController {
             return
         }
         // Append source of truth, call completion
-        let league = League(leagueName: leagueName, userReference: appleUserReference)
-//        let league = League(leagueName: leagueName, isPending: isPending, users: users, userReference: CKRecord.Reference)
+        let league = League(leagueName: leagueName, userReference: [appleUserReference])
         saveLeague(league: league) { (success) in }
             completion(league)
     }
@@ -56,13 +57,15 @@ class LeagueController {
             completion(true)
         }
     }
+
+// ❎ Incomplete function
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
     // 🔸 MARK: - ADD TEAMS TO LEAGUE
     
     func addTeamToLeague(league: League, team: Team, completion: @escaping (Bool) -> Void) {
         league.teams.append(team)
-        saveLeague(league: league, completion: <#T##(Bool) -> Void#>)
+//        saveLeague(league: league, completion: <#T##(Bool) -> Void#>)
     }
 
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸

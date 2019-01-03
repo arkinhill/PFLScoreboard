@@ -6,10 +6,25 @@
 //  Copyright © 2018 Arkin Hill. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CloudKit
 
 class Team {
+    
+    enum Color: String {
+        case black
+        case blue
+        case silver
+        case green
+        case orange
+        case purple
+        case red
+        case yellow
+        case PFLBlue
+        case PFLGray
+        case PFLRed
+        case PFLYellow
+    }
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
     // 🔸 MARK: - PROPERTIES
@@ -17,7 +32,7 @@ class Team {
     // General team info
     var coach: String
     var name: String
-    var color: String
+    var color: Color
     
     // Team record
     var wins: Int
@@ -85,7 +100,7 @@ class Team {
         // General team info
         coach: String,
         name: String,
-        color: String,
+        color: Color,
     
         // Team record
         wins: Int = 0,
@@ -175,7 +190,9 @@ class Team {
         // General team info
         self.coach = coach
         self.name = name
-        self.color = color
+        
+        guard let colorAsEnum = Color(rawValue: color) else { return nil }
+        self.color = colorAsEnum
         
         // Team record
         self.wins = wins
@@ -219,7 +236,7 @@ extension CKRecord {
         // General team info
         self.setValue(team.coach, forKey: Team.coachKey)
         self.setValue(team.name, forKey: Team.nameKey)
-        self.setValue(team.color, forKey: Team.colorKey)
+        self.setValue(team.color.rawValue, forKey: Team.colorKey)
         
         // Team record
         self.setValue(team.wins, forKey: Team.winsKey)
