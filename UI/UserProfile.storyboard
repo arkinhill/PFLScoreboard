@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9f1-cp-Gqy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4av-dT-UJn">
     <device id="retina5_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,23 +14,23 @@
         <!--User ProfileVC-->
         <scene sceneID="iYb-xO-ToI">
             <objects>
-                <viewController id="9f1-cp-Gqy" customClass="UserProfileVC" customModule="PFLScoreboard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9f1-cp-Gqy" customClass="UserProfileVC" customModule="PFL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4st-Iv-PxC">
                         <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grayGradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="z6c-nD-iwY">
-                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                                <rect key="frame" x="0.0" y="44" width="736" height="370"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PFLLogo" translatesAutoresizingMaskIntoConstraints="NO" id="UPY-hu-2GL">
-                                <rect key="frame" x="32" y="32" width="50" height="70"/>
+                                <rect key="frame" x="32" y="64" width="50" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="I5k-BJ-1aV"/>
                                     <constraint firstAttribute="width" constant="50" id="vLc-zi-9Xo"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="fRz-xC-7fO">
-                                <rect key="frame" x="98.000000000000014" y="36" width="158.33333333333337" height="53.666666666666657"/>
+                                <rect key="frame" x="98.000000000000014" y="68" width="158.33333333333337" height="53.666666666666657"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5i-cZ-lbo">
                                         <rect key="frame" x="0.0" y="0.0" width="128.66666666666666" height="33.333333333333336"/>
@@ -44,7 +44,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USERNAME:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2QX-Be-Fjo">
                                                 <rect key="frame" x="0.0" y="0.0" width="79.666666666666671" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="17"/>
-                                                <color key="textColor" red="0.95942836999893188" green="0.75420618057250977" blue="0.32142004370689392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="textColor" name="PFLYellow"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="arkinhill71" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDq-yX-J0g">
@@ -57,188 +57,84 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Stz-P9-QP8">
-                                <rect key="frame" x="584" y="32" width="120" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="zAx-od-lsf"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <state key="normal" title="ADD NEW LEAGUE">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="addNewLeagueButton:" destination="9f1-cp-Gqy" eventType="touchUpInside" id="FE6-Zw-LUr"/>
-                                    <segue destination="Hwo-dt-AU1" kind="show" identifier="toLeagueSetup" id="cmi-sH-UTj"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="27" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VPm-Ma-vw7">
-                                <rect key="frame" x="32" y="118" width="672" height="264"/>
+                                <rect key="frame" x="32" y="180.66666666666663" width="672" height="201.33333333333337"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="separatorColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <color key="separatorColor" name="PFLGray"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="-5" reuseIdentifier="sectionCell" rowHeight="27" id="mJk-IE-duZ" customClass="SectionTVCell" customModule="PFLScoreboard" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="27" width="672" height="27"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="leagueCell" rowHeight="50" id="V05-55-pmn" customClass="LeagueTVCell" customModule="PFL" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="27" width="672" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mJk-IE-duZ" id="4p2-cQ-SWX">
-                                            <rect key="frame" x="0.0" y="0.0" width="672" height="26.666666666666668"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V05-55-pmn" id="4i8-gr-zG6">
+                                            <rect key="frame" x="0.0" y="0.0" width="672" height="49.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SECTION TITLE:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ic9-Zl-wWn">
-                                                    <rect key="frame" x="0.0" y="-0.33333333333333393" width="114.33333333333333" height="19"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MyC-Cw-oMR">
+                                                    <rect key="frame" x="0.0" y="0.0" width="672" height="47"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLB-43-Uzv">
+                                                            <rect key="frame" x="467" y="15" width="189" height="17"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="17" id="bbE-il-wpl"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                            <state key="normal" title="UNLINK USER FROM LEAGUE">
+                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="unlinkFromLeagueButtonTapped:" destination="V05-55-pmn" eventType="touchUpInside" id="qE8-C4-P8P"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hill Brothers 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEh-r3-4h9">
+                                                            <rect key="frame" x="16" y="12.666666666666664" width="134.66666666666666" height="22"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="19"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" name="Yellow"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="19" id="mHu-1L-56O"/>
+                                                        <constraint firstItem="oEh-r3-4h9" firstAttribute="centerY" secondItem="MyC-Cw-oMR" secondAttribute="centerY" id="EOb-uT-W3v"/>
+                                                        <constraint firstAttribute="height" constant="46.670000000000002" id="Hw6-4h-G5S"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ZLB-43-Uzv" secondAttribute="trailing" constant="16" id="PRk-3b-HLS"/>
+                                                        <constraint firstItem="oEh-r3-4h9" firstAttribute="leading" secondItem="MyC-Cw-oMR" secondAttribute="leading" constant="16" id="t2p-CZ-DsA"/>
+                                                        <constraint firstItem="ZLB-43-Uzv" firstAttribute="centerY" secondItem="MyC-Cw-oMR" secondAttribute="centerY" id="yE6-xg-YHX"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="19"/>
-                                                    <color key="textColor" name="PFLyellow"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="ic9-Zl-wWn" secondAttribute="bottom" constant="8" id="YcE-iL-o3T"/>
-                                                <constraint firstItem="ic9-Zl-wWn" firstAttribute="leading" secondItem="4p2-cQ-SWX" secondAttribute="leading" id="hJN-H8-nuR"/>
+                                                <constraint firstItem="MyC-Cw-oMR" firstAttribute="leading" secondItem="4i8-gr-zG6" secondAttribute="leading" id="KnQ-Zq-lmn"/>
+                                                <constraint firstAttribute="trailing" secondItem="MyC-Cw-oMR" secondAttribute="trailing" id="VVV-qa-Xhd"/>
+                                                <constraint firstAttribute="bottom" secondItem="MyC-Cw-oMR" secondAttribute="bottom" constant="6" id="Wiw-Yv-ucG"/>
+                                                <constraint firstItem="MyC-Cw-oMR" firstAttribute="top" secondItem="4i8-gr-zG6" secondAttribute="top" id="gLX-cG-eGr"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <outlet property="sectionTitleLabel" destination="ic9-Zl-wWn" id="sW8-5A-wy7"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="leagueActiveCell" rowHeight="50" id="V05-55-pmn" customClass="LeagueActiveTVCell" customModule="PFLScoreboard" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="54" width="672" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V05-55-pmn" id="4i8-gr-zG6">
-                                            <rect key="frame" x="0.0" y="0.0" width="672" height="49.666666666666664"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hill Brothers 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEh-r3-4h9">
-                                                    <rect key="frame" x="16" y="14" width="134.66666666666666" height="22"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="19"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLB-43-Uzv">
-                                                    <rect key="frame" x="467" y="16.333333333333332" width="189" height="16.999999999999996"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="17" id="bbE-il-wpl"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                                    <state key="normal" title="UNLINK USER FROM LEAGUE">
-                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="unlinkFromLeagueButtonTapped:" destination="V05-55-pmn" eventType="touchUpInside" id="qE8-C4-P8P"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <color key="backgroundColor" name="PFLlightYellow"/>
-                                            <constraints>
-                                                <constraint firstItem="oEh-r3-4h9" firstAttribute="leading" secondItem="4i8-gr-zG6" secondAttribute="leading" constant="16" id="2ep-Vd-TzF"/>
-                                                <constraint firstItem="oEh-r3-4h9" firstAttribute="centerY" secondItem="4i8-gr-zG6" secondAttribute="centerY" id="3DD-4M-rFU"/>
-                                                <constraint firstAttribute="trailing" secondItem="ZLB-43-Uzv" secondAttribute="trailing" constant="16" id="Bsc-YE-KIm"/>
-                                                <constraint firstItem="ZLB-43-Uzv" firstAttribute="centerY" secondItem="4i8-gr-zG6" secondAttribute="centerY" id="jFv-hn-NK9"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
+                                                <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.50791827280000001" green="0.50791827280000001" blue="0.50791827280000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="leagueNameLabel" destination="oEh-r3-4h9" id="mid-39-5a2"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="-5" reuseIdentifier="leagueInvitedCell" rowHeight="50" id="qZj-qG-akz" customClass="LeagueInvitedTVCell" customModule="PFLScoreboard" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="104" width="672" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qZj-qG-akz" id="m79-2a-1s1">
-                                            <rect key="frame" x="0.0" y="0.0" width="672" height="49.666666666666664"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DevMountain iOS22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTj-Y1-dcC">
-                                                    <rect key="frame" x="16" y="13.666666666666666" width="147" height="22.666666666666671"/>
-                                                    <color key="tintColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="19"/>
-                                                    <color key="textColor" red="0.38081138840255491" green="0.38749745264035057" blue="0.41865241326802027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Auh-fh-lJV">
-                                                    <rect key="frame" x="427.66666666666669" y="17" width="228.33333333333331" height="16"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NP1-yV-XGl">
-                                                            <rect key="frame" x="0.0" y="0.0" width="98" height="16"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                                            <state key="normal" title="ACCEPT INVITE">
-                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </state>
-                                                            <connections>
-                                                                <action selector="acceptInviteButton:" destination="aXy-Tk-ks8" eventType="touchUpInside" id="zsY-4p-H7I"/>
-                                                                <action selector="acceptInviteButtonTapped:" destination="qZj-qG-akz" eventType="touchUpInside" id="hXM-d8-9Ig"/>
-                                                            </connections>
-                                                        </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGS-YQ-Ahb">
-                                                            <rect key="frame" x="113.99999999999994" y="0.0" width="3.3333333333333286" height="16"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xr9-8Y-Mcr">
-                                                            <rect key="frame" x="133.33333333333331" y="0.0" width="95" height="16"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                                            <state key="normal" title="REJECT INVITE">
-                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </state>
-                                                            <connections>
-                                                                <action selector="rejectInviteButton:" destination="aXy-Tk-ks8" eventType="touchUpInside" id="YS4-4n-b9U"/>
-                                                                <action selector="rejectInviteButtonTapped:" destination="qZj-qG-akz" eventType="touchUpInside" id="fHS-qZ-93z"/>
-                                                            </connections>
-                                                        </button>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="16" id="xsm-0Z-8FM"/>
-                                                    </constraints>
-                                                </stackView>
-                                            </subviews>
-                                            <color key="backgroundColor" name="PFLgray"/>
-                                            <constraints>
-                                                <constraint firstItem="BTj-Y1-dcC" firstAttribute="centerY" secondItem="m79-2a-1s1" secondAttribute="centerY" id="7fs-Uk-dpg"/>
-                                                <constraint firstItem="Auh-fh-lJV" firstAttribute="centerY" secondItem="m79-2a-1s1" secondAttribute="centerY" id="PPi-d0-rMg"/>
-                                                <constraint firstItem="BTj-Y1-dcC" firstAttribute="leading" secondItem="m79-2a-1s1" secondAttribute="leading" constant="16" id="hoy-EM-do0"/>
-                                                <constraint firstAttribute="trailing" secondItem="Auh-fh-lJV" secondAttribute="trailing" constant="16" id="vj7-fh-BTA"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" name="PFLgray"/>
-                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <outlet property="leagueNameLabel" destination="BTj-Y1-dcC" id="Oxa-Li-sFD"/>
+                                            <segue destination="Lyd-Iq-aco" kind="show" identifier="toGameSchedule" id="Fxo-Iu-yIh"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -249,62 +145,106 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="9f1-cp-Gqy" id="Kz1-0L-sAM"/>
                                     <outlet property="delegate" destination="9f1-cp-Gqy" id="X6u-TX-0kG"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR LEAGUES:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLc-uO-paV">
+                                <rect key="frame" x="32" y="150" width="672" height="22.666666666666657"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="19"/>
+                                <color key="textColor" name="PFLYellow"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="UPY-hu-2GL" firstAttribute="top" secondItem="dH1-YU-9VF" secondAttribute="top" constant="32" id="3bE-KI-V23"/>
+                            <constraint firstItem="dH1-YU-9VF" firstAttribute="trailing" secondItem="lLc-uO-paV" secondAttribute="trailing" constant="32" id="1lR-Je-mmo"/>
+                            <constraint firstItem="UPY-hu-2GL" firstAttribute="top" secondItem="dH1-YU-9VF" secondAttribute="top" constant="20" id="3bE-KI-V23"/>
+                            <constraint firstItem="lLc-uO-paV" firstAttribute="top" secondItem="UPY-hu-2GL" secondAttribute="bottom" constant="16" id="4Sg-Kg-5s2"/>
                             <constraint firstItem="dH1-YU-9VF" firstAttribute="bottom" secondItem="VPm-Ma-vw7" secondAttribute="bottom" constant="32" id="LwO-nY-BX1"/>
                             <constraint firstItem="dH1-YU-9VF" firstAttribute="bottom" secondItem="z6c-nD-iwY" secondAttribute="bottom" id="MSx-MG-PoT"/>
                             <constraint firstItem="dH1-YU-9VF" firstAttribute="trailing" secondItem="z6c-nD-iwY" secondAttribute="trailing" id="PPe-iC-H4K"/>
                             <constraint firstItem="VPm-Ma-vw7" firstAttribute="leading" secondItem="dH1-YU-9VF" secondAttribute="leading" constant="32" id="UHx-jN-t81"/>
-                            <constraint firstItem="dH1-YU-9VF" firstAttribute="trailing" secondItem="Stz-P9-QP8" secondAttribute="trailing" constant="32" id="W53-9D-Edr"/>
-                            <constraint firstItem="fRz-xC-7fO" firstAttribute="top" secondItem="dH1-YU-9VF" secondAttribute="top" constant="36" id="XCL-RL-ljI"/>
+                            <constraint firstItem="VPm-Ma-vw7" firstAttribute="top" secondItem="lLc-uO-paV" secondAttribute="bottom" constant="8" id="UO2-HM-MXP"/>
+                            <constraint firstItem="fRz-xC-7fO" firstAttribute="top" secondItem="dH1-YU-9VF" secondAttribute="top" constant="24" id="XCL-RL-ljI"/>
                             <constraint firstItem="z6c-nD-iwY" firstAttribute="top" secondItem="dH1-YU-9VF" secondAttribute="top" id="d7i-UT-vK7"/>
                             <constraint firstItem="z6c-nD-iwY" firstAttribute="leading" secondItem="dH1-YU-9VF" secondAttribute="leading" id="fjC-VT-fh6"/>
                             <constraint firstItem="dH1-YU-9VF" firstAttribute="trailing" secondItem="VPm-Ma-vw7" secondAttribute="trailing" constant="32" id="gWw-BL-srC"/>
-                            <constraint firstItem="VPm-Ma-vw7" firstAttribute="top" secondItem="UPY-hu-2GL" secondAttribute="bottom" constant="16" id="nbU-fI-JxB"/>
-                            <constraint firstItem="Stz-P9-QP8" firstAttribute="top" secondItem="dH1-YU-9VF" secondAttribute="top" constant="32" id="wad-oa-V5C"/>
+                            <constraint firstItem="lLc-uO-paV" firstAttribute="leading" secondItem="dH1-YU-9VF" secondAttribute="leading" constant="32" id="wpR-FQ-2Dm"/>
                             <constraint firstItem="fRz-xC-7fO" firstAttribute="leading" secondItem="UPY-hu-2GL" secondAttribute="trailing" constant="16" id="xUb-Q8-jTh"/>
                             <constraint firstItem="UPY-hu-2GL" firstAttribute="leading" secondItem="dH1-YU-9VF" secondAttribute="leading" constant="32" id="xlY-jN-TX1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dH1-YU-9VF"/>
                     </view>
+                    <navigationItem key="navigationItem" id="dtD-gy-bxs">
+                        <barButtonItem key="rightBarButtonItem" title="Add New League" id="14I-zZ-3s4">
+                            <connections>
+                                <segue destination="Hwo-dt-AU1" kind="show" id="g6H-yd-TYm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="VPm-Ma-vw7" id="71e-tw-V1c"/>
                         <outlet property="usernameLabel" destination="yDq-yX-J0g" id="kp9-xr-pio"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r59-xE-L16" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="aXy-Tk-ks8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-11.413043478260871" y="405.79710144927537"/>
+            <point key="canvasLocation" x="761.41304347826087" y="405.79710144927537"/>
         </scene>
         <!--LeagueSetup-->
         <scene sceneID="qUW-xh-lbi">
             <objects>
-                <viewControllerPlaceholder storyboardName="LeagueSetup" id="Hwo-dt-AU1" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="LeagueSetup" id="Hwo-dt-AU1" colorLabel="IBBuiltInLabel-Gray" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ocb-w2-Oe2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="473" y="406"/>
+            <point key="canvasLocation" x="1187.771739130435" y="373.91304347826087"/>
+        </scene>
+        <!--GameSchedule-->
+        <scene sceneID="rAi-ev-Fat">
+            <objects>
+                <viewControllerPlaceholder storyboardName="GameSchedule" id="Lyd-Iq-aco" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cb1-mR-x6z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1191.4402173913045" y="442.02898550724643"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="e77-zd-btc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4av-dT-UJn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="bkI-U0-cZz">
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="PFLYellow"/>
+                        <color key="barTintColor" red="0.12507931472081213" green="0.12507931472081213" blue="0.12507931472081213" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9f1-cp-Gqy" kind="relationship" relationship="rootViewController" id="10d-Tl-nYb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FsS-3U-hJr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-11.413043478260871" y="405.79710144927537"/>
         </scene>
     </scenes>
     <resources>
         <image name="PFLLogo" width="724" height="978"/>
         <image name="grayGradientBackground" width="2209" height="1243"/>
-        <namedColor name="PFLgray">
-            <color red="0.83499997854232788" green="0.83899998664855957" blue="0.85900002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="PFLGray">
+            <color red="0.38100001215934753" green="0.38699999451637268" blue="0.41899999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="PFLlightYellow">
-            <color red="0.95999997854232788" green="0.94499999284744263" blue="0.76800000667572021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="PFLyellow">
+        <namedColor name="PFLYellow">
             <color red="0.95899999141693115" green="0.75400000810623169" blue="0.32100000977516174" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Yellow">
+            <color red="0.95999997854232788" green="0.94499999284744263" blue="0.76800000667572021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

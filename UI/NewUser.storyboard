@@ -14,7 +14,7 @@
         <!--New UserVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="NewUserVC" customModule="PFLScoreboard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="NewUserVC" customModule="PFL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,7 +60,7 @@
                                                             </stackView>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PFL username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nYZ-en-i7f">
                                                                 <rect key="frame" x="13" y="68" width="220" height="32"/>
-                                                                <color key="backgroundColor" red="0.83529411764705885" green="0.83921568627450982" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" name="PFLGrayLight"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="32" id="0Bx-hw-GAp"/>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" id="x3j-cp-sMo"/>
@@ -70,7 +70,7 @@
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                                                        <color key="value" name="PFL-StandardGray"/>
+                                                                        <color key="value" name="PFLGray"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
@@ -81,7 +81,7 @@
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Re-LG-IxW">
                                                         <rect key="frame" x="51.666666666666686" y="206" width="143" height="36"/>
-                                                        <color key="backgroundColor" name="StandardRed"/>
+                                                        <color key="backgroundColor" name="PFLRed"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="36" id="5ZK-Rv-WKP"/>
                                                             <constraint firstAttribute="width" constant="143" id="uv0-Li-KKg"/>
@@ -130,7 +130,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="BhL-0x-qEv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="1V8-Jb-3tB"/>
                             <constraint firstAttribute="bottom" secondItem="BhL-0x-qEv" secondAttribute="bottom" id="bjd-c3-Tym"/>
@@ -159,10 +159,13 @@
     <resources>
         <image name="PFLLogo" width="724" height="978"/>
         <image name="grayGradientBackground" width="2209" height="1243"/>
-        <namedColor name="PFL-StandardGray">
+        <namedColor name="PFLGray">
             <color red="0.38100001215934753" green="0.38699999451637268" blue="0.41899999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="StandardRed">
+        <namedColor name="PFLGrayLight">
+            <color red="0.83499997854232788" green="0.83899998664855957" blue="0.85900002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PFLRed">
             <color red="0.78299999237060547" green="0.012000000104308128" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>

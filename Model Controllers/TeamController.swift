@@ -19,14 +19,18 @@ class TeamController {
     // Database
     private let database = CKContainer.default().publicCloudDatabase
     
-// ❎ Do I need all CRUD functions? (I put them all in at first, not sure which I would need)
-    
     // MARK: - CRUD FUNCTIONS
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
     // 🔸 MARK: - CREATE
     
-    func createTeam(coach: String, name: String, color: Team.Color, league: League, completion: @escaping (Team?) -> Void) {
+    func createTeam(
+        coach: String,
+        name: String,
+        color: Team.Color,
+        league: League,
+        
+        completion: @escaping (Team?) -> Void) {
         
         // Make sure correct user is creating array
         guard let leagueCKRecord = league.ckRecordID else {
@@ -98,7 +102,7 @@ class TeamController {
         // General team info
         coach: String,
         name: String,
-        color: String,
+        color: Team.Color,
         
         // Team record
         wins: Int,

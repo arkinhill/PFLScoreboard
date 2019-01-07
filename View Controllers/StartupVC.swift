@@ -10,7 +10,8 @@ import UIKit
 
 class StartupVC: UIViewController {
     
-    // MARK: - VIEW DID LOAD
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: - VIEW DID LOAD
 
     override func viewDidLoad() {
         super.viewDidLoad()

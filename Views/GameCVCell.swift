@@ -12,9 +12,9 @@ class GameCVCell: UICollectionViewCell {
     
     // MARK: - OUTLETS
     
-    @IBOutlet weak var leftHelmetImageView: UIImageView!
+    @IBOutlet weak var leftHelmetButton: UIButton!
     @IBOutlet weak var leftHelmetLetterImageView: UIImageView!
-    @IBOutlet weak var rightHelmetImageView: UIImageView!
+    @IBOutlet weak var rightHelmetButton: UIButton!
     @IBOutlet weak var rightHelmetLetterImageView: UIImageView!
     @IBOutlet weak var team1NameLabel: UILabel!
     @IBOutlet weak var team1ScoreLabel: UILabel!

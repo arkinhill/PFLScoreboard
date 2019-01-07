@@ -10,17 +10,20 @@ import UIKit
 
 class NewUserVC: UIViewController {
     
-    // MARK: - OUTLETS
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: - OUTLETS
     
     @IBOutlet weak var newUsernameTextField: UITextField!
     
-    // MARK: - VIEW DID LOAD
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: - VIEW DID LOAD
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    // MARK: - ACTIONS
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: - ACTIONS
     
     @IBAction func submitButton(_ sender: UIButton) {
         
@@ -40,7 +43,8 @@ class NewUserVC: UIViewController {
     }
 }
 
-// MARK: - RESIGN FIRST RESPONDER EXTENSION
+// 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+// 🔸 MARK: - RESIGN FIRST RESPONDER EXTENSION
 
 extension NewUserVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

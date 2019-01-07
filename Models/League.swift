@@ -54,7 +54,7 @@ class League {
     
     init(leagueName: String, userReference: [CKRecord.Reference] = []) {
         
-////        // League info
+//        // League info
         self.leagueName = leagueName
 //
 //        // League arrays
@@ -76,8 +76,8 @@ class League {
         guard let leagueName = ckRecord[League.leagueNameKey] as? String,
             
             // League arrays
-            let teams = ckRecord[League.teamsKey] as? [Team],
-            let users = ckRecord[League.usersKey] as? [User],
+//            let teams = ckRecord[League.teamsKey] as? [Team],
+//            let users = ckRecord[League.usersKey] as? [User],
             
             // CloudKit variables
             let userReference = ckRecord[League.userReferenceKey] as? [CKRecord.Reference]
@@ -90,11 +90,12 @@ class League {
         self.leagueName = leagueName
         
         // League arrays
-        self.teams = teams
-        self.users = users
+//        self.teams = teams
+//        self.users = users
         
         // CloudKit variables
         self.userReference = userReference
+        self.ckRecordID = ckRecord.recordID
     }
 }
 
@@ -117,8 +118,8 @@ extension CKRecord {
         self.setValue(league.leagueName, forKey: League.leagueNameKey)
         
         // League arrays
-        self.setValue(league.teams, forKey: League.teamsKey)
-        self.setValue(league.users, forKey: League.usersKey)
+//        self.setValue(league.teams, forKey: League.teamsKey)
+//        self.setValue(league.users, forKey: League.usersKey)
         
         // CloudKit variables
         self.setValue(league.userReference, forKey: League.userReferenceKey)

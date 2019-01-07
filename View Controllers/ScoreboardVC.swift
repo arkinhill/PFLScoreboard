@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import CloudKit
 
 class ScoreboardVC: UIViewController {
     
-    // MARK: - LANDING PAD
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: - LANDING PAD
     
     var selectedGame: Game?
     
@@ -236,15 +238,140 @@ class ScoreboardVC: UIViewController {
         
         // Set stat cell background colors
         setCellBackgroundColor()
+        updateViews()
     }
     
-    // MARK: - SWITCH STAT CELL COLOR FUNCTION
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: - UPDATE VIEWS FUNCTION
+    
+    func updateViews() {
+        guard let game = selectedGame else { return }
+        
+        // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+        // 🔸 MARK: - UPDATE TEAM HEADERS
+        
+        // Team 1 header
+        team1NameLabel.text = "\(game.team1Name.uppercased())"
+        team1CoachLabel.text = game.team1Coach
+//        team1RecordLabel
+//        team1RankImageView
+        team1HelmetButton.setBackgroundImage(UIImage(named: "helmet\(game.team1Color)Left"), for: .normal)
+        team1HelmetLetterImageView.image = UIImage(named: "letter\(game.team1Name.prefix(1).capitalized)")
+        
+        // Team 2 header
+        team2NameLabel.text = "\(game.team2Name.uppercased())"
+        team2CoachLabel.text = game.team2Coach
+        //        team2RecordLabel
+        //        team2RankImageView
+        team2HelmetButton.setBackgroundImage(UIImage(named: "helmet\(game.team2Color)Right"), for: .normal)
+        team2HelmetLetterImageView.image = UIImage(named: "letter\(game.team2Name.prefix(1).capitalized)")
+        
+        // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+        // 🔸 MARK: - UPDATE TEAM 1 STATS
+        
+        // Stats - Team 1 Pass Completion - Game
+        team1GameCompletionsButton.setTitle("\(game.team1CompletionsMade)", for: .normal)
+        team1GamePassesAttemptedButton.setTitle("\(game.team1CompletionsAttempted)", for: .normal)
+        
+        // Check to see if denominator is zero
+        if game.team1CompletionsAttempted == 0 {
+            team1GameCompletionPercentButton.setTitle("0%", for: .normal)
+        } else {
+            team1GameCompletionPercentButton.setTitle("\(game.team1CompletionsMade / game.team1CompletionsAttempted)%", for: .normal)
+        }
+        
+        team1GameIntThrownButton.setTitle("\(game.team1InterceptionsThrown)", for: .normal)
+        
+        // Stats - Team 1 Pass Completion - Averages
+        team1AvgCoompletionsButton.setTitle("ADD", for: .normal)
+        team1AvgPassesAttemptedButton.setTitle("ADD", for: .normal)
+        team1AvgCompletionPercentButton.setTitle("ADD", for: .normal)
+        team1AvgIntThrownButton.setTitle("ADD", for: .normal)
+        
+        // Stats - Team 1 Field Goals - Game
+        team1GameFieldGoalsButton.setTitle("\(game.team1FieldGoalsMade)", for: .normal)
+        team1GameFieldGoalsAttemptedButton.setTitle("\(game.team1FieldGoalsAttempted)", for: .normal)
+        team1GameFieldGoalPercentButton.setTitle("ADD", for: .normal)
+        
+        // Stats - Team 1 Field Goals - Averages
+        team1AvgFieldGoalsButton.setTitle("ADD", for: .normal)
+        team1AvgFieldGoalsAttemptedButton.setTitle("ADD", for: .normal)
+        team1AvgFieldGoalPercentButton.setTitle("ADD", for: .normal)
+        
+        // Stats - Team 1 PATs - Game
+        team1GamePATsMadeButton.setTitle("\(game.team1PATsMade)", for: .normal)
+        team1GamePATsAttemptedButton.setTitle("\(game.team1PATsAttempted)", for: .normal)
+        team1GamePATPercentButton.setTitle("ADD", for: .normal)
+        
+        // Stats - Team 1 PATs - Averages
+        team1AvgPATsMadeButton.setTitle("ADD", for: .normal)
+        team1AvgPATsAttemptedButton.setTitle("ADD", for: .normal)
+        team1AvgPATPercentButton.setTitle("ADD", for: .normal)
+        
+        // Stats - Team 1 Misc - Game
+        team1GameTDsButton.setTitle("\(game.team1Touchdowns)", for: .normal)
+        team1Game2PTsButton.setTitle("\(game.team1TwoPointConversions)", for: .normal)
+        team1GameIntCaughtButton.setTitle("\(game.team1InterceptionsCaught)", for: .normal)
+        
+        // Stats - Team 1 Misc - Averages
+        team1AvgTDsButton.setTitle("ADD", for: .normal)
+        team1Avg2PTsButton.setTitle("ADD", for: .normal)
+        team1AvgIntCaughtButton.setTitle("ADD", for: .normal)
+        
+        // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+        // 🔸 MARK: - UPDATE TEAM 2 STATS
+            
+        // Stats - Team 2 Pass Completion - Game
+        team2GameCompletionsButton.setTitle("\(game.team2CompletionsMade)", for: .normal)
+        team2GamePassesAttemptedButton.setTitle("\(game.team2CompletionsAttempted)", for: .normal)
+        team2GameCompletionPercentButton.setTitle("ADD", for: .normal)
+        team2GameIntThrownButton.setTitle("\(game.team2InterceptionsThrown)", for: .normal)
+        
+        // Stats - Team 2 Pass Completion - Averages
+        team2AvgCoompletionsButton.setTitle("ADD", for: .normal)
+        team2AvgPassesAttemptedButton.setTitle("ADD", for: .normal)
+        team2AvgCompletionPercentButton.setTitle("ADD", for: .normal)
+        team2AvgIntThrownButton.setTitle("ADD", for: .normal)
+        
+        // Stats - Team 2 Field Goals - Game
+        team2GameFieldGoalsButton.setTitle("\(game.team2FieldGoalsMade)", for: .normal)
+        team2GameFieldGoalsAttemptedButton.setTitle("\(game.team2FieldGoalsAttempted)", for: .normal)
+        team2GameFieldGoalPercentButton.setTitle("ADD", for: .normal)
+        
+        // Stats - Team 2 Field Goals - Averages
+        team2AvgFieldGoalsButton.setTitle("ADD", for: .normal)
+        team2AvgFieldGoalsAttemptedButton.setTitle("ADD", for: .normal)
+        team2AvgFieldGoalPercentButton.setTitle("ADD", for: .normal)
+        
+        // Stats - Team 2 PATs - Game
+        team2GamePATsMadeButton.setTitle("\(game.team2PATsMade)", for: .normal)
+        team2GamePATsAttemptedButton.setTitle("\(game.team2PATsAttempted)", for: .normal)
+        team2GamePATPercentButton.setTitle("ADD", for: .normal)
+        
+        // Stats - Team 2 PATs - Averages
+        team2AvgPATsMadeButton.setTitle("ADD", for: .normal)
+        team2AvgPATsAttemptedButton.setTitle("ADD", for: .normal)
+        team2AvgPATPercentButton.setTitle("ADD", for: .normal)
+        
+        // Stats - Team 2 Misc - Game
+        team2GameTDsButton.setTitle("\(game.team2Touchdowns)", for: .normal)
+        team2Game2PTsButton.setTitle("\(game.team2TwoPointConversions)", for: .normal)
+        team2GameIntCaughtButton.setTitle("\(game.team2InterceptionsCaught)", for: .normal)
+        
+        // Stats - Team 2 Misc - Averages
+        team2AvgTDsButton.setTitle("ADD", for: .normal)
+        team2Avg2PTsButton.setTitle("ADD", for: .normal)
+        team2AvgIntCaughtButton.setTitle("ADD", for: .normal)
+    }
+    
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: - SWITCH STAT CELL COLOR FUNCTION
     
     func setCellBackgroundColor() {
         
         guard let game = selectedGame else { return }
-        let color1 = UIColor(named: game.team1.color.rawValue)
-        let color2 = UIColor(named: game.team2.color.rawValue)
+        let color1 = UIColor(named: game.team1Color)
+        let color2 = UIColor(named: game.team2Color)
         
         for button in team1Buttons {
             button.backgroundColor = color1
@@ -275,6 +402,7 @@ class ScoreboardVC: UIViewController {
     }
     
     @IBAction func exitButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸

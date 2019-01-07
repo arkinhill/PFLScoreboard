@@ -16,8 +16,9 @@ class LeagueController {
     // Shared instance
     static let shared = LeagueController()
     
-    // Source of truth ??
+    // Source of truth
     var leagues: [League] = []
+    var teamColors: [Team.Color] = [.Red, .Orange, .Yellow, .Green, .Blue, .Purple, .Silver, .Black]
     
     // Database
     let database = CKContainer.default().publicCloudDatabase
@@ -32,14 +33,17 @@ class LeagueController {
     func createLeague(leagueName: String, isPending: Bool, users: [User], completion: @escaping (League?) -> Void) {
         
         // Make sure correct user is creating array
-        guard let appleUserReference = UserController.shared.loggedInUser?.appleUserReference else {
+        guard let userRecord = UserController.shared.loggedInUser?.ckRecordID else {
             completion(nil)
             return
         }
+        
+        let userReference = CKRecord.Reference(recordID: userRecord, action: .none)
         // Append source of truth, call completion
-        let league = League(leagueName: leagueName, userReference: [appleUserReference])
-        saveLeague(league: league) { (success) in }
+        let league = League(leagueName: leagueName, userReference: [userReference])
+        saveLeague(league: league) { (success) in
             completion(league)
+        }
     }
 
     func saveLeague(league: League, completion: @escaping (Bool) -> Void) {
@@ -58,13 +62,15 @@ class LeagueController {
         }
     }
 
-// ❎ Incomplete function
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
     // 🔸 MARK: - ADD TEAMS TO LEAGUE
     
+    // ❎ Incomplete function
+    
     func addTeamToLeague(league: League, team: Team, completion: @escaping (Bool) -> Void) {
         league.teams.append(team)
+        completion(true)
 //        saveLeague(league: league, completion: <#T##(Bool) -> Void#>)
     }
 
@@ -223,11 +229,11 @@ class LeagueController {
     func fetchLeagues(completion: @escaping (Bool) -> Void) {
         
         // Set predicate to user reference, so we can pull users leagues from database in query
-        guard let appleUserReference = UserController.shared.loggedInUser?.appleUserReference else {
+        guard let userRecord = UserController.shared.loggedInUser?.ckRecordID else {
             completion(false)
             return
         }
-        let predicate = NSPredicate(format: "appleUser == %@", appleUserReference)
+        let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "League", predicate: predicate)
         database.perform(query, inZoneWith: nil) { (records, error) in
             if let error = error {
@@ -242,7 +248,14 @@ class LeagueController {
             }
             // Gather leagues into array, replace source of truth with new array, call completion
             let fetchedLeagues = records.compactMap { League(ckRecord: $0) }
-            self.leagues = fetchedLeagues
+            let filteredLeaues = fetchedLeagues.filter({ (league) -> Bool in
+                if league.userReference.contains(CKRecord.Reference(recordID: userRecord, action: .none)) {
+                    return true
+                } else {
+                    return false
+                }
+            })
+            UserController.shared.loggedInUser?.leagues = filteredLeaues
             completion(true)
         }
     }

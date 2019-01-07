@@ -15,12 +15,36 @@ class Game {
     // 🔸 MARK: - PROPERTIES
     
     // Game info
-    var date: Date
-    var team1: Team
-    var team2: Team
+    var date: Date?
+    var team1: Team?
+//    {
+//        didSet {
+//            team1Name = team.name
+//            team1Color = team1.color.rawValue
+//            team1Coach = team1.coach
+//        }
+//    }
+    var team2: Team?
+//    {
+//        didSet {
+//            team2Name = team2.name
+//            team2Coach = team2.coach
+//            team2Color = team2.color.rawValue
+//        }
+//    }
+
+    var team1Name: String
+    var team1Color: String
+    var team1Coach: String
+    
+    var team2Name: String
+    var team2Color: String
+    var team2Coach: String
+    
+// ❎ NEED TO CHANGE CLOCK FROM OPTIONAL
     
     // Clock
-    var clockTime: Timer
+    var clockTime: Timer?
     var whichHalf: Int
     
     // Team 1 game stats
@@ -61,8 +85,16 @@ class Game {
     
     // Game info
     fileprivate static let dateKey = "date"
-    fileprivate static let team1Key = "team1"  // Team.teamName
-    fileprivate static let team2Key = "team2"  // Team.teamName
+    fileprivate static let team1Key = "team1"
+    fileprivate static let team2Key = "team2"
+    
+    fileprivate static let team1NameKey = "team1Name"
+    fileprivate static let team1CoachKey = "team1Coach"
+    fileprivate static let team1ColorKey = "team1Color"
+    
+    fileprivate static let team2NameKey = "team2Name"
+    fileprivate static let team2CoachKey = "team2Coach"
+    fileprivate static let team2ColorKey = "team2Color"
     
     // Clock
     fileprivate static let clockTimeKey = "clockTime"
@@ -95,7 +127,7 @@ class Game {
     fileprivate static let team2InterceptionsCaughtKey = "team2InterceptionsCaught"
     
     // CloudKit variables
-    fileprivate static let leagueReferenceKey = "leagueReferenceKey"
+    fileprivate static let leagueReferenceKey = "leagueReference"
     
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
@@ -104,7 +136,6 @@ class Game {
     init(
         
         // Game info
-        date: Date = Date(),
         team1: Team,
         team2: Team,
         
@@ -142,9 +173,16 @@ class Game {
         leagueReference: CKRecord.Reference) {
         
         // Game info
-        self.date = date
         self.team1 = team1
         self.team2 = team2
+        
+        self.team1Name = team1.name
+        self.team1Coach = team1.coach
+        self.team1Color = team1.color.rawValue
+        
+        self.team2Name = team2.name
+        self.team2Coach = team2.coach
+        self.team2Color = team2.color.rawValue
         
         // Clock
         self.clockTime = clockTime
@@ -188,13 +226,21 @@ class Game {
         // Unpack values
         
         // Game info
-        guard let date = ckRecord[Game.dateKey] as? Date,
-            let team1 = ckRecord[Game.team1Key] as? Team,
-            let team2 = ckRecord[Game.team2Key] as? Team,
+        guard let date = ckRecord[Game.dateKey] as? Date?,
+
+// ❎ NEED TO REACTIVATE CLOCK, CHANGE IT FROM OPTIONAL ABOVE
             
             // Clock
-            let clockTime = ckRecord[Game.clockTimeKey] as? Timer,
+            //            let clockTime = ckRecord[Game.clockTimeKey] as? Timer,
             let whichHalf = ckRecord[Game.whichHalfKey] as? Int,
+            
+            let team1Name = ckRecord[Game.team1NameKey] as? String,
+            let team1Color = ckRecord[Game.team1ColorKey] as? String,
+            let team1Coach = ckRecord[Game.team1CoachKey] as? String,
+            
+            let team2Name = ckRecord[Game.team2NameKey] as? String,
+            let team2Color = ckRecord[Game.team2ColorKey] as? String,
+            let team2Coach = ckRecord[Game.team2CoachKey] as? String,
             
             // Team 1 game stats
             let team1Score = ckRecord[Game.team1ScoreKey] as? Int,
@@ -231,12 +277,21 @@ class Game {
         
         // Game info
         self.date = date
-        self.team1 = team1
-        self.team2 = team2
         
         // Clock
-        self.clockTime = clockTime
+
+// ❎ NEED TO REACTIVATE CLOCK, CHANGE IT FROM OPTIONAL ABOVE
+        
+        //        self.clockTime = clockTime
         self.whichHalf = whichHalf
+        
+        self.team1Coach = team1Coach
+        self.team1Name = team1Name
+        self.team1Color = team1Color
+        
+        self.team2Name = team2Name
+        self.team2Coach = team2Coach
+        self.team2Color = team2Color
         
         // Team 1 game stats
         self.team1Score = team1Score
@@ -286,9 +341,17 @@ extension CKRecord {
         // Set CKRecord values
         
         // Game info
-        self.setValue(game.date, forKey: Game.dateKey)
-        self.setValue(game.team1, forKey: Game.team1Key)
-        self.setValue(game.team2, forKey: Game.team2Key)
+        if let date = game.date {
+            self.setValue(date, forKey: Game.dateKey)
+        }
+        
+        self.setValue(game.team1Name, forKey: Game.team1NameKey)
+        self.setValue(game.team1Color, forKey: Game.team1ColorKey)
+        self.setValue(game.team1Coach, forKey: Game.team1CoachKey)
+        
+        self.setValue(game.team2Name, forKey: Game.team2NameKey)
+        self.setValue(game.team2Color, forKey: Game.team2ColorKey)
+        self.setValue(game.team2Coach, forKey: Game.team2CoachKey)
         
         // Clock
         self.setValue(game.clockTime, forKey: Game.clockTimeKey)

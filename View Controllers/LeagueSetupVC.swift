@@ -11,229 +11,150 @@ import CloudKit
 
 class LeagueSetupVC: UIViewController {
     
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: - SOURCE OF TRUTH
+    
     var league: League?
     
-    // MARK: - OUTLETS
+    
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: - OUTLETS
     
     @IBOutlet weak var leagueNameTextField: UITextField!
     
-    @IBOutlet weak var teamATeamNameTextField: UITextField!
-    @IBOutlet weak var teamACoachNameTextField: UITextField!
-    
-    @IBOutlet weak var teamBTeamNameTextField: UITextField!
-    @IBOutlet weak var teamBCoachNameTextField: UITextField!
-    
-    @IBOutlet weak var teamCTeamNameTextField: UITextField!
-    @IBOutlet weak var teamCCoachNameTextField: UITextField!
-    
-    @IBOutlet weak var teamDTeamNameTextField: UITextField!
-    @IBOutlet weak var teamDCoachNameTextField: UITextField!
-    
-    @IBOutlet weak var teamETeamNameTextField: UITextField!
-    @IBOutlet weak var teamECoachNameTextField: UITextField!
-    
-    @IBOutlet weak var teamFTeamNameTextField: UITextField!
-    @IBOutlet weak var teamFCoachNameTextField: UITextField!
-    
-    @IBOutlet weak var teamGTeamNameTextField: UITextField!
-    @IBOutlet weak var teamGCoachNameTextField: UITextField!
-    
-    @IBOutlet weak var teamHTeamNameTextField: UITextField!
-    @IBOutlet weak var teamHCoachNameTextField: UITextField!
+    @IBOutlet var teamNameTextFields: [UITextField]!
+    @IBOutlet var coachNameTextFields: [UITextField]!
     
     // Outlet collection (dragged out one username field, selected "collection" instead of "outlet", then joined all other username fields by dragging from filled circle at left up to each field on storyboard)
     
     @IBOutlet var usernameTextFields: [UITextField]!
     
-    // MARK: - VIEW DID LOAD
+    
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: - VIEW DID LOAD
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    // MARK: - ACTIONS
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: - ACTIONS
     
     @IBAction func createNewLeagueButton(_ sender: UIButton) {
+        let teamCount = self.checkHowManyTeams()
         LeagueController.shared.createLeague(leagueName: leagueNameTextField.text!, isPending: false, users: []) { (league) in
             if let league = league {
                 self.league = league
-                league.teams = []
-                
-            // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
-            // 🔸 MARK: - CREATE TEAMS
-                
-                // Team A information
-                if let teamATeamName = self.teamATeamNameTextField.text, !teamATeamName.isEmpty,
-                    let teamACoachName = self.teamACoachNameTextField.text, !teamACoachName.isEmpty {
-                    TeamController.shared.createTeam(coach: teamACoachName, name: teamATeamName, color: .LightRed, league: league, completion: { (team) in
-                        guard let team = team else { return }
-                        LeagueController.shared.addTeamToLeague(league: league, team: team, completion: { (success) in
-                        })
-                    })
-                }
-                
-                // Team B information
-                if let teamBTeamName = self.teamBTeamNameTextField.text, !teamBTeamName.isEmpty,
-                    let teamBCoachName = self.teamBCoachNameTextField.text, !teamBCoachName.isEmpty {
-                    TeamController.shared.createTeam(coach: teamBCoachName, name: teamBTeamName, color: .lightOrange, league: league, completion: { (team) in
-                        guard let team = team else { return }
-                        LeagueController.shared.addTeamToLeague(league: league, team: team, completion: { (success) in
-                        })
-                    })
-                }
-                
-                // Team C information
-                if let teamCTeamName = self.teamCTeamNameTextField.text, !teamCTeamName.isEmpty,
-                    let teamCCoachName = self.teamCCoachNameTextField.text, !teamCCoachName.isEmpty {
-                    TeamController.shared.createTeam(coach: teamCCoachName, name: teamCTeamName, color: "yellow", league: league, completion: { (team) in
-                        guard let team = team else { return }
-                        LeagueController.shared.addTeamToLeague(league: league, team: team, completion: { (success) in
-                        })
-                    })
-                }
-                
-                // Team D information
-                if let teamDTeamName = self.teamDTeamNameTextField.text, !teamDTeamName.isEmpty,
-                    let teamDCoachName = self.teamDCoachNameTextField.text, !teamDCoachName.isEmpty {
-                    TeamController.shared.createTeam(coach: teamDCoachName, name: teamDTeamName, color: "green", league: league, completion: { (team) in
-                        guard let team = team else { return }
-                        LeagueController.shared.addTeamToLeague(league: league, team: team, completion: { (success) in
-                        })
-                    })
-                }
-                
-                // Team E information
-                if let teamETeamName = self.teamETeamNameTextField.text, !teamETeamName.isEmpty,
-                    let teamECoachName = self.teamECoachNameTextField.text, !teamECoachName.isEmpty {
-                    TeamController.shared.createTeam(coach: teamECoachName, name: teamETeamName, color: "blue", league: league, completion: { (team) in
-                        guard let team = team else { return }
-                        LeagueController.shared.addTeamToLeague(league: league, team: team, completion: { (success) in
-                        })
-                    })
-                }
-                
-                // Team F information
-                if let teamFTeamName = self.teamFTeamNameTextField.text, !teamFTeamName.isEmpty,
-                    let teamFCoachName = self.teamFCoachNameTextField.text, !teamFCoachName.isEmpty {
-                    TeamController.shared.createTeam(coach: teamFCoachName, name: teamFTeamName, color: "purple", league: league, completion: { (team) in
-                        guard let team = team else { return }
-                        LeagueController.shared.addTeamToLeague(league: league, team: team, completion: { (success) in
-                        })
-                    })
-                }
-                
-                // Team G information
-                if let teamGTeamName = self.teamGTeamNameTextField.text, !teamGTeamName.isEmpty,
-                    let teamGCoachName = self.teamGCoachNameTextField.text, !teamGCoachName.isEmpty {
-                    TeamController.shared.createTeam(coach: teamGCoachName, name: teamGTeamName, color: "silver", league: league, completion: { (team) in
-                        guard let team = team else { return }
-                        LeagueController.shared.addTeamToLeague(league: league, team: team, completion: { (success) in
-                        })
-                    })
-                }
-                
-                // Team H information
-                if let teamHTeamName = self.teamHTeamNameTextField.text, !teamHTeamName.isEmpty,
-                    let teamHCoachName = self.teamHCoachNameTextField.text, !teamHCoachName.isEmpty {
-                    TeamController.shared.createTeam(coach: teamHCoachName, name: teamHTeamName, color: "black", league: league, completion: { (team) in
-                        guard let team = team else { return }
-                        LeagueController.shared.addTeamToLeague(league: league, team: team, completion: { (success) in
-                        })
-                    })
-                }
-                
-            // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
-            // 🔸 MARK: - CREATE GAMES
-                
-                // Selecting the right game schedule based on number of teams in league
-                if league.teams.count == 4 {
-                    LeagueController.shared.addGamesTo4TeamLeague(league: league)
-                } else if league.teams.count == 6 {
-                    LeagueController.shared.addGamesTo6TeamLeague(league: league)
-                } else if league.teams.count == 8 {
-                    LeagueController.shared.addGamesTo8TeamLeague(league: league)
-                    
-                // Presenting alert notification if league info is incorrect
-                } else {
-                    self.presentAlertController()
-                }
-            
-            // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
-            // 🔸 MARK: - INVITE EXISTING USERS TO LEAGUE
-                
-                // Set up dispatch group, so app doesn't move on until looping through all username fields
-                let dispatchGroup = DispatchGroup()
-                
-                // Loop through username fields, check to see if empty or not
-                for usernameTextField in self.usernameTextFields {
-                    guard let username = usernameTextField.text,!username.isEmpty else { continue }
-                    
-                    // Set predicate to username, query to find username records
-                    let predicate = NSPredicate(format: "username == %@", username)
-                    let query = CKQuery(recordType: User.userTypeKey, predicate: predicate)
-                    dispatchGroup.enter()
-                    LeagueController.shared.database.perform(query, inZoneWith: nil, completionHandler: { (records, error) in
-                        if let error = error {
-                            print("Error fetching user: \(error.localizedDescription)")
-                            return
-                        }
+                self.addAllTeamsTo(league: league, endIndex: (teamCount - 1), completion: { (success) in
+                    if success {
                         
-                        if let records = records, let userRecord = records.first {
-                            if let user = User(ckRecord: userRecord), let userRecordID = user.ckRecordID {
-                                let userReference = CKRecord.Reference(recordID: userRecordID, action: CKRecord_Reference_Action.none)
-                                league.userReference.append(userReference)
-                                LeagueController.shared.saveLeague(league: league, completion: { (success) in
-                                    if success {
-                                        dispatchGroup.notify(queue: .main, execute: {
-                                            self.performSegue(withIdentifier: "toGameSchedule", sender: nil)
-                                        })
-                                    }
-                                })
+                        // Selecting the right game schedule based on number of teams in league
+                        if self.league!.teams.count == 4 {
+                            LeagueController.shared.addGamesTo4TeamLeague(league: league)
+                        } else if league.teams.count == 6 {
+                            LeagueController.shared.addGamesTo6TeamLeague(league: league)
+                        } else if league.teams.count == 8 {
+                            LeagueController.shared.addGamesTo8TeamLeague(league: league)
+                
+                        // Presenting alert notification if league info is incorrect
+                        } else {
+                            self.presentAlertController()
+                        }
+                        DispatchQueue.main.async {
+                            
+                        self.addUsersTo(league: league, completion: { (success) in
+                            if success {
                             }
+                        })
                         }
-                        
-//                        // Adding a league reference to username
-//                        if let records = records, let userRecord = records.first {
-//                            if let user = User(ckRecord: userRecord) {
-//                                let leagueReference = CKRecord.Reference(recordID: league.ckRecordID!, action: .none)
-//                                user.leagueInvitesReferences.append(leagueReference)
-//
-//                                // Bundle up and send to CloudKit
-//                                let record = CKRecord(user: user)
-//                                let operation = CKModifyRecordsOperation(recordsToSave: [record], recordIDsToDelete: nil)
-//                                operation.savePolicy = .changedKeys
-//                                operation.queuePriority = .high
-//                                operation.qualityOfService = .userInteractive
-//
-//                                // Update league on CloudKit
-//                                operation.completionBlock = {
-//                                    dispatchGroup.leave()
-//                                }
-//                                LeagueController.shared.database.add(operation)
-//                            }
-//                        }
-                    })
-                }
-                
-// ❎ Do I need to present alert notification if league name is missing, or team names or coach names?
-                
-                // When all tasks are finished, perform segue to next view
+                    }
+                })
             }
         }
     }
     
-    // MARK: - NAVIGATION
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: - CREATE LEAGUE BUTTON FUNCTIONS
+    
+    func checkHowManyTeams() -> Int {
+        var teamNameCount = 0
+        var coachNameCount = 0
+        for textField in teamNameTextFields {
+            if textField.text != nil && textField.text != "" {
+                teamNameCount += 1
+            }
+        }
+        for textField in coachNameTextFields {
+            if textField.text != nil && textField.text != "" {
+                coachNameCount += 1
+            }
+        }
+        if teamNameCount == coachNameCount {
+            return coachNameCount
+        } else {
+            return 0
+        }
+    }
+    
+    func addAllTeamsTo(league: League, index: Int = 0, endIndex: Int, completion: @escaping (Bool) -> Void) {
+        DispatchQueue.main.async {
+            
+            if let teamName = self.teamNameTextFields[index].text, !teamName.isEmpty,
+                let coachName = self.coachNameTextFields[index].text, !coachName.isEmpty {
+                TeamController.shared.createTeam(coach: coachName, name: teamName, color: LeagueController.shared.teamColors[index], league: league) { (team) in
+                    guard let team = team else { completion(false); return }
+                    LeagueController.shared.addTeamToLeague(league: league, team: team, completion: { (success) in
+                        if success {
+                            if index == endIndex {
+                                completion(true)
+                            } else {
+                                self.addAllTeamsTo(league: league, index: index + 1, endIndex: endIndex, completion: completion)
+                            }
+                        }
+                    })
+                }
+            }
+        }
+    }
+    
+    // ⭐️ RIP: Eric Lanza gave the best years of his life to make this function work...
+    
+    func addUsersTo(league: League, completion: @escaping (Bool) -> Void) {
+        for textField in self.usernameTextFields {
+            guard let username = textField.text,!username.isEmpty else { continue }
+            
+            // Set predicate to username, query to find username records
+            let predicate = NSPredicate(format: "username == %@", username)
+            let query = CKQuery(recordType: User.userTypeKey, predicate: predicate)
+            
+            CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
+                if let error = error {
+                    print("Error fetching user: \(error.localizedDescription)")
+                    return
+                }
+                if let records = records, let userRecord = records.first {
+                    if let user = User(ckRecord: userRecord), let userRecordID = user.ckRecordID {
+                        let userReference = CKRecord.Reference(recordID: userRecordID, action: .none)
+                        league.userReference.append(userReference)
+                        
+                        LeagueController.shared.updateLeague(league: league, leagueName: league.leagueName, isPending: league.isPending ?? false, teams: league.teams, users: league.users, completion: completion)
+                    }
+                }
+            }
+        }
+    }
+    
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: - NAVIGATION
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toGameSchedule" {
-            
-            guard let destinationVC = segue.destination as? GameScheduleVC else { return }
-            destinationVC.league = league
+        if segue.identifier == "toUserProfile" {
         }
     }
 }
 
-// MARK: - ALERT CONTROLLER
+// 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+// 🔸 MARK: - ALERT CONTROLLER EXTENSION
 
 extension LeagueSetupVC {
     
@@ -246,10 +167,12 @@ extension LeagueSetupVC {
     }
 }
 
+// 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+// 🔸 MARK: - RESIGN TEXT FIELD EXTENSION
+
 extension LeagueSetupVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
 }
-

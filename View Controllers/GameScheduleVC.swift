@@ -12,58 +12,86 @@ class GameScheduleVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     // MARK: - LANDING PAD
     
-    var league: League?
+    var selectedLeague: League? {
+        didSet {
+            guard let selectedLeague = selectedLeague else { return }
+            GameController.shared.fetchGamesFor(league: selectedLeague) { (success) in
+                if success {
+                    DispatchQueue.main.async {
+                        self.collectionView.reloadData()
+                    }
+                }
+            }
+        }
+    }
     
     // MARK: - OUTLETS
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - VIEW DID LOAD
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("break")
+        
     }
     
     // MARK: - COLLECTION VIEW DATA SOURCE
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-// ❎ What is the right location for games array?
-        
-        return GameController.shared.games.count
+        return selectedLeague?.games.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gameCell", for: indexPath) as? GameCVCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gameCell", for: indexPath) as? GameCVCell
+            else { return UICollectionViewCell() }
         
-// ❎ What is the right location for games array?
-        
-        let game = GameController.shared.games[indexPath.row]
-        
+        let cellGame = selectedLeague?.games[indexPath.row]
+        guard let game = cellGame else { return cell }
+//            let team1 = game.team1,
+//            let team2 = game.team2
+//
         // Configure cell
-        cell.leftHelmetImageView.image = UIImage(named: "helmet\(game.team1.color)Left")
-        cell.leftHelmetLetterImageView.image = UIImage(named: "letter\(game.team1.name.prefix(1))")
-        cell.rightHelmetImageView.image = UIImage(named: "helmet\(game.team2.color)Right")
-        cell.rightHelmetLetterImageView.image = UIImage(named: "letter\(game.team1.name.prefix(1))")
-        cell.team1NameLabel.text = game.team1.name.capitalized
+        if let date = game.date {
+            cell.backgroundColor = UIColor(named: "Black")
+            cell.gameDateLabel.text = date.asString
+        } else {
+            cell.backgroundColor = UIColor(named: "Yellow")
+        }
+        
+        cell.leftHelmetButton.setImage(UIImage(named: "helmet\(game.team1Color)Left"), for: .normal)
+        cell.leftHelmetLetterImageView.image = UIImage(named: "letter\(game.team1Name.prefix(1).capitalized)")
+        cell.team1NameLabel.text = game.team1Name.uppercased()
         cell.team1ScoreLabel.text = "\(game.team1Score)"
-        cell.team2NameLabel.text = game.team2.name.capitalized
+        
+        cell.rightHelmetButton.setImage(UIImage(named: "helmet\(game.team2Color)Right"), for: .normal)
+        cell.rightHelmetLetterImageView.image = UIImage(named: "letter\(game.team2Name.prefix(1).capitalized)")
+        cell.team2NameLabel.text = game.team2Name.uppercased()
         cell.team2ScoreLabel.text = "\(game.team2Score)"
-        cell.gameDateLabel.text = "\(game.date)"
         
         return cell
     }
     
-// ❎ Need to complete navigation (after user profile, and game schedule are working)
-    
-    // MARK: - NAVIGATION
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toScoreboard" {
-            guard let destinationVC = segue.destination as? ScoreboardVC, let indexPath = collectionView.indexPath(for: <#T##UICollectionViewCell#>) else { return }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard let game = selectedLeague?.games[indexPath.row] else { return }
+        
+        if let _ = game.date {
+            guard let gameRecapVC = UIStoryboard(name: "GameRecap", bundle: nil).instantiateInitialViewController() as? GameRecapVC else { return }
             
-            let game = GameController.shared.games[indexPath.row]
-            destinationVC.selectedGame = game
+            gameRecapVC.selectedGame = game
+            
+            navigationController?.present(gameRecapVC, animated: true, completion: nil)
+        
+        } else {
+            guard let scoreboardVC = UIStoryboard(name: "Scoreboard", bundle: nil).instantiateInitialViewController() as? ScoreboardVC else { return }
+            
+            scoreboardVC.selectedGame = game
+            
+            navigationController?.present(scoreboardVC, animated: true, completion: nil)
+            
         }
     }
 }
+

@@ -16,7 +16,6 @@ class User {
     
     // Username
     let username: String
-//    var leagueInvitesReferences: [CKRecord.Reference]
 
 // ❎ Are we going to use thes leagues and leagueInvites arrays, or the isPending property on League objects?
     

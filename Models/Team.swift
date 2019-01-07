@@ -11,21 +11,6 @@ import CloudKit
 
 class Team {
     
-    enum Color: String {
-        case black
-        case blue
-        case silver
-        case green
-        case orange
-        case purple
-        case red
-        case yellow
-        case PFLBlue
-        case PFLGray
-        case PFLRed
-        case PFLYellow
-    }
-    
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
     // 🔸 MARK: - PROPERTIES
     
@@ -56,7 +41,6 @@ class Team {
     
     // CloudKit variables
     var leagueReference: CKRecord.Reference
-//    var gameReferences: [CKRecord.Reference]
     var ckRecordID: CKRecord.ID?
     
     
@@ -121,7 +105,6 @@ class Team {
     
         // CloudKit variables
         leagueReference: CKRecord.Reference
-//        , gameReferences: [CKRecord.Reference]
         ) {
         
         // General team info
@@ -148,7 +131,6 @@ class Team {
         
         // CloudKit variables
         self.leagueReference = leagueReference
-//        self.gameReferences = gameReferences
     }
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
@@ -191,6 +173,7 @@ class Team {
         self.coach = coach
         self.name = name
         
+        // Coverting CloudKit record color (string) into enum color
         guard let colorAsEnum = Color(rawValue: color) else { return nil }
         self.color = colorAsEnum
         
@@ -270,5 +253,25 @@ extension Team: Equatable {
     
     static func == (lhs: Team, rhs: Team) -> Bool {
         return lhs.ckRecordID == rhs.ckRecordID
+    }
+}
+
+// MARK: - SET COLOR AS TYPE (FOR TEAM COLORS)
+
+extension Team {
+    
+    enum Color: String {
+        case Black
+        case Blue
+        case Silver
+        case Green
+        case Orange
+        case Purple
+        case Red
+        case Yellow
+        case PFLBlue
+        case PFLGray
+        case PFLRed
+        case PFLYellow
     }
 }

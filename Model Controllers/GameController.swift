@@ -22,8 +22,6 @@ class GameController {
     // Database
     private let database = CKContainer.default().publicCloudDatabase
     
-// ❎ Do I need all CRUD functions? (I put them all in at first, not sure which I would need)
-    
     // MARK: - CRUD FUNCTIONS
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
@@ -80,7 +78,6 @@ class GameController {
         let game = Game(
             
             // Game info
-            date: date,
             team1: team1,
             team2: team2,
             

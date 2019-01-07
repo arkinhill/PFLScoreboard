@@ -11,7 +11,8 @@ import CloudKit
 
 class UserController {
     
-    // MARK: - SHARED, SOURCE, DATABASE
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: - SHARED, SOURCE, DATABASE
     
     // Shared instance
     static let shared = UserController()
@@ -22,10 +23,9 @@ class UserController {
     
     // Database
     let database = CKContainer.default().publicCloudDatabase
-
-// ❎ Do I need all CRUD functions? (I put them all in at first, not sure which I would need)
     
-    // MARK: - FETCH USER FUNCTION
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: - FETCH USER FUNCTION
     
     func fetchLoggedInUser(completion: @escaping (Bool) -> Void) {
         
@@ -60,7 +60,8 @@ class UserController {
         }
     }
     
-    // MARK: - CREATE USER FUNCTION
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: - CREATE USER FUNCTION
     
     func createUser(username: String, completion: @escaping (Bool) -> Void) {
         
