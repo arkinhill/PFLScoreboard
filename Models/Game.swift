@@ -36,10 +36,12 @@ class Game {
     var team1Name: String
     var team1Color: String
     var team1Coach: String
+    var team1CKRecordID: CKRecord.ID?
     
     var team2Name: String
     var team2Color: String
     var team2Coach: String
+    var team2CKRecordID: CKRecord.ID?
     
 // ❎ NEED TO CHANGE CLOCK FROM OPTIONAL
     
@@ -76,6 +78,7 @@ class Game {
     // CloudKit variables
     var leagueReference: CKRecord.Reference
     var ckRecordID: CKRecord.ID?
+
     
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
@@ -91,10 +94,12 @@ class Game {
     fileprivate static let team1NameKey = "team1Name"
     fileprivate static let team1CoachKey = "team1Coach"
     fileprivate static let team1ColorKey = "team1Color"
+    fileprivate static let team1CKRecordIDKey = "team1CKRecordID"
     
     fileprivate static let team2NameKey = "team2Name"
     fileprivate static let team2CoachKey = "team2Coach"
     fileprivate static let team2ColorKey = "team2Color"
+    fileprivate static let team2CKRecordIDKey = "team2CKRecordID"
     
     // Clock
     fileprivate static let clockTimeKey = "clockTime"
@@ -179,10 +184,12 @@ class Game {
         self.team1Name = team1.name
         self.team1Coach = team1.coach
         self.team1Color = team1.color.rawValue
+        self.team1CKRecordID = team1.ckRecordID
         
         self.team2Name = team2.name
         self.team2Coach = team2.coach
         self.team2Color = team2.color.rawValue
+        self.team2CKRecordID = team2.ckRecordID
         
         // Clock
         self.clockTime = clockTime
@@ -222,7 +229,7 @@ class Game {
     // 🔸 MARK: - INITIALIZE MODEL OBJECT FROM CKRECORD
     
     init?(ckRecord: CKRecord) {
-        
+    
         // Unpack values
         
         // Game info
@@ -237,10 +244,12 @@ class Game {
             let team1Name = ckRecord[Game.team1NameKey] as? String,
             let team1Color = ckRecord[Game.team1ColorKey] as? String,
             let team1Coach = ckRecord[Game.team1CoachKey] as? String,
+            let team1CKRecordID = ckRecord[Game.team1CKRecordIDKey] as? String,
             
             let team2Name = ckRecord[Game.team2NameKey] as? String,
             let team2Color = ckRecord[Game.team2ColorKey] as? String,
             let team2Coach = ckRecord[Game.team2CoachKey] as? String,
+            let team2CKRecordID = ckRecord[Game.team2CKRecordIDKey] as? String,
             
             // Team 1 game stats
             let team1Score = ckRecord[Game.team1ScoreKey] as? Int,
@@ -288,10 +297,12 @@ class Game {
         self.team1Coach = team1Coach
         self.team1Name = team1Name
         self.team1Color = team1Color
+        self.team1CKRecordID = CKRecord.ID(recordName: team1CKRecordID)
         
         self.team2Name = team2Name
         self.team2Coach = team2Coach
         self.team2Color = team2Color
+        self.team2CKRecordID = CKRecord.ID(recordName: team2CKRecordID)
         
         // Team 1 game stats
         self.team1Score = team1Score
@@ -348,10 +359,12 @@ extension CKRecord {
         self.setValue(game.team1Name, forKey: Game.team1NameKey)
         self.setValue(game.team1Color, forKey: Game.team1ColorKey)
         self.setValue(game.team1Coach, forKey: Game.team1CoachKey)
+        self.setValue(game.team1CKRecordID?.recordName, forKey: Game.team1CKRecordIDKey)
         
         self.setValue(game.team2Name, forKey: Game.team2NameKey)
         self.setValue(game.team2Color, forKey: Game.team2ColorKey)
         self.setValue(game.team2Coach, forKey: Game.team2CoachKey)
+        self.setValue(game.team2CKRecordID?.recordName, forKey: Game.team2CKRecordIDKey)
         
         // Clock
         self.setValue(game.clockTime, forKey: Game.clockTimeKey)

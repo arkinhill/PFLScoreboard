@@ -58,7 +58,7 @@ class ScoreboardVC: UIViewController {
     @IBOutlet weak var team1GameIntThrownButton: UIButton!
     
     // Stats - Team 1 Pass Completion - Averages
-    @IBOutlet weak var team1AvgCoompletionsButton: UIButton!
+    @IBOutlet weak var team1AvgCompletionsButton: UIButton!
     @IBOutlet weak var team1AvgPassesAttemptedButton: UIButton!
     @IBOutlet weak var team1AvgCompletionPercentButton: UIButton!
     @IBOutlet weak var team1AvgIntThrownButton: UIButton!
@@ -147,6 +147,14 @@ class ScoreboardVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let game = selectedGame {
+            GameController.shared.fetchTeamsFor(game: game) { (success) in
+                if success {
+                    print("Do something?")
+                    self.updateAverages()
+                }
+            }
+        }
         
         team1Buttons = [
             
@@ -157,7 +165,7 @@ class ScoreboardVC: UIViewController {
             team1GameIntThrownButton,
         
             // Stats - Team 1 Pass Completion - Averages
-            team1AvgCoompletionsButton,
+            team1AvgCompletionsButton,
             team1AvgPassesAttemptedButton,
             team1AvgCompletionPercentButton,
             team1AvgIntThrownButton,
@@ -277,16 +285,17 @@ class ScoreboardVC: UIViewController {
             if game.team1CompletionsAttempted == 0 {
                 team1GameCompletionPercentButton.setTitle("0%", for: .normal)
             } else {
-                team1GameCompletionPercentButton.setTitle("\(game.team1CompletionsMade / game.team1CompletionsAttempted)%", for: .normal)
+                let percentage = getPercentageString(numerator: game.team1CompletionsMade, denominator: game.team1CompletionsAttempted)
+                team1GameCompletionPercentButton.setTitle(percentage, for: .normal)
             }
         
         team1GameIntThrownButton.setTitle("\(game.team1InterceptionsThrown)", for: .normal)
         
         // Stats - Team 1 Pass Completion - Averages
-        team1AvgCoompletionsButton.setTitle("ADD", for: .normal)
-        team1AvgPassesAttemptedButton.setTitle("ADD", for: .normal)
-        team1AvgCompletionPercentButton.setTitle("ADD", for: .normal)
-        team1AvgIntThrownButton.setTitle("ADD", for: .normal)
+        team1AvgCompletionsButton.setTitle("0", for: .normal)
+        team1AvgPassesAttemptedButton.setTitle("0", for: .normal)
+        team1AvgCompletionPercentButton.setTitle("0", for: .normal)
+        team1AvgIntThrownButton.setTitle("0", for: .normal)
         
         // Stats - Team 1 Field Goals - Game
         team1GameFieldGoalsButton.setTitle("\(game.team1FieldGoalsMade)", for: .normal)
@@ -300,9 +309,9 @@ class ScoreboardVC: UIViewController {
             }
         
         // Stats - Team 1 Field Goals - Averages
-        team1AvgFieldGoalsButton.setTitle("ADD", for: .normal)
-        team1AvgFieldGoalsAttemptedButton.setTitle("ADD", for: .normal)
-        team1AvgFieldGoalPercentButton.setTitle("ADD", for: .normal)
+        team1AvgFieldGoalsButton.setTitle("0", for: .normal)
+        team1AvgFieldGoalsAttemptedButton.setTitle("0", for: .normal)
+        team1AvgFieldGoalPercentButton.setTitle("0", for: .normal)
         
         // Stats - Team 1 PATs - Game
         team1GamePATsMadeButton.setTitle("\(game.team1PATsMade)", for: .normal)
@@ -316,9 +325,9 @@ class ScoreboardVC: UIViewController {
             }
         
         // Stats - Team 1 PATs - Averages
-        team1AvgPATsMadeButton.setTitle("ADD", for: .normal)
-        team1AvgPATsAttemptedButton.setTitle("ADD", for: .normal)
-        team1AvgPATPercentButton.setTitle("ADD", for: .normal)
+        team1AvgPATsMadeButton.setTitle("0", for: .normal)
+        team1AvgPATsAttemptedButton.setTitle("0", for: .normal)
+        team1AvgPATPercentButton.setTitle("0", for: .normal)
         
         // Stats - Team 1 Misc - Game
         team1GameTDsButton.setTitle("\(game.team1Touchdowns)", for: .normal)
@@ -326,9 +335,9 @@ class ScoreboardVC: UIViewController {
         team1GameIntCaughtButton.setTitle("\(game.team1InterceptionsCaught)", for: .normal)
         
         // Stats - Team 1 Misc - Averages
-        team1AvgTDsButton.setTitle("ADD", for: .normal)
-        team1Avg2PTsButton.setTitle("ADD", for: .normal)
-        team1AvgIntCaughtButton.setTitle("ADD", for: .normal)
+        team1AvgTDsButton.setTitle("0", for: .normal)
+        team1Avg2PTsButton.setTitle("0", for: .normal)
+        team1AvgIntCaughtButton.setTitle("0", for: .normal)
         
         // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
         // 🔸 MARK: - UPDATE TEAM 2 STATS
@@ -336,7 +345,7 @@ class ScoreboardVC: UIViewController {
         // Stats - Team 2 Pass Completion - Game
         team2GameCompletionsButton.setTitle("\(game.team2CompletionsMade)", for: .normal)
         team2GamePassesAttemptedButton.setTitle("\(game.team2CompletionsAttempted)", for: .normal)
-        team2GameCompletionPercentButton.setTitle("ADD", for: .normal)
+        team2GameCompletionPercentButton.setTitle("0", for: .normal)
         
         // For percentage calculation: Check to see if denominator is zero
         if game.team2CompletionsAttempted == 0 {
@@ -348,10 +357,10 @@ class ScoreboardVC: UIViewController {
         team2GameIntThrownButton.setTitle("\(game.team2InterceptionsThrown)", for: .normal)
         
         // Stats - Team 2 Pass Completion - Averages
-        team2AvgCompletionsButton.setTitle("ADD", for: .normal)
-        team2AvgPassesAttemptedButton.setTitle("ADD", for: .normal)
-        team2AvgCompletionPercentButton.setTitle("ADD", for: .normal)
-        team2AvgIntThrownButton.setTitle("ADD", for: .normal)
+        team2AvgCompletionsButton.setTitle("0", for: .normal)
+        team2AvgPassesAttemptedButton.setTitle("0", for: .normal)
+        team2AvgCompletionPercentButton.setTitle("0", for: .normal)
+        team2AvgIntThrownButton.setTitle("0", for: .normal)
         
         // Stats - Team 2 Field Goals - Game
         team2GameFieldGoalsButton.setTitle("\(game.team2FieldGoalsMade)", for: .normal)
@@ -365,25 +374,25 @@ class ScoreboardVC: UIViewController {
             }
         
         // Stats - Team 2 Field Goals - Averages
-        team2AvgFieldGoalsButton.setTitle("ADD", for: .normal)
-        team2AvgFieldGoalsAttemptedButton.setTitle("ADD", for: .normal)
-        team2AvgFieldGoalPercentButton.setTitle("ADD", for: .normal)
+        team2AvgFieldGoalsButton.setTitle("0", for: .normal)
+        team2AvgFieldGoalsAttemptedButton.setTitle("0", for: .normal)
+        team2AvgFieldGoalPercentButton.setTitle("0", for: .normal)
         
         // Stats - Team 2 PATs - Game
         team2GamePATsMadeButton.setTitle("\(game.team2PATsMade)", for: .normal)
         team2GamePATsAttemptedButton.setTitle("\(game.team2PATsAttempted)", for: .normal)
         
-            // For percentage calculation: Check to see if denominator is zero
-            if game.team2PATsAttempted == 0 {
-                team2GamePATPercentButton.setTitle("0%", for: .normal)
-            } else {
-                team2GamePATPercentButton.setTitle("\(game.team2PATsMade / game.team2PATsAttempted)%", for: .normal)
-            }
+//            // For percentage calculation: Check to see if denominator is zero
+//            if game.team2PATsAttempted == 0 {
+//                team2GamePATPercentButton.setTitle("0%", for: .normal)
+//            } else {
+//                team2GamePATPercentButton.setTitle("\(game.team2PATsMade / game.team2PATsAttempted)%", for: .normal)
+//            }
         
         // Stats - Team 2 PATs - Averages
-        team2AvgPATsMadeButton.setTitle("ADD", for: .normal)
-        team2AvgPATsAttemptedButton.setTitle("ADD", for: .normal)
-        team2AvgPATPercentButton.setTitle("ADD", for: .normal)
+        team2AvgPATsMadeButton.setTitle("0", for: .normal)
+        team2AvgPATsAttemptedButton.setTitle("0", for: .normal)
+        team2AvgPATPercentButton.setTitle("0", for: .normal)
         
         // Stats - Team 2 Misc - Game
         team2GameTDsButton.setTitle("\(game.team2Touchdowns)", for: .normal)
@@ -391,9 +400,9 @@ class ScoreboardVC: UIViewController {
         team2GameIntCaughtButton.setTitle("\(game.team2InterceptionsCaught)", for: .normal)
         
         // Stats - Team 2 Misc - Averages
-        team2AvgTDsButton.setTitle("ADD", for: .normal)
-        team2Avg2PTsButton.setTitle("ADD", for: .normal)
-        team2AvgIntCaughtButton.setTitle("ADD", for: .normal)
+        team2AvgTDsButton.setTitle("0", for: .normal)
+        team2Avg2PTsButton.setTitle("0", for: .normal)
+        team2AvgIntCaughtButton.setTitle("0", for: .normal)
     }
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
@@ -440,22 +449,67 @@ class ScoreboardVC: UIViewController {
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
     // 🔸 MARK: - ACTIONS - TEAM 1 STATS BUTTONS
     
+    //
+    func updateCells(cellA1: Int, ) {}
+    
+    
     // Stats - Team 1 Pass Completion - Add
-    @IBAction func team1AddCompletionMadeButton(_ sender: Any) {
+    @IBAction func team1AddCompletionMadeButton(_ sender: UIButton) {
         guard let game = selectedGame else { return }
-        game.team1CompletionsMade += 1
-        team1GameCompletionsButton.setTitle("\(game.team1CompletionsMade)", for: .normal)
         
-        //Cody's Changes
-        guard var completions = game.team1?.completionsMade else {print("Error unwrapping"); return}
-        completions += 1
-        print("Team Overall Completions = \(completions)")
-        print("Team Game Completions = \(game.team1CompletionsMade)")
+        // Add 1 to game stats
+        game.team1CompletionsMade += 1
+        game.team1CompletionsAttempted += 1
+        
+        // Add 1 to game stat labels
+        team1GameCompletionsButton.setTitle("\(game.team1CompletionsMade)", for: .normal)
+        team1GamePassesAttemptedButton.setTitle("\(game.team1CompletionsAttempted)", for: .normal)
+        
+        // Add 1 to team season stat labels
+        game.team1?.completionsMade += 1
+        game.team1?.completionsAttempted += 1
+        
+        // Update game percentage button
+        if game.team1CompletionsAttempted == 0 {
+            team1GameCompletionPercentButton.setTitle("0%", for: .normal)
+        } else {
+            let percentage = getPercentageString(numerator: game.team1CompletionsMade, denominator: game.team1CompletionsAttempted)
+            team1GameCompletionPercentButton.setTitle(percentage, for: .normal)
+        }
+        // Update team averages buttons
+        let gamesPlayed = game.team1?.gamesPlayed
+        team1AvgCompletionsButton.setTitle("\(game.team1?.completionsMade ?? 0 / (gamesPlayed ?? 0 + 1))", for: .normal)
+        team1AvgPassesAttemptedButton.setTitle("\(game.team1?.completionsAttempted ?? 0 / (gamesPlayed ?? 0 + 1))", for: .normal)
+        
+        // Update team season percentage button
+        if game.team1?.completionsAttempted == 0 {
+            team1AvgPassesAttemptedButton.setTitle("0%", for: .normal)
+        } else {
+            let percentage = getPercentageString(numerator: game.team1?.completionsMade ?? 0, denominator: game.team1?.completionsAttempted ?? 0)
+            team1AvgCompletionPercentButton.setTitle(percentage, for: .normal)
+        }
     }
-    
-    //    team1GameCompletionsButton.setTitle("\(game.team1CompletionsMade)", for: .normal)
-    
+
     @IBAction func team1AddCompletionMissedButton(_ sender: Any) {
+        guard let game = selectedGame else { return }
+        
+        // Add 1 to attempted and change labels
+        game.team1CompletionsAttempted += 1
+        team1GamePassesAttemptedButton.setTitle("\(game.team1CompletionsAttempted)", for: .normal)
+        game.team1?.completionsAttempted += 1
+        
+        // Update percentage button
+        if game.team1CompletionsAttempted == 0 {
+            team1GameCompletionPercentButton.setTitle("0%", for: .normal)
+        } else {
+            let percentage = getPercentageString(numerator: game.team1CompletionsMade, denominator: game.team1CompletionsAttempted)
+            team1GameCompletionPercentButton.setTitle(percentage, for: .normal)
+        }
+        
+        // Update averages
+        team1AvgCompletionsButton.setTitle("\(game.team1?.completionsMade ?? 0 / (game.team1?.gamesPlayed ?? 0 + 1))", for: .normal)
+        team1AvgPassesAttemptedButton.setTitle("\(game.team1?.completionsAttempted ?? 0 / (game.team1?.gamesPlayed ?? 0 + 1))", for: .normal)
+        
     }
     
     @IBAction func team1AddInterceptionThrownButton(_ sender: Any) {
@@ -463,6 +517,20 @@ class ScoreboardVC: UIViewController {
     
     // Stats - Team 1 Pass Completion - Subtract
     @IBAction func team1SubtractCompletionMadeButton(_ sender: Any) {
+        
+        // Subtracting points
+        guard let game = selectedGame else { return }
+        game.team1CompletionsMade -= 1
+        game.team1CompletionsAttempted -= 1
+        game.team1?.completionsMade -= 1
+        
+        // Updating labels
+        team1GameCompletionsButton.setTitle("\(game.team1CompletionsMade)", for: .normal)
+        team1GamePassesAttemptedButton.setTitle("\(game.team1CompletionsAttempted)", for: .normal)
+        
+        //team 1 completion avgs
+        team1AvgCompletionsButton.setTitle("\(game.team1?.completionsMade ?? 0 / (game.team1?.gamesPlayed ?? 0 + 1))", for: .normal)
+        team1AvgPassesAttemptedButton.setTitle("\(game.team1?.completionsAttempted ?? 0 / (game.team1?.gamesPlayed ?? 0 + 1))", for: .normal)
     }
     
     @IBAction func team1SubtractCompletionMissedButton(_ sender: Any) {
@@ -590,8 +658,29 @@ class ScoreboardVC: UIViewController {
     @IBAction func teeam2SubtractInterceptionCaughtButton(_ sender: Any) {
     }
     
+    //MARK: - FIRST TIME LABEL SET UP
+    func updateAverages(){
+        guard let game = selectedGame else { return }
+        //team 1 completion avgs
+        team1AvgCompletionsButton.setTitle("\(game.team1?.completionsMade ?? 0 / (game.team1?.gamesPlayed ?? 0 + 1))", for: .normal)
+    }
+    
+    
+    
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
     // 🔸 MARK: - NAVIGATION
     
     // JUST NEED TO POP OFF STACK WITH EXIT BUTTON
+}
+
+extension ScoreboardVC {
+    
+    fileprivate func getPercentageString(numerator: Int, denominator: Int) -> String {
+        
+        let numeratorDouble = Double(numerator)
+        let denominatorDouble = Double(denominator)
+        let percent = Int((numeratorDouble / denominatorDouble) * 100)
+        
+        return "\(String(percent))%"
+    }
 }

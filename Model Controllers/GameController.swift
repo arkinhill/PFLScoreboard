@@ -261,4 +261,35 @@ class GameController {
         }
         database.add(operation)
     }
+    
+    func fetchTeamsFor(game: Game, completion: @escaping (Bool) -> Void) {
+        guard let team1CKRecordID = game.team1CKRecordID, let team2CKRecordID = game.team2CKRecordID else { return }
+        
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: Team.teamTypeKey, predicate: predicate)
+        
+        database.perform(query, inZoneWith: nil) { (records, error) in
+            if let error = error {
+                print("There was an error fetching teams for the game; \(error.localizedDescription)")
+                completion(false)
+                return
+            }
+            
+            guard let records = records else { return }
+            
+            let teams = records.compactMap({Team(ckRecord: $0)})
+            
+            let team1 = teams.filter({ (team) -> Bool in
+                return team.ckRecordID == team1CKRecordID
+            })
+            
+            let team2 = teams.filter({ (team) -> Bool in
+                return team.ckRecordID == team2CKRecordID
+            })
+            
+            game.team1 = team1.first
+            game.team2 = team2.first
+            completion(true)
+        }
+    }
 }

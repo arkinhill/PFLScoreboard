@@ -549,7 +549,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="yqx-fd-kgb" userLabel="team1GamePasses">
                                                         <rect key="frame" x="0.0" y="0.0" width="198" height="34"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pL-kI-WGt">
+                                                            <button opaque="NO" tag="-1" contentMode="scaleToFill" restorationIdentifier="completion" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pL-kI-WGt">
                                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="48" id="fcI-7K-fMV"/>
@@ -563,7 +563,7 @@
                                                                     <action selector="team1AddCompletionMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="VNp-Kt-UGT"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4SU-QB-nFi">
+                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="thrown" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4SU-QB-nFi">
                                                                 <rect key="frame" x="50" y="0.0" width="48" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="34" id="Ggm-vo-9Pp"/>
@@ -588,7 +588,7 @@
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nwx-NQ-GkN">
+                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="interception" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nwx-NQ-GkN">
                                                                 <rect key="frame" x="150" y="0.0" width="48" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="34" id="HJy-lD-UPf"/>
@@ -748,7 +748,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="1kM-hh-3qj" userLabel="team1AvgPasses">
                                                         <rect key="frame" x="0.0" y="0.0" width="198" height="34"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5u3-th-X0m">
+                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="completion" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5u3-th-X0m">
                                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="48" id="Z8C-kt-DhM"/>
@@ -762,7 +762,7 @@
                                                                     <action selector="team1SubtractCompletionMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="t5n-ae-Yvg"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4J-UM-MXy">
+                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="thrown" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4J-UM-MXy">
                                                                 <rect key="frame" x="50" y="0.0" width="48" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="34" id="016-VG-lN6"/>
@@ -787,7 +787,7 @@
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYj-jj-ivA">
+                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="interception" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYj-jj-ivA">
                                                                 <rect key="frame" x="150" y="0.0" width="48" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="34" id="2CZ-cL-guq"/>
@@ -1433,7 +1433,7 @@
                         <outlet property="halfIndicatorImageView" destination="rlC-w8-eXv" id="xKi-ec-xV0"/>
                         <outlet property="team1Avg2PTsButton" destination="08F-wb-Kh3" id="5bz-Sl-zpf"/>
                         <outlet property="team1AvgCompletionPercentButton" destination="yzp-UK-t4E" id="5IK-e3-M9b"/>
-                        <outlet property="team1AvgCoompletionsButton" destination="5u3-th-X0m" id="0gL-pN-oR9"/>
+                        <outlet property="team1AvgCompletionsButton" destination="5u3-th-X0m" id="0gL-pN-oR9"/>
                         <outlet property="team1AvgFieldGoalPercentButton" destination="LvP-H7-wi0" id="hNj-oP-jTP"/>
                         <outlet property="team1AvgFieldGoalsAttemptedButton" destination="ay9-Gx-vJM" id="ZKD-i5-B58"/>
                         <outlet property="team1AvgFieldGoalsButton" destination="Kd7-VL-RVe" id="5gh-JY-gJy"/>
