@@ -14,13 +14,20 @@ class GameRecapVC: UIViewController {
     
     var selectedGame: Game?
     
+    // MARK: - OUTLETS
+    
     // MARK: - VIEW DID LOAD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
+    
+    // MARK: - ACTIONS
+    
+    @IBAction func exitButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     
 
     /*

@@ -22,7 +22,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grayGradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="RJM-KV-uxI">
                                 <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="ceK-CW-Dwj" userLabel="teamCoachNames">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="ceK-CW-Dwj" userLabel="teamCoachNames">
                                 <rect key="frame" x="122.66666666666667" y="63.333333333333343" width="155.33333333333331" height="76"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="TITANS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mM-hR-ENI">
@@ -32,7 +32,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JOz-oq-Djf">
-                                        <rect key="frame" x="0.0" y="47.333333333333329" width="155.33333333333334" height="28.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="47.333333333333336" width="155.33333333333334" height="28.666666666666664"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COACH:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPa-gz-Aaz">
                                                 <rect key="frame" x="0.0" y="0.0" width="71.666666666666671" height="28.666666666666668"/>
@@ -50,29 +50,29 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="helmetRedRight" translatesAutoresizingMaskIntoConstraints="NO" id="GwF-5P-oid">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="helmetRedRight" translatesAutoresizingMaskIntoConstraints="NO" id="GwF-5P-oid">
                                 <rect key="frame" x="278" y="41.333333333333343" width="180" height="162"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="162" id="Tgo-zd-t7M"/>
                                     <constraint firstAttribute="width" constant="180" id="hBC-Gf-F5f"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="letterW" translatesAutoresizingMaskIntoConstraints="NO" id="9nA-rs-1bE">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterW" translatesAutoresizingMaskIntoConstraints="NO" id="9nA-rs-1bE">
                                 <rect key="frame" x="353" y="63.333333333333343" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="H1o-PY-8ka"/>
                                     <constraint firstAttribute="width" priority="50" constant="60" id="aBJ-hl-UBr"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="ranking4" translatesAutoresizingMaskIntoConstraints="NO" id="6Vh-rb-ovG" userLabel="rankingPatch">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ranking4" translatesAutoresizingMaskIntoConstraints="NO" id="6Vh-rb-ovG" userLabel="rankingPatch">
                                 <rect key="frame" x="421" y="41.333333333333343" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="7Jq-l8-AJ0"/>
                                     <constraint firstAttribute="height" constant="50" id="UCh-a2-cGF"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="i5B-Av-ssO" userLabel="winsLosses">
-                                <rect key="frame" x="470" y="119.99999999999999" width="74" height="47.333333333333336"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="i5B-Av-ssO" userLabel="winsLosses">
+                                <rect key="frame" x="470" y="119.99999999999999" width="74" height="47.333333333333329"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOJ-IB-cos">
                                         <rect key="frame" x="0.0" y="0.0" width="19.333333333333332" height="47.333333333333336"/>
@@ -109,7 +109,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="G2z-ib-l0N" userLabel="statsLabels">
                                         <rect key="frame" x="0.0" y="0.0" width="666" height="32.666666666666664"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="kER-3Y-KXe">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="kER-3Y-KXe">
                                                 <rect key="frame" x="0.0" y="0.0" width="201" height="32.666666666666664"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PASS COMPLETION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJj-n3-w4T">
@@ -165,7 +165,7 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="gD1-b2-Pgw">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="gD1-b2-Pgw">
                                                 <rect key="frame" x="208" y="0.0" width="148" height="32.666666666666664"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIELD GOALS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrh-Ck-97t">
@@ -211,7 +211,7 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="8K5-Mq-PD0">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="8K5-Mq-PD0">
                                                 <rect key="frame" x="363" y="0.0" width="148" height="32.666666666666664"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PATs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIp-GP-3OB">
@@ -257,7 +257,7 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="y9N-1c-jW2">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="y9N-1c-jW2">
                                                 <rect key="frame" x="518" y="0.0" width="148" height="32.666666666666664"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fmp-lU-pdq">
@@ -307,6 +307,9 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="gD1-b2-Pgw" firstAttribute="leading" secondItem="G2z-ib-l0N" secondAttribute="leading" constant="208" id="FFs-cW-BBk"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="wuS-tY-IQx" userLabel="teamStats">
                                         <rect key="frame" x="0.0" y="36.666666666666657" width="666" height="103"/>
@@ -643,7 +646,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="SEASON TOTALS / AVERAGES PER GAME:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUr-fm-ZhU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEASON TOTALS / AVERAGES PER GAME:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUr-fm-ZhU">
                                 <rect key="frame" x="35.666666666666686" y="215.33333333333334" width="665" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="665" id="91T-VW-aky"/>
@@ -667,10 +670,14 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="uUr-fm-ZhU" firstAttribute="top" secondItem="i5B-Av-ssO" secondAttribute="bottom" constant="48" id="3B6-wL-cC6"/>
                             <constraint firstItem="oAp-A6-JB2" firstAttribute="top" secondItem="gZc-bz-hBQ" secondAttribute="top" constant="8" id="57c-sb-OTG"/>
                             <constraint firstItem="i5B-Av-ssO" firstAttribute="leading" secondItem="GwF-5P-oid" secondAttribute="trailing" constant="12" id="7do-h1-uy7"/>
+                            <constraint firstItem="6Vh-rb-ovG" firstAttribute="leading" secondItem="9nA-rs-1bE" secondAttribute="trailing" constant="8" symbolic="YES" id="7kf-xY-AOa"/>
                             <constraint firstItem="6Vh-rb-ovG" firstAttribute="top" secondItem="GwF-5P-oid" secondAttribute="top" id="Bip-v2-e6z"/>
+                            <constraint firstItem="9nA-rs-1bE" firstAttribute="leading" secondItem="ceK-CW-Dwj" secondAttribute="trailing" constant="75" id="LD5-bW-95f"/>
                             <constraint firstItem="RJM-KV-uxI" firstAttribute="leading" secondItem="gZc-bz-hBQ" secondAttribute="leading" id="MAw-GN-GdI"/>
+                            <constraint firstItem="i5B-Av-ssO" firstAttribute="top" secondItem="gZc-bz-hBQ" secondAttribute="top" constant="120" id="Wbx-ay-ck6"/>
                             <constraint firstItem="GwF-5P-oid" firstAttribute="leading" secondItem="ceK-CW-Dwj" secondAttribute="trailing" id="a7L-xv-DSZ"/>
                             <constraint firstItem="gZc-bz-hBQ" firstAttribute="trailing" secondItem="oAp-A6-JB2" secondAttribute="trailing" constant="8" id="aJ1-66-Vyn"/>
                             <constraint firstItem="gZc-bz-hBQ" firstAttribute="bottom" secondItem="fT1-ZY-8gS" secondAttribute="bottom" constant="35" id="cC1-O9-bVQ"/>
@@ -718,6 +725,29 @@
                         <outlet property="totalPassesAttemptedLabel" destination="KQQ-Z5-jBL" id="Qcj-mp-1eH"/>
                         <outlet property="totalTDsLabel" destination="QAR-YI-hnz" id="l0R-vi-xZT"/>
                         <outlet property="winsLabel" destination="JOJ-IB-cos" id="6oC-3v-4bT"/>
+                        <outletCollection property="teamStatsLabels" destination="0G6-SX-xqY" collectionClass="NSMutableArray" id="Kla-32-nUY"/>
+                        <outletCollection property="teamStatsLabels" destination="KQQ-Z5-jBL" collectionClass="NSMutableArray" id="sKC-mP-xag"/>
+                        <outletCollection property="teamStatsLabels" destination="EtA-SY-JZn" collectionClass="NSMutableArray" id="hCy-sl-uvS"/>
+                        <outletCollection property="teamStatsLabels" destination="x11-mS-Whd" collectionClass="NSMutableArray" id="hs6-68-F4T"/>
+                        <outletCollection property="teamStatsLabels" destination="N1F-kp-fzu" collectionClass="NSMutableArray" id="vCB-qX-7Cc"/>
+                        <outletCollection property="teamStatsLabels" destination="a6S-c0-cON" collectionClass="NSMutableArray" id="Sfd-rD-oiY"/>
+                        <outletCollection property="teamStatsLabels" destination="dMd-yR-M8y" collectionClass="NSMutableArray" id="T0a-Yf-U6q"/>
+                        <outletCollection property="teamStatsLabels" destination="Fl3-32-Pl0" collectionClass="NSMutableArray" id="uA4-e5-vIB"/>
+                        <outletCollection property="teamStatsLabels" destination="sJZ-9d-JH9" collectionClass="NSMutableArray" id="mOQ-9s-dGh"/>
+                        <outletCollection property="teamStatsLabels" destination="3lZ-X2-ffh" collectionClass="NSMutableArray" id="2yg-Qo-Hft"/>
+                        <outletCollection property="teamStatsLabels" destination="QAR-YI-hnz" collectionClass="NSMutableArray" id="Lgu-0G-PnM"/>
+                        <outletCollection property="teamStatsLabels" destination="acg-PW-nKX" collectionClass="NSMutableArray" id="1rS-9P-3j6"/>
+                        <outletCollection property="teamStatsLabels" destination="60c-Dw-5Yv" collectionClass="NSMutableArray" id="VnX-t7-bxQ"/>
+                        <outletCollection property="teamStatsLabels" destination="ZI2-Re-WX6" collectionClass="NSMutableArray" id="ifv-Wc-wMv"/>
+                        <outletCollection property="teamStatsLabels" destination="8Vy-Ov-Mkq" collectionClass="NSMutableArray" id="15s-P1-1p1"/>
+                        <outletCollection property="teamStatsLabels" destination="scI-kb-RAU" collectionClass="NSMutableArray" id="Ykc-Xj-eVc"/>
+                        <outletCollection property="teamStatsLabels" destination="AQg-gz-iFQ" collectionClass="NSMutableArray" id="E28-PC-nSk"/>
+                        <outletCollection property="teamStatsLabels" destination="Af7-tS-HEq" collectionClass="NSMutableArray" id="dZJ-nf-3Vh"/>
+                        <outletCollection property="teamStatsLabels" destination="MnH-xq-FUE" collectionClass="NSMutableArray" id="Mg4-kn-cdB"/>
+                        <outletCollection property="teamStatsLabels" destination="EVr-Mv-66F" collectionClass="NSMutableArray" id="143-Pi-RXY"/>
+                        <outletCollection property="teamStatsLabels" destination="U7m-BL-uDf" collectionClass="NSMutableArray" id="dva-TQ-XHP"/>
+                        <outletCollection property="teamStatsLabels" destination="ejh-IQ-I7D" collectionClass="NSMutableArray" id="97L-gm-49E"/>
+                        <outletCollection property="teamStatsLabels" destination="tMP-fx-blX" collectionClass="NSMutableArray" id="aN1-j2-VEW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BPJ-Fu-mMp" userLabel="First Responder" sceneMemberID="firstResponder"/>

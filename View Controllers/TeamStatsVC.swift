@@ -10,7 +10,13 @@ import UIKit
 
 class TeamStatsVC: UIViewController {
     
-    // MARK: - OUTLETS
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: -LANDING PAD
+    
+    var selectedTeam: Team?
+    
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: - OUTLETS
     
     // Team header
     @IBOutlet weak var teamNameLabel: UILabel!
@@ -60,26 +66,127 @@ class TeamStatsVC: UIViewController {
     @IBOutlet weak var avg2PTsLabel: UILabel!
     @IBOutlet weak var avgIntCaughtLabel: UILabel!
     
-    // MARK: - VIEW DID LOAD
+    // Collections of stats labels
+    @IBOutlet var teamStatsLabels: [UILabel]!
+    
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: - VIEW DID LOAD
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set stat cell background colors
+        setCellBackgroundColor()
+        updateViews()
     }
     
-    // MARK: - ACTIONS
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: - UPDATE VIEWS FUNCTION
+    
+    func updateViews() {
+        guard let team = selectedTeam else { return }
+        
+        // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+        // 🔸 MARK: - UPDATE TEAM HEADERS
+        
+        teamNameLabel.text = "\(team.name.uppercased())"
+        coachNameLabel.text = "\(team.coach)"
+        helmetImageView.image = UIImage(named: "helmet\(team.color)Right")
+        helmetLetterImageView.image = UIImage(named: "letter\(team.name.prefix(1).capitalized)")
+        rankingBadgeImageView.image = UIImage(named: "ranking1")
+        winsLabel.text = "\(team.wins)"
+        lossesLabel.text = "\(team.losses)"
+
+        // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+        // 🔸 MARK: - UPDATE TEAM STATS
+        
+        // Stats - Team Pass Completion - Game
+        totalCompletionsLabel.text = "\(team.completionsMade)"
+        totalPassesAttemptedLabel.text = "\(team.completionsAttempted)"
+        if team.completionsAttempted == 0 {
+            totalCompletionPercentLabel.text = "0%"
+        } else {
+            let percentage = getPercentageString(numerator: team.completionsMade, denominator: team.completionsAttempted)
+            totalCompletionPercentLabel.text = "\(percentage)"
+        }
+        totalIntThrownLabel.text = "\(team.interceptionsThrown)"
+        
+        // Stats - Team Pass Completion - Averages
+        avgCoompletionsLabel.text = String(format: "%.1f", Double(team.completionsMade / (team.gamesPlayed + 1)))
+        avgassesAttemptedLabel.text = String(format: "%.1f", Double(team.completionsAttempted / (team.gamesPlayed + 1)))
+        avgIntThrownLabel.text = String(format: "%.1f", Double(team.interceptionsThrown / (team.gamesPlayed + 1)))
+        
+        // Stats - Team Field Goals - Game
+        totalFieldGoalsLabel.text = "\(team.fieldGoalsMade)"
+        totalFieldGoalsAttemptedLabel.text = "\(team.fieldGoalsAttempted)"
+        if team.fieldGoalsAttempted == 0 {
+            totalFieldGoalPercentLabel.text = "0%"
+        } else {
+            let percentage = getPercentageString(numerator: team.fieldGoalsMade, denominator: team.fieldGoalsAttempted)
+            totalFieldGoalPercentLabel.text = "\(percentage)"
+        }
+        
+        // Stats - Team Field Goals - Averages
+        avgFieldGoalsLabel.text = String(format: "%.1f", Double(team.fieldGoalsMade / (team.gamesPlayed + 1)))
+        avgFieldGoalsAttemptedLabel.text = String(format: "%.1f", Double(team.fieldGoalsAttempted / (team.gamesPlayed + 1)))
+        
+        // Stats - Team PATs - Game
+        totalPATsMadeLabel.text = "\(team.pATsMade)"
+        totalPATsAttemptedLabel.text = "\(team.pATsAttempted)"
+        if team.pATsAttempted == 0 {
+            totalPATPercentLabel.text = "0%"
+        } else {
+            let percentage = getPercentageString(numerator: team.pATsMade, denominator: team.pATsAttempted)
+            totalPATPercentLabel.text = "\(percentage)"
+        }
+        
+        // Stats - Team PATs - Averages
+        avgPATsMadeLabel.text = String(format: "%.1f", Double(team.pATsMade / (team.gamesPlayed + 1)))
+        avgPATsAttemptedLabel.text = String(format: "%.1f", Double(team.pATsAttempted / (team.gamesPlayed + 1)))
+        
+        // Stats - Team Misc - Game
+        totalTDsLabel.text = "\(team.touchdowns)"
+        total2PTsLabel.text = "\(team.twoPointConversions)"
+        totalIntCaughtLabel.text = "\(team.interceptionsCaught)"
+        
+        // Stats - Team Misc - Averages
+        avgTDsLabel.text = String(format: "%.1f", Double(team.touchdowns / (team.gamesPlayed + 1)))
+        avg2PTsLabel.text = String(format: "%.1f", Double(team.twoPointConversions / (team.gamesPlayed + 1)))
+        avgIntCaughtLabel.text = String(format: "%.1f", Double(team.interceptionsCaught / (team.gamesPlayed + 1)))
+    }
+    
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: - SWITCH STAT CELL COLOR FUNCTION
+    
+    func setCellBackgroundColor() {
+        
+        guard let team = selectedTeam else { return }
+        let color = UIColor(named: team.color.rawValue)
+        
+        for label in teamStatsLabels {
+            label.backgroundColor = color
+        }
+    }
+    
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: - ACTIONS
     
     @IBAction func exitButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
-    
-    
-    /*
-    // MARK: - NAVIGATION
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+// 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+// 🔸 MARK: - GET PERCENTAGE FUNCTION EXTENSION
+
+extension TeamStatsVC {
+    
+    fileprivate func getPercentageString(numerator: Int, denominator: Int) -> String {
+        
+        let numeratorDouble = Double(numerator)
+        let denominatorDouble = Double(denominator)
+        let percent = Int((numeratorDouble / denominatorDouble) * 100)
+        
+        return "\(String(percent))%"
     }
-    */
-
 }

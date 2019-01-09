@@ -70,7 +70,7 @@
                                                 <state key="normal" backgroundImage="helmetBlueLeft"/>
                                                 <connections>
                                                     <action selector="team1HelmetTapped:" destination="q5C-iq-nZK" eventType="touchUpInside" id="4yT-YJ-BWM"/>
-                                                    <segue destination="xkx-r2-2gY" kind="show" id="Tpt-6n-zg8"/>
+                                                    <segue destination="xkx-r2-2gY" kind="show" identifier="fromTeam1" id="Tpt-6n-zg8"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -86,7 +86,7 @@
                                                 <state key="normal" backgroundImage="helmetRedRight"/>
                                                 <connections>
                                                     <action selector="team2HelmetTapped:" destination="q5C-iq-nZK" eventType="touchUpInside" id="gdh-zb-3gl"/>
-                                                    <segue destination="xkx-r2-2gY" kind="show" id="fNo-bi-a5i"/>
+                                                    <segue destination="xkx-r2-2gY" kind="show" identifier="fromTeam2" id="fNo-bi-a5i"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="CSW-45-L4L" userLabel="team2Info">
@@ -549,7 +549,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="yqx-fd-kgb" userLabel="team1GamePasses">
                                                         <rect key="frame" x="0.0" y="0.0" width="198" height="34"/>
                                                         <subviews>
-                                                            <button opaque="NO" tag="-1" contentMode="scaleToFill" restorationIdentifier="completion" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pL-kI-WGt">
+                                                            <button opaque="NO" tag="-1" contentMode="scaleToFill" restorationIdentifier="completionGame1" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pL-kI-WGt">
                                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="48" id="fcI-7K-fMV"/>
@@ -563,7 +563,7 @@
                                                                     <action selector="team1AddCompletionMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="VNp-Kt-UGT"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="thrown" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4SU-QB-nFi">
+                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="thrownGame1" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4SU-QB-nFi">
                                                                 <rect key="frame" x="50" y="0.0" width="48" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="34" id="Ggm-vo-9Pp"/>
@@ -588,7 +588,7 @@
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="interception" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nwx-NQ-GkN">
+                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="interceptionGame1" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nwx-NQ-GkN">
                                                                 <rect key="frame" x="150" y="0.0" width="48" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="34" id="HJy-lD-UPf"/>
@@ -748,7 +748,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="1kM-hh-3qj" userLabel="team1AvgPasses">
                                                         <rect key="frame" x="0.0" y="0.0" width="198" height="34"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="completion" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5u3-th-X0m">
+                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="completionTeam1" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5u3-th-X0m">
                                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="48" id="Z8C-kt-DhM"/>
@@ -762,7 +762,7 @@
                                                                     <action selector="team1SubtractCompletionMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="t5n-ae-Yvg"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="thrown" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4J-UM-MXy">
+                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="thrownTeam1" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4J-UM-MXy">
                                                                 <rect key="frame" x="50" y="0.0" width="48" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="34" id="016-VG-lN6"/>
@@ -787,7 +787,7 @@
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="interception" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYj-jj-ivA">
+                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="interceptionTeam1" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYj-jj-ivA">
                                                                 <rect key="frame" x="150" y="0.0" width="48" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="34" id="2CZ-cL-guq"/>
@@ -905,7 +905,7 @@
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="team1SubtractMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="zAK-hF-VS3"/>
+                                                                    <action selector="team1SubtractTDMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="zAK-hF-VS3"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08F-wb-Kh3">
@@ -1499,6 +1499,58 @@
                         <outlet property="team2RecordLabel" destination="jDt-ZS-kcp" id="E41-MA-wnQ"/>
                         <outlet property="team2ScoreFirstDigitImageView" destination="j55-v7-2Bp" id="fLL-fH-Leg"/>
                         <outlet property="team2ScoreSecondDigitImageView" destination="T9v-sx-SN5" id="Vto-dK-0dw"/>
+                        <outletCollection property="team1Buttons" destination="9pL-kI-WGt" collectionClass="NSMutableArray" id="qx1-qi-vHJ"/>
+                        <outletCollection property="team2Buttons" destination="sTx-bV-apH" collectionClass="NSMutableArray" id="xlJ-4f-eIx"/>
+                        <outletCollection property="team1Buttons" destination="4SU-QB-nFi" collectionClass="NSMutableArray" id="wpo-ga-Haq"/>
+                        <outletCollection property="team1Buttons" destination="5Yx-fP-RPK" collectionClass="NSMutableArray" id="WNF-p1-Osa"/>
+                        <outletCollection property="team1Buttons" destination="Nwx-NQ-GkN" collectionClass="NSMutableArray" id="ldq-Y7-BGk"/>
+                        <outletCollection property="team1Buttons" destination="ZP2-1S-wL1" collectionClass="NSMutableArray" id="y5u-3c-dRP"/>
+                        <outletCollection property="team1Buttons" destination="X2m-KH-faR" collectionClass="NSMutableArray" id="y7S-3e-Le3"/>
+                        <outletCollection property="team1Buttons" destination="61z-RK-1vn" collectionClass="NSMutableArray" id="zrI-yG-PUm"/>
+                        <outletCollection property="team1Buttons" destination="Wpi-Dm-yFw" collectionClass="NSMutableArray" id="f41-Qo-yBb"/>
+                        <outletCollection property="team1Buttons" destination="W7h-HC-7mp" collectionClass="NSMutableArray" id="pGs-Ya-05F"/>
+                        <outletCollection property="team1Buttons" destination="VGE-JG-5Ub" collectionClass="NSMutableArray" id="bsl-Uq-ZY4"/>
+                        <outletCollection property="team1Buttons" destination="xoE-Ji-uon" collectionClass="NSMutableArray" id="MX6-9v-Aap"/>
+                        <outletCollection property="team1Buttons" destination="P4b-mp-7vr" collectionClass="NSMutableArray" id="eAy-MP-f0U"/>
+                        <outletCollection property="team1Buttons" destination="SHY-e6-KuC" collectionClass="NSMutableArray" id="Upi-OJ-00x"/>
+                        <outletCollection property="team1Buttons" destination="5u3-th-X0m" collectionClass="NSMutableArray" id="PHx-db-Cdz"/>
+                        <outletCollection property="team1Buttons" destination="x4J-UM-MXy" collectionClass="NSMutableArray" id="ioh-uc-lR5"/>
+                        <outletCollection property="team1Buttons" destination="yzp-UK-t4E" collectionClass="NSMutableArray" id="6ak-gP-qhL"/>
+                        <outletCollection property="team1Buttons" destination="YYj-jj-ivA" collectionClass="NSMutableArray" id="AMD-Tz-tHZ"/>
+                        <outletCollection property="team1Buttons" destination="Kd7-VL-RVe" collectionClass="NSMutableArray" id="rRC-UD-OmU"/>
+                        <outletCollection property="team1Buttons" destination="ay9-Gx-vJM" collectionClass="NSMutableArray" id="NBL-en-PBL"/>
+                        <outletCollection property="team1Buttons" destination="LvP-H7-wi0" collectionClass="NSMutableArray" id="tyT-Oc-QJB"/>
+                        <outletCollection property="team1Buttons" destination="O4W-PA-BUU" collectionClass="NSMutableArray" id="W9s-gn-Jf3"/>
+                        <outletCollection property="team1Buttons" destination="DGt-mp-smE" collectionClass="NSMutableArray" id="3vb-Gb-vap"/>
+                        <outletCollection property="team1Buttons" destination="x9B-qV-0uA" collectionClass="NSMutableArray" id="RkV-Tk-FbS"/>
+                        <outletCollection property="team1Buttons" destination="9q3-fZ-FXC" collectionClass="NSMutableArray" id="GKs-ut-qPq"/>
+                        <outletCollection property="team1Buttons" destination="08F-wb-Kh3" collectionClass="NSMutableArray" id="O2D-jm-zRE"/>
+                        <outletCollection property="team1Buttons" destination="DEv-eM-IQd" collectionClass="NSMutableArray" id="MqN-sP-Zfq"/>
+                        <outletCollection property="team2Buttons" destination="Pbj-BI-IVe" collectionClass="NSMutableArray" id="6b5-N9-qHK"/>
+                        <outletCollection property="team2Buttons" destination="jKV-FR-V4b" collectionClass="NSMutableArray" id="meG-pA-gmL"/>
+                        <outletCollection property="team2Buttons" destination="YlL-fR-Oh2" collectionClass="NSMutableArray" id="DD8-wJ-OT9"/>
+                        <outletCollection property="team2Buttons" destination="1eS-mk-0NX" collectionClass="NSMutableArray" id="BHs-Nw-XTd"/>
+                        <outletCollection property="team2Buttons" destination="pwC-p7-UaP" collectionClass="NSMutableArray" id="naR-pE-gPv"/>
+                        <outletCollection property="team2Buttons" destination="mdh-xf-0sz" collectionClass="NSMutableArray" id="Lzr-vE-cjL"/>
+                        <outletCollection property="team2Buttons" destination="F3r-k1-U98" collectionClass="NSMutableArray" id="IwN-Zx-XA5"/>
+                        <outletCollection property="team2Buttons" destination="1ww-xG-on3" collectionClass="NSMutableArray" id="R2R-jW-faA"/>
+                        <outletCollection property="team2Buttons" destination="83Y-If-aA8" collectionClass="NSMutableArray" id="EJP-87-oli"/>
+                        <outletCollection property="team2Buttons" destination="Ol0-SW-FqO" collectionClass="NSMutableArray" id="EJ8-VD-GrV"/>
+                        <outletCollection property="team2Buttons" destination="ZTJ-NR-80E" collectionClass="NSMutableArray" id="78V-qj-J9o"/>
+                        <outletCollection property="team2Buttons" destination="LGf-ck-445" collectionClass="NSMutableArray" id="laN-T2-7Ps"/>
+                        <outletCollection property="team2Buttons" destination="bzY-Jl-jP8" collectionClass="NSMutableArray" id="hW2-dD-mmH"/>
+                        <outletCollection property="team2Buttons" destination="iwp-1I-BUH" collectionClass="NSMutableArray" id="lbl-Gh-FWG"/>
+                        <outletCollection property="team2Buttons" destination="uVe-fV-13c" collectionClass="NSMutableArray" id="kIp-qW-c0h"/>
+                        <outletCollection property="team2Buttons" destination="aS1-hz-3GY" collectionClass="NSMutableArray" id="Cqk-64-UC2"/>
+                        <outletCollection property="team2Buttons" destination="vfW-fq-qCE" collectionClass="NSMutableArray" id="lb5-Fs-OJH"/>
+                        <outletCollection property="team2Buttons" destination="bo0-F7-JfI" collectionClass="NSMutableArray" id="YwJ-Wh-XHs"/>
+                        <outletCollection property="team2Buttons" destination="Wdj-aK-Uv5" collectionClass="NSMutableArray" id="oDr-GL-NQE"/>
+                        <outletCollection property="team2Buttons" destination="RGz-bm-AIs" collectionClass="NSMutableArray" id="e8s-uR-gSX"/>
+                        <outletCollection property="team2Buttons" destination="WAb-CG-QBn" collectionClass="NSMutableArray" id="clR-4k-Cyj"/>
+                        <outletCollection property="team2Buttons" destination="FFI-ca-HJg" collectionClass="NSMutableArray" id="IEY-t4-7nO"/>
+                        <outletCollection property="team2Buttons" destination="a4c-c7-FAR" collectionClass="NSMutableArray" id="tNt-tl-JcE"/>
+                        <outletCollection property="team2Buttons" destination="Q6K-mK-0fq" collectionClass="NSMutableArray" id="Phg-eY-MDc"/>
+                        <outletCollection property="team2Buttons" destination="NF2-XJ-AiY" collectionClass="NSMutableArray" id="sDE-YK-TsY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PzY-JM-7Op" userLabel="First Responder" sceneMemberID="firstResponder"/>
