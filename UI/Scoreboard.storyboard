@@ -192,14 +192,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="0VI-6Z-e5J" userLabel="scoreMinutes">
                                                 <rect key="frame" x="0.0" y="0.0" width="122" height="99"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboard0Yellow" translatesAutoresizingMaskIntoConstraints="NO" id="yWJ-6V-BdF">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboard1Yellow" translatesAutoresizingMaskIntoConstraints="NO" id="yWJ-6V-BdF">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="99"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="60" id="Cvh-xT-RWY"/>
                                                             <constraint firstAttribute="height" constant="99" id="nS1-7T-sd0"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboard8Yellow" translatesAutoresizingMaskIntoConstraints="NO" id="zgi-lT-6hZ">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboard2Yellow" translatesAutoresizingMaskIntoConstraints="NO" id="zgi-lT-6hZ">
                                                         <rect key="frame" x="62" y="0.0" width="60" height="99"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="60" id="aaq-n7-e6A"/>
@@ -211,14 +211,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="bUf-ih-lRI" userLabel="scoreSeconds">
                                                 <rect key="frame" x="140" y="0.0" width="122" height="99"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboard4Yellow" translatesAutoresizingMaskIntoConstraints="NO" id="fwE-Sp-0fz">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboard0Yellow" translatesAutoresizingMaskIntoConstraints="NO" id="fwE-Sp-0fz">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="99"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="99" id="Ism-DC-mXL"/>
                                                             <constraint firstAttribute="width" constant="60" id="NEr-mU-0fa"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboard3Yellow" translatesAutoresizingMaskIntoConstraints="NO" id="fsr-16-yC9">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboard0Yellow" translatesAutoresizingMaskIntoConstraints="NO" id="fsr-16-yC9">
                                                         <rect key="frame" x="62" y="0.0" width="60" height="99"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="99" id="DbO-Jw-9fe"/>
@@ -269,54 +269,42 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="qHL-YR-mpr" userLabel="logo&amp;HalfIndicator">
-                                <rect key="frame" x="350.66666666666669" y="20" width="38" height="73"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PFLLogo" translatesAutoresizingMaskIntoConstraints="NO" id="VB8-np-l9a">
-                                        <rect key="frame" x="0.0" y="0.0" width="38" height="52"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="38" id="3IB-6B-cQu"/>
-                                            <constraint firstAttribute="height" constant="52" id="SDW-jU-hmJ"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboardHalf1" translatesAutoresizingMaskIntoConstraints="NO" id="rlC-w8-eXv" userLabel="scoreboardHalfIndicator">
-                                        <rect key="frame" x="0.0" y="61" width="38" height="12"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="12" id="01y-aZ-nfs"/>
-                                            <constraint firstAttribute="width" constant="38" id="eti-P6-EQO"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PFLLogo" translatesAutoresizingMaskIntoConstraints="NO" id="VB8-np-l9a">
+                                <rect key="frame" x="350.66666666666669" y="20" width="38" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="38" id="3IB-6B-cQu"/>
+                                    <constraint firstAttribute="height" constant="52" id="SDW-jU-hmJ"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ix-kf-7aT" userLabel="buttonForward">
-                                <rect key="frame" x="37.666666666666664" y="160" width="43.999999999999993" height="44"/>
+                                <rect key="frame" x="33.666666666666664" y="156" width="43.999999999999993" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="3xe-EI-rAy"/>
                                     <constraint firstAttribute="height" constant="44" id="lIR-q1-a5g"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="scoreboardButtonForward"/>
+                                <state key="normal" backgroundImage="buttonForward"/>
                                 <connections>
                                     <action selector="forwardButtonTapped:" destination="q5C-iq-nZK" eventType="touchUpInside" id="hpZ-3G-kaP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3c-XI-qSj" userLabel="buttonPlayPause">
-                                <rect key="frame" x="657.66666666666663" y="160" width="44" height="44"/>
+                                <rect key="frame" x="661.66666666666663" y="156" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="GHJ-uV-4OK"/>
                                     <constraint firstAttribute="width" constant="44" id="U6b-pI-RfB"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="scoreboardButtonPlay"/>
+                                <state key="normal" backgroundImage="buttonPlay"/>
                                 <connections>
                                     <action selector="playPauseButtonTapped:" destination="q5C-iq-nZK" eventType="touchUpInside" id="Ra3-zU-EdR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azr-RN-Nka" userLabel="buttonRewind">
-                                <rect key="frame" x="37.666666666666664" y="108" width="43.999999999999993" height="44"/>
+                                <rect key="frame" x="33.666666666666664" y="104" width="43.999999999999993" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Wk2-xY-YIV"/>
                                     <constraint firstAttribute="width" constant="44" id="z2k-wh-icc"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="scoreboardButtonRewind"/>
+                                <state key="normal" backgroundImage="buttonRewind"/>
                                 <connections>
                                     <action selector="rewindButtonTapped:" destination="q5C-iq-nZK" eventType="touchUpInside" id="LbO-X4-i5R"/>
                                 </connections>
@@ -707,7 +695,6 @@
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="team1AddTDMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="RSp-vP-FeI"/>
-                                                                    <action selector="team2AddCompletionMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="vkw-3R-YSV"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4b-mp-7vr">
@@ -724,7 +711,7 @@
                                                                     <action selector="team1Add2PTMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="1rO-2e-vay"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHY-e6-KuC">
+                                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHY-e6-KuC">
                                                                 <rect key="frame" x="100" y="0.0" width="48" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="48" id="9MY-sk-g9M"/>
@@ -922,7 +909,7 @@
                                                                     <action selector="team1Subtract2PTMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="0y3-De-Q7s"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEv-eM-IQd">
+                                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEv-eM-IQd">
                                                                 <rect key="frame" x="100" y="0.0" width="48" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="34" id="toV-a5-UgH"/>
@@ -1125,7 +1112,7 @@
                                                                     <action selector="team2Add2PTMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="3yi-XZ-5op"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGf-ck-445">
+                                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGf-ck-445">
                                                                 <rect key="frame" x="100" y="0.0" width="48" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="34" id="FiB-Fh-JHq"/>
@@ -1306,7 +1293,7 @@
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="team2SubtractMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="hvV-kO-IpJ"/>
+                                                                    <action selector="team2SubtractTouchdownsMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="Xgd-2z-o3r"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6K-mK-0fq">
@@ -1323,7 +1310,7 @@
                                                                     <action selector="team2Subtract2PTMadeButton:" destination="q5C-iq-nZK" eventType="touchUpInside" id="9By-E4-OP7"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NF2-XJ-AiY">
+                                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NF2-XJ-AiY">
                                                                 <rect key="frame" x="100" y="0.0" width="48" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="34" id="NNd-tG-5Un"/>
@@ -1348,14 +1335,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="4v6-Qy-FrZ">
                                 <rect key="frame" x="20.333333333333336" y="273" width="10" height="98"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboardButtonsUpDownArrows" translatesAutoresizingMaskIntoConstraints="NO" id="59U-6F-fxr">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buttonUpDown" translatesAutoresizingMaskIntoConstraints="NO" id="59U-6F-fxr">
                                         <rect key="frame" x="0.0" y="0.0" width="10" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="10" id="5Bv-w3-uoR"/>
                                             <constraint firstAttribute="height" constant="20" id="tXK-MW-CTU"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboardButtonsUpDownArrows" translatesAutoresizingMaskIntoConstraints="NO" id="jfJ-y3-g5f">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buttonUpDown" translatesAutoresizingMaskIntoConstraints="NO" id="jfJ-y3-g5f">
                                         <rect key="frame" x="0.0" y="78" width="10" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="10" id="QVz-zv-Yk4"/>
@@ -1367,13 +1354,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="4wf-ra-PQQ">
                                 <rect key="frame" x="709.33333333333326" y="273" width="10" height="98"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboardButtonsUpDownArrows" translatesAutoresizingMaskIntoConstraints="NO" id="70G-Ix-wjY">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buttonUpDown" translatesAutoresizingMaskIntoConstraints="NO" id="70G-Ix-wjY">
                                         <rect key="frame" x="0.0" y="0.0" width="10" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="bCj-eA-dc0"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboardButtonsUpDownArrows" translatesAutoresizingMaskIntoConstraints="NO" id="7kW-jt-jvw">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buttonUpDown" translatesAutoresizingMaskIntoConstraints="NO" id="7kW-jt-jvw">
                                         <rect key="frame" x="0.0" y="78" width="10" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="4or-VC-P0L"/>
@@ -1382,46 +1369,68 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cA-94-xs0" userLabel="buttonPlayPause">
+                                <rect key="frame" x="661.66666666666663" y="104" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="JfN-eM-g7g"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="PAo-P2-xWE"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="uka-QK-RJa"/>
+                                    <constraint firstAttribute="height" constant="44" id="zfL-Sw-VbN"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="buttonEndGame"/>
+                                <connections>
+                                    <action selector="endGameButtonTapped:" destination="q5C-iq-nZK" eventType="touchUpInside" id="C4N-Y6-CZu"/>
+                                    <action selector="playPauseButtonTapped:" destination="q5C-iq-nZK" eventType="touchUpInside" id="6Xh-Ej-H6s"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="half1" translatesAutoresizingMaskIntoConstraints="NO" id="rlC-w8-eXv" userLabel="scoreboardHalfIndicator">
+                                <rect key="frame" x="347.66666666666669" y="80" width="44" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="01y-aZ-nfs"/>
+                                    <constraint firstAttribute="width" constant="44" id="N7L-AU-lKj"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="R3c-XI-qSj" firstAttribute="top" secondItem="7ix-kf-7aT" secondAttribute="top" id="0Qs-KC-s9f"/>
                             <constraint firstItem="SxK-NR-FSK" firstAttribute="centerX" secondItem="ecF-zn-Cz1" secondAttribute="centerX" id="0ru-Bp-Hxh"/>
                             <constraint firstItem="ymc-4Y-fyi" firstAttribute="leading" secondItem="TpV-H4-sEo" secondAttribute="leading" id="2Cu-pt-xH0"/>
                             <constraint firstItem="91e-hl-veQ" firstAttribute="centerX" secondItem="ecF-zn-Cz1" secondAttribute="centerX" id="2Cw-3v-xkY"/>
                             <constraint firstItem="Dxm-n7-uNR" firstAttribute="leading" secondItem="TpV-H4-sEo" secondAttribute="leading" constant="35" id="2ou-sK-EiU"/>
                             <constraint firstItem="Ffc-ca-4PQ" firstAttribute="leading" secondItem="TpV-H4-sEo" secondAttribute="leading" constant="34" id="3b8-SO-cv5"/>
                             <constraint firstItem="SxK-NR-FSK" firstAttribute="top" secondItem="TpV-H4-sEo" secondAttribute="top" constant="18" id="5Yi-mR-5OE"/>
-                            <constraint firstItem="rq0-Cn-apf" firstAttribute="leading" secondItem="7ix-kf-7aT" secondAttribute="trailing" constant="8" id="9Ai-yq-4eW"/>
+                            <constraint firstItem="rlC-w8-eXv" firstAttribute="top" secondItem="VB8-np-l9a" secondAttribute="bottom" constant="8" id="7bJ-BI-SZe"/>
+                            <constraint firstItem="rq0-Cn-apf" firstAttribute="leading" secondItem="7ix-kf-7aT" secondAttribute="trailing" constant="12" id="9Ai-yq-4eW"/>
                             <constraint firstItem="91e-hl-veQ" firstAttribute="top" secondItem="TpV-H4-sEo" secondAttribute="top" constant="30" id="9QA-Re-qIw"/>
-                            <constraint firstItem="qHL-YR-mpr" firstAttribute="centerX" secondItem="ecF-zn-Cz1" secondAttribute="centerX" id="9qm-dh-5q6"/>
                             <constraint firstItem="Dxm-n7-uNR" firstAttribute="top" secondItem="Ffc-ca-4PQ" secondAttribute="bottom" constant="4" id="9wj-MJ-O47"/>
                             <constraint firstItem="TpV-H4-sEo" firstAttribute="bottom" secondItem="4v6-Qy-FrZ" secondAttribute="bottom" constant="43" id="D1a-fj-cAx"/>
-                            <constraint firstItem="rq0-Cn-apf" firstAttribute="top" secondItem="qHL-YR-mpr" secondAttribute="bottom" constant="4" id="FY6-Ua-1xU"/>
-                            <constraint firstItem="R3c-XI-qSj" firstAttribute="leading" secondItem="rq0-Cn-apf" secondAttribute="trailing" constant="8" id="GPV-dW-MzL"/>
+                            <constraint firstItem="R3c-XI-qSj" firstAttribute="top" secondItem="2cA-94-xs0" secondAttribute="bottom" constant="8" id="E0k-eB-9LW"/>
+                            <constraint firstItem="2cA-94-xs0" firstAttribute="leading" secondItem="rq0-Cn-apf" secondAttribute="trailing" constant="12" id="FlG-Yt-5f3"/>
                             <constraint firstItem="TpV-H4-sEo" firstAttribute="bottom" secondItem="ymc-4Y-fyi" secondAttribute="bottom" id="Gg0-SX-nhG"/>
-                            <constraint firstItem="R3c-XI-qSj" firstAttribute="firstBaseline" secondItem="7ix-kf-7aT" secondAttribute="firstBaseline" id="Hro-hA-LO6"/>
-                            <constraint firstItem="Ffc-ca-4PQ" firstAttribute="top" secondItem="R3c-XI-qSj" secondAttribute="bottom" constant="8" symbolic="YES" id="Obg-mp-eRz"/>
+                            <constraint firstItem="Ffc-ca-4PQ" firstAttribute="top" secondItem="R3c-XI-qSj" secondAttribute="bottom" constant="12" id="Obg-mp-eRz"/>
+                            <constraint firstItem="VB8-np-l9a" firstAttribute="top" secondItem="Q7x-6C-Q2Y" secondAttribute="top" id="T0J-Ps-SdE"/>
                             <constraint firstItem="rq0-Cn-apf" firstAttribute="centerX" secondItem="ecF-zn-Cz1" secondAttribute="centerX" id="UrH-Kp-Gw4"/>
                             <constraint firstItem="TpV-H4-sEo" firstAttribute="trailing" secondItem="4wf-ra-PQQ" secondAttribute="trailing" constant="20" id="VsE-sV-RAC"/>
                             <constraint firstItem="4v6-Qy-FrZ" firstAttribute="leading" secondItem="TpV-H4-sEo" secondAttribute="leading" constant="20" id="XvU-10-zOT"/>
-                            <constraint firstItem="INd-P1-fRq" firstAttribute="top" secondItem="qHL-YR-mpr" secondAttribute="bottom" constant="8" symbolic="YES" id="Xym-zI-mfw"/>
                             <constraint firstItem="TpV-H4-sEo" firstAttribute="trailing" secondItem="JhI-wa-gGX" secondAttribute="trailing" constant="8" id="f6y-UA-g6u"/>
                             <constraint firstItem="TpV-H4-sEo" firstAttribute="bottom" secondItem="4wf-ra-PQQ" secondAttribute="bottom" constant="43" id="fDy-Al-Ns7"/>
                             <constraint firstItem="Q7x-6C-Q2Y" firstAttribute="centerX" secondItem="ecF-zn-Cz1" secondAttribute="centerX" id="h77-UV-KoN"/>
-                            <constraint firstItem="rq0-Cn-apf" firstAttribute="leading" secondItem="azr-RN-Nka" secondAttribute="trailing" constant="8" id="hc3-Yv-c26"/>
+                            <constraint firstItem="INd-P1-fRq" firstAttribute="bottom" secondItem="7ix-kf-7aT" secondAttribute="bottom" id="hQx-0L-veZ"/>
+                            <constraint firstItem="rq0-Cn-apf" firstAttribute="leading" secondItem="azr-RN-Nka" secondAttribute="trailing" constant="12" id="hc3-Yv-c26"/>
                             <constraint firstItem="JhI-wa-gGX" firstAttribute="top" secondItem="TpV-H4-sEo" secondAttribute="top" constant="8" id="k6J-wU-neX"/>
-                            <constraint firstItem="R3c-XI-qSj" firstAttribute="leading" secondItem="rq0-Cn-apf" secondAttribute="trailing" constant="8" id="l0S-CX-F70"/>
+                            <constraint firstItem="R3c-XI-qSj" firstAttribute="leading" secondItem="rq0-Cn-apf" secondAttribute="trailing" constant="12" id="l0S-CX-F70"/>
                             <constraint firstItem="TpV-H4-sEo" firstAttribute="trailing" secondItem="ymc-4Y-fyi" secondAttribute="trailing" id="mnz-jB-RT6"/>
                             <constraint firstItem="7ix-kf-7aT" firstAttribute="top" secondItem="azr-RN-Nka" secondAttribute="bottom" constant="8" id="oQe-9K-Rax"/>
                             <constraint firstItem="Q7x-6C-Q2Y" firstAttribute="top" secondItem="TpV-H4-sEo" secondAttribute="top" constant="20" id="ogP-2i-F2C"/>
                             <constraint firstItem="Ffc-ca-4PQ" firstAttribute="top" secondItem="rq0-Cn-apf" secondAttribute="bottom" constant="8" id="pUW-7G-lkg"/>
+                            <constraint firstItem="rlC-w8-eXv" firstAttribute="centerX" secondItem="ecF-zn-Cz1" secondAttribute="centerX" id="piN-tq-7Ma"/>
                             <constraint firstItem="TpV-H4-sEo" firstAttribute="bottom" secondItem="Dxm-n7-uNR" secondAttribute="bottom" constant="18" id="qwf-7e-kVt"/>
-                            <constraint firstItem="R3c-XI-qSj" firstAttribute="baseline" secondItem="7ix-kf-7aT" secondAttribute="baseline" id="snc-He-MQJ"/>
+                            <constraint firstItem="Ffc-ca-4PQ" firstAttribute="top" secondItem="7ix-kf-7aT" secondAttribute="bottom" constant="12" id="rgl-Lg-Vbn"/>
                             <constraint firstItem="ymc-4Y-fyi" firstAttribute="top" secondItem="TpV-H4-sEo" secondAttribute="top" id="sxU-3A-C9l"/>
                             <constraint firstItem="INd-P1-fRq" firstAttribute="centerX" secondItem="ecF-zn-Cz1" secondAttribute="centerX" id="tec-fl-5gh"/>
                             <constraint firstItem="4wf-ra-PQQ" firstAttribute="leading" secondItem="Dxm-n7-uNR" secondAttribute="trailing" constant="8" id="tzE-UP-3Iv"/>
                             <constraint firstItem="TpV-H4-sEo" firstAttribute="trailing" secondItem="Ffc-ca-4PQ" secondAttribute="trailing" constant="33" id="vj5-g2-rCU"/>
+                            <constraint firstItem="VB8-np-l9a" firstAttribute="centerX" secondItem="91e-hl-veQ" secondAttribute="centerX" id="xMt-v4-QIo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TpV-H4-sEo"/>
                     </view>
@@ -1431,6 +1440,7 @@
                         <outlet property="clockSecondDigitImageView" destination="zgi-lT-6hZ" id="Zpm-TC-xLa"/>
                         <outlet property="clockThirdDigitImageView" destination="fwE-Sp-0fz" id="eqt-RB-guI"/>
                         <outlet property="halfIndicatorImageView" destination="rlC-w8-eXv" id="xKi-ec-xV0"/>
+                        <outlet property="playPauseButton" destination="R3c-XI-qSj" id="wU3-l1-imf"/>
                         <outlet property="team1Avg2PTsButton" destination="08F-wb-Kh3" id="5bz-Sl-zpf"/>
                         <outlet property="team1AvgCompletionPercentButton" destination="yzp-UK-t4E" id="5IK-e3-M9b"/>
                         <outlet property="team1AvgCompletionsButton" destination="5u3-th-X0m" id="0gL-pN-oR9"/>
@@ -1499,58 +1509,58 @@
                         <outlet property="team2RecordLabel" destination="jDt-ZS-kcp" id="E41-MA-wnQ"/>
                         <outlet property="team2ScoreFirstDigitImageView" destination="j55-v7-2Bp" id="fLL-fH-Leg"/>
                         <outlet property="team2ScoreSecondDigitImageView" destination="T9v-sx-SN5" id="Vto-dK-0dw"/>
-                        <outletCollection property="team1Buttons" destination="9pL-kI-WGt" collectionClass="NSMutableArray" id="qx1-qi-vHJ"/>
-                        <outletCollection property="team2Buttons" destination="sTx-bV-apH" collectionClass="NSMutableArray" id="xlJ-4f-eIx"/>
-                        <outletCollection property="team1Buttons" destination="4SU-QB-nFi" collectionClass="NSMutableArray" id="wpo-ga-Haq"/>
-                        <outletCollection property="team1Buttons" destination="5Yx-fP-RPK" collectionClass="NSMutableArray" id="WNF-p1-Osa"/>
-                        <outletCollection property="team1Buttons" destination="Nwx-NQ-GkN" collectionClass="NSMutableArray" id="ldq-Y7-BGk"/>
-                        <outletCollection property="team1Buttons" destination="ZP2-1S-wL1" collectionClass="NSMutableArray" id="y5u-3c-dRP"/>
-                        <outletCollection property="team1Buttons" destination="X2m-KH-faR" collectionClass="NSMutableArray" id="y7S-3e-Le3"/>
-                        <outletCollection property="team1Buttons" destination="61z-RK-1vn" collectionClass="NSMutableArray" id="zrI-yG-PUm"/>
-                        <outletCollection property="team1Buttons" destination="Wpi-Dm-yFw" collectionClass="NSMutableArray" id="f41-Qo-yBb"/>
-                        <outletCollection property="team1Buttons" destination="W7h-HC-7mp" collectionClass="NSMutableArray" id="pGs-Ya-05F"/>
-                        <outletCollection property="team1Buttons" destination="VGE-JG-5Ub" collectionClass="NSMutableArray" id="bsl-Uq-ZY4"/>
-                        <outletCollection property="team1Buttons" destination="xoE-Ji-uon" collectionClass="NSMutableArray" id="MX6-9v-Aap"/>
-                        <outletCollection property="team1Buttons" destination="P4b-mp-7vr" collectionClass="NSMutableArray" id="eAy-MP-f0U"/>
-                        <outletCollection property="team1Buttons" destination="SHY-e6-KuC" collectionClass="NSMutableArray" id="Upi-OJ-00x"/>
-                        <outletCollection property="team1Buttons" destination="5u3-th-X0m" collectionClass="NSMutableArray" id="PHx-db-Cdz"/>
-                        <outletCollection property="team1Buttons" destination="x4J-UM-MXy" collectionClass="NSMutableArray" id="ioh-uc-lR5"/>
-                        <outletCollection property="team1Buttons" destination="yzp-UK-t4E" collectionClass="NSMutableArray" id="6ak-gP-qhL"/>
-                        <outletCollection property="team1Buttons" destination="YYj-jj-ivA" collectionClass="NSMutableArray" id="AMD-Tz-tHZ"/>
-                        <outletCollection property="team1Buttons" destination="Kd7-VL-RVe" collectionClass="NSMutableArray" id="rRC-UD-OmU"/>
-                        <outletCollection property="team1Buttons" destination="ay9-Gx-vJM" collectionClass="NSMutableArray" id="NBL-en-PBL"/>
-                        <outletCollection property="team1Buttons" destination="LvP-H7-wi0" collectionClass="NSMutableArray" id="tyT-Oc-QJB"/>
-                        <outletCollection property="team1Buttons" destination="O4W-PA-BUU" collectionClass="NSMutableArray" id="W9s-gn-Jf3"/>
-                        <outletCollection property="team1Buttons" destination="DGt-mp-smE" collectionClass="NSMutableArray" id="3vb-Gb-vap"/>
-                        <outletCollection property="team1Buttons" destination="x9B-qV-0uA" collectionClass="NSMutableArray" id="RkV-Tk-FbS"/>
-                        <outletCollection property="team1Buttons" destination="9q3-fZ-FXC" collectionClass="NSMutableArray" id="GKs-ut-qPq"/>
-                        <outletCollection property="team1Buttons" destination="08F-wb-Kh3" collectionClass="NSMutableArray" id="O2D-jm-zRE"/>
-                        <outletCollection property="team1Buttons" destination="DEv-eM-IQd" collectionClass="NSMutableArray" id="MqN-sP-Zfq"/>
-                        <outletCollection property="team2Buttons" destination="Pbj-BI-IVe" collectionClass="NSMutableArray" id="6b5-N9-qHK"/>
-                        <outletCollection property="team2Buttons" destination="jKV-FR-V4b" collectionClass="NSMutableArray" id="meG-pA-gmL"/>
-                        <outletCollection property="team2Buttons" destination="YlL-fR-Oh2" collectionClass="NSMutableArray" id="DD8-wJ-OT9"/>
-                        <outletCollection property="team2Buttons" destination="1eS-mk-0NX" collectionClass="NSMutableArray" id="BHs-Nw-XTd"/>
-                        <outletCollection property="team2Buttons" destination="pwC-p7-UaP" collectionClass="NSMutableArray" id="naR-pE-gPv"/>
-                        <outletCollection property="team2Buttons" destination="mdh-xf-0sz" collectionClass="NSMutableArray" id="Lzr-vE-cjL"/>
-                        <outletCollection property="team2Buttons" destination="F3r-k1-U98" collectionClass="NSMutableArray" id="IwN-Zx-XA5"/>
-                        <outletCollection property="team2Buttons" destination="1ww-xG-on3" collectionClass="NSMutableArray" id="R2R-jW-faA"/>
-                        <outletCollection property="team2Buttons" destination="83Y-If-aA8" collectionClass="NSMutableArray" id="EJP-87-oli"/>
-                        <outletCollection property="team2Buttons" destination="Ol0-SW-FqO" collectionClass="NSMutableArray" id="EJ8-VD-GrV"/>
-                        <outletCollection property="team2Buttons" destination="ZTJ-NR-80E" collectionClass="NSMutableArray" id="78V-qj-J9o"/>
-                        <outletCollection property="team2Buttons" destination="LGf-ck-445" collectionClass="NSMutableArray" id="laN-T2-7Ps"/>
-                        <outletCollection property="team2Buttons" destination="bzY-Jl-jP8" collectionClass="NSMutableArray" id="hW2-dD-mmH"/>
-                        <outletCollection property="team2Buttons" destination="iwp-1I-BUH" collectionClass="NSMutableArray" id="lbl-Gh-FWG"/>
-                        <outletCollection property="team2Buttons" destination="uVe-fV-13c" collectionClass="NSMutableArray" id="kIp-qW-c0h"/>
-                        <outletCollection property="team2Buttons" destination="aS1-hz-3GY" collectionClass="NSMutableArray" id="Cqk-64-UC2"/>
-                        <outletCollection property="team2Buttons" destination="vfW-fq-qCE" collectionClass="NSMutableArray" id="lb5-Fs-OJH"/>
-                        <outletCollection property="team2Buttons" destination="bo0-F7-JfI" collectionClass="NSMutableArray" id="YwJ-Wh-XHs"/>
-                        <outletCollection property="team2Buttons" destination="Wdj-aK-Uv5" collectionClass="NSMutableArray" id="oDr-GL-NQE"/>
-                        <outletCollection property="team2Buttons" destination="RGz-bm-AIs" collectionClass="NSMutableArray" id="e8s-uR-gSX"/>
-                        <outletCollection property="team2Buttons" destination="WAb-CG-QBn" collectionClass="NSMutableArray" id="clR-4k-Cyj"/>
-                        <outletCollection property="team2Buttons" destination="FFI-ca-HJg" collectionClass="NSMutableArray" id="IEY-t4-7nO"/>
-                        <outletCollection property="team2Buttons" destination="a4c-c7-FAR" collectionClass="NSMutableArray" id="tNt-tl-JcE"/>
-                        <outletCollection property="team2Buttons" destination="Q6K-mK-0fq" collectionClass="NSMutableArray" id="Phg-eY-MDc"/>
-                        <outletCollection property="team2Buttons" destination="NF2-XJ-AiY" collectionClass="NSMutableArray" id="sDE-YK-TsY"/>
+                        <outletCollection property="team1StatsButtons" destination="9pL-kI-WGt" collectionClass="NSMutableArray" id="qx1-qi-vHJ"/>
+                        <outletCollection property="team2StatsButtons" destination="sTx-bV-apH" collectionClass="NSMutableArray" id="xlJ-4f-eIx"/>
+                        <outletCollection property="team1StatsButtons" destination="4SU-QB-nFi" collectionClass="NSMutableArray" id="wpo-ga-Haq"/>
+                        <outletCollection property="team1StatsButtons" destination="5Yx-fP-RPK" collectionClass="NSMutableArray" id="WNF-p1-Osa"/>
+                        <outletCollection property="team1StatsButtons" destination="Nwx-NQ-GkN" collectionClass="NSMutableArray" id="ldq-Y7-BGk"/>
+                        <outletCollection property="team1StatsButtons" destination="ZP2-1S-wL1" collectionClass="NSMutableArray" id="y5u-3c-dRP"/>
+                        <outletCollection property="team1StatsButtons" destination="X2m-KH-faR" collectionClass="NSMutableArray" id="y7S-3e-Le3"/>
+                        <outletCollection property="team1StatsButtons" destination="61z-RK-1vn" collectionClass="NSMutableArray" id="zrI-yG-PUm"/>
+                        <outletCollection property="team1StatsButtons" destination="Wpi-Dm-yFw" collectionClass="NSMutableArray" id="f41-Qo-yBb"/>
+                        <outletCollection property="team1StatsButtons" destination="W7h-HC-7mp" collectionClass="NSMutableArray" id="pGs-Ya-05F"/>
+                        <outletCollection property="team1StatsButtons" destination="VGE-JG-5Ub" collectionClass="NSMutableArray" id="bsl-Uq-ZY4"/>
+                        <outletCollection property="team1StatsButtons" destination="xoE-Ji-uon" collectionClass="NSMutableArray" id="MX6-9v-Aap"/>
+                        <outletCollection property="team1StatsButtons" destination="P4b-mp-7vr" collectionClass="NSMutableArray" id="eAy-MP-f0U"/>
+                        <outletCollection property="team1StatsButtons" destination="SHY-e6-KuC" collectionClass="NSMutableArray" id="Upi-OJ-00x"/>
+                        <outletCollection property="team1StatsButtons" destination="5u3-th-X0m" collectionClass="NSMutableArray" id="PHx-db-Cdz"/>
+                        <outletCollection property="team1StatsButtons" destination="x4J-UM-MXy" collectionClass="NSMutableArray" id="ioh-uc-lR5"/>
+                        <outletCollection property="team1StatsButtons" destination="yzp-UK-t4E" collectionClass="NSMutableArray" id="6ak-gP-qhL"/>
+                        <outletCollection property="team1StatsButtons" destination="YYj-jj-ivA" collectionClass="NSMutableArray" id="AMD-Tz-tHZ"/>
+                        <outletCollection property="team1StatsButtons" destination="Kd7-VL-RVe" collectionClass="NSMutableArray" id="rRC-UD-OmU"/>
+                        <outletCollection property="team1StatsButtons" destination="ay9-Gx-vJM" collectionClass="NSMutableArray" id="NBL-en-PBL"/>
+                        <outletCollection property="team1StatsButtons" destination="LvP-H7-wi0" collectionClass="NSMutableArray" id="tyT-Oc-QJB"/>
+                        <outletCollection property="team1StatsButtons" destination="O4W-PA-BUU" collectionClass="NSMutableArray" id="W9s-gn-Jf3"/>
+                        <outletCollection property="team1StatsButtons" destination="DGt-mp-smE" collectionClass="NSMutableArray" id="3vb-Gb-vap"/>
+                        <outletCollection property="team1StatsButtons" destination="x9B-qV-0uA" collectionClass="NSMutableArray" id="RkV-Tk-FbS"/>
+                        <outletCollection property="team1StatsButtons" destination="9q3-fZ-FXC" collectionClass="NSMutableArray" id="GKs-ut-qPq"/>
+                        <outletCollection property="team1StatsButtons" destination="08F-wb-Kh3" collectionClass="NSMutableArray" id="O2D-jm-zRE"/>
+                        <outletCollection property="team1StatsButtons" destination="DEv-eM-IQd" collectionClass="NSMutableArray" id="MqN-sP-Zfq"/>
+                        <outletCollection property="team2StatsButtons" destination="Pbj-BI-IVe" collectionClass="NSMutableArray" id="6b5-N9-qHK"/>
+                        <outletCollection property="team2StatsButtons" destination="jKV-FR-V4b" collectionClass="NSMutableArray" id="meG-pA-gmL"/>
+                        <outletCollection property="team2StatsButtons" destination="YlL-fR-Oh2" collectionClass="NSMutableArray" id="DD8-wJ-OT9"/>
+                        <outletCollection property="team2StatsButtons" destination="1eS-mk-0NX" collectionClass="NSMutableArray" id="BHs-Nw-XTd"/>
+                        <outletCollection property="team2StatsButtons" destination="pwC-p7-UaP" collectionClass="NSMutableArray" id="naR-pE-gPv"/>
+                        <outletCollection property="team2StatsButtons" destination="mdh-xf-0sz" collectionClass="NSMutableArray" id="Lzr-vE-cjL"/>
+                        <outletCollection property="team2StatsButtons" destination="F3r-k1-U98" collectionClass="NSMutableArray" id="IwN-Zx-XA5"/>
+                        <outletCollection property="team2StatsButtons" destination="1ww-xG-on3" collectionClass="NSMutableArray" id="R2R-jW-faA"/>
+                        <outletCollection property="team2StatsButtons" destination="83Y-If-aA8" collectionClass="NSMutableArray" id="EJP-87-oli"/>
+                        <outletCollection property="team2StatsButtons" destination="Ol0-SW-FqO" collectionClass="NSMutableArray" id="EJ8-VD-GrV"/>
+                        <outletCollection property="team2StatsButtons" destination="ZTJ-NR-80E" collectionClass="NSMutableArray" id="78V-qj-J9o"/>
+                        <outletCollection property="team2StatsButtons" destination="LGf-ck-445" collectionClass="NSMutableArray" id="laN-T2-7Ps"/>
+                        <outletCollection property="team2StatsButtons" destination="bzY-Jl-jP8" collectionClass="NSMutableArray" id="hW2-dD-mmH"/>
+                        <outletCollection property="team2StatsButtons" destination="iwp-1I-BUH" collectionClass="NSMutableArray" id="lbl-Gh-FWG"/>
+                        <outletCollection property="team2StatsButtons" destination="uVe-fV-13c" collectionClass="NSMutableArray" id="kIp-qW-c0h"/>
+                        <outletCollection property="team2StatsButtons" destination="aS1-hz-3GY" collectionClass="NSMutableArray" id="Cqk-64-UC2"/>
+                        <outletCollection property="team2StatsButtons" destination="vfW-fq-qCE" collectionClass="NSMutableArray" id="lb5-Fs-OJH"/>
+                        <outletCollection property="team2StatsButtons" destination="bo0-F7-JfI" collectionClass="NSMutableArray" id="YwJ-Wh-XHs"/>
+                        <outletCollection property="team2StatsButtons" destination="Wdj-aK-Uv5" collectionClass="NSMutableArray" id="oDr-GL-NQE"/>
+                        <outletCollection property="team2StatsButtons" destination="RGz-bm-AIs" collectionClass="NSMutableArray" id="e8s-uR-gSX"/>
+                        <outletCollection property="team2StatsButtons" destination="WAb-CG-QBn" collectionClass="NSMutableArray" id="clR-4k-Cyj"/>
+                        <outletCollection property="team2StatsButtons" destination="FFI-ca-HJg" collectionClass="NSMutableArray" id="IEY-t4-7nO"/>
+                        <outletCollection property="team2StatsButtons" destination="a4c-c7-FAR" collectionClass="NSMutableArray" id="tNt-tl-JcE"/>
+                        <outletCollection property="team2StatsButtons" destination="Q6K-mK-0fq" collectionClass="NSMutableArray" id="Phg-eY-MDc"/>
+                        <outletCollection property="team2StatsButtons" destination="NF2-XJ-AiY" collectionClass="NSMutableArray" id="sDE-YK-TsY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PzY-JM-7Op" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1560,7 +1570,13 @@
     </scenes>
     <resources>
         <image name="PFLLogo" width="724" height="978"/>
+        <image name="buttonEndGame" width="120.5" height="120.5"/>
+        <image name="buttonForward" width="120" height="120.5"/>
+        <image name="buttonPlay" width="120.5" height="120.5"/>
+        <image name="buttonRewind" width="120" height="120.5"/>
+        <image name="buttonUpDown" width="26" height="64.5"/>
         <image name="grayGradientBackground" width="2209" height="1243"/>
+        <image name="half1" width="137.5" height="37"/>
         <image name="helmetBlueLeft" width="357" height="329.5"/>
         <image name="helmetRedRight" width="359.5" height="331.5"/>
         <image name="letterC" width="100" height="100"/>
@@ -1570,18 +1586,12 @@
         <image name="scoreboard0Red" width="187" height="309.5"/>
         <image name="scoreboard0Yellow" width="187" height="309.5"/>
         <image name="scoreboard1Red" width="187" height="309.5"/>
+        <image name="scoreboard1Yellow" width="187" height="309.5"/>
         <image name="scoreboard2Red" width="187" height="309.5"/>
-        <image name="scoreboard3Yellow" width="187" height="309.5"/>
-        <image name="scoreboard4Yellow" width="187" height="309.5"/>
+        <image name="scoreboard2Yellow" width="187" height="309.5"/>
         <image name="scoreboard7Red" width="187" height="309.5"/>
-        <image name="scoreboard8Yellow" width="187" height="309.5"/>
         <image name="scoreboardBackClock" width="807" height="316"/>
         <image name="scoreboardBackScores" width="387" height="316"/>
-        <image name="scoreboardButtonForward" width="131" height="122"/>
-        <image name="scoreboardButtonPlay" width="128" height="119"/>
-        <image name="scoreboardButtonRewind" width="122" height="114"/>
-        <image name="scoreboardButtonsUpDownArrows" width="26" height="64.5"/>
-        <image name="scoreboardHalf1" width="137.5" height="37"/>
         <image name="xWhite" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>

@@ -66,8 +66,11 @@ class TeamStatsVC: UIViewController {
     @IBOutlet weak var avg2PTsLabel: UILabel!
     @IBOutlet weak var avgIntCaughtLabel: UILabel!
     
-    // Collections of stats labels
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: - OUTLETS - LABEL COLLECTION
+    
     @IBOutlet var teamStatsLabels: [UILabel]!
+    
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
     // 🔸 MARK: - VIEW DID LOAD

@@ -22,7 +22,7 @@ class StartupVC: UIViewController {
                 // If user exists, send to user profile view
                 if userLoggedIn == true {
                     self.performSegue(withIdentifier: "toUserProfile", sender: nil)
-                    
+                    LeagueController.shared.fetchLeagues(completion: { (_) in})
                     // If user doesn't exist yet, send to new user view
                 } else {
                     self.performSegue(withIdentifier: "toNewUser", sender: nil)

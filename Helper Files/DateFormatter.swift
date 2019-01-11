@@ -11,10 +11,18 @@ import Foundation
 extension Date {
     
     var asString: String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
-        return formatter.string(from: self)
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "MMMM dd, yyyy"
+        
+        return dateFormatterPrint.string(from: self)
+    }
+    
+    var asHeader: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        return dateFormatter.string(from: self)
     }
 }

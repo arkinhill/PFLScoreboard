@@ -9,6 +9,8 @@
 import Foundation
 import CloudKit
 
+public let leaguesDidUpdate = NSNotification.Name(rawValue: "leaguesDidUpdateNotification")
+
 class LeagueController {
     
     // MARK: - SHARED, SOURCE, DATABASE
@@ -17,7 +19,11 @@ class LeagueController {
     static let shared = LeagueController()
     
     // Source of truth
-    var leagues: [League] = []
+    var leagues: [League] = [] {
+        didSet {
+            NotificationCenter.default.post(name: leaguesDidUpdate, object: nil)
+        }
+    }
     var teamColors: [Team.Color] = [.Red, .Orange, .Yellow, .Green, .Blue, .Purple, .Silver, .Black]
     
     // Database
@@ -255,7 +261,7 @@ class LeagueController {
                     return false
                 }
             })
-            UserController.shared.loggedInUser?.leagues = filteredLeaues
+            self.leagues = filteredLeaues
             completion(true)
         }
     }
@@ -263,13 +269,13 @@ class LeagueController {
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
     // 🔸 MARK: - UPDATE
     
-    func updateLeague(league: League, leagueName: String, isPending: Bool, teams: [Team], users: [User], completion: @escaping (Bool) -> Void) {
+    func updateLeague(league: League, completion: @escaping (Bool) -> Void) {
         
         // Take existing league, update it locally
-        league.leagueName = leagueName
-        league.isPending = isPending
-        league.teams = teams
-        league.users = users
+//        league.leagueName = leagueName
+//        league.isPending = isPending
+//        league.teams = teams
+//        league.users = users
         
         // Take new league, update fields that have changed
         let record = CKRecord(league: league)

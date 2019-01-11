@@ -6,7 +6,7 @@
 //  Copyright © 2018 Arkin Hill. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CloudKit
 
 class GameController {
@@ -34,10 +34,6 @@ class GameController {
         team1: Team,
         team2: Team,
         league: League,
-        
-        // Clock
-        clockTime: Timer = Timer(),
-        whichHalf: Int = 0,
         
         // Team 1 game stats
         team1Score: Int = 0,
@@ -80,10 +76,6 @@ class GameController {
             // Game info
             team1: team1,
             team2: team2,
-            
-            // Clock
-            clockTime: clockTime,
-            whichHalf: whichHalf,
             
             // Team 1 game stats
             team1Score: team1Score,
@@ -170,83 +162,11 @@ class GameController {
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
     // 🔸 MARK: - UPDATE
     
-    func updateGame(
+    func update(_ game: Game, from sender: UIButton? = nil, completion: @escaping (Bool) -> Void) {
         
-        game: Game,
-        
-        // Game info
-        date: Date,
-        team1: Team,
-        team2: Team,
-        
-        // Clock
-        clockTime: Timer,
-        whichHalf: Int,
-        
-        // Team 1 game stats
-        team1Score: Int,
-        team1CompletionsMade: Int,
-        team1CompletionsAttempted: Int,
-        team1InterceptionsThrown: Int,
-        team1FieldGoalsMade: Int,
-        team1FieldGoalsAttempted: Int,
-        team1PATsMade: Int,
-        team1PATsAttempted: Int,
-        team1Touchdowns: Int,
-        team1TwoPointConversions: Int,
-        team1InterceptionsCaught: Int,
-        
-        // Team 2 game stats
-        team2Score: Int,
-        team2CompletionsMade: Int,
-        team2CompletionsAttempted: Int,
-        team2InterceptionsThrown: Int,
-        team2FieldGoalsMade: Int,
-        team2FieldGoalsAttempted: Int,
-        team2PATsMade: Int,
-        team2PATsAttempted: Int,
-        team2Touchdowns: Int,
-        team2TwoPointConversions: Int,
-        team2InterceptionsCaught: Int,
-        
-        completion: @escaping (Bool) -> Void) {
-        
-        // Take existing game, update it locally
-        
-        // Game info
-        game.date = date
-        game.team1 = team1
-        game.team2 = team2
-        
-        // Clock
-        game.clockTime = clockTime
-        game.whichHalf = whichHalf
-        
-        // Team 1 game stats
-        game.team1Score = team1Score
-        game.team1CompletionsMade = team1CompletionsMade
-        game.team1CompletionsAttempted = team1CompletionsAttempted
-        game.team1InterceptionsThrown = team1InterceptionsThrown
-        game.team1FieldGoalsMade = team1FieldGoalsMade
-        game.team1FieldGoalsAttempted = team1FieldGoalsAttempted
-        game.team1PATsMade = team1PATsMade
-        game.team1PATsAttempted = team1PATsAttempted
-        game.team1Touchdowns = team1Touchdowns
-        game.team1TwoPointConversions = team1TwoPointConversions
-        game.team1InterceptionsCaught = team1InterceptionsCaught
-        
-        // Team 2 game stats
-        game.team2Score = team2Score
-        game.team2CompletionsMade = team2CompletionsMade
-        game.team2CompletionsAttempted = team2CompletionsAttempted
-        game.team2InterceptionsThrown = team2InterceptionsThrown
-        game.team2FieldGoalsMade = team2FieldGoalsMade
-        game.team2FieldGoalsAttempted = team2FieldGoalsAttempted
-        game.team2PATsMade = team2PATsMade
-        game.team2PATsAttempted = team2PATsAttempted
-        game.team2Touchdowns = team2Touchdowns
-        game.team2TwoPointConversions = team2TwoPointConversions
-        game.team2InterceptionsCaught = team2InterceptionsCaught
+        if sender?.restorationIdentifier == "endGame" {
+            game.date = Date()
+        }
         
         // Take new game, update fields that have changed
         let record = CKRecord(game: game)
@@ -291,5 +211,9 @@ class GameController {
             game.team2 = team2.first
             completion(true)
         }
+    }
+    
+    func assignGameEndDate(game: Game) {
+        game.date = Date()
     }
 }

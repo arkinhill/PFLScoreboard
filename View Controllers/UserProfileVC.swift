@@ -7,21 +7,10 @@
 //
 
 import UIKit
+import CloudKit
 
 class UserProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
-    // 🔸 MARK: - SOURCE OF TRUTH
-
-// ❎ NEW LEAGUES AREN'T SHOWING UP
-    
-    var leagues: [League] = [] {
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
     // 🔸 MARK: - OUTLETS
@@ -37,16 +26,14 @@ class UserProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         guard let user = UserController.shared.loggedInUser?.username else { return }
         usernameLabel?.text = user
+        
+        // Listen for every update to the leagues source of truth
+        NotificationCenter.default.addObserver(self, selector: #selector(updateView), name: leaguesDidUpdate, object: nil)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        LeagueController.shared.fetchLeagues { (success) in
-            
-            DispatchQueue.main.async {
-        
+    @objc func updateView() {
+        DispatchQueue.main.async {
             self.tableView.reloadData()
-            }
         }
     }
     
@@ -60,12 +47,11 @@ class UserProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     // 🔸 MARK: - TABLE VIEW DATA SOURCE
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let leagues = UserController.shared.loggedInUser?.leagues else { return 1 }
-        return leagues.count
+        return LeagueController.shared.leagues.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let league = UserController.shared.loggedInUser?.leagues[indexPath.row]
+        let league = LeagueController.shared.leagues[indexPath.row]
         
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "leagueCell", for: indexPath) as? LeagueTVCell
                 else { return UITableViewCell() }
@@ -73,9 +59,10 @@ class UserProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             // Set delegate to custom view cell
             // (Step 5 of 5 - 3 steps in child, 2 in parent(this file))
             cell.delegate = self
-            
+            cell.league = league
+            cell.indexPath = indexPath
             // Configure the cell
-            cell.leagueNameLabel?.text = league?.leagueName
+            cell.leagueNameLabel?.text = league.leagueName
             return cell
     }
     
@@ -87,7 +74,7 @@ class UserProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             guard let destinationVC = segue.destination as?
                 GameScheduleVC, let indexPath = tableView.indexPathForSelectedRow else { return }
             
-            let league = UserController.shared.loggedInUser?.leagues[indexPath.row]
+            let league = LeagueController.shared.leagues[indexPath.row]
             destinationVC.selectedLeague = league
             
             let backItem = UIBarButtonItem()
@@ -95,6 +82,10 @@ class UserProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             navigationItem.backBarButtonItem = backItem
         }
     }
+}
+
+func prepareForSegue(completion: @escaping () -> Void){
+    
 }
 
 // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
@@ -105,19 +96,48 @@ class UserProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 
 extension UserProfileVC: LeagueTVCellDelegate {
     
-    func unlinkFromLeagueButtonTapped(_ sender: LeagueTVCell) {
+    func unlinkFromLeagueButtonTapped(_ sender: LeagueTVCell, indexPath: IndexPath) {
     
         let alertController = UIAlertController(title: "Are you sure?", message: "This action will permanently disconnect you from this league.", preferredStyle: .alert)
         
         let dismissAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let continueAction = UIAlertAction(title: "Proceed", style: .default) { (_) in
             print("Continue action was tapped by the user")
+            
+            guard let league = sender.league,
+                let loggedInUser = UserController.shared.loggedInUser
+                else { return }
+            
+            var refs: [CKRecord.Reference] = []
+            for ref in league.userReference {
+                if ref.recordID == loggedInUser.ckRecordID {
+                    continue
+                }
+                
+                refs.append(ref)
+            }
+            league.userReference = refs
+            
+            LeagueController.shared.updateLeague(league: league, completion: { (success) in
+                if success {
+                    DispatchQueue.main.async {
+                        
+                        guard let indexToDelete = LeagueController.shared.leagues.firstIndex(of: league) else { return }
+                        LeagueController.shared.leagues.remove(at: indexToDelete)
+                        
+                        self.tableView.deleteRows(at: [indexPath], with: .fade)
+                    }
+                }
+            })
+            
         }
+        
         alertController.addAction(dismissAction)
         alertController.addAction(continueAction)
         self.present(alertController, animated: true, completion: nil)
     }
 }
+
 
 
 

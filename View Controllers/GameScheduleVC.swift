@@ -33,8 +33,11 @@ class GameScheduleVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("break")
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.collectionView.reloadData()
     }
     
     // MARK: - COLLECTION VIEW DATA SOURCE
@@ -55,7 +58,7 @@ class GameScheduleVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         // Configure cell
         if let date = game.date {
             cell.backgroundColor = UIColor(named: "Black")
-            cell.gameDateLabel.text = date.asString
+            cell.gameDateLabel.text = date.asHeader
         } else {
             cell.backgroundColor = UIColor(named: "Yellow")
         }
@@ -76,21 +79,14 @@ class GameScheduleVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         guard let game = selectedLeague?.games[indexPath.row] else { return }
-        
         if let _ = game.date {
             guard let gameRecapVC = UIStoryboard(name: "GameRecap", bundle: nil).instantiateInitialViewController() as? GameRecapVC else { return }
-            
             gameRecapVC.selectedGame = game
-            
             navigationController?.present(gameRecapVC, animated: true, completion: nil)
-        
         } else {
             guard let scoreboardVC = UIStoryboard(name: "Scoreboard", bundle: nil).instantiateInitialViewController() as? ScoreboardVC else { return }
-            
             scoreboardVC.selectedGame = game
-            
             navigationController?.present(scoreboardVC, animated: true, completion: nil)
-            
         }
     }
 }

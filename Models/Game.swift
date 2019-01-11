@@ -46,7 +46,8 @@ class Game {
 // ❎ NEED TO CHANGE CLOCK FROM OPTIONAL
     
     // Clock
-    var clockTime: Timer?
+    var clockTime: TimeInterval
+
     var whichHalf: Int
     
     // Team 1 game stats
@@ -145,8 +146,8 @@ class Game {
         team2: Team,
         
         // Clock
-        clockTime: Timer = Timer(),
-        whichHalf: Int = 0,
+        clockTime: TimeInterval = 10,
+        whichHalf: Int = 1,
         
         // Team 1 game stats
         team1Score: Int = 0,
@@ -238,7 +239,7 @@ class Game {
 // ❎ NEED TO REACTIVATE CLOCK, CHANGE IT FROM OPTIONAL ABOVE
             
             // Clock
-            //            let clockTime = ckRecord[Game.clockTimeKey] as? Timer,
+            let clockTime = ckRecord[Game.clockTimeKey] as? TimeInterval,
             let whichHalf = ckRecord[Game.whichHalfKey] as? Int,
             
             let team1Name = ckRecord[Game.team1NameKey] as? String,
@@ -291,7 +292,7 @@ class Game {
 
 // ❎ NEED TO REACTIVATE CLOCK, CHANGE IT FROM OPTIONAL ABOVE
         
-        //        self.clockTime = clockTime
+        self.clockTime = clockTime
         self.whichHalf = whichHalf
         
         self.team1Coach = team1Coach

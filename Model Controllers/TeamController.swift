@@ -95,61 +95,12 @@ class TeamController {
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
     // 🔸 MARK: - UPDATE
     
-    func updateTeam(
+    func updateTeams(teams: [Team], completion: @escaping (Bool) -> Void) {
         
-        team: Team,
-        
-        // General team info
-        coach: String,
-        name: String,
-        color: Team.Color,
-        
-        // Team record
-        wins: Int,
-        losses: Int,
-        rank: Int,
-        
-        // Team stats
-        completionsAttempted: Int,
-        completionsMade: Int,
-        interceptionsThrown: Int,
-        fieldGoalsMade: Int,
-        fieldGoalsAttempted: Int,
-        pATsMade: Int,
-        pATsAttempted: Int,
-        touchdowns: Int,
-        twoPointConversions: Int,
-        interceptionsCaught: Int,
-        
-        completion: @escaping (Bool) -> Void) {
-        
-        // Take existing team, update it locally
-        
-        // General team info
-        team.coach = coach
-        team.name = name
-        team.color = color
-        
-        // Team record
-        team.wins = wins
-        team.losses = losses
-        team.rank = rank
-        
-        // Team stats
-        team.completionsAttempted = completionsAttempted
-        team.completionsMade = completionsMade
-        team.interceptionsThrown = interceptionsThrown
-        team.fieldGoalsMade = fieldGoalsMade
-        team.fieldGoalsAttempted = fieldGoalsAttempted
-        team.pATsMade = pATsMade
-        team.pATsAttempted = pATsAttempted
-        team.touchdowns = touchdowns
-        team.twoPointConversions = twoPointConversions
-        team.interceptionsCaught = interceptionsCaught
+        let teamRecords = teams.compactMap { CKRecord(team: $0) }
         
         // Take new team, update fields that have changed
-        let record = CKRecord(team: team)
-        let operation = CKModifyRecordsOperation(recordsToSave: [record], recordIDsToDelete: nil)
+        let operation = CKModifyRecordsOperation(recordsToSave: teamRecords, recordIDsToDelete: nil)
         operation.savePolicy = .changedKeys
         operation.queuePriority = .high
         operation.qualityOfService = .userInteractive
@@ -159,5 +110,19 @@ class TeamController {
             completion(true)
         }
         database.add(operation)
+    }
+    
+    func assignWinOrLoss(game: Game) {
+        guard let team1 = game.team1,
+            let team2 = game.team2
+            else { return }
+        
+        if game.team1Score > game.team2Score {
+            team1.wins += 1
+            team2.losses += 1
+        } else {
+            team1.losses += 1
+            team2.wins += 1
+        }
     }
 }

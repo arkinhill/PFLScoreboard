@@ -16,7 +16,8 @@ class LeagueTVCell: UITableViewCell {
     // (Step 2 of 5 - 3 steps in child (this file), 2 in parent)
     
     weak var delegate: LeagueTVCellDelegate?
-
+    var league: League?
+    var indexPath: IndexPath?
     // MARK: - OUTLETS
     
     @IBOutlet weak var leagueNameLabel: UILabel!
@@ -27,8 +28,8 @@ class LeagueTVCell: UITableViewCell {
         
         // Call the delegate function
         // (Step 3 of 5 - 3 steps in child (this file), 2 in parent)
-        
-        delegate?.unlinkFromLeagueButtonTapped(self)
+        guard let indexPath = indexPath else { return }
+        delegate?.unlinkFromLeagueButtonTapped(self, indexPath: indexPath)
     }
 }
 
@@ -38,5 +39,5 @@ class LeagueTVCell: UITableViewCell {
 // (Step 1 of 5 - 3 steps in child (this file), 2 in parent)
 
 protocol LeagueTVCellDelegate: class {
-    func unlinkFromLeagueButtonTapped(_ sender: LeagueTVCell)
+    func unlinkFromLeagueButtonTapped(_ sender: LeagueTVCell, indexPath: IndexPath)
 }

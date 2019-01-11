@@ -768,7 +768,6 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="createNewLeagueButton:" destination="RVE-mI-b4y" eventType="touchUpInside" id="QYe-WB-9gO"/>
-                                                    <segue destination="8uU-Lp-2xs" kind="show" id="E8V-bz-6nl"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -830,6 +829,7 @@
                     <size key="freeformSize" width="736" height="1050"/>
                     <connections>
                         <outlet property="leagueNameTextField" destination="9QO-nF-ZQH" id="at6-9M-x9Q"/>
+                        <outlet property="networkIndicatorView" destination="tXc-2T-XeM" id="KAr-hF-me1"/>
                         <outletCollection property="usernameTextFields" destination="t5U-iN-mZD" collectionClass="NSMutableArray" id="dul-7v-FhC"/>
                         <outletCollection property="usernameTextFields" destination="I4s-cc-vvr" collectionClass="NSMutableArray" id="Hhr-93-4Vs"/>
                         <outletCollection property="usernameTextFields" destination="pgU-XY-8ag" collectionClass="NSMutableArray" id="nCb-GL-q2m"/>
@@ -854,11 +854,46 @@
                         <outletCollection property="coachNameTextFields" destination="BGr-Kx-feq" collectionClass="NSMutableArray" id="cV3-3G-Lk5"/>
                         <outletCollection property="coachNameTextFields" destination="T2Q-QJ-C1R" collectionClass="NSMutableArray" id="tnP-9I-n4o"/>
                         <outletCollection property="teamNameTextFields" destination="9jD-hw-ea3" collectionClass="NSMutableArray" id="ast-gc-jpe"/>
+                        <outletCollection property="teamNameTextFieldsCopy" destination="rAD-16-agl" collectionClass="NSMutableArray" id="ZDI-bE-KwU"/>
+                        <outletCollection property="teamNameTextFieldsCopy" destination="Pc7-bT-jxy" collectionClass="NSMutableArray" id="yrp-Ug-u7g"/>
+                        <outletCollection property="teamNameTextFieldsCopy" destination="3qd-aL-dtS" collectionClass="NSMutableArray" id="KNt-e6-HkW"/>
+                        <outletCollection property="teamNameTextFieldsCopy" destination="vld-PV-g6B" collectionClass="NSMutableArray" id="Wif-Ed-29V"/>
+                        <outletCollection property="teamNameTextFieldsCopy" destination="TNl-29-dJ7" collectionClass="NSMutableArray" id="4UF-k2-zfl"/>
+                        <outletCollection property="teamNameTextFieldsCopy" destination="6Nz-e1-7aZ" collectionClass="NSMutableArray" id="Yr4-Zi-w7k"/>
+                        <outletCollection property="teamNameTextFieldsCopy" destination="CBe-Q9-fUH" collectionClass="NSMutableArray" id="cyD-Uc-FoH"/>
+                        <outletCollection property="teamNameTextFieldsCopy" destination="9jD-hw-ea3" collectionClass="NSMutableArray" id="TPV-2t-NYs"/>
+                        <outletCollection property="coachNameTextFieldsCopy" destination="Bjc-vm-F9j" collectionClass="NSMutableArray" id="ps5-7O-0Ig"/>
+                        <outletCollection property="coachNameTextFieldsCopy" destination="2JL-CL-dfo" collectionClass="NSMutableArray" id="OUW-eg-AiA"/>
+                        <outletCollection property="coachNameTextFieldsCopy" destination="Ykc-0q-fiQ" collectionClass="NSMutableArray" id="em1-nd-UIv"/>
+                        <outletCollection property="coachNameTextFieldsCopy" destination="9ay-Ac-jnJ" collectionClass="NSMutableArray" id="yfC-jn-XZB"/>
+                        <outletCollection property="coachNameTextFieldsCopy" destination="rG3-gZ-QGp" collectionClass="NSMutableArray" id="zkd-Ib-Xx7"/>
+                        <outletCollection property="coachNameTextFieldsCopy" destination="0fL-cy-Wsh" collectionClass="NSMutableArray" id="tTe-ci-ALO"/>
+                        <outletCollection property="coachNameTextFieldsCopy" destination="BGr-Kx-feq" collectionClass="NSMutableArray" id="pJX-PP-Xq7"/>
+                        <outletCollection property="coachNameTextFieldsCopy" destination="T2Q-QJ-C1R" collectionClass="NSMutableArray" id="86R-Eh-WOv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MqK-Um-Vrd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="tXc-2T-XeM">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="X1M-AE-SZD">
+                            <rect key="frame" x="101.66666666666667" y="45.666666666666657" width="37.000000000000014" height="37"/>
+                            <constraints>
+                                <constraint firstAttribute="width" priority="40" constant="37" id="KIE-yP-i1H"/>
+                                <constraint firstAttribute="height" constant="37" id="Pam-Kj-kZh"/>
+                            </constraints>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="X1M-AE-SZD" firstAttribute="centerY" secondItem="tXc-2T-XeM" secondAttribute="centerY" id="GAy-l1-B1B"/>
+                        <constraint firstItem="X1M-AE-SZD" firstAttribute="centerX" secondItem="tXc-2T-XeM" secondAttribute="centerX" id="Smr-h2-b4P"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="9hv-ua-O1Q"/>
+                </view>
             </objects>
-            <point key="canvasLocation" x="676.63043478260875" y="404.34782608695656"/>
+            <point key="canvasLocation" x="673" y="520"/>
         </scene>
         <!--UserProfile-->
         <scene sceneID="QHe-Mx-7eX">
