@@ -37,7 +37,7 @@ class GameScheduleVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.collectionView.reloadData()
+        collectionView.reloadData()
     }
     
     // MARK: - COLLECTION VIEW DATA SOURCE

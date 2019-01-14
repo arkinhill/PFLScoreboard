@@ -96,7 +96,7 @@ class TeamStatsVC: UIViewController {
         coachNameLabel.text = "\(team.coach)"
         helmetImageView.image = UIImage(named: "helmet\(team.color)Right")
         helmetLetterImageView.image = UIImage(named: "letter\(team.name.prefix(1).capitalized)")
-        rankingBadgeImageView.image = UIImage(named: "ranking1")
+        rankingBadgeImageView.image = UIImage(named: "")
         winsLabel.text = "\(team.wins)"
         lossesLabel.text = "\(team.losses)"
 

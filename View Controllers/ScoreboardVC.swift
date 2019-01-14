@@ -8,6 +8,7 @@
 
 import UIKit
 import CloudKit
+import AVFoundation
 
 class ScoreboardVC: UIViewController {
     
@@ -164,6 +165,16 @@ class ScoreboardVC: UIViewController {
                     self.updateAverages()
                 }
             }
+        }
+        
+        let path = Bundle.main.path(forResource: "sportsArenaBuzzer", ofType: "wav")
+        let soundUrl = URL(fileURLWithPath: path!)
+        
+        do {
+            try buzzer = AVAudioPlayer(contentsOf: soundUrl)
+            buzzer.prepareToPlay()
+        } catch let err as NSError {
+            print(err.debugDescription)
         }
         
         // Set stat cell background colors
@@ -361,16 +372,15 @@ class ScoreboardVC: UIViewController {
     
     func endGame(sender: UIButton) {
         
-        // Change font and color of notificaton alert title and message
+        // Change font and color of notificaton alert title
         let attributedStringTitle = NSAttributedString(string: "WANT TO END THE GAME?", attributes: [
             NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBold", size: 18) as Any,
-            NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.9976590276, green: 0.7437580228, blue: 0.1992819309, alpha: 1)
-            ])
+            NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.9976590276, green: 0.7437580228, blue: 0.1992819309, alpha: 1) ])
         
+        // Change font and color of notificaton alert message
         let attributedStringMessage = NSAttributedString(string: "This action will end the game and finalize scores and stats.", attributes: [
             NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Light", size: 16) as Any,
-            NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-            ])
+            NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) ])
         
         // Have notification appear to ask if they are sure they want to end game
         let alertController = UIAlertController(title: "", message: "", preferredStyle: .alert)
@@ -379,7 +389,7 @@ class ScoreboardVC: UIViewController {
         
         // change the background color
         let subview = (alertController.view.subviews.first?.subviews.first?.subviews.first!)! as UIView
-        subview.layer.cornerRadius = 3
+        subview.layer.cornerRadius = 5
         subview.backgroundColor = #colorLiteral(red: 0.3096027874, green: 0.3096027874, blue: 0.3096027874, alpha: 1)
         
         let dismissAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
@@ -389,17 +399,11 @@ class ScoreboardVC: UIViewController {
                 let team2 = selectedGame.team2
                 else { return }
             
-            // Assign an end date to the game.
+            // Assign an end date, win/loss, and update to CloudKit
             GameController.shared.assignGameEndDate(game: selectedGame)
-            
-            // Assign win/loss according to game's score.
             TeamController.shared.assignWinOrLoss(game: selectedGame)
-            
-            // Update on the cloud.
             GameController.shared.update(selectedGame, from: sender, completion: { (success) in
                 if success {
-                    
-                    // Update on the cloud.
                     TeamController.shared.updateTeams(teams: [team1, team2], completion: { (success) in
                         DispatchQueue.main.async {
                             self.dismiss(animated: true, completion: nil)
@@ -411,9 +415,10 @@ class ScoreboardVC: UIViewController {
         alertController.addAction(dismissAction)
         alertController.addAction(continueAction)
         
-//        // Customize alert notification button colors
-//        continueAction.setValue(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), forKey: "titleTextColor")
-//        dismissAction.setValue(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), forKey: "titleTextColor")
+        // Customize alert notification button colors
+        continueAction.setValue(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), forKey: "titleTextColor")
+        dismissAction.setValue(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), forKey: "titleTextColor")
+        
         self.present(alertController, animated: true, completion: nil)
     }
     
@@ -429,12 +434,14 @@ class ScoreboardVC: UIViewController {
         
         if selectedGame.clockTime == 0 && selectedGame.whichHalf == 1 {
             timer.invalidate()
+            buzzerSound()
             selectedGame.clockTime = 720
             selectedGame.whichHalf = 2
             updateScoreboard()
             playPauseButton.setBackgroundImage(UIImage(named: "buttonPlay"), for: .normal)
         } else if selectedGame.clockTime == 0 {
             timer.invalidate()
+            buzzerSound()
         }
     }
     
@@ -450,6 +457,15 @@ class ScoreboardVC: UIViewController {
         let halfImage = selectedGame?.whichHalf == 1 ? UIImage(named: "half1") : UIImage(named: "half2")
         
         halfIndicatorImageView.image = halfImage
+    }
+    
+    var buzzer: AVAudioPlayer!
+    
+    func buzzerSound() {
+        if buzzer.isPlaying {
+            buzzer.stop()
+        }
+        buzzer.play()
     }
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸

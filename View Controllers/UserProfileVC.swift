@@ -84,10 +84,6 @@ class UserProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
 }
 
-func prepareForSegue(completion: @escaping () -> Void){
-    
-}
-
 // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
 // 🔸 MARK: - LEAGUE ACTIVE TV CELL DELEGATE EXTENSION
 
@@ -98,9 +94,26 @@ extension UserProfileVC: LeagueTVCellDelegate {
     
     func unlinkFromLeagueButtonTapped(_ sender: LeagueTVCell, indexPath: IndexPath) {
     
-        let alertController = UIAlertController(title: "Are you sure?", message: "This action will permanently disconnect you from this league.", preferredStyle: .alert)
+        // Change font and color of notificaton alert title
+        let attributedStringTitle = NSAttributedString(string: "WANT TO UNLINK LEAGUE?", attributes: [
+            NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBold", size: 18) as Any,
+            NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.9976590276, green: 0.7437580228, blue: 0.1992819309, alpha: 1) ])
         
-        let dismissAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        // Change font and color of notificaton alert message
+        let attributedStringMessage = NSAttributedString(string: "This action will permanently disconnect you from this league.", attributes: [
+            NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Light", size: 16) as Any,
+            NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) ])
+        
+        let alertController = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        alertController.setValue(attributedStringTitle, forKey: "attributedTitle")
+        alertController.setValue(attributedStringMessage, forKey: "attributedMessage")
+        
+        // change the background color
+        let subview = (alertController.view.subviews.first?.subviews.first?.subviews.first!)! as UIView
+        subview.layer.cornerRadius = 5
+        subview.backgroundColor = #colorLiteral(red: 0.3096027874, green: 0.3096027874, blue: 0.3096027874, alpha: 1)
+        
+        let dismissAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
         let continueAction = UIAlertAction(title: "Proceed", style: .default) { (_) in
             print("Continue action was tapped by the user")
             
@@ -113,7 +126,6 @@ extension UserProfileVC: LeagueTVCellDelegate {
                 if ref.recordID == loggedInUser.ckRecordID {
                     continue
                 }
-                
                 refs.append(ref)
             }
             league.userReference = refs
@@ -121,7 +133,6 @@ extension UserProfileVC: LeagueTVCellDelegate {
             LeagueController.shared.updateLeague(league: league, completion: { (success) in
                 if success {
                     DispatchQueue.main.async {
-                        
                         guard let indexToDelete = LeagueController.shared.leagues.firstIndex(of: league) else { return }
                         LeagueController.shared.leagues.remove(at: indexToDelete)
                         
@@ -129,15 +140,14 @@ extension UserProfileVC: LeagueTVCellDelegate {
                     }
                 }
             })
-            
         }
-        
         alertController.addAction(dismissAction)
         alertController.addAction(continueAction)
+        
+        // Customize alert notification button colors
+        continueAction.setValue(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), forKey: "titleTextColor")
+        dismissAction.setValue(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), forKey: "titleTextColor")
+        
         self.present(alertController, animated: true, completion: nil)
     }
 }
-
-
-
-

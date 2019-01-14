@@ -128,14 +128,14 @@ class GameRecapVC: UIViewController {
         team1CoachTextLabel.text = "\(team1.coach.capitalized)"
         team1HelmetButton.setBackgroundImage(UIImage(named: "helmet\(game.team1Color)Left"), for: .normal)
             team1HelmetLetterImageView.image = UIImage(named: "letter\(team1.name.prefix(1).capitalized)")
-        team1RankingImageView.image = UIImage(named: "ranking1")
+        team1RankingImageView.image = UIImage(named: "")
         
         // Team 2 header
         team2NameTextLabel.text = "\(team2.name.uppercased())"
         team2CoachTextLabel.text = "\(team2.coach.capitalized)"
         team2HelmetButton.setBackgroundImage(UIImage(named: "helmet\(game.team2Color)Right"), for: .normal)
         team2HelmetLetterImageView.image = UIImage(named: "letter\(team2.name.prefix(1).capitalized)")
-        team2RankingImageView.image = UIImage(named: "ranking1")
+        team2RankingImageView.image = UIImage(named: "")
         
         // Score and date
         team1ScoreTextLabel.text = "\(String(describing: game.team1Score))"
