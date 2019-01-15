@@ -42,7 +42,7 @@ class GameRecapVC: UIViewController {
     
     // Stats - Team 1 Pass Completion - Game
     @IBOutlet weak var team1CompletionsTextLabel: UILabel!
-    @IBOutlet weak var team1PassesAttemptedTextLabel: UILabel!
+    @IBOutlet weak var team1CompletionsAttemptedTextLabel: UILabel!
     @IBOutlet weak var team1CompletionPercentTextLabel: UILabel!
     @IBOutlet weak var team1IntThrownTextLabel: UILabel!
     
@@ -67,7 +67,7 @@ class GameRecapVC: UIViewController {
     
     // Stats - Team 2 Pass Completion - Game
     @IBOutlet weak var team2CompletionsTextLabel: UILabel!
-    @IBOutlet weak var team2PassesAttemptedTextLabel: UILabel!
+    @IBOutlet weak var team2CompletionsAttemptedTextLabel: UILabel!
     @IBOutlet weak var team2CompletionPercentTextLabel: UILabel!
     @IBOutlet weak var team2IntThrownTextLabel: UILabel!
     
@@ -148,7 +148,7 @@ class GameRecapVC: UIViewController {
         
         // Stats - Team 1 Pass Completion - Game
         team1CompletionsTextLabel.text = "\(game.team1CompletionsMade)"
-        team1PassesAttemptedTextLabel.text = "\(game.team1CompletionsAttempted)"
+        team1CompletionsAttemptedTextLabel.text = "\(game.team1CompletionsAttempted)"
         if team1.completionsAttempted == 0 {
             team1CompletionPercentTextLabel.text = "0%"
         } else {
@@ -188,7 +188,7 @@ class GameRecapVC: UIViewController {
         
         // Stats - Team 2 Pass Completion - Game
         team2CompletionsTextLabel.text = "\(game.team2CompletionsMade)"
-        team2PassesAttemptedTextLabel.text = "\(game.team2CompletionsAttempted)"
+        team2CompletionsAttemptedTextLabel.text = "\(game.team2CompletionsAttempted)"
         if team2.completionsAttempted == 0 {
             team2CompletionPercentTextLabel.text = "0%"
         } else {

@@ -27,10 +27,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grayGradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ymc-4Y-fyi">
-                                <rect key="frame" x="0.0" y="0.0" width="739.33333333333337" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="123" translatesAutoresizingMaskIntoConstraints="NO" id="Q7x-6C-Q2Y" userLabel="teamHeaders">
-                                <rect key="frame" x="39.666666666666686" y="20" width="660" height="66"/>
+                                <rect key="frame" x="38" y="20" width="660" height="66"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="etE-d9-ZTR" userLabel="team1Header">
                                         <rect key="frame" x="0.0" y="0.0" width="268" height="66"/>
@@ -39,7 +39,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="180" height="66"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="TITANS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X93-hz-2zO">
-                                                        <rect key="frame" x="123.66666666666664" y="0.0" width="56.333333333333329" height="26"/>
+                                                        <rect key="frame" x="123.66666666666667" y="0.0" width="56.333333333333329" height="26"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -88,7 +88,7 @@
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="CSW-45-L4L" userLabel="team2Info">
-                                                <rect key="frame" x="89" y="0.0" width="180" height="66"/>
+                                                <rect key="frame" x="88.999999999999943" y="0.0" width="180" height="66"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="CARDINALS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFi-7C-qDK">
                                                         <rect key="frame" x="0.0" y="0.0" width="92" height="26"/>
@@ -118,7 +118,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="182" translatesAutoresizingMaskIntoConstraints="NO" id="91e-hl-veQ" userLabel="teamHelmetLetters">
-                                <rect key="frame" x="253.66666666666663" y="30" width="232" height="25"/>
+                                <rect key="frame" x="252" y="30" width="232" height="25"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bwS-xE-fa6">
                                         <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
@@ -128,7 +128,7 @@
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gxs-Bn-rMR">
-                                        <rect key="frame" x="207" y="0.0" width="25" height="25"/>
+                                        <rect key="frame" x="207.00000000000003" y="0.0" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="cb0-Ga-0SD"/>
                                             <constraint firstAttribute="height" constant="25" id="t2Q-6C-ZOH"/>
@@ -137,7 +137,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="rq0-Cn-apf" userLabel="scores&amp;ClockBacking">
-                                <rect key="frame" x="89.666666666666686" y="97" width="560" height="107"/>
+                                <rect key="frame" x="88" y="97" width="560" height="107"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboardBackScores" translatesAutoresizingMaskIntoConstraints="NO" id="Ny2-ot-ScS">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="107"/>
@@ -154,7 +154,7 @@
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboardBackScores" translatesAutoresizingMaskIntoConstraints="NO" id="UsO-oX-dqS">
-                                        <rect key="frame" x="430" y="0.0" width="130" height="107"/>
+                                        <rect key="frame" x="429.99999999999994" y="0.0" width="130.00000000000006" height="107"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="130" id="9su-Km-1tZ"/>
                                             <constraint firstAttribute="height" constant="107" id="P3E-jd-kjT"/>
@@ -163,7 +163,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="INd-P1-fRq" userLabel="scores&amp;ClockNumbers">
-                                <rect key="frame" x="93.666666666666686" y="101" width="552" height="99"/>
+                                <rect key="frame" x="92" y="101" width="552" height="99"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="uUa-XL-t71" userLabel="scoreTeam1">
                                         <rect key="frame" x="0.0" y="0.0" width="122" height="99"/>
@@ -176,7 +176,7 @@
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboard7Red" translatesAutoresizingMaskIntoConstraints="NO" id="UWA-WF-BsD">
-                                                <rect key="frame" x="62" y="0.0" width="60" height="99"/>
+                                                <rect key="frame" x="61.999999999999986" y="0.0" width="60" height="99"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="99" id="R2q-cH-Aj0"/>
                                                     <constraint firstAttribute="width" constant="60" id="aqm-Yp-IW6"/>
@@ -198,7 +198,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboard2Yellow" translatesAutoresizingMaskIntoConstraints="NO" id="zgi-lT-6hZ">
-                                                        <rect key="frame" x="62" y="0.0" width="60" height="99"/>
+                                                        <rect key="frame" x="62.000000000000028" y="0.0" width="60" height="99"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="60" id="aaq-n7-e6A"/>
                                                             <constraint firstAttribute="height" constant="99" id="pMG-6C-YZo"/>
@@ -207,7 +207,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="bUf-ih-lRI" userLabel="scoreSeconds">
-                                                <rect key="frame" x="140" y="0.0" width="122" height="99"/>
+                                                <rect key="frame" x="140.00000000000003" y="0.0" width="121.99999999999997" height="99"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboard0Yellow" translatesAutoresizingMaskIntoConstraints="NO" id="fwE-Sp-0fz">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="99"/>
@@ -228,7 +228,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Jls-7M-NPm" userLabel="scoreTeam2">
-                                        <rect key="frame" x="430" y="0.0" width="122" height="99"/>
+                                        <rect key="frame" x="429.99999999999994" y="0.0" width="122.00000000000006" height="99"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreboard2Red" translatesAutoresizingMaskIntoConstraints="NO" id="j55-v7-2Bp">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="99"/>
@@ -249,7 +249,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="237" translatesAutoresizingMaskIntoConstraints="NO" id="SxK-NR-FSK" userLabel="teamRankingPatches">
-                                <rect key="frame" x="231.33333333333331" y="18" width="277" height="20"/>
+                                <rect key="frame" x="229.66666666666663" y="18" width="277" height="20"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zDX-fG-hvG" userLabel="team1RankingPatch">
                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -268,14 +268,14 @@
                                 </subviews>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PFLLogo" translatesAutoresizingMaskIntoConstraints="NO" id="VB8-np-l9a">
-                                <rect key="frame" x="350.66666666666669" y="20" width="38" height="52"/>
+                                <rect key="frame" x="349" y="20" width="38" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="38" id="3IB-6B-cQu"/>
                                     <constraint firstAttribute="height" constant="52" id="SDW-jU-hmJ"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ix-kf-7aT" userLabel="buttonForward">
-                                <rect key="frame" x="33.666666666666664" y="152" width="43.999999999999993" height="44"/>
+                                <rect key="frame" x="32" y="152" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="3xe-EI-rAy"/>
                                     <constraint firstAttribute="height" constant="44" id="lIR-q1-a5g"/>
@@ -286,7 +286,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3c-XI-qSj" userLabel="buttonPlayPause">
-                                <rect key="frame" x="661.66666666666663" y="152" width="44" height="44"/>
+                                <rect key="frame" x="660" y="152" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="GHJ-uV-4OK"/>
                                     <constraint firstAttribute="width" constant="44" id="U6b-pI-RfB"/>
@@ -297,7 +297,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azr-RN-Nka" userLabel="buttonRewind">
-                                <rect key="frame" x="33.666666666666664" y="108" width="43.999999999999993" height="44"/>
+                                <rect key="frame" x="32" y="108" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Wk2-xY-YIV"/>
                                     <constraint firstAttribute="width" constant="44" id="z2k-wh-icc"/>
@@ -308,7 +308,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JhI-wa-gGX" userLabel="buttonexit">
-                                <rect key="frame" x="699.33333333333326" y="8" width="32" height="32"/>
+                                <rect key="frame" x="696" y="8" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="6DD-yu-y0W"/>
                                     <constraint firstAttribute="width" constant="32" id="xAB-Ch-qQV"/>
@@ -319,7 +319,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Ffc-ca-4PQ" userLabel="teamStatsLabels">
-                                <rect key="frame" x="34.333333333333314" y="212" width="672" height="32"/>
+                                <rect key="frame" x="34" y="212" width="669" height="32"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="pgE-bs-gPa" userLabel="labelsPassCompletion">
                                         <rect key="frame" x="0.0" y="0.0" width="201" height="32"/>
@@ -377,8 +377,8 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="OFa-RH-bp8" userLabel="labelsFieldGoals">
-                                        <rect key="frame" x="210" y="0.0" width="148" height="32"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="OFa-RH-bp8" userLabel="labelsFieldGoals">
+                                        <rect key="frame" x="210" y="0.0" width="163" height="32"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIELD GOALS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGI-3i-geF">
                                                 <rect key="frame" x="0.0" y="0.0" width="72" height="16"/>
@@ -400,7 +400,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kicked" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bk-Wh-Q8v">
-                                                        <rect key="frame" x="50.000000000000028" y="0.0" width="48" height="16"/>
+                                                        <rect key="frame" x="50" y="0.0" width="48" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="48" id="8Zs-E7-i25"/>
                                                             <constraint firstAttribute="height" constant="16" id="q4l-tH-c1j"/>
@@ -410,7 +410,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvx-fZ-rVE">
-                                                        <rect key="frame" x="100.00000000000003" y="0.0" width="48" height="16"/>
+                                                        <rect key="frame" x="100" y="0.0" width="48" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="48" id="OjC-a7-24U"/>
                                                             <constraint firstAttribute="height" constant="16" id="zSg-Ly-lnh"/>
@@ -423,8 +423,8 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="r7H-hE-i2Z" userLabel="labelsPATs">
-                                        <rect key="frame" x="367" y="0.0" width="148" height="32"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="r7H-hE-i2Z" userLabel="labelsPATs">
+                                        <rect key="frame" x="382" y="0.0" width="148" height="32"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PATs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gqc-yG-RpL">
                                                 <rect key="frame" x="0.0" y="0.0" width="27" height="16"/>
@@ -469,8 +469,8 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="My9-NF-nnp" userLabel="labelsMisc">
-                                        <rect key="frame" x="524" y="0.0" width="148" height="32"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="My9-NF-nnp" userLabel="labelsMisc">
+                                        <rect key="frame" x="539" y="0.0" width="130" height="32"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MISC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYr-e3-UqL">
                                                 <rect key="frame" x="0.0" y="0.0" width="29" height="16"/>
@@ -482,7 +482,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="UGl-pM-t84">
-                                                <rect key="frame" x="0.0" y="16" width="148" height="16"/>
+                                                <rect key="frame" x="0.0" y="16" width="130" height="16"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TDs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4GH-AJ-BlF">
                                                         <rect key="frame" x="0.0" y="0.0" width="48" height="16"/>
@@ -505,7 +505,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Int C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xb6-L6-hk6">
-                                                        <rect key="frame" x="100" y="0.0" width="48" height="16"/>
+                                                        <rect key="frame" x="100" y="0.0" width="30" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="48" id="Vsu-cf-bLB"/>
                                                             <constraint firstAttribute="height" constant="16" id="Wbq-RK-R7p"/>
@@ -524,13 +524,13 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dxm-n7-uNR" userLabel="teamStats">
-                                <rect key="frame" x="35.333333333333314" y="248" width="666" height="148"/>
+                                <rect key="frame" x="35" y="248" width="663" height="148"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="0Or-fS-Bif" userLabel="team1Stats">
-                                        <rect key="frame" x="0.0" y="0.0" width="666" height="70"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="663" height="70"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mqe-Db-J9l" userLabel="team1GameStats">
-                                                <rect key="frame" x="0.0" y="0.0" width="666" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="663" height="34"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="yqx-fd-kgb" userLabel="team1GamePasses">
                                                         <rect key="frame" x="0.0" y="0.0" width="198" height="34"/>
@@ -608,7 +608,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2m-KH-faR">
-                                                                <rect key="frame" x="50.000000000000028" y="0.0" width="48" height="34"/>
+                                                                <rect key="frame" x="50" y="0.0" width="48" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="48" id="FZE-kH-Y97"/>
                                                                     <constraint firstAttribute="height" constant="34" id="NIN-xp-xiC"/>
@@ -622,7 +622,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61z-RK-1vn">
-                                                                <rect key="frame" x="100.00000000000003" y="0.0" width="48" height="34"/>
+                                                                <rect key="frame" x="100" y="0.0" width="48" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="48" id="NNu-H1-Tcw"/>
                                                                     <constraint firstAttribute="height" constant="34" id="YEa-5D-4ze"/>
@@ -679,7 +679,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="8Bt-L0-SeU" userLabel="team1GameMisc">
-                                                        <rect key="frame" x="518" y="0.0" width="148" height="34"/>
+                                                        <rect key="frame" x="518" y="0.0" width="145" height="34"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xoE-Ji-uon">
                                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="34"/>
@@ -710,7 +710,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHY-e6-KuC">
-                                                                <rect key="frame" x="100" y="0.0" width="48" height="34"/>
+                                                                <rect key="frame" x="100" y="0.0" width="45" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="48" id="9MY-sk-g9M"/>
                                                                     <constraint firstAttribute="height" constant="34" id="nGq-SF-BQp"/>
@@ -728,7 +728,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gzy-ng-MbM" userLabel="team1AvgStats">
-                                                <rect key="frame" x="0.0" y="36" width="666" height="34"/>
+                                                <rect key="frame" x="0.0" y="36" width="663" height="34"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="1kM-hh-3qj" userLabel="team1AvgPasses">
                                                         <rect key="frame" x="0.0" y="0.0" width="198" height="34"/>
@@ -806,7 +806,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ay9-Gx-vJM">
-                                                                <rect key="frame" x="50.000000000000028" y="0.0" width="48" height="34"/>
+                                                                <rect key="frame" x="50" y="0.0" width="48" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="34" id="64P-M9-goS"/>
                                                                     <constraint firstAttribute="width" constant="48" id="Txn-CW-fNJ"/>
@@ -820,7 +820,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LvP-H7-wi0">
-                                                                <rect key="frame" x="100.00000000000003" y="0.0" width="48" height="34"/>
+                                                                <rect key="frame" x="100" y="0.0" width="48" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="34" id="J7P-Tc-rcO"/>
                                                                     <constraint firstAttribute="width" constant="48" id="pZG-7D-6ox"/>
@@ -877,7 +877,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="TCM-BH-8KZ" userLabel="team1AvgMisc">
-                                                        <rect key="frame" x="518" y="0.0" width="148" height="34"/>
+                                                        <rect key="frame" x="518" y="0.0" width="145" height="34"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9q3-fZ-FXC">
                                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="34"/>
@@ -908,7 +908,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEv-eM-IQd">
-                                                                <rect key="frame" x="100" y="0.0" width="48" height="34"/>
+                                                                <rect key="frame" x="100" y="0.0" width="45" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="34" id="toV-a5-UgH"/>
                                                                     <constraint firstAttribute="width" constant="48" id="w1R-qF-oEb"/>
@@ -928,10 +928,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="YG2-Xa-76T" userLabel="team2Stats">
-                                        <rect key="frame" x="0.0" y="78" width="666" height="70"/>
+                                        <rect key="frame" x="0.0" y="78" width="663" height="70"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tWw-RR-kYV" userLabel="team2GameStats">
-                                                <rect key="frame" x="0.0" y="0.0" width="666" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="663" height="34"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="pfH-GG-J5F" userLabel="team2GamePasses">
                                                         <rect key="frame" x="0.0" y="0.0" width="198" height="34"/>
@@ -1009,7 +1009,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwC-p7-UaP">
-                                                                <rect key="frame" x="50.000000000000028" y="0.0" width="48" height="34"/>
+                                                                <rect key="frame" x="50" y="0.0" width="48" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="34" id="5Ez-ou-7qz"/>
                                                                     <constraint firstAttribute="width" constant="48" id="qor-we-C3V"/>
@@ -1023,7 +1023,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdh-xf-0sz">
-                                                                <rect key="frame" x="100.00000000000003" y="0.0" width="48" height="34"/>
+                                                                <rect key="frame" x="100" y="0.0" width="48" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="48" id="OpQ-HV-4gC"/>
                                                                     <constraint firstAttribute="height" constant="34" id="yw0-bs-9oy"/>
@@ -1080,7 +1080,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="nqr-rx-1Hz" userLabel="team2GameMisc">
-                                                        <rect key="frame" x="518" y="0.0" width="148" height="34"/>
+                                                        <rect key="frame" x="518" y="0.0" width="145" height="34"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ol0-SW-FqO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="34"/>
@@ -1111,7 +1111,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGf-ck-445">
-                                                                <rect key="frame" x="100" y="0.0" width="48" height="34"/>
+                                                                <rect key="frame" x="100" y="0.0" width="45" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="34" id="FiB-Fh-JHq"/>
                                                                     <constraint firstAttribute="width" constant="48" id="Ga5-Ae-d3O"/>
@@ -1129,7 +1129,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kpb-VY-qaM" userLabel="team2AvgStats">
-                                                <rect key="frame" x="0.0" y="36" width="666" height="34"/>
+                                                <rect key="frame" x="0.0" y="36" width="663" height="34"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="b8N-7g-OQJ" userLabel="team2AvgPasses">
                                                         <rect key="frame" x="0.0" y="0.0" width="198" height="34"/>
@@ -1207,7 +1207,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bo0-F7-JfI">
-                                                                <rect key="frame" x="50.000000000000028" y="0.0" width="48" height="34"/>
+                                                                <rect key="frame" x="50" y="0.0" width="48" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="34" id="7Vo-qS-nIx"/>
                                                                     <constraint firstAttribute="width" constant="48" id="oOY-kb-0tr"/>
@@ -1221,7 +1221,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wdj-aK-Uv5">
-                                                                <rect key="frame" x="100.00000000000003" y="0.0" width="48" height="34"/>
+                                                                <rect key="frame" x="100" y="0.0" width="48" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="48" id="7cl-1n-gfG"/>
                                                                     <constraint firstAttribute="height" constant="34" id="WYy-Lm-OHo"/>
@@ -1278,7 +1278,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="K4h-xv-ZQX" userLabel="team2AvgMisc">
-                                                        <rect key="frame" x="518" y="0.0" width="148" height="34"/>
+                                                        <rect key="frame" x="518" y="0.0" width="145" height="34"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4c-c7-FAR">
                                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="34"/>
@@ -1309,7 +1309,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NF2-XJ-AiY">
-                                                                <rect key="frame" x="100" y="0.0" width="48" height="34"/>
+                                                                <rect key="frame" x="100" y="0.0" width="45" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="34" id="NNd-tG-5Un"/>
                                                                     <constraint firstAttribute="width" constant="48" id="vBG-3P-EXN"/>
@@ -1331,7 +1331,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="4v6-Qy-FrZ">
-                                <rect key="frame" x="20.333333333333336" y="273" width="10" height="98"/>
+                                <rect key="frame" x="20" y="273" width="10" height="98"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buttonUpDown" translatesAutoresizingMaskIntoConstraints="NO" id="59U-6F-fxr">
                                         <rect key="frame" x="0.0" y="0.0" width="10" height="20"/>
@@ -1350,7 +1350,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="4wf-ra-PQQ">
-                                <rect key="frame" x="709.33333333333326" y="273" width="10" height="98"/>
+                                <rect key="frame" x="706" y="273" width="10" height="98"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buttonUpDown" translatesAutoresizingMaskIntoConstraints="NO" id="70G-Ix-wjY">
                                         <rect key="frame" x="0.0" y="0.0" width="10" height="20"/>
@@ -1368,7 +1368,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cA-94-xs0" userLabel="buttonPlayPause">
-                                <rect key="frame" x="661.66666666666663" y="108" width="44" height="44"/>
+                                <rect key="frame" x="660" y="108" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="JfN-eM-g7g"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="PAo-P2-xWE"/>
@@ -1382,7 +1382,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="half1" translatesAutoresizingMaskIntoConstraints="NO" id="rlC-w8-eXv" userLabel="scoreboardHalfIndicator">
-                                <rect key="frame" x="347.66666666666669" y="80" width="44" height="12"/>
+                                <rect key="frame" x="346" y="80" width="44" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="12" id="01y-aZ-nfs"/>
                                     <constraint firstAttribute="width" constant="44" id="N7L-AU-lKj"/>
@@ -1441,6 +1441,7 @@
                         <outlet property="playPauseButton" destination="R3c-XI-qSj" id="wU3-l1-imf"/>
                         <outlet property="team1Avg2PTsButton" destination="08F-wb-Kh3" id="5bz-Sl-zpf"/>
                         <outlet property="team1AvgCompletionPercentButton" destination="yzp-UK-t4E" id="5IK-e3-M9b"/>
+                        <outlet property="team1AvgCompletionsAttemptedButton" destination="x4J-UM-MXy" id="Kuw-xJ-SDy"/>
                         <outlet property="team1AvgCompletionsButton" destination="5u3-th-X0m" id="0gL-pN-oR9"/>
                         <outlet property="team1AvgFieldGoalPercentButton" destination="LvP-H7-wi0" id="hNj-oP-jTP"/>
                         <outlet property="team1AvgFieldGoalsAttemptedButton" destination="ay9-Gx-vJM" id="ZKD-i5-B58"/>
@@ -1450,11 +1451,11 @@
                         <outlet property="team1AvgPATPercentButton" destination="x9B-qV-0uA" id="lVw-iH-lZL"/>
                         <outlet property="team1AvgPATsAttemptedButton" destination="DGt-mp-smE" id="k7b-Y6-ga0"/>
                         <outlet property="team1AvgPATsMadeButton" destination="O4W-PA-BUU" id="hE8-bp-iaJ"/>
-                        <outlet property="team1AvgPassesAttemptedButton" destination="x4J-UM-MXy" id="Kuw-xJ-SDy"/>
                         <outlet property="team1AvgTDsButton" destination="9q3-fZ-FXC" id="gXc-h9-yvx"/>
                         <outlet property="team1CoachLabel" destination="ZHD-wA-uLV" id="Pdf-sy-fJe"/>
                         <outlet property="team1Game2PTsButton" destination="P4b-mp-7vr" id="Pim-Fb-0Uw"/>
                         <outlet property="team1GameCompletionPercentButton" destination="5Yx-fP-RPK" id="i88-lP-OD7"/>
+                        <outlet property="team1GameCompletionsAttemptedButton" destination="4SU-QB-nFi" id="LBb-h9-7b8"/>
                         <outlet property="team1GameCompletionsButton" destination="9pL-kI-WGt" id="fNP-8c-DJC"/>
                         <outlet property="team1GameFieldGoalPercentButton" destination="61z-RK-1vn" id="DPd-E5-WCK"/>
                         <outlet property="team1GameFieldGoalsAttemptedButton" destination="X2m-KH-faR" id="gBI-8i-8Ih"/>
@@ -1464,7 +1465,6 @@
                         <outlet property="team1GamePATPercentButton" destination="VGE-JG-5Ub" id="IGD-j2-fUa"/>
                         <outlet property="team1GamePATsAttemptedButton" destination="W7h-HC-7mp" id="kJ1-ue-hiJ"/>
                         <outlet property="team1GamePATsMadeButton" destination="Wpi-Dm-yFw" id="PUH-Kb-Ws8"/>
-                        <outlet property="team1GamePassesAttemptedButton" destination="4SU-QB-nFi" id="LBb-h9-7b8"/>
                         <outlet property="team1GameTDsButton" destination="xoE-Ji-uon" id="t0Y-12-6ax"/>
                         <outlet property="team1HelmetButton" destination="8nW-Z4-ptF" id="zsD-Av-M2y"/>
                         <outlet property="team1HelmetLetterImageView" destination="bwS-xE-fa6" id="MFL-k9-pbU"/>
@@ -1475,6 +1475,7 @@
                         <outlet property="team1ScoreSecondDigitImageView" destination="UWA-WF-BsD" id="tq8-bl-Jd8"/>
                         <outlet property="team2Avg2PTsButton" destination="Q6K-mK-0fq" id="Fgy-a5-Pqu"/>
                         <outlet property="team2AvgCompletionPercentButton" destination="uVe-fV-13c" id="jz3-Zd-Hdo"/>
+                        <outlet property="team2AvgCompletionsAttemptedButton" destination="iwp-1I-BUH" id="21R-ol-MSY"/>
                         <outlet property="team2AvgCompletionsButton" destination="bzY-Jl-jP8" id="D64-UT-EOS"/>
                         <outlet property="team2AvgFieldGoalPercentButton" destination="Wdj-aK-Uv5" id="GyT-xd-5aY"/>
                         <outlet property="team2AvgFieldGoalsAttemptedButton" destination="bo0-F7-JfI" id="Aki-5C-iue"/>
@@ -1484,11 +1485,11 @@
                         <outlet property="team2AvgPATPercentButton" destination="FFI-ca-HJg" id="L4r-NY-75S"/>
                         <outlet property="team2AvgPATsAttemptedButton" destination="WAb-CG-QBn" id="vUj-73-6RK"/>
                         <outlet property="team2AvgPATsMadeButton" destination="RGz-bm-AIs" id="r5b-Y3-Nnd"/>
-                        <outlet property="team2AvgPassesAttemptedButton" destination="iwp-1I-BUH" id="21R-ol-MSY"/>
                         <outlet property="team2AvgTDsButton" destination="a4c-c7-FAR" id="Qit-UI-kRL"/>
                         <outlet property="team2CoachLabel" destination="Vbh-HA-CSP" id="lqa-zW-GQ8"/>
                         <outlet property="team2Game2PTsButton" destination="ZTJ-NR-80E" id="scj-80-FvB"/>
                         <outlet property="team2GameCompletionPercentButton" destination="jKV-FR-V4b" id="nxl-vh-8vs"/>
+                        <outlet property="team2GameCompletionsAttemptedButton" destination="Pbj-BI-IVe" id="n1R-aL-PXe"/>
                         <outlet property="team2GameCompletionsButton" destination="sTx-bV-apH" id="YW7-gB-3d6"/>
                         <outlet property="team2GameFieldGoalPercentButton" destination="mdh-xf-0sz" id="ymg-Wf-283"/>
                         <outlet property="team2GameFieldGoalsAttemptedButton" destination="pwC-p7-UaP" id="S8i-jO-VKZ"/>
@@ -1498,7 +1499,6 @@
                         <outlet property="team2GamePATPercentButton" destination="83Y-If-aA8" id="vi5-1X-E0q"/>
                         <outlet property="team2GamePATsAttemptedButton" destination="1ww-xG-on3" id="UjT-6w-sGc"/>
                         <outlet property="team2GamePATsMadeButton" destination="F3r-k1-U98" id="RQ0-HH-CZA"/>
-                        <outlet property="team2GamePassesAttemptedButton" destination="Pbj-BI-IVe" id="n1R-aL-PXe"/>
                         <outlet property="team2GameTDsButton" destination="Ol0-SW-FqO" id="3ig-uD-BRb"/>
                         <outlet property="team2HelmetButton" destination="yXZ-wx-0AX" id="MNV-c1-b8X"/>
                         <outlet property="team2HelmetLetterImageView" destination="Gxs-Bn-rMR" id="6Sj-zz-ArP"/>

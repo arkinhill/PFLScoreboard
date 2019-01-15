@@ -29,7 +29,7 @@ class TeamStatsVC: UIViewController {
     
     // Stats - Team Pass Completion - Game
     @IBOutlet weak var totalCompletionsLabel: UILabel!
-    @IBOutlet weak var totalPassesAttemptedLabel: UILabel!
+    @IBOutlet weak var totalCompletionsAttemptedLabel: UILabel!
     @IBOutlet weak var totalCompletionPercentLabel: UILabel!
     @IBOutlet weak var totalIntThrownLabel: UILabel!
     
@@ -105,7 +105,7 @@ class TeamStatsVC: UIViewController {
         
         // Stats - Team Pass Completion - Game
         totalCompletionsLabel.text = "\(team.completionsMade)"
-        totalPassesAttemptedLabel.text = "\(team.completionsAttempted)"
+        totalCompletionsAttemptedLabel.text = "\(team.completionsAttempted)"
         if team.completionsAttempted == 0 {
             totalCompletionPercentLabel.text = "0%"
         } else {

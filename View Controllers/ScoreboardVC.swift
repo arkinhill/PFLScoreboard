@@ -61,13 +61,13 @@ class ScoreboardVC: UIViewController {
     
     // Stats - Team 1 Pass Completion - Game
     @IBOutlet weak var team1GameCompletionsButton: UIButton!
-    @IBOutlet weak var team1GamePassesAttemptedButton: UIButton!
+    @IBOutlet weak var team1GameCompletionsAttemptedButton: UIButton!
     @IBOutlet weak var team1GameCompletionPercentButton: UIButton!
     @IBOutlet weak var team1GameIntThrownButton: UIButton!
     
     // Stats - Team 1 Pass Completion - Averages
     @IBOutlet weak var team1AvgCompletionsButton: UIButton!
-    @IBOutlet weak var team1AvgPassesAttemptedButton: UIButton!
+    @IBOutlet weak var team1AvgCompletionsAttemptedButton: UIButton!
     @IBOutlet weak var team1AvgCompletionPercentButton: UIButton!
     @IBOutlet weak var team1AvgIntThrownButton: UIButton!
     
@@ -106,13 +106,13 @@ class ScoreboardVC: UIViewController {
     
     // Stats - Team 2 Pass Completion - Game
     @IBOutlet weak var team2GameCompletionsButton: UIButton!
-    @IBOutlet weak var team2GamePassesAttemptedButton: UIButton!
+    @IBOutlet weak var team2GameCompletionsAttemptedButton: UIButton!
     @IBOutlet weak var team2GameCompletionPercentButton: UIButton!
     @IBOutlet weak var team2GameIntThrownButton: UIButton!
     
     // Stats - Team 2 Pass Completion - Averages
     @IBOutlet weak var team2AvgCompletionsButton: UIButton!
-    @IBOutlet weak var team2AvgPassesAttemptedButton: UIButton!
+    @IBOutlet weak var team2AvgCompletionsAttemptedButton: UIButton!
     @IBOutlet weak var team2AvgCompletionPercentButton: UIButton!
     @IBOutlet weak var team2AvgIntThrownButton: UIButton!
     
@@ -158,6 +158,8 @@ class ScoreboardVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Unwrap game and update averages
         if let game = selectedGame {
             GameController.shared.fetchTeamsFor(game: game) { (success) in
                 if success {
@@ -203,12 +205,12 @@ class ScoreboardVC: UIViewController {
     }
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
-    // 🔸 MARK: - UPDATE VIEWS FUNCTION
+    // 🔸 MARK: - UPDATE VIEWS AND SET STATS TO ZERO
     
     func updateViews() {
         guard let game = selectedGame else { return }
         
-        // UPDATE TEAM HEADERS
+        // MARK: - TEAM HEADERS
         
         // Team 1 header
         team1NameLabel.text = "\(game.team1Name.uppercased())"
@@ -226,11 +228,11 @@ class ScoreboardVC: UIViewController {
         team2HelmetButton.setBackgroundImage(UIImage(named: "helmet\(game.team2Color)Right"), for: .normal)
         team2HelmetLetterImageView.image = UIImage(named: "letter\(game.team2Name.prefix(1).capitalized)")
         
-        // UPDATE TEAM 1 STATS
+        // MARK: - TEAM 1 COMPLETIONS
         
         // Stats - Team 1 Pass Completion - Game
         team1GameCompletionsButton.setTitle("\(game.team1CompletionsMade)", for: .normal)
-        team1GamePassesAttemptedButton.setTitle("\(game.team1CompletionsAttempted)", for: .normal)
+        team1GameCompletionsAttemptedButton.setTitle("\(game.team1CompletionsAttempted)", for: .normal)
         
             // For percentage calculation: Check to see if denominator is zero
             if game.team1CompletionsAttempted == 0 {
@@ -242,10 +244,13 @@ class ScoreboardVC: UIViewController {
         team1GameIntThrownButton.setTitle("\(game.team1InterceptionsThrown)", for: .normal)
         
         // Stats - Team 1 Pass Completion - Averages
+        
         team1AvgCompletionsButton.setTitle("0.0", for: .normal)
-        team1AvgPassesAttemptedButton.setTitle("0.0", for: .normal)
+        team1AvgCompletionsAttemptedButton.setTitle("0.0", for: .normal)
         team1AvgCompletionPercentButton.setTitle("0%", for: .normal)
         team1AvgIntThrownButton.setTitle("0.0", for: .normal)
+        
+        // MARK: - TEAM 1 FIELD GOALS
         
         // Stats - Team 1 Field Goals - Game
         team1GameFieldGoalsButton.setTitle("\(game.team1FieldGoalsMade)", for: .normal)
@@ -263,6 +268,8 @@ class ScoreboardVC: UIViewController {
         team1AvgFieldGoalsAttemptedButton.setTitle("0.0", for: .normal)
         team1AvgFieldGoalPercentButton.setTitle("0%", for: .normal)
         
+        // MARK: - TEAM 1 PATs
+        
         // Stats - Team 1 PATs - Game
         team1GamePATsMadeButton.setTitle("\(game.team1PATsMade)", for: .normal)
         team1GamePATsAttemptedButton.setTitle("\(game.team1PATsAttempted)", for: .normal)
@@ -279,6 +286,8 @@ class ScoreboardVC: UIViewController {
         team1AvgPATsAttemptedButton.setTitle("0.0", for: .normal)
         team1AvgPATPercentButton.setTitle("0%", for: .normal)
         
+        // MARK: - TEAM 1 MISC
+        
         // Stats - Team 1 Misc - Game
         team1GameTDsButton.setTitle("\(game.team1Touchdowns)", for: .normal)
         team1Game2PTsButton.setTitle("\(game.team1TwoPointConversions)", for: .normal)
@@ -289,11 +298,11 @@ class ScoreboardVC: UIViewController {
         team1Avg2PTsButton.setTitle("0.0", for: .normal)
         team1AvgIntCaughtButton.setTitle("0.0", for: .normal)
         
-        // UPDATE TEAM 2 STATS
+        // MARK: - TEAM 2 COMPLETIONS
             
         // Stats - Team 2 Pass Completion - Game
         team2GameCompletionsButton.setTitle("\(game.team2CompletionsMade)", for: .normal)
-        team2GamePassesAttemptedButton.setTitle("\(game.team2CompletionsAttempted)", for: .normal)
+        team2GameCompletionsAttemptedButton.setTitle("\(game.team2CompletionsAttempted)", for: .normal)
         team2GameCompletionPercentButton.setTitle("0%", for: .normal)
         
         // For percentage calculation: Check to see if denominator is zero
@@ -307,9 +316,11 @@ class ScoreboardVC: UIViewController {
         
         // Stats - Team 2 Pass Completion - Averages
         team2AvgCompletionsButton.setTitle("0.0", for: .normal)
-        team2AvgPassesAttemptedButton.setTitle("0.0", for: .normal)
+        team2AvgCompletionsAttemptedButton.setTitle("0.0", for: .normal)
         team2AvgCompletionPercentButton.setTitle("0%", for: .normal)
         team2AvgIntThrownButton.setTitle("0.0", for: .normal)
+        
+        // MARK: - TEAM 2 FIELD GOALS
         
         // Stats - Team 2 Field Goals - Game
         team2GameFieldGoalsButton.setTitle("\(game.team2FieldGoalsMade)", for: .normal)
@@ -327,6 +338,8 @@ class ScoreboardVC: UIViewController {
         team2AvgFieldGoalsAttemptedButton.setTitle("0.0", for: .normal)
         team2AvgFieldGoalPercentButton.setTitle("0.0", for: .normal)
         
+        // MARK: - TEAM 2 PATs
+        
         // Stats - Team 2 PATs - Game
         team2GamePATsMadeButton.setTitle("\(game.team2PATsMade)", for: .normal)
         team2GamePATsAttemptedButton.setTitle("\(game.team2PATsAttempted)", for: .normal)
@@ -335,6 +348,8 @@ class ScoreboardVC: UIViewController {
         team2AvgPATsMadeButton.setTitle("0.0", for: .normal)
         team2AvgPATsAttemptedButton.setTitle("0.0", for: .normal)
         team2AvgPATPercentButton.setTitle("0.0", for: .normal)
+        
+        // MARK: - TEAM 2 MISC
         
         // Stats - Team 2 Misc - Game
         team2GameTDsButton.setTitle("\(game.team2Touchdowns)", for: .normal)
@@ -348,6 +363,324 @@ class ScoreboardVC: UIViewController {
         
         updateScoreboard()
 
+    }
+    
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: - UPDATE AVERAGES TO REFLECT PAST GAMES
+    
+    func updateAverages(){
+        
+        guard let game = self.selectedGame else { return }
+        DispatchQueue.main.async {
+            
+            // MARK: - TEAM 1 COMPLETIONS
+            
+            // Team 1 average completions
+            if game.team1?.gamesPlayed == 0 {
+                self.team1AvgCompletionsButton.setTitle("0.0", for: .normal)
+            } else {
+                if game.team1?.completionsAttempted == 0 {
+                    self.team1AvgCompletionsButton.setTitle("0.0", for: .normal)
+                } else {
+                    self.team1AvgCompletionsButton.setTitle("\(Double((game.team1?.completionsMade ?? 0)) / Double((game.team1?.gamesPlayed ?? 1)))", for: .normal)
+                }
+            }
+            
+            // Team 1 average completions attempted
+            if game.team1?.gamesPlayed == 0 {
+                self.team1AvgCompletionsAttemptedButton.setTitle("0.0", for: .normal)
+            } else {
+                if game.team1?.completionsAttempted == 0 {
+                    self.team1AvgCompletionsAttemptedButton.setTitle("0.0", for: .normal)
+                } else {
+                    self.team1AvgCompletionsAttemptedButton.setTitle("\((Double(game.team1?.completionsAttempted ?? 0)) / Double((game.team1?.gamesPlayed ?? 1)))", for: .normal)
+                }
+            }
+            
+              // Team 1 completion average percentage
+            if game.team1?.gamesPlayed == 0 {
+                self.team1AvgCompletionPercentButton.setTitle("0%", for: .normal)
+            } else {
+                if game.team1?.completionsAttempted == 0 {
+                    self.team1AvgCompletionPercentButton.setTitle("0%", for: .normal)
+                } else {
+                    let average = (Double(game.team1?.completionsMade ?? 0)) / Double((game.team1?.completionsAttempted ?? 1))
+                    self.team1AvgCompletionPercentButton.setTitle("\(Int(average * 100))%", for: .normal)
+                }
+            }
+            
+            // Team 1 average interceptions thrown
+            if game.team1?.gamesPlayed == 0 {
+                self.team1AvgIntThrownButton.setTitle("0.0", for: .normal)
+            } else {
+                if game.team1?.interceptionsThrown == 0 {
+                    self.team1AvgIntThrownButton.setTitle("0.0%", for: .normal)
+                } else {
+                self.team1AvgIntThrownButton.setTitle("\(Double((game.team1?.interceptionsThrown ?? 0)) / Double((game.team1?.gamesPlayed ?? 1)))", for: .normal)
+                }
+            }
+            
+            // MARK: - TEAM 1 FIELD GOALS
+            
+            // Team 1 average field goals
+            if game.team1?.gamesPlayed == 0 {
+                self.team1AvgFieldGoalsButton.setTitle("0.0", for: .normal)
+            } else {
+                if game.team1?.fieldGoalsAttempted == 0 {
+                    self.team1AvgFieldGoalsButton.setTitle("0.0", for: .normal)
+                } else {
+                    self.team1AvgFieldGoalsButton.setTitle("\(Double((game.team1?.fieldGoalsMade ?? 0)) / Double((game.team1?.gamesPlayed ?? 1)))", for: .normal)
+                }
+            }
+            
+            // Team 1 average field goals attempted
+            if game.team1?.gamesPlayed == 0 {
+                self.team1AvgFieldGoalsAttemptedButton.setTitle("0.0", for: .normal)
+            } else {
+                if game.team1?.fieldGoalsAttempted == 0 {
+                    self.team1AvgFieldGoalsAttemptedButton.setTitle("0.0", for: .normal)
+                } else {
+                    self.team1AvgFieldGoalsAttemptedButton.setTitle("\((Double(game.team1?.fieldGoalsAttempted ?? 0)) / Double((game.team1?.gamesPlayed ?? 1)))", for: .normal)
+                }
+            }
+            
+            // Team 1 average field goals percentage
+            if game.team1?.gamesPlayed == 0 {
+                self.team1AvgFieldGoalPercentButton.setTitle("0%", for: .normal)
+            } else {
+                if game.team1?.fieldGoalsAttempted == 0 {
+                    self.team1AvgFieldGoalPercentButton.setTitle("0%", for: .normal)
+                } else {
+                    let average = (Double(game.team1?.fieldGoalsMade ?? 0)) / Double((game.team1?.fieldGoalsAttempted ?? 1))
+                    self.team1AvgFieldGoalPercentButton.setTitle("\(Int(average * 100))%", for: .normal)
+                }
+            }
+            
+            // MARK: - TEAM 1 PATs
+            
+            // Team 1 average PATs
+            if game.team1?.gamesPlayed == 0 {
+                self.team1AvgPATsMadeButton.setTitle("0.0", for: .normal)
+            } else {
+                if game.team1?.pATsAttempted == 0 {
+                    self.team1AvgPATsMadeButton.setTitle("0.0", for: .normal)
+                } else {
+                    self.team1AvgPATsMadeButton.setTitle("\(Double((game.team1?.pATsMade ?? 0)) / Double((game.team1?.gamesPlayed ?? 1)))", for: .normal)
+                }
+            }
+            
+            // Team 1 average PATs attempted
+            if game.team1?.gamesPlayed == 0 {
+                self.team1AvgPATsAttemptedButton.setTitle("0.0", for: .normal)
+            } else {
+                if game.team1?.pATsAttempted == 0 {
+                    self.team1AvgPATsAttemptedButton.setTitle("0.0", for: .normal)
+                } else {
+                    self.team1AvgPATsAttemptedButton.setTitle("\((Double(game.team1?.pATsAttempted ?? 0)) / Double((game.team1?.gamesPlayed ?? 1)))", for: .normal)
+                }
+            }
+            
+            // Team 1 average PAT percentage
+            if game.team1?.gamesPlayed == 0 {
+                self.team1AvgPATPercentButton.setTitle("0%", for: .normal)
+            } else {
+                if game.team1?.pATsAttempted == 0 {
+                    self.team1AvgPATPercentButton.setTitle("0%", for: .normal)
+                } else {
+                    let average = (Double(game.team1?.pATsMade ?? 0)) / Double((game.team1?.pATsAttempted ?? 1))
+                    self.team1AvgPATPercentButton.setTitle("\(Int(average * 100))%", for: .normal)
+                }
+            }
+            
+            // MARK: - TEAM 1 MISC
+            
+            // Team 1 average TDs thrown
+            if game.team1?.gamesPlayed == 0 {
+                self.team1AvgTDsButton.setTitle("0.0", for: .normal)
+            } else {
+                if game.team1?.touchdowns == 0 {
+                    self.team1AvgTDsButton.setTitle("0.0", for: .normal)
+                } else {
+                    self.team1AvgTDsButton.setTitle("\(Double((game.team1?.touchdowns ?? 0)) / Double((game.team1?.gamesPlayed ?? 1)))", for: .normal)
+                }
+            }
+            
+            // Team 1 average 2PTs thrown
+            if game.team1?.gamesPlayed == 0 {
+                self.team1Avg2PTsButton.setTitle("0.0", for: .normal)
+            } else {
+                if game.team1?.twoPointConversions == 0 {
+                    self.team1Avg2PTsButton.setTitle("0.0", for: .normal)
+                } else {
+                    self.team1Avg2PTsButton.setTitle("\(Double((game.team1?.twoPointConversions ?? 0)) / Double((game.team1?.gamesPlayed ?? 1)))", for: .normal)
+                }
+            }
+            
+            // Team 1 average Interceptions caught
+            if game.team1?.gamesPlayed == 0 {
+                self.team1AvgIntCaughtButton.setTitle("0.0", for: .normal)
+            } else {
+                if game.team1?.interceptionsCaught == 0 {
+                    self.team1AvgIntCaughtButton.setTitle("0.0", for: .normal)
+                } else {
+                    self.team1AvgIntCaughtButton.setTitle("\(Double((game.team1?.interceptionsCaught ?? 0)) / Double((game.team1?.gamesPlayed ?? 1)))", for: .normal)
+                }
+            }
+            
+            // MARK: - TEAM 2 COMPLETIONS
+            
+            // Team 2 average completions
+            if game.team2?.gamesPlayed == 0 {
+                self.team2AvgCompletionsButton.setTitle("0.0", for: .normal)
+            } else {
+                if game.team2?.completionsAttempted == 0 {
+                    self.team2AvgCompletionsButton.setTitle("0.0", for: .normal)
+                } else {
+                    self.team2AvgCompletionsButton.setTitle("\(Double((game.team2?.completionsMade ?? 0)) / Double((game.team2?.gamesPlayed ?? 1)))", for: .normal)
+                }
+            }
+            
+            // Team 2 average completions attempted
+            if game.team2?.gamesPlayed == 0 {
+                self.team2AvgCompletionsAttemptedButton.setTitle("0.0", for: .normal)
+            } else {
+                if game.team2?.completionsAttempted == 0 {
+                    self.team2AvgCompletionsAttemptedButton.setTitle("0.0", for: .normal)
+                } else {
+                    self.team2AvgCompletionsAttemptedButton.setTitle("\((Double(game.team2?.completionsAttempted ?? 0)) / Double((game.team2?.gamesPlayed ?? 1)))", for: .normal)
+                }
+            }
+            
+            // Team 2 completion average percentage
+            if game.team2?.gamesPlayed == 0 {
+                self.team2AvgCompletionPercentButton.setTitle("0%", for: .normal)
+            } else {
+                if game.team2?.completionsAttempted == 0 {
+                    self.team2AvgCompletionPercentButton.setTitle("0%", for: .normal)
+                } else {
+                    let average = (Double(game.team2?.completionsMade ?? 0)) / Double((game.team2?.completionsAttempted ?? 1))
+                    self.team2AvgCompletionPercentButton.setTitle("\(Int(average * 100))%", for: .normal)
+                }
+            }
+            
+            // Team 2 average interceptions thrown
+            if game.team2?.gamesPlayed == 0 {
+                self.team2AvgIntThrownButton.setTitle("0.0", for: .normal)
+            } else {
+                if game.team2?.interceptionsThrown == 0 {
+                    self.team2AvgIntThrownButton.setTitle("0.0%", for: .normal)
+                } else {
+                    self.team2AvgIntThrownButton.setTitle("\(Double((game.team2?.interceptionsThrown ?? 0)) / Double((game.team2?.gamesPlayed ?? 1)))", for: .normal)
+                }
+            }
+            
+            // MARK: - TEAM 2 FIELD GOALS
+            
+            // Team 2 average field goals
+            if game.team2?.gamesPlayed == 0 {
+                self.team2AvgFieldGoalsButton.setTitle("0.0", for: .normal)
+            } else {
+                if game.team2?.fieldGoalsAttempted == 0 {
+                    self.team2AvgFieldGoalsButton.setTitle("0.0", for: .normal)
+                } else {
+                    self.team2AvgFieldGoalsButton.setTitle("\(Double((game.team2?.fieldGoalsMade ?? 0)) / Double((game.team2?.gamesPlayed ?? 1)))", for: .normal)
+                }
+            }
+            
+            // Team 2 average field goals attempted
+            if game.team2?.gamesPlayed == 0 {
+                self.team2AvgFieldGoalsAttemptedButton.setTitle("0.0", for: .normal)
+            } else {
+                if game.team2?.fieldGoalsAttempted == 0 {
+                    self.team2AvgFieldGoalsAttemptedButton.setTitle("0.0", for: .normal)
+                } else {
+                    self.team2AvgFieldGoalsAttemptedButton.setTitle("\((Double(game.team2?.fieldGoalsAttempted ?? 0)) / Double((game.team2?.gamesPlayed ?? 1)))", for: .normal)
+                }
+            }
+            
+            // Team 2 average field goals percentage
+            if game.team2?.gamesPlayed == 0 {
+                self.team2AvgFieldGoalPercentButton.setTitle("0%", for: .normal)
+            } else {
+                if game.team2?.fieldGoalsAttempted == 0 {
+                    self.team2AvgFieldGoalPercentButton.setTitle("0%", for: .normal)
+                } else {
+                    let average = (Double(game.team2?.fieldGoalsMade ?? 0)) / Double((game.team2?.fieldGoalsAttempted ?? 1))
+                    self.team2AvgFieldGoalPercentButton.setTitle("\(Int(average * 100))%", for: .normal)
+                }
+            }
+            
+            // MARK: - TEAM 2 PATs
+            
+            // Team 2 average PATs
+            if game.team2?.gamesPlayed == 0 {
+                self.team2AvgPATsMadeButton.setTitle("0.0", for: .normal)
+            } else {
+                if game.team2?.pATsAttempted == 0 {
+                    self.team2AvgPATsMadeButton.setTitle("0.0", for: .normal)
+                } else {
+                    self.team2AvgPATsMadeButton.setTitle("\(Double((game.team2?.pATsMade ?? 0)) / Double((game.team2?.gamesPlayed ?? 1)))", for: .normal)
+                }
+            }
+            
+            // Team 2 average PATs attempted
+            if game.team2?.gamesPlayed == 0 {
+                self.team2AvgPATsAttemptedButton.setTitle("0.0", for: .normal)
+            } else {
+                if game.team2?.pATsAttempted == 0 {
+                    self.team2AvgPATsAttemptedButton.setTitle("0.0", for: .normal)
+                } else {
+                    self.team2AvgPATsAttemptedButton.setTitle("\((Double(game.team2?.pATsAttempted ?? 0)) / Double((game.team2?.gamesPlayed ?? 1)))", for: .normal)
+                }
+            }
+            
+            // Team 2 average PAT percentage
+            if game.team2?.gamesPlayed == 0 {
+                self.team2AvgPATsAttemptedButton.setTitle("0%", for: .normal)
+            } else {
+                if game.team2?.pATsAttempted == 0 {
+                    self.team2AvgPATPercentButton.setTitle("0%", for: .normal)
+                } else {
+                    let average = (Double(game.team2?.pATsMade ?? 0)) / Double((game.team2?.pATsAttempted ?? 1))
+                    self.team2AvgPATsAttemptedButton.setTitle("\(Int(average * 100))%", for: .normal)
+                }
+            }
+            
+            // MARK: - TEAM 2 MISC
+            
+            // Team 2 average TDs thrown
+            if game.team2?.gamesPlayed == 0 {
+                self.team2AvgTDsButton.setTitle("0.0", for: .normal)
+            } else {
+                if game.team2?.touchdowns == 0 {
+                    self.team2AvgTDsButton.setTitle("0.0", for: .normal)
+                } else {
+                    self.team2AvgTDsButton.setTitle("\(Double((game.team2?.touchdowns ?? 0)) / Double((game.team2?.gamesPlayed ?? 1)))", for: .normal)
+                }
+            }
+            
+            // Team 2 average 2PTs thrown
+            if game.team2?.gamesPlayed == 0 {
+                self.team2Avg2PTsButton.setTitle("0.0", for: .normal)
+            } else {
+                if game.team2?.twoPointConversions == 0 {
+                    self.team2Avg2PTsButton.setTitle("0.0", for: .normal)
+                } else {
+                    self.team2Avg2PTsButton.setTitle("\(Double((game.team2?.twoPointConversions ?? 0)) / Double((game.team2?.gamesPlayed ?? 1)))", for: .normal)
+                }
+            }
+            
+            // Team 2 average Interceptions caught
+            if game.team2?.gamesPlayed == 0 {
+                self.team2AvgIntCaughtButton.setTitle("0.0", for: .normal)
+            } else {
+                if game.team2?.interceptionsCaught == 0 {
+                    self.team2AvgIntCaughtButton.setTitle("0.0", for: .normal)
+                } else {
+                    self.team2AvgIntCaughtButton.setTitle("\(Double((game.team2?.interceptionsCaught ?? 0)) / Double((game.team2?.gamesPlayed ?? 1)))", for: .normal)
+                }
+            }
+        }
     }
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
@@ -365,6 +698,52 @@ class ScoreboardVC: UIViewController {
         for button in team2StatsButtons {
             button.backgroundColor = color2
         }
+    }
+    
+    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+    // 🔸 MARK: - SCORE AND CLOCK FUNCTIONS
+    
+    var timer = Timer()
+    
+    @objc func counter() {
+        guard let selectedGame = selectedGame else { return }
+        selectedGame.clockTime -= 1
+        updateScoreboard()
+        
+        if selectedGame.clockTime == 0 && selectedGame.whichHalf == 1 {
+            timer.invalidate()
+            buzzerSound()
+            selectedGame.clockTime = 720
+            selectedGame.whichHalf = 2
+            updateScoreboard()
+            playPauseButton.setBackgroundImage(UIImage(named: "buttonPlay"), for: .normal)
+        } else if selectedGame.clockTime == 0 {
+            timer.invalidate()
+            buzzerSound()
+        }
+    }
+    
+    func updateScoreboard() {
+        let formattedTime = TimeStringFormatter.shared.timeString(time: TimeInterval(selectedGame?.clockTime ?? 0))
+        
+        // Clock image labels
+        clockFirstDigitImageView.image = UIImage(named: "scoreboard\(formattedTime[0])Yellow")
+        clockSecondDigitImageView.image = UIImage(named: "scoreboard\(formattedTime[1])Yellow")
+        clockThirdDigitImageView.image = UIImage(named: "scoreboard\(formattedTime[2])Yellow")
+        clockFourthDigitImageView.image = UIImage(named: "scoreboard\(formattedTime[3])Yellow")
+        
+        let halfImage = selectedGame?.whichHalf == 1 ? UIImage(named: "half1") : UIImage(named: "half2")
+        
+        halfIndicatorImageView.image = halfImage
+    }
+    
+    var buzzer: AVAudioPlayer!
+    
+    func buzzerSound() {
+        if buzzer.isPlaying {
+            buzzer.stop()
+        }
+        buzzer.play()
     }
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
@@ -423,59 +802,15 @@ class ScoreboardVC: UIViewController {
     }
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
-    // 🔸 MARK: - TIMER FUNCTIONS
-    
-    var timer = Timer()
-    
-    @objc func counter() {
-        guard let selectedGame = selectedGame else { return }
-        selectedGame.clockTime -= 1
-        updateScoreboard()
-        
-        if selectedGame.clockTime == 0 && selectedGame.whichHalf == 1 {
-            timer.invalidate()
-            buzzerSound()
-            selectedGame.clockTime = 720
-            selectedGame.whichHalf = 2
-            updateScoreboard()
-            playPauseButton.setBackgroundImage(UIImage(named: "buttonPlay"), for: .normal)
-        } else if selectedGame.clockTime == 0 {
-            timer.invalidate()
-            buzzerSound()
-        }
-    }
-    
-    func updateScoreboard() {
-        let formattedTime = TimeStringFormatter.shared.timeString(time: TimeInterval(selectedGame?.clockTime ?? 0))
-        
-        // Clock image labels
-        clockFirstDigitImageView.image = UIImage(named: "scoreboard\(formattedTime[0])Yellow")
-        clockSecondDigitImageView.image = UIImage(named: "scoreboard\(formattedTime[1])Yellow")
-        clockThirdDigitImageView.image = UIImage(named: "scoreboard\(formattedTime[2])Yellow")
-        clockFourthDigitImageView.image = UIImage(named: "scoreboard\(formattedTime[3])Yellow")
-        
-        let halfImage = selectedGame?.whichHalf == 1 ? UIImage(named: "half1") : UIImage(named: "half2")
-        
-        halfIndicatorImageView.image = halfImage
-    }
-    
-    var buzzer: AVAudioPlayer!
-    
-    func buzzerSound() {
-        if buzzer.isPlaying {
-            buzzer.stop()
-        }
-        buzzer.play()
-    }
-    
-    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
-    // 🔸 MARK: - ACTIONS - TEAM HEADERS, SCORE, AND CLOCK
+    // 🔸 MARK: - ACTIONS - BUTTONS
     
     // Headers
     @IBAction func team1HelmetTapped(_ sender: Any) {
+        // Navigation covers action
     }
     
     @IBAction func team2HelmetTapped(_ sender: Any) {
+        // Navigation covers action
     }
     
     // Clock buttons and exit
@@ -485,7 +820,7 @@ class ScoreboardVC: UIViewController {
          updateScoreboard()
             
         } else {
-            // Give alert that they can rewind while timer is running
+            // Give alert that they can't rewind while timer is running
         }
     }
     
@@ -495,7 +830,7 @@ class ScoreboardVC: UIViewController {
           updateScoreboard()
             
         } else {
-            // Give alert that they can rewind while timer is running
+            // Give alert that they can't forward while timer is running
         }
     }
     
@@ -530,20 +865,19 @@ class ScoreboardVC: UIViewController {
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
     // 🔸 MARK: - ACTIONS - TEAM 1 STATS BUTTONS
     
+    // MARK: - TEAM 1 COMPLETIONS
+    
     // Stats - Team 1 Pass Completion - Add
+    
     @IBAction func team1AddCompletionMadeButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team1 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team1?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team1 else { return }
         
         // Cell labels
         let cellA1 = team1GameCompletionsButton
-        let cellA2 = team1GamePassesAttemptedButton
+        let cellA2 = team1GameCompletionsAttemptedButton
         let cellA3 = team1GameCompletionPercentButton
-        let cellB1 = team1AvgCompletionsButton
-        let cellB2 = team1AvgPassesAttemptedButton
-        let cellB3 = team1AvgCompletionPercentButton
         
         //update source of truth
         game.team1CompletionsMade += 1
@@ -554,15 +888,11 @@ class ScoreboardVC: UIViewController {
         // Model object properties
         let gameCountA1 = game.team1CompletionsMade
         let gameCountA2 = game.team1CompletionsAttempted
-        let teamAvgA1 = team.completionsMade
-        let teamAvgA2 = team.completionsAttempted
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
         cellA2?.setTitle("\(gameCountA2)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
-        cellB2?.setTitle(String(format: "%.1f", Double(teamAvgA2 / (gamesPlayed + 1))), for: .normal)
-        
+
         // Update percentage lables
         if gameCountA2 == 0 {
             cellA3?.setTitle("0%", for: .normal)
@@ -570,28 +900,17 @@ class ScoreboardVC: UIViewController {
             let percentage = getPercentageString(numerator: gameCountA1, denominator: gameCountA2)
             cellA3?.setTitle(percentage, for: .normal)
         }
-
-        if teamAvgA2 == 0 {
-            cellB3?.setTitle("0%", for: .normal)
-        } else {
-            let percentage = getPercentageString(numerator: teamAvgA1, denominator: teamAvgA2)
-            cellB3?.setTitle(percentage, for: .normal)
-        }
     }
     
     @IBAction func team1AddCompletionMissedButton(_ sender: Any) {
 
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team1 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team1?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team1 else { return }
         
         // Cell labels
         let cellA1 = team1GameCompletionsButton
-        let cellA2 = team1GamePassesAttemptedButton
+        let cellA2 = team1GameCompletionsAttemptedButton
         let cellA3 = team1GameCompletionPercentButton
-        let cellB1 = team1AvgCompletionsButton
-        let cellB2 = team1AvgPassesAttemptedButton
-        let cellB3 = team1AvgCompletionPercentButton
         
         //update source of truth
         game.team1CompletionsMade += 0
@@ -602,14 +921,10 @@ class ScoreboardVC: UIViewController {
         // Model object properties
         let gameCountA1 = game.team1CompletionsMade
         let gameCountA2 = game.team1CompletionsAttempted
-        let teamAvgA1 = team.completionsMade
-        let teamAvgA2 = team.completionsAttempted
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
         cellA2?.setTitle("\(gameCountA2)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
-        cellB2?.setTitle(String(format: "%.1f", Double(teamAvgA2 / (gamesPlayed + 1))), for: .normal)
         
         // Update percentage lables
         if gameCountA2 == 0 {
@@ -618,27 +933,17 @@ class ScoreboardVC: UIViewController {
             let percentage = getPercentageString(numerator: gameCountA1, denominator: gameCountA2)
             cellA3?.setTitle(percentage, for: .normal)
         }
-        
-        if teamAvgA2 == 0 {
-            cellB3?.setTitle("0%", for: .normal)
-        } else {
-            let percentage = getPercentageString(numerator: teamAvgA1, denominator: teamAvgA2)
-            cellB3?.setTitle(percentage, for: .normal)
-        }
     }
     
     @IBAction func team1AddInterceptionThrownButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team1 = game.team1 else { print("Error unwrapping team1") ; return }
-        guard let team2 = game.team2 else { print("Error unwrapping team2") ; return }
-        guard let gamesPlayed = game.team1?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team1 = game.team1 else { return }
+        guard let team2 = game.team2 else { return }
         
         // Cell labels
         let cellA1 = team1GameIntThrownButton
-        let cellB1 = team1AvgIntThrownButton
         let cellC1 = team2GameIntCaughtButton
-        let cellD1 = team2AvgIntCaughtButton
         
         // Update source of truth
         game.team1InterceptionsThrown += 1
@@ -649,33 +954,26 @@ class ScoreboardVC: UIViewController {
         // Model object properties
         let gameCountTeam1 = game.team1InterceptionsThrown
         let gameCountTeam2 = game.team2InterceptionsCaught
-        let team1Avg = team1.interceptionsThrown
-        let team2Avg = team2.interceptionsCaught
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountTeam1)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(team1Avg / (gamesPlayed + 1))), for: .normal)
         cellC1?.setTitle("\(gameCountTeam2)", for: .normal)
-        cellD1?.setTitle(String(format: "%.1f", Double(team2Avg / (gamesPlayed + 1))), for: .normal)
     }
     
     // Stats - Team 1 Pass Completion - Subtract
+    
     @IBAction func team1SubtractCompletionMadeButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team1 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team1?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team1 else { return }
         
         // Guard against subtracting to negative numbers
         if game.team1CompletionsMade == 0 || team.completionsMade == 0 { return }
         
         // Cell labels
         let cellA1 = team1GameCompletionsButton
-        let cellA2 = team1GamePassesAttemptedButton
+        let cellA2 = team1GameCompletionsAttemptedButton
         let cellA3 = team1GameCompletionPercentButton
-        let cellB1 = team1AvgCompletionsButton
-        let cellB2 = team1AvgPassesAttemptedButton
-        let cellB3 = team1AvgCompletionPercentButton
         
         //update source of truth
         game.team1CompletionsMade -= 1
@@ -686,14 +984,10 @@ class ScoreboardVC: UIViewController {
         // Model object properties
         let gameCountA1 = game.team1CompletionsMade
         let gameCountA2 = game.team1CompletionsAttempted
-        let teamAvgA1 = team.completionsMade
-        let teamAvgA2 = team.completionsAttempted
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
         cellA2?.setTitle("\(gameCountA2)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
-        cellB2?.setTitle(String(format: "%.1f", Double(teamAvgA2 / (gamesPlayed + 1))), for: .normal)
         
         // Update percentage lables
         if gameCountA2 == 0 {
@@ -702,31 +996,20 @@ class ScoreboardVC: UIViewController {
             let percentage = getPercentageString(numerator: gameCountA1, denominator: gameCountA2)
             cellA3?.setTitle(percentage, for: .normal)
         }
-        
-        if teamAvgA2 == 0 {
-            cellB3?.setTitle("0%", for: .normal)
-        } else {
-            let percentage = getPercentageString(numerator: teamAvgA1, denominator: teamAvgA2)
-            cellB3?.setTitle(percentage, for: .normal)
-        }
     }
     
     @IBAction func team1SubtractCompletionMissedButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team1 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team1?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team1 else { return }
         
         // Guard against subtracting to negative numbers
         if game.team1CompletionsAttempted == 0 || team.completionsAttempted == 0 { return }
         
         // Cell labels
         let cellA1 = team1GameCompletionsButton
-        let cellA2 = team1GamePassesAttemptedButton
+        let cellA2 = team1GameCompletionsAttemptedButton
         let cellA3 = team1GameCompletionPercentButton
-        let cellB1 = team1AvgCompletionsButton
-        let cellB2 = team1AvgPassesAttemptedButton
-        let cellB3 = team1AvgCompletionPercentButton
         
         //update source of truth
         game.team1CompletionsMade += 0
@@ -737,14 +1020,10 @@ class ScoreboardVC: UIViewController {
         // Model object properties
         let gameCountA1 = game.team1CompletionsMade
         let gameCountA2 = game.team1CompletionsAttempted
-        let teamAvgA1 = team.completionsMade
-        let teamAvgA2 = team.completionsAttempted
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
         cellA2?.setTitle("\(gameCountA2)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
-        cellB2?.setTitle(String(format: "%.1f", Double(teamAvgA2 / (gamesPlayed + 1))), for: .normal)
         
         // Update percentage lables
         if gameCountA2 == 0 {
@@ -753,30 +1032,20 @@ class ScoreboardVC: UIViewController {
             let percentage = getPercentageString(numerator: gameCountA1, denominator: gameCountA2)
             cellA3?.setTitle(percentage, for: .normal)
         }
-        
-        if teamAvgA2 == 0 {
-            cellB3?.setTitle("0%", for: .normal)
-        } else {
-            let percentage = getPercentageString(numerator: teamAvgA1, denominator: teamAvgA2)
-            cellB3?.setTitle(percentage, for: .normal)
-        }
     }
     
     @IBAction func team1SubtractInterceptionThrownButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team1 = game.team1 else { print("Error unwrapping team") ; return }
-        guard let team2 = game.team2 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team1?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team1 = game.team1 else { return }
+        guard let team2 = game.team2 else { return }
         
         // Guard against subtracting to negative numbers
         if game.team1InterceptionsThrown == 0 { return }
         
         // Cell labels
         let cellA1 = team1GameIntThrownButton
-        let cellB1 = team1AvgIntThrownButton
         let cellC1 = team2GameIntCaughtButton
-        let cellD1 = team2AvgIntCaughtButton
         
         // Update source of truth
         game.team1InterceptionsThrown -= 1
@@ -787,30 +1056,25 @@ class ScoreboardVC: UIViewController {
         // Model object properties
         let gameCountTeam1 = game.team1InterceptionsThrown
         let gameCountTeam2 = game.team2InterceptionsCaught
-        let team1Avg = team1.interceptionsThrown
-        let team2Avg = team2.interceptionsCaught
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountTeam1)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(team1Avg / (gamesPlayed + 1))), for: .normal)
         cellC1?.setTitle("\(gameCountTeam2)", for: .normal)
-        cellD1?.setTitle(String(format: "%.1f", Double(team2Avg / (gamesPlayed + 1))), for: .normal)
     }
     
+    // MARK: - TEAM 1 FIELD GOALS
+    
     // Stats - Team 1 Field Goals - Add
+    
     @IBAction func team1AddFieldGoalMadeButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team1 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team1?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team1 else { return }
         
         // Cell labels
         let cellA1 = team1GameFieldGoalsButton
         let cellA2 = team1GameFieldGoalsAttemptedButton
         let cellA3 = team1GameFieldGoalPercentButton
-        let cellB1 = team1AvgFieldGoalsButton
-        let cellB2 = team1AvgFieldGoalsAttemptedButton
-        let cellB3 = team1AvgFieldGoalPercentButton
         
         //update source of truth
         game.team1FieldGoalsMade += 1
@@ -822,14 +1086,10 @@ class ScoreboardVC: UIViewController {
         // Model object properties
         let gameCountA1 = game.team1FieldGoalsMade
         let gameCountA2 = game.team1FieldGoalsAttempted
-        let teamAvgA1 = team.fieldGoalsMade
-        let teamAvgA2 = team.fieldGoalsAttempted
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
         cellA2?.setTitle("\(gameCountA2)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
-        cellB2?.setTitle(String(format: "%.1f", Double(teamAvgA2 / (gamesPlayed + 1))), for: .normal)
         changeScore()
         
         // Update percentage lables
@@ -839,28 +1099,17 @@ class ScoreboardVC: UIViewController {
             let percentage = getPercentageString(numerator: gameCountA1, denominator: gameCountA2)
             cellA3?.setTitle(percentage, for: .normal)
         }
-        
-        if teamAvgA2 == 0 {
-            cellB3?.setTitle("0%", for: .normal)
-        } else {
-            let percentage = getPercentageString(numerator: teamAvgA1, denominator: teamAvgA2)
-            cellB3?.setTitle(percentage, for: .normal)
-        }
     }
     
     @IBAction func team1AddFieldGoalMissedButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team1 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team1?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team1 else { return }
         
         // Cell labels
         let cellA1 = team1GameFieldGoalsButton
         let cellA2 = team1GameFieldGoalsAttemptedButton
         let cellA3 = team1GameFieldGoalPercentButton
-        let cellB1 = team1AvgFieldGoalsButton
-        let cellB2 = team1AvgFieldGoalsAttemptedButton
-        let cellB3 = team1AvgFieldGoalPercentButton
         
         //update source of truth
         game.team1FieldGoalsMade += 0
@@ -871,14 +1120,10 @@ class ScoreboardVC: UIViewController {
         // Model object properties
         let gameCountA1 = game.team1FieldGoalsMade
         let gameCountA2 = game.team1FieldGoalsAttempted
-        let teamAvgA1 = team.fieldGoalsMade
-        let teamAvgA2 = team.fieldGoalsAttempted
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
         cellA2?.setTitle("\(gameCountA2)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
-        cellB2?.setTitle(String(format: "%.1f", Double(teamAvgA2 / (gamesPlayed + 1))), for: .normal)
         
         // Update percentage lables
         if gameCountA2 == 0 {
@@ -887,21 +1132,14 @@ class ScoreboardVC: UIViewController {
             let percentage = getPercentageString(numerator: gameCountA1, denominator: gameCountA2)
             cellA3?.setTitle(percentage, for: .normal)
         }
-        
-        if teamAvgA2 == 0 {
-            cellB3?.setTitle("0%", for: .normal)
-        } else {
-            let percentage = getPercentageString(numerator: teamAvgA1, denominator: teamAvgA2)
-            cellB3?.setTitle(percentage, for: .normal)
-        }
     }
     
     // Stats - Team 1 Field Goals - Subtract
+    
     @IBAction func team1SubtractFieldGoalMadeButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team1 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team1?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team1 else { return }
         
         // Guard against subtracting to negative numbers
         if game.team1FieldGoalsMade == 0 || team.fieldGoalsMade == 0 { return }
@@ -910,9 +1148,6 @@ class ScoreboardVC: UIViewController {
         let cellA1 = team1GameFieldGoalsButton
         let cellA2 = team1GameFieldGoalsAttemptedButton
         let cellA3 = team1GameFieldGoalPercentButton
-        let cellB1 = team1AvgFieldGoalsButton
-        let cellB2 = team1AvgFieldGoalsAttemptedButton
-        let cellB3 = team1AvgFieldGoalPercentButton
         
         //update source of truth
         game.team1FieldGoalsMade -= 1
@@ -924,14 +1159,10 @@ class ScoreboardVC: UIViewController {
         // Model object properties
         let gameCountA1 = game.team1FieldGoalsMade
         let gameCountA2 = game.team1FieldGoalsAttempted
-        let teamAvgA1 = team.fieldGoalsMade
-        let teamAvgA2 = team.fieldGoalsAttempted
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
         cellA2?.setTitle("\(gameCountA2)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
-        cellB2?.setTitle(String(format: "%.1f", Double(teamAvgA2 / (gamesPlayed + 1))), for: .normal)
         changeScore()
         
         // Update percentage lables
@@ -941,20 +1172,12 @@ class ScoreboardVC: UIViewController {
             let percentage = getPercentageString(numerator: gameCountA1, denominator: gameCountA2)
             cellA3?.setTitle(percentage, for: .normal)
         }
-        
-        if teamAvgA2 == 0 {
-            cellB3?.setTitle("0%", for: .normal)
-        } else {
-            let percentage = getPercentageString(numerator: teamAvgA1, denominator: teamAvgA2)
-            cellB3?.setTitle(percentage, for: .normal)
-        }
     }
     
     @IBAction func team1SubractFieldGoalMissedButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team1 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team1?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team1 else { return }
         
         // Guard against subtracting to negative numbers
         if game.team1FieldGoalsAttempted == 0 || team.fieldGoalsAttempted == 0 { return }
@@ -963,9 +1186,6 @@ class ScoreboardVC: UIViewController {
         let cellA1 = team1GameFieldGoalsButton
         let cellA2 = team1GameFieldGoalsAttemptedButton
         let cellA3 = team1GameFieldGoalPercentButton
-        let cellB1 = team1AvgFieldGoalsButton
-        let cellB2 = team1AvgFieldGoalsAttemptedButton
-        let cellB3 = team1AvgFieldGoalPercentButton
         
         //update source of truth
         game.team1FieldGoalsMade -= 0
@@ -976,14 +1196,10 @@ class ScoreboardVC: UIViewController {
         // Model object properties
         let gameCountA1 = game.team1FieldGoalsMade
         let gameCountA2 = game.team1FieldGoalsAttempted
-        let teamAvgA1 = team.fieldGoalsMade
-        let teamAvgA2 = team.fieldGoalsAttempted
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
         cellA2?.setTitle("\(gameCountA2)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
-        cellB2?.setTitle(String(format: "%.1f", Double(teamAvgA2 / (gamesPlayed + 1))), for: .normal)
         
         // Update percentage lables
         if gameCountA2 == 0 {
@@ -992,29 +1208,21 @@ class ScoreboardVC: UIViewController {
             let percentage = getPercentageString(numerator: gameCountA1, denominator: gameCountA2)
             cellA3?.setTitle(percentage, for: .normal)
         }
-        
-        if teamAvgA2 == 0 {
-            cellB3?.setTitle("0%", for: .normal)
-        } else {
-            let percentage = getPercentageString(numerator: teamAvgA1, denominator: teamAvgA2)
-            cellB3?.setTitle(percentage, for: .normal)
-        }
     }
     
+    // MARK: - TEAM 1 PATs
+    
     // Stats - Team 1 PATs - Add
+    
     @IBAction func team1AddPATMadeButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team1 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team1?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team1 else { return }
         
         // Cell labels
         let cellA1 = team1GamePATsMadeButton
         let cellA2 = team1GamePATsAttemptedButton
         let cellA3 = team1GamePATPercentButton
-        let cellB1 = team1AvgPATsMadeButton
-        let cellB2 = team1AvgPATsAttemptedButton
-        let cellB3 = team1AvgPATPercentButton
         
         //update source of truth
         game.team1PATsMade += 1
@@ -1026,14 +1234,10 @@ class ScoreboardVC: UIViewController {
         // Model object properties
         let gameCountA1 = game.team1PATsMade
         let gameCountA2 = game.team1PATsAttempted
-        let teamAvgA1 = team.pATsMade
-        let teamAvgA2 = team.pATsAttempted
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
         cellA2?.setTitle("\(gameCountA2)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
-        cellB2?.setTitle(String(format: "%.1f", Double(teamAvgA2 / (gamesPlayed + 1))), for: .normal)
         changeScore()
         
         // Update percentage lables
@@ -1043,28 +1247,17 @@ class ScoreboardVC: UIViewController {
             let percentage = getPercentageString(numerator: gameCountA1, denominator: gameCountA2)
             cellA3?.setTitle(percentage, for: .normal)
         }
-        
-        if teamAvgA2 == 0 {
-            cellB3?.setTitle("0%", for: .normal)
-        } else {
-            let percentage = getPercentageString(numerator: teamAvgA1, denominator: teamAvgA2)
-            cellB3?.setTitle(percentage, for: .normal)
-        }
     }
     
     @IBAction func team1AddPATMIssedButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team1 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team1?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team1 else { return }
         
         // Cell labels
         let cellA1 = team1GamePATsMadeButton
         let cellA2 = team1GamePATsAttemptedButton
         let cellA3 = team1GamePATPercentButton
-        let cellB1 = team1AvgPATsMadeButton
-        let cellB2 = team1AvgPATsAttemptedButton
-        let cellB3 = team1AvgPATPercentButton
         
         //update source of truth
         game.team1PATsMade += 0
@@ -1075,14 +1268,10 @@ class ScoreboardVC: UIViewController {
         // Model object properties
         let gameCountA1 = game.team1PATsMade
         let gameCountA2 = game.team1PATsAttempted
-        let teamAvgA1 = team.pATsMade
-        let teamAvgA2 = team.pATsAttempted
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
         cellA2?.setTitle("\(gameCountA2)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
-        cellB2?.setTitle(String(format: "%.1f", Double(teamAvgA2 / (gamesPlayed + 1))), for: .normal)
         
         // Update percentage lables
         if gameCountA2 == 0 {
@@ -1091,21 +1280,14 @@ class ScoreboardVC: UIViewController {
             let percentage = getPercentageString(numerator: gameCountA1, denominator: gameCountA2)
             cellA3?.setTitle(percentage, for: .normal)
         }
-        
-        if teamAvgA2 == 0 {
-            cellB3?.setTitle("0%", for: .normal)
-        } else {
-            let percentage = getPercentageString(numerator: teamAvgA1, denominator: teamAvgA2)
-            cellB3?.setTitle(percentage, for: .normal)
-        }
     }
     
     // Stats - Team 1 PATs - Subtract
+    
     @IBAction func team1SubtractPATMadeButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team1 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team1?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team1 else { return }
         
         // Guard against subtracting to negative numbers
         if game.team1PATsMade == 0 || team.pATsMade == 0 { return }
@@ -1114,9 +1296,6 @@ class ScoreboardVC: UIViewController {
         let cellA1 = team1GamePATsMadeButton
         let cellA2 = team1GamePATsAttemptedButton
         let cellA3 = team1GamePATPercentButton
-        let cellB1 = team1AvgPATsMadeButton
-        let cellB2 = team1AvgPATsAttemptedButton
-        let cellB3 = team1AvgPATPercentButton
         
         //update source of truth
         game.team1PATsMade -= 1
@@ -1128,14 +1307,10 @@ class ScoreboardVC: UIViewController {
         // Model object properties
         let gameCountA1 = game.team1PATsMade
         let gameCountA2 = game.team1PATsAttempted
-        let teamAvgA1 = team.pATsMade
-        let teamAvgA2 = team.pATsAttempted
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
         cellA2?.setTitle("\(gameCountA2)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
-        cellB2?.setTitle(String(format: "%.1f", Double(teamAvgA2 / (gamesPlayed + 1))), for: .normal)
         changeScore()
         
         // Update percentage lables
@@ -1145,20 +1320,12 @@ class ScoreboardVC: UIViewController {
             let percentage = getPercentageString(numerator: gameCountA1, denominator: gameCountA2)
             cellA3?.setTitle(percentage, for: .normal)
         }
-        
-        if teamAvgA2 == 0 {
-            cellB3?.setTitle("0%", for: .normal)
-        } else {
-            let percentage = getPercentageString(numerator: teamAvgA1, denominator: teamAvgA2)
-            cellB3?.setTitle(percentage, for: .normal)
-        }
     }
     
     @IBAction func team1SubractPATMIssedButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team1 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team1?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team1 else { return }
         
         // Guard against subtracting to negative numbers
         if game.team1PATsAttempted == 0 || team.pATsAttempted == 0 { return }
@@ -1167,9 +1334,6 @@ class ScoreboardVC: UIViewController {
         let cellA1 = team1GamePATsMadeButton
         let cellA2 = team1GamePATsAttemptedButton
         let cellA3 = team1GamePATPercentButton
-        let cellB1 = team1AvgPATsMadeButton
-        let cellB2 = team1AvgPATsAttemptedButton
-        let cellB3 = team1AvgPATPercentButton
         
         //update source of truth
         game.team1PATsMade -= 0
@@ -1180,14 +1344,10 @@ class ScoreboardVC: UIViewController {
         // Model object properties
         let gameCountA1 = game.team1PATsMade
         let gameCountA2 = game.team1PATsAttempted
-        let teamAvgA1 = team.pATsMade
-        let teamAvgA2 = team.pATsAttempted
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
         cellA2?.setTitle("\(gameCountA2)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
-        cellB2?.setTitle(String(format: "%.1f", Double(teamAvgA2 / (gamesPlayed + 1))), for: .normal)
         
         // Update percentage lables
         if gameCountA2 == 0 {
@@ -1196,25 +1356,19 @@ class ScoreboardVC: UIViewController {
             let percentage = getPercentageString(numerator: gameCountA1, denominator: gameCountA2)
             cellA3?.setTitle(percentage, for: .normal)
         }
-        
-        if teamAvgA2 == 0 {
-            cellB3?.setTitle("0%", for: .normal)
-        } else {
-            let percentage = getPercentageString(numerator: teamAvgA1, denominator: teamAvgA2)
-            cellB3?.setTitle(percentage, for: .normal)
-        }
     }
     
+    // MARK: - TEAM 1 MISC
+    
     // Stats - Team 1 Misc - Add
+    
     @IBAction func team1AddTDMadeButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team1 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team1?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team1 else { return }
         
         // Cell labels
         let cellA1 = team1GameTDsButton
-        let cellB1 = team1AvgTDsButton
         
         //update source of truth
         game.team1Touchdowns += 1
@@ -1223,24 +1377,20 @@ class ScoreboardVC: UIViewController {
         
         // Model object properties
         let gameCountA1 = game.team1Touchdowns
-        let teamAvgA1 = team.touchdowns
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
         changeScore()
     }
     
     @IBAction func team1Add2PTMadeButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team1 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team1?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team1 else { return }
         
         // Cell labels
         let cellA1 = team1Game2PTsButton
-        let cellB1 = team1Avg2PTsButton
-        
+   
         //update source of truth
         game.team1TwoPointConversions += 1
         team.twoPointConversions += 1
@@ -1248,28 +1398,24 @@ class ScoreboardVC: UIViewController {
         
         // Model object properties
         let gameCountA1 = game.team1TwoPointConversions
-        let teamAvgA1 = team.twoPointConversions
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
         changeScore()
     }
     
     // Stats - Team 1 Misc - Subtract
+    
     @IBAction func team1SubtractTDMadeButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team1 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team1?.gamesPlayed else { print("Error unwrapping games played") ; return }
-        
+        guard let game = selectedGame else { return }
+        guard let team = game.team1 else { return }
         
         // Guard against subtracting to negative numbers
         if game.team1Touchdowns == 0 { return }
         
         // Cell labels
         let cellA1 = team1GameTDsButton
-        let cellB1 = team1AvgTDsButton
         
         //update source of truth
         game.team1Touchdowns -= 1
@@ -1278,26 +1424,22 @@ class ScoreboardVC: UIViewController {
         
         // Model object properties
         let gameCountA1 = game.team1Touchdowns
-        let teamAvgA1 = team.touchdowns
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
         changeScore()
     }
     
     @IBAction func team1Subtract2PTMadeButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team1 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team1?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team1 else { return }
         
         // Guard against subtracting to negative numbers
         if game.team1TwoPointConversions == 0 { return }
         
         // Cell labels
         let cellA1 = team1Game2PTsButton
-        let cellB1 = team1Avg2PTsButton
         
         //update source of truth
         game.team1TwoPointConversions -= 1
@@ -1306,31 +1448,28 @@ class ScoreboardVC: UIViewController {
         
         // Model object properties
         let gameCountA1 = game.team1TwoPointConversions
-        let teamAvgA1 = team.twoPointConversions
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
         changeScore()
     }
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
     // 🔸 MARK: - ACTIONS - TEAM 2 STATS BUTTONS
     
+    // MARK: - TEAM 2 COMPLETIONS
+    
     // Stats - Team 2 Pass Completion - Add
+    
     @IBAction func team2AddCompletionMadeButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team2 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team2?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team2 else { return }
         
         // Cell labels
         let cellA1 = team2GameCompletionsButton
-        let cellA2 = team2GamePassesAttemptedButton
+        let cellA2 = team2GameCompletionsAttemptedButton
         let cellA3 = team2GameCompletionPercentButton
-        let cellB1 = team2AvgCompletionsButton
-        let cellB2 = team2AvgPassesAttemptedButton
-        let cellB3 = team2AvgCompletionPercentButton
         
         //update source of truth
         game.team2CompletionsMade += 1
@@ -1341,14 +1480,10 @@ class ScoreboardVC: UIViewController {
         // Model object properties
         let gameCountA1 = game.team2CompletionsMade
         let gameCountA2 = game.team2CompletionsAttempted
-        let teamAvgA1 = team.completionsMade
-        let teamAvgA2 = team.completionsAttempted
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
         cellA2?.setTitle("\(gameCountA2)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
-        cellB2?.setTitle(String(format: "%.1f", Double(teamAvgA2 / (gamesPlayed + 1))), for: .normal)
         
         // Update percentage lables
         if gameCountA2 == 0 {
@@ -1357,28 +1492,17 @@ class ScoreboardVC: UIViewController {
             let percentage = getPercentageString(numerator: gameCountA1, denominator: gameCountA2)
             cellA3?.setTitle(percentage, for: .normal)
         }
-        
-        if teamAvgA2 == 0 {
-            cellB3?.setTitle("0%", for: .normal)
-        } else {
-            let percentage = getPercentageString(numerator: teamAvgA1, denominator: teamAvgA2)
-            cellB3?.setTitle(percentage, for: .normal)
-        }
     }
     
     @IBAction func team2AddCompletionMissedButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team2 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team2?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team2 else { return }
         
         // Cell labels
         let cellA1 = team2GameCompletionsButton
-        let cellA2 = team2GamePassesAttemptedButton
+        let cellA2 = team2GameCompletionsAttemptedButton
         let cellA3 = team2GameCompletionPercentButton
-        let cellB1 = team2AvgCompletionsButton
-        let cellB2 = team2AvgPassesAttemptedButton
-        let cellB3 = team2AvgCompletionPercentButton
         
         //update source of truth
         game.team2CompletionsMade += 0
@@ -1389,14 +1513,10 @@ class ScoreboardVC: UIViewController {
         // Model object properties
         let gameCountA1 = game.team2CompletionsMade
         let gameCountA2 = game.team2CompletionsAttempted
-        let teamAvgA1 = team.completionsMade
-        let teamAvgA2 = team.completionsAttempted
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
         cellA2?.setTitle("\(gameCountA2)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
-        cellB2?.setTitle(String(format: "%.1f", Double(teamAvgA2 / (gamesPlayed + 1))), for: .normal)
         
         // Update percentage lables
         if gameCountA2 == 0 {
@@ -1405,64 +1525,47 @@ class ScoreboardVC: UIViewController {
             let percentage = getPercentageString(numerator: gameCountA1, denominator: gameCountA2)
             cellA3?.setTitle(percentage, for: .normal)
         }
-        
-        if teamAvgA2 == 0 {
-            cellB3?.setTitle("0%", for: .normal)
-        } else {
-            let percentage = getPercentageString(numerator: teamAvgA1, denominator: teamAvgA2)
-            cellB3?.setTitle(percentage, for: .normal)
-        }
     }
     
     @IBAction func team2AddInterceptionThrownButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team1 = game.team1 else { print("Error unwrapping team1") ; return }
-        guard let team2 = game.team2 else { print("Error unwrapping team2") ; return }
-        guard let gamesPlayed = game.team1?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team1 = game.team1 else { return }
+        guard let team2 = game.team2 else { return }
         
         // Cell labels
         let cellA1 = team2GameIntThrownButton
-        let cellB1 = team2AvgIntThrownButton
         let cellC1 = team1GameIntCaughtButton
-        let cellD1 = team1AvgIntCaughtButton
         
         // Update source of truth
         game.team2InterceptionsThrown += 1
         game.team1InterceptionsCaught += 1
-        team2.interceptionsThrown += 1
-        team1.interceptionsCaught += 1
+        team1.interceptionsThrown += 1
+        team2.interceptionsCaught += 1
         
         // Model object properties
         let gameCountTeam1 = game.team2InterceptionsThrown
         let gameCountTeam2 = game.team1InterceptionsCaught
-        let team1Avg = team2.interceptionsThrown
-        let team2Avg = team1.interceptionsCaught
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountTeam2)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(team2Avg / (gamesPlayed + 1))), for: .normal)
         cellC1?.setTitle("\(gameCountTeam1)", for: .normal)
-        cellD1?.setTitle(String(format: "%.1f", Double(team1Avg / (gamesPlayed + 1))), for: .normal)
     }
     
     // Stats - Team 2 Pass Completion - Subtract
+    
     @IBAction func team2SubtractCompletionMadeButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team2 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team2?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team2 else { return }
         
         // Guard against subtracting to negative numbers
         if game.team2CompletionsMade == 0 || team.completionsMade == 0 { return }
         
         // Cell labels
         let cellA1 = team2GameCompletionsButton
-        let cellA2 = team2GamePassesAttemptedButton
+        let cellA2 = team2GameCompletionsAttemptedButton
         let cellA3 = team2GameCompletionPercentButton
-        let cellB1 = team2AvgCompletionsButton
-        let cellB2 = team2AvgPassesAttemptedButton
-        let cellB3 = team2AvgCompletionPercentButton
         
         //update source of truth
         game.team2CompletionsMade -= 1
@@ -1473,14 +1576,10 @@ class ScoreboardVC: UIViewController {
         // Model object properties
         let gameCountA1 = game.team2CompletionsMade
         let gameCountA2 = game.team2CompletionsAttempted
-        let teamAvgA1 = team.completionsMade
-        let teamAvgA2 = team.completionsAttempted
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
         cellA2?.setTitle("\(gameCountA2)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
-        cellB2?.setTitle(String(format: "%.1f", Double(teamAvgA2 / (gamesPlayed + 1))), for: .normal)
         
         // Update percentage lables
         if gameCountA2 == 0 {
@@ -1489,31 +1588,20 @@ class ScoreboardVC: UIViewController {
             let percentage = getPercentageString(numerator: gameCountA1, denominator: gameCountA2)
             cellA3?.setTitle(percentage, for: .normal)
         }
-        
-        if teamAvgA2 == 0 {
-            cellB3?.setTitle("0%", for: .normal)
-        } else {
-            let percentage = getPercentageString(numerator: teamAvgA1, denominator: teamAvgA2)
-            cellB3?.setTitle(percentage, for: .normal)
-        }
     }
     
     @IBAction func team2SubtractCompletionMissedButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team2 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team2?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team2 else { return }
         
         // Guard against subtracting to negative numbers
         if game.team2CompletionsAttempted == 0 || team.completionsAttempted == 0 { return }
         
         // Cell labels
         let cellA1 = team2GameCompletionsButton
-        let cellA2 = team2GamePassesAttemptedButton
+        let cellA2 = team2GameCompletionsAttemptedButton
         let cellA3 = team2GameCompletionPercentButton
-        let cellB1 = team2AvgCompletionsButton
-        let cellB2 = team2AvgPassesAttemptedButton
-        let cellB3 = team2AvgCompletionPercentButton
         
         //update source of truth
         game.team2CompletionsMade += 0
@@ -1524,14 +1612,10 @@ class ScoreboardVC: UIViewController {
         // Model object properties
         let gameCountA1 = game.team2CompletionsMade
         let gameCountA2 = game.team2CompletionsAttempted
-        let teamAvgA1 = team.completionsMade
-        let teamAvgA2 = team.completionsAttempted
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
         cellA2?.setTitle("\(gameCountA2)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
-        cellB2?.setTitle(String(format: "%.1f", Double(teamAvgA2 / (gamesPlayed + 1))), for: .normal)
         
         // Update percentage lables
         if gameCountA2 == 0 {
@@ -1540,61 +1624,49 @@ class ScoreboardVC: UIViewController {
             let percentage = getPercentageString(numerator: gameCountA1, denominator: gameCountA2)
             cellA3?.setTitle(percentage, for: .normal)
         }
-        
-        if teamAvgA2 == 0 {
-            cellB3?.setTitle("0%", for: .normal)
-        } else {
-            let percentage = getPercentageString(numerator: teamAvgA1, denominator: teamAvgA2)
-            cellB3?.setTitle(percentage, for: .normal)
-        }
     }
     
     @IBAction func team2SubtractInterceptionThrownButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team1 = game.team1 else { print("Error unwrapping team1") ; return }
-        guard let team2 = game.team2 else { print("Error unwrapping team2") ; return }
-        guard let gamesPlayed = game.team1?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team1 = game.team1 else { return }
+        guard let team2 = game.team2 else { return }
+        
+        // Guard against subtracting to negative numbers
+        if game.team2InterceptionsThrown == 0 { return }
         
         // Cell labels
         let cellA1 = team2GameIntThrownButton
-        let cellB1 = team2AvgIntThrownButton
         let cellC1 = team1GameIntCaughtButton
-        let cellD1 = team1AvgIntCaughtButton
         
         // Update source of truth
         game.team2InterceptionsThrown -= 1
         game.team1InterceptionsCaught -= 1
-        team2.interceptionsThrown -= 1
-        team1.interceptionsCaught -= 1
+        team1.interceptionsThrown -= 1
+        team2.interceptionsCaught -= 1
         
         // Model object properties
         let gameCountTeam1 = game.team2InterceptionsThrown
         let gameCountTeam2 = game.team1InterceptionsCaught
-        let team1Avg = team2.interceptionsThrown
-        let team2Avg = team1.interceptionsCaught
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountTeam2)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(team2Avg / (gamesPlayed + 1))), for: .normal)
         cellC1?.setTitle("\(gameCountTeam1)", for: .normal)
-        cellD1?.setTitle(String(format: "%.1f", Double(team1Avg / (gamesPlayed + 1))), for: .normal)
     }
     
+    // MARK: - TEAM 2 FIELD GOALS
+    
     // Stats - Team 2 Field Goals - Add
+    
     @IBAction func team2AddFieldGoalMadeButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team2 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team2?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team2 else { return }
         
         // Cell labels
         let cellA1 = team2GameFieldGoalsButton
         let cellA2 = team2GameFieldGoalsAttemptedButton
         let cellA3 = team2GameFieldGoalPercentButton
-        let cellB1 = team2AvgFieldGoalsButton
-        let cellB2 = team2AvgFieldGoalsAttemptedButton
-        let cellB3 = team2AvgFieldGoalPercentButton
         
         //update source of truth
         game.team2FieldGoalsMade += 1
@@ -1606,14 +1678,10 @@ class ScoreboardVC: UIViewController {
         // Model object properties
         let gameCountA1 = game.team2FieldGoalsMade
         let gameCountA2 = game.team2FieldGoalsAttempted
-        let teamAvgA1 = team.fieldGoalsMade
-        let teamAvgA2 = team.fieldGoalsAttempted
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
         cellA2?.setTitle("\(gameCountA2)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
-        cellB2?.setTitle(String(format: "%.1f", Double(teamAvgA2 / (gamesPlayed + 1))), for: .normal)
         changeScore()
         
         // Update percentage lables
@@ -1623,28 +1691,17 @@ class ScoreboardVC: UIViewController {
             let percentage = getPercentageString(numerator: gameCountA1, denominator: gameCountA2)
             cellA3?.setTitle(percentage, for: .normal)
         }
-        
-        if teamAvgA2 == 0 {
-            cellB3?.setTitle("0%", for: .normal)
-        } else {
-            let percentage = getPercentageString(numerator: teamAvgA1, denominator: teamAvgA2)
-            cellB3?.setTitle(percentage, for: .normal)
-        }
     }
     
     @IBAction func team2AddFieldGoalMissedButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team2 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team2?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team2 else { return }
         
         // Cell labels
         let cellA1 = team2GameFieldGoalsButton
         let cellA2 = team2GameFieldGoalsAttemptedButton
         let cellA3 = team2GameFieldGoalPercentButton
-        let cellB1 = team2AvgFieldGoalsButton
-        let cellB2 = team2AvgFieldGoalsAttemptedButton
-        let cellB3 = team2AvgFieldGoalPercentButton
         
         //update source of truth
         game.team2FieldGoalsMade += 0
@@ -1655,14 +1712,10 @@ class ScoreboardVC: UIViewController {
         // Model object properties
         let gameCountA1 = game.team2FieldGoalsMade
         let gameCountA2 = game.team2FieldGoalsAttempted
-        let teamAvgA1 = team.fieldGoalsMade
-        let teamAvgA2 = team.fieldGoalsAttempted
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
         cellA2?.setTitle("\(gameCountA2)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
-        cellB2?.setTitle(String(format: "%.1f", Double(teamAvgA2 / (gamesPlayed + 1))), for: .normal)
         
         // Update percentage lables
         if gameCountA2 == 0 {
@@ -1671,21 +1724,14 @@ class ScoreboardVC: UIViewController {
             let percentage = getPercentageString(numerator: gameCountA1, denominator: gameCountA2)
             cellA3?.setTitle(percentage, for: .normal)
         }
-        
-        if teamAvgA2 == 0 {
-            cellB3?.setTitle("0%", for: .normal)
-        } else {
-            let percentage = getPercentageString(numerator: teamAvgA1, denominator: teamAvgA2)
-            cellB3?.setTitle(percentage, for: .normal)
-        }
     }
     
     // Stats - Team 2 Field Goals - Subtract
+        
     @IBAction func team2SubtractFieldGoalMadeButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team2 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team2?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team2 else { return }
         
         // Guard against subtracting to negative numbers
         if game.team2FieldGoalsMade == 0 || team.fieldGoalsMade == 0 { return }
@@ -1694,9 +1740,6 @@ class ScoreboardVC: UIViewController {
         let cellA1 = team2GameFieldGoalsButton
         let cellA2 = team2GameFieldGoalsAttemptedButton
         let cellA3 = team2GameFieldGoalPercentButton
-        let cellB1 = team2AvgFieldGoalsButton
-        let cellB2 = team2AvgFieldGoalsAttemptedButton
-        let cellB3 = team2AvgFieldGoalPercentButton
         
         //update source of truth
         game.team2FieldGoalsMade -= 1
@@ -1708,14 +1751,10 @@ class ScoreboardVC: UIViewController {
         // Model object properties
         let gameCountA1 = game.team2FieldGoalsMade
         let gameCountA2 = game.team2FieldGoalsAttempted
-        let teamAvgA1 = team.fieldGoalsMade
-        let teamAvgA2 = team.fieldGoalsAttempted
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
         cellA2?.setTitle("\(gameCountA2)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
-        cellB2?.setTitle(String(format: "%.1f", Double(teamAvgA2 / (gamesPlayed + 1))), for: .normal)
         changeScore()
         
         // Update percentage lables
@@ -1725,20 +1764,12 @@ class ScoreboardVC: UIViewController {
             let percentage = getPercentageString(numerator: gameCountA1, denominator: gameCountA2)
             cellA3?.setTitle(percentage, for: .normal)
         }
-        
-        if teamAvgA2 == 0 {
-            cellB3?.setTitle("0%", for: .normal)
-        } else {
-            let percentage = getPercentageString(numerator: teamAvgA1, denominator: teamAvgA2)
-            cellB3?.setTitle(percentage, for: .normal)
-        }
     }
     
     @IBAction func team2SubractFieldGoalMissedButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team2 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team2?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team2 else { return }
         
         // Guard against subtracting to negative numbers
         if game.team2FieldGoalsAttempted == 0 || team.fieldGoalsAttempted == 0 { return }
@@ -1747,9 +1778,6 @@ class ScoreboardVC: UIViewController {
         let cellA1 = team2GameFieldGoalsButton
         let cellA2 = team2GameFieldGoalsAttemptedButton
         let cellA3 = team2GameFieldGoalPercentButton
-        let cellB1 = team2AvgFieldGoalsButton
-        let cellB2 = team2AvgFieldGoalsAttemptedButton
-        let cellB3 = team2AvgFieldGoalPercentButton
         
         //update source of truth
         game.team2FieldGoalsMade -= 0
@@ -1760,14 +1788,10 @@ class ScoreboardVC: UIViewController {
         // Model object properties
         let gameCountA1 = game.team2FieldGoalsMade
         let gameCountA2 = game.team2FieldGoalsAttempted
-        let teamAvgA1 = team.fieldGoalsMade
-        let teamAvgA2 = team.fieldGoalsAttempted
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
         cellA2?.setTitle("\(gameCountA2)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
-        cellB2?.setTitle(String(format: "%.1f", Double(teamAvgA2 / (gamesPlayed + 1))), for: .normal)
         
         // Update percentage lables
         if gameCountA2 == 0 {
@@ -1776,29 +1800,21 @@ class ScoreboardVC: UIViewController {
             let percentage = getPercentageString(numerator: gameCountA1, denominator: gameCountA2)
             cellA3?.setTitle(percentage, for: .normal)
         }
-        
-        if teamAvgA2 == 0 {
-            cellB3?.setTitle("0%", for: .normal)
-        } else {
-            let percentage = getPercentageString(numerator: teamAvgA1, denominator: teamAvgA2)
-            cellB3?.setTitle(percentage, for: .normal)
-        }
     }
+        
+    // MARK: - TEAM 2 PATs
     
     // Stats - Team 2 PATs - Add
+        
     @IBAction func team2AddPATMadeButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team2 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team2?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team2 else { return }
         
         // Cell labels
         let cellA1 = team2GamePATsMadeButton
         let cellA2 = team2GamePATsAttemptedButton
         let cellA3 = team2GamePATPercentButton
-        let cellB1 = team2AvgPATsMadeButton
-        let cellB2 = team2AvgPATsAttemptedButton
-        let cellB3 = team2AvgPATPercentButton
         
         //update source of truth
         game.team2PATsMade += 1
@@ -1810,14 +1826,10 @@ class ScoreboardVC: UIViewController {
         // Model object properties
         let gameCountA1 = game.team2PATsMade
         let gameCountA2 = game.team2PATsAttempted
-        let teamAvgA1 = team.pATsMade
-        let teamAvgA2 = team.pATsAttempted
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
         cellA2?.setTitle("\(gameCountA2)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
-        cellB2?.setTitle(String(format: "%.1f", Double(teamAvgA2 / (gamesPlayed + 1))), for: .normal)
         changeScore()
         
         // Update percentage lables
@@ -1827,28 +1839,17 @@ class ScoreboardVC: UIViewController {
             let percentage = getPercentageString(numerator: gameCountA1, denominator: gameCountA2)
             cellA3?.setTitle(percentage, for: .normal)
         }
-        
-        if teamAvgA2 == 0 {
-            cellB3?.setTitle("0%", for: .normal)
-        } else {
-            let percentage = getPercentageString(numerator: teamAvgA1, denominator: teamAvgA2)
-            cellB3?.setTitle(percentage, for: .normal)
-        }
     }
     
     @IBAction func team2AddPATMIssedButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team2 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team2?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team2 else { return }
         
         // Cell labels
         let cellA1 = team2GamePATsMadeButton
         let cellA2 = team2GamePATsAttemptedButton
         let cellA3 = team2GamePATPercentButton
-        let cellB1 = team2AvgPATsMadeButton
-        let cellB2 = team2AvgPATsAttemptedButton
-        let cellB3 = team2AvgPATPercentButton
         
         //update source of truth
         game.team2PATsMade += 0
@@ -1859,14 +1860,10 @@ class ScoreboardVC: UIViewController {
         // Model object properties
         let gameCountA1 = game.team2PATsMade
         let gameCountA2 = game.team2PATsAttempted
-        let teamAvgA1 = team.pATsMade
-        let teamAvgA2 = team.pATsAttempted
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
         cellA2?.setTitle("\(gameCountA2)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
-        cellB2?.setTitle(String(format: "%.1f", Double(teamAvgA2 / (gamesPlayed + 1))), for: .normal)
         
         // Update percentage lables
         if gameCountA2 == 0 {
@@ -1875,21 +1872,14 @@ class ScoreboardVC: UIViewController {
             let percentage = getPercentageString(numerator: gameCountA1, denominator: gameCountA2)
             cellA3?.setTitle(percentage, for: .normal)
         }
-        
-        if teamAvgA2 == 0 {
-            cellB3?.setTitle("0%", for: .normal)
-        } else {
-            let percentage = getPercentageString(numerator: teamAvgA1, denominator: teamAvgA2)
-            cellB3?.setTitle(percentage, for: .normal)
-        }
     }
     
     // Stats - Team 2 PATs - Subtract
+        
     @IBAction func team2SubtractPATMadeButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team2 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team2?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team2 else { return }
         
         // Guard against subtracting to negative numbers
         if game.team2PATsMade == 0 || team.pATsMade == 0 { return }
@@ -1898,9 +1888,6 @@ class ScoreboardVC: UIViewController {
         let cellA1 = team2GamePATsMadeButton
         let cellA2 = team2GamePATsAttemptedButton
         let cellA3 = team2GamePATPercentButton
-        let cellB1 = team2AvgPATsMadeButton
-        let cellB2 = team2AvgPATsAttemptedButton
-        let cellB3 = team2AvgPATPercentButton
         
         //update source of truth
         game.team2PATsMade -= 1
@@ -1912,14 +1899,10 @@ class ScoreboardVC: UIViewController {
         // Model object properties
         let gameCountA1 = game.team2PATsMade
         let gameCountA2 = game.team2PATsAttempted
-        let teamAvgA1 = team.pATsMade
-        let teamAvgA2 = team.pATsAttempted
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
         cellA2?.setTitle("\(gameCountA2)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
-        cellB2?.setTitle(String(format: "%.1f", Double(teamAvgA2 / (gamesPlayed + 1))), for: .normal)
         changeScore()
         
         // Update percentage lables
@@ -1929,20 +1912,12 @@ class ScoreboardVC: UIViewController {
             let percentage = getPercentageString(numerator: gameCountA1, denominator: gameCountA2)
             cellA3?.setTitle(percentage, for: .normal)
         }
-        
-        if teamAvgA2 == 0 {
-            cellB3?.setTitle("0%", for: .normal)
-        } else {
-            let percentage = getPercentageString(numerator: teamAvgA1, denominator: teamAvgA2)
-            cellB3?.setTitle(percentage, for: .normal)
-        }
     }
     
     @IBAction func team2SubractPATMIssedButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team2 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team2?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team2 else { return }
         
         // Guard against subtracting to negative numbers
         if game.team2PATsAttempted == 0 || team.pATsAttempted == 0 { return }
@@ -1951,9 +1926,6 @@ class ScoreboardVC: UIViewController {
         let cellA1 = team2GamePATsMadeButton
         let cellA2 = team2GamePATsAttemptedButton
         let cellA3 = team2GamePATPercentButton
-        let cellB1 = team2AvgPATsMadeButton
-        let cellB2 = team2AvgPATsAttemptedButton
-        let cellB3 = team2AvgPATPercentButton
         
         //update source of truth
         game.team2PATsMade -= 0
@@ -1964,14 +1936,10 @@ class ScoreboardVC: UIViewController {
         // Model object properties
         let gameCountA1 = game.team2PATsMade
         let gameCountA2 = game.team2PATsAttempted
-        let teamAvgA1 = team.pATsMade
-        let teamAvgA2 = team.pATsAttempted
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
         cellA2?.setTitle("\(gameCountA2)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
-        cellB2?.setTitle(String(format: "%.1f", Double(teamAvgA2 / (gamesPlayed + 1))), for: .normal)
         
         // Update percentage lables
         if gameCountA2 == 0 {
@@ -1980,25 +1948,19 @@ class ScoreboardVC: UIViewController {
             let percentage = getPercentageString(numerator: gameCountA1, denominator: gameCountA2)
             cellA3?.setTitle(percentage, for: .normal)
         }
-        
-        if teamAvgA2 == 0 {
-            cellB3?.setTitle("0%", for: .normal)
-        } else {
-            let percentage = getPercentageString(numerator: teamAvgA1, denominator: teamAvgA2)
-            cellB3?.setTitle(percentage, for: .normal)
-        }
     }
+        
+    // MARK: - TEAM 2 MISC
     
     // Stats - Team 2 Misc - Add
+        
     @IBAction func team2AddTDMadeButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team2 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team2?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team2 else { return }
         
         // Cell labels
         let cellA1 = team2GameTDsButton
-        let cellB1 = team2AvgTDsButton
         
         //update source of truth
         game.team2Touchdowns += 1
@@ -2007,23 +1969,19 @@ class ScoreboardVC: UIViewController {
         
         // Model object properties
         let gameCountA1 = game.team2Touchdowns
-        let teamAvgA1 = team.touchdowns
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
         changeScore()
     }
     
     @IBAction func team2Add2PTMadeButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team2 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team2?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team2 else { return }
         
         // Cell labels
         let cellA1 = team2Game2PTsButton
-        let cellB1 = team2Avg2PTsButton
         
         //update source of truth
         game.team2TwoPointConversions += 1
@@ -2032,28 +1990,24 @@ class ScoreboardVC: UIViewController {
         
         // Model object properties
         let gameCountA1 = game.team2TwoPointConversions
-        let teamAvgA1 = team.twoPointConversions
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
         changeScore()
     }
     
     // Stats - Team 2 Misc - Subtract
+        
     @IBAction func team2SubtractTouchdownsMadeButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team2 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team2?.gamesPlayed else { print("Error unwrapping games played") ; return }
-        
+        guard let game = selectedGame else { return }
+        guard let team = game.team2 else { return }
         
         // Guard against subtracting to negative numbers
         if game.team2Touchdowns == 0 { return }
         
         // Cell labels
         let cellA1 = team2GameTDsButton
-        let cellB1 = team2AvgTDsButton
         
         //update source of truth
         game.team2Touchdowns -= 1
@@ -2062,26 +2016,22 @@ class ScoreboardVC: UIViewController {
         
         // Model object properties
         let gameCountA1 = game.team2Touchdowns
-        let teamAvgA1 = team.touchdowns
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
         changeScore()
     }
     
     @IBAction func team2Subtract2PTMadeButton(_ sender: Any) {
         
-        guard let game = selectedGame else { print("Error unwrapping game") ; return }
-        guard let team = game.team2 else { print("Error unwrapping team") ; return }
-        guard let gamesPlayed = game.team2?.gamesPlayed else { print("Error unwrapping games played") ; return }
+        guard let game = selectedGame else { return }
+        guard let team = game.team2 else { return }
         
         // Guard against subtracting to negative numbers
         if game.team2TwoPointConversions == 0 { return }
         
         // Cell labels
         let cellA1 = team2Game2PTsButton
-        let cellB1 = team2Avg2PTsButton
         
         //update source of truth
         game.team2TwoPointConversions -= 1
@@ -2090,28 +2040,10 @@ class ScoreboardVC: UIViewController {
         
         // Model object properties
         let gameCountA1 = game.team2TwoPointConversions
-        let teamAvgA1 = team.twoPointConversions
         
         // Update stat labels
         cellA1?.setTitle("\(gameCountA1)", for: .normal)
-        cellB1?.setTitle(String(format: "%.1f", Double(teamAvgA1 / (gamesPlayed + 1))), for: .normal)
         changeScore()
-    }
-    
-    // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
-    // 🔸 MARK: - FIRST TIME LABEL SET UP
-    
-    func updateAverages(){
-        
-        guard let game = self.selectedGame else { return }
-        DispatchQueue.main.async {
-            
-            self.team1AvgCompletionsButton.setTitle("\(game.team1?.completionsMade ?? 0 / (game.team1?.gamesPlayed ?? 0 + 1))", for: .normal)
-            
-            //team 2 completion avgs
-            self.team1AvgCompletionsButton.setTitle("\(game.team2?.completionsMade ?? 0 / (game.team2?.gamesPlayed ?? 0 + 1))", for: .normal)
-        }
-        //team 1 completion avgs
     }
     
     // 🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
